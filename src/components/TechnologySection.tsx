@@ -1,47 +1,45 @@
+"use client";
+
 import Image from "next/image";
-
-interface TechItem {
-  id: string;
-  logoSrc: string;
-  logoAlt: string;
-  logoWidth: number;
-  logoHeight: number;
-  description: string;
-  href: string;
-}
-
-const techItems: TechItem[] = [
-  {
-    id: "azerocare",
-    logoSrc: "/images/logo-azerocare-plus.svg",
-    logoAlt: "Azerocare Plus®",
-    logoWidth: 269,
-    logoHeight: 48,
-    description:
-      "New technology Developed for surfaces in Lether, Matt and Lux® finish",
-    href: "/en/azerocare-plus",
-  },
-  {
-    id: "avp",
-    logoSrc: "/images/logo-avp.png",
-    logoAlt: "AVP",
-    logoWidth: 308,
-    logoHeight: 53,
-    description: "Advanced Vein Process technology for natural stone",
-    href: "/en/avp",
-  },
-  {
-    id: "azerobact",
-    logoSrc: "/images/logo-azerobact-plus.png",
-    logoAlt: "Azerobact Plus",
-    logoWidth: 253,
-    logoHeight: 53,
-    description: "Antibacterial technology for natural stone surfaces",
-    href: "/en/azerobact-plus",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function TechnologySection() {
+  const { t, isRTL } = useLanguage();
+
+  const fontFamily = isRTL
+    ? "var(--font-vazirmatn), Vazirmatn, Tahoma, sans-serif"
+    : "Lato, sans-serif";
+
+  const techItems = [
+    {
+      id: "azerocare",
+      logoSrc: "/images/logo-azerocare-plus.svg",
+      logoAlt: "Azerocare Plus®",
+      logoWidth: 269,
+      logoHeight: 48,
+      description: t.technology.azerocare,
+      href: "/en/azerocare-plus",
+    },
+    {
+      id: "avp",
+      logoSrc: "/images/logo-avp.png",
+      logoAlt: "AVP",
+      logoWidth: 308,
+      logoHeight: 53,
+      description: t.technology.avp,
+      href: "/en/avp",
+    },
+    {
+      id: "azerobact",
+      logoSrc: "/images/logo-azerobact-plus.png",
+      logoAlt: "Azerobact Plus",
+      logoWidth: 253,
+      logoHeight: 53,
+      description: t.technology.azerobact,
+      href: "/en/azerobact-plus",
+    },
+  ];
+
   return (
     <section
       style={{
@@ -59,6 +57,7 @@ export function TechnologySection() {
           alignItems: "flex-start",
           gap: "60px",
           flexWrap: "wrap",
+          direction: isRTL ? "rtl" : "ltr",
         }}
       >
         {techItems.map((item) => (
@@ -89,7 +88,7 @@ export function TechnologySection() {
                 lineHeight: "1.6",
                 maxWidth: "280px",
                 margin: 0,
-                fontFamily: "Lato, sans-serif",
+                fontFamily,
                 fontWeight: 300,
               }}
             >
@@ -99,14 +98,14 @@ export function TechnologySection() {
               style={{
                 fontSize: "13px",
                 color: "#A18F7A",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
+                letterSpacing: isRTL ? "0px" : "2px",
+                textTransform: isRTL ? "none" : "uppercase",
                 borderBottom: "1px solid #A18F7A",
                 paddingBottom: "2px",
-                fontFamily: "Lato, sans-serif",
+                fontFamily,
               }}
             >
-              Discover more
+              {t.technology.discoverMore}
             </span>
           </a>
         ))}

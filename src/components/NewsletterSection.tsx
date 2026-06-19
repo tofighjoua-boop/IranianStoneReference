@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function NewsletterSection() {
+  const { t, isRTL } = useLanguage();
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -10,6 +12,10 @@ export function NewsletterSection() {
     e.preventDefault();
     if (email) setSubmitted(true);
   };
+
+  const fontFamily = isRTL
+    ? "var(--font-vazirmatn), Vazirmatn, Tahoma, sans-serif"
+    : "Lato, sans-serif";
 
   return (
     <section
@@ -30,32 +36,33 @@ export function NewsletterSection() {
           alignItems: "center",
           gap: "24px",
           textAlign: "center",
+          direction: isRTL ? "rtl" : "ltr",
         }}
       >
         <p
           style={{
             fontSize: "11px",
             color: "#777373",
-            letterSpacing: "3px",
-            textTransform: "uppercase",
+            letterSpacing: isRTL ? "1px" : "3px",
+            textTransform: isRTL ? "none" : "uppercase",
             margin: 0,
-            fontFamily: "Lato, sans-serif",
+            fontFamily,
           }}
         >
-          NEWSLETTER
+          {t.newsletter.heading}
         </p>
         <h2
           style={{
             fontSize: "22px",
             color: "#A18F7A",
-            letterSpacing: "4px",
-            textTransform: "uppercase",
+            letterSpacing: isRTL ? "1px" : "4px",
+            textTransform: isRTL ? "none" : "uppercase",
             fontWeight: 300,
             margin: 0,
-            fontFamily: "Lato, sans-serif",
+            fontFamily,
           }}
         >
-          STAY UPDATED
+          {t.newsletter.title}
         </h2>
 
         {!submitted ? (
@@ -73,7 +80,7 @@ export function NewsletterSection() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="E-MAIL"
+              placeholder={t.newsletter.emailPlaceholder}
               required
               style={{
                 width: "100%",
@@ -84,9 +91,10 @@ export function NewsletterSection() {
                 color: "#A18F7A",
                 background: "transparent",
                 outline: "none",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                fontFamily: "Lato, sans-serif",
+                letterSpacing: isRTL ? "0px" : "2px",
+                textTransform: isRTL ? "none" : "uppercase",
+                fontFamily,
+                textAlign: isRTL ? "right" : "left",
               }}
             />
             <p
@@ -95,11 +103,10 @@ export function NewsletterSection() {
                 color: "#777373",
                 lineHeight: "1.6",
                 margin: 0,
-                fontFamily: "Lato, sans-serif",
+                fontFamily,
               }}
             >
-              I have read and authorize the use of my personal data. * Required
-              field
+              {t.newsletter.privacyText}
             </p>
             <button
               type="submit"
@@ -109,14 +116,14 @@ export function NewsletterSection() {
                 border: "none",
                 padding: "14px 40px",
                 fontSize: "13px",
-                letterSpacing: "3px",
-                textTransform: "uppercase",
+                letterSpacing: isRTL ? "0px" : "3px",
+                textTransform: isRTL ? "none" : "uppercase",
                 cursor: "pointer",
-                fontFamily: "Lato, sans-serif",
+                fontFamily,
                 fontWeight: 400,
               }}
             >
-              SUBSCRIBE
+              {t.newsletter.subscribe}
             </button>
           </form>
         ) : (
@@ -124,10 +131,10 @@ export function NewsletterSection() {
             style={{
               fontSize: "16px",
               color: "#A18F7A",
-              fontFamily: "Lato, sans-serif",
+              fontFamily,
             }}
           >
-            Thank you for subscribing!
+            {t.newsletter.thankYou}
           </p>
         )}
       </div>

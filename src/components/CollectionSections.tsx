@@ -2,65 +2,17 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-interface CollectionItem {
-  id: string;
-  backgroundImage: string;
-  label: string | null;
-  title: string | null;
-  body: string | null;
-  ctaText: string;
-  ctaHref: string;
-  logoSrc?: string;
-  logoAlt?: string;
-  logoWidth?: number;
-  logoHeight?: number;
-}
-
-const collections: CollectionItem[] = [
-  {
-    id: "exclusive",
-    backgroundImage: "/images/collection-exclusive.jpg",
-    label: "ANTOLINI®",
-    title: "EXCLUSIVE COLLECTION",
-    body: "Exclusivity through tradition and expertise. Antolini® is curator to Mother Nature's most desired and recognisable masterpieces.",
-    ctaText: "DISCOVER THIS MATERIAL",
-    ctaHref: "/en/c3/exclusive-collection",
-  },
-  {
-    id: "stoneroom",
-    backgroundImage: "/images/collection-stoneroom.jpg",
-    label: null,
-    title: null,
-    body: null,
-    ctaText: "DISCOVER MORE",
-    ctaHref: "/en/milanoduomo",
-    logoSrc: "/images/stoneroom-logo.png",
-    logoAlt: "Antolini® Stoneroom®",
-    logoWidth: 260,
-    logoHeight: 72,
-  },
-  {
-    id: "tableware",
-    backgroundImage: "/images/collection-tableware.jpg",
-    label: "ANTOLINI®",
-    title: "TABLEWARE",
-    body: null,
-    ctaText: "DISCOVER",
-    ctaHref: "/en/tableware",
-  },
-  {
-    id: "technology",
-    backgroundImage: "/images/collection-tech.jpg",
-    label: "ANTOLINI®",
-    title: "INNOVATION",
-    body: null,
-    ctaText: "DISCOVER",
-    ctaHref: "/en/innovation",
-  },
-];
-
-function CollectionCTA({ text, href }: { text: string; href: string }) {
+function CollectionCTA({
+  text,
+  href,
+  isRTL,
+}: {
+  text: string;
+  href: string;
+  isRTL: boolean;
+}) {
   const [hovered, setHovered] = useState(false);
   return (
     <a
@@ -74,12 +26,14 @@ function CollectionCTA({ text, href }: { text: string; href: string }) {
         color: hovered ? "white" : "#A18F7A",
         backgroundColor: hovered ? "#A18F7A" : "transparent",
         fontSize: "13px",
-        letterSpacing: "3px",
-        textTransform: "uppercase",
+        letterSpacing: isRTL ? "0px" : "3px",
+        textTransform: isRTL ? "none" : "uppercase",
         textDecoration: "none",
         transition: "all 0.5s ease",
         cursor: "pointer",
-        fontFamily: "Lato, sans-serif",
+        fontFamily: isRTL
+          ? "var(--font-vazirmatn), Vazirmatn, Tahoma, sans-serif"
+          : "Lato, sans-serif",
         fontWeight: 400,
       }}
     >
@@ -89,6 +43,67 @@ function CollectionCTA({ text, href }: { text: string; href: string }) {
 }
 
 export function CollectionSections() {
+  const { t, isRTL } = useLanguage();
+
+  const fontFamily = isRTL
+    ? "var(--font-vazirmatn), Vazirmatn, Tahoma, sans-serif"
+    : "Lato, sans-serif";
+
+  const collections = [
+    {
+      id: "exclusive",
+      backgroundImage: "/images/collection-exclusive.jpg",
+      label: t.collections.brand,
+      title: t.collections.exclusiveTitle,
+      body: t.collections.exclusiveBody,
+      ctaText: t.collections.discoverMaterial,
+      ctaHref: "/en/c3/exclusive-collection",
+      logoSrc: undefined as string | undefined,
+      logoAlt: undefined as string | undefined,
+      logoWidth: undefined as number | undefined,
+      logoHeight: undefined as number | undefined,
+    },
+    {
+      id: "stoneroom",
+      backgroundImage: "/images/collection-stoneroom.jpg",
+      label: null,
+      title: null,
+      body: null,
+      ctaText: t.collections.discoverMore,
+      ctaHref: "/en/milanoduomo",
+      logoSrc: "/images/stoneroom-logo.png",
+      logoAlt: "Iranian Stone Reference® Stoneroom®",
+      logoWidth: 260,
+      logoHeight: 72,
+    },
+    {
+      id: "tableware",
+      backgroundImage: "/images/collection-tableware.jpg",
+      label: t.collections.brand,
+      title: t.collections.tablewareTitle,
+      body: null,
+      ctaText: t.collections.discover,
+      ctaHref: "/en/tableware",
+      logoSrc: undefined,
+      logoAlt: undefined,
+      logoWidth: undefined,
+      logoHeight: undefined,
+    },
+    {
+      id: "technology",
+      backgroundImage: "/images/collection-tech.jpg",
+      label: t.collections.brand,
+      title: t.collections.innovationTitle,
+      body: null,
+      ctaText: t.collections.discover,
+      ctaHref: "/en/innovation",
+      logoSrc: undefined,
+      logoAlt: undefined,
+      logoWidth: undefined,
+      logoHeight: undefined,
+    },
+  ];
+
   return (
     <div>
       {collections.map((col) => (
@@ -104,7 +119,7 @@ export function CollectionSections() {
             justifyContent: "center",
           }}
         >
-          {/* Background image with slow zoom animation */}
+          {/* Background image with slow zoom */}
           <div
             style={{
               position: "absolute",
@@ -128,6 +143,7 @@ export function CollectionSections() {
               textAlign: "center",
               gap: "20px",
               padding: "0 40px",
+              direction: isRTL ? "rtl" : "ltr",
             }}
           >
             {col.logoSrc ? (
@@ -139,7 +155,11 @@ export function CollectionSections() {
                   height={col.logoHeight ?? 72}
                   style={{ objectFit: "contain" }}
                 />
-                <CollectionCTA text={col.ctaText} href={col.ctaHref} />
+                <CollectionCTA
+                  text={col.ctaText}
+                  href={col.ctaHref}
+                  isRTL={isRTL}
+                />
               </>
             ) : (
               <>
@@ -148,11 +168,11 @@ export function CollectionSections() {
                     style={{
                       fontSize: "12px",
                       color: "#A18F7A",
-                      letterSpacing: "5px",
-                      textTransform: "uppercase",
+                      letterSpacing: isRTL ? "1px" : "5px",
+                      textTransform: isRTL ? "none" : "uppercase",
                       fontWeight: 400,
                       margin: 0,
-                      fontFamily: "Lato, sans-serif",
+                      fontFamily,
                     }}
                   >
                     {col.label}
@@ -163,12 +183,12 @@ export function CollectionSections() {
                     style={{
                       fontSize: "28px",
                       color: "#A18F7A",
-                      letterSpacing: "3px",
-                      textTransform: "uppercase",
+                      letterSpacing: isRTL ? "1px" : "3px",
+                      textTransform: isRTL ? "none" : "uppercase",
                       fontWeight: 400,
                       lineHeight: 1.3,
                       margin: 0,
-                      fontFamily: "Lato, sans-serif",
+                      fontFamily,
                     }}
                   >
                     {col.title}
@@ -183,13 +203,17 @@ export function CollectionSections() {
                       lineHeight: 1.6,
                       maxWidth: "480px",
                       margin: 0,
-                      fontFamily: "Lato, sans-serif",
+                      fontFamily,
                     }}
                   >
                     {col.body}
                   </p>
                 )}
-                <CollectionCTA text={col.ctaText} href={col.ctaHref} />
+                <CollectionCTA
+                  text={col.ctaText}
+                  href={col.ctaHref}
+                  isRTL={isRTL}
+                />
               </>
             )}
           </div>

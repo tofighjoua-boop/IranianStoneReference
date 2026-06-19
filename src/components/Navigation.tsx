@@ -3,28 +3,29 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { MenuIcon, SearchIcon, CloseIcon } from "@/components/icons";
-import { cn } from "@/lib/utils";
-
-const navItems = [
-  { label: "ANTOLINI®", href: "/en/" },
-  { label: "HAUTE NATURE®", href: "/en/haute-nature" },
-  { label: "HISTORY", href: "/en/history" },
-  { label: "COLLECTIONS", href: "/en/c3/exclusive-collection" },
-  { label: "GEOFAMILY", href: "/en/natural-stones" },
-  { label: "INNOVATION", href: "/en/innovation" },
-  { label: "LADY A", href: "/en/lady-a" },
-  { label: "STONEROOM®", href: "/en/milanoduomo" },
-];
-
-const topNavItems = [
-  { label: "STORE LOCATOR", href: "/en/store-locator" },
-  { label: "FAIRS & EVENTS", href: "/en/fairs-and-events" },
-  { label: "CONTACT US", href: "/en/contacts" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Navigation() {
+  const { t, language, setLanguage, isRTL } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItems = [
+    { label: t.nav.brand, href: "/en/" },
+    { label: t.nav.hauteNature, href: "/en/haute-nature" },
+    { label: t.nav.history, href: "/en/history" },
+    { label: t.nav.collections, href: "/en/c3/exclusive-collection" },
+    { label: t.nav.geofamily, href: "/en/natural-stones" },
+    { label: t.nav.innovation, href: "/en/innovation" },
+    { label: t.nav.ladyA, href: "/en/lady-a" },
+    { label: t.nav.stoneroom, href: "/en/milanoduomo" },
+  ];
+
+  const topNavItems = [
+    { label: t.nav.storeLocator, href: "/en/store-locator" },
+    { label: t.nav.fairsEvents, href: "/en/fairs-and-events" },
+    { label: t.nav.contactUs, href: "/en/contacts" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,38 +56,32 @@ export function Navigation() {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "20px clamp(16px, 3vw, 40px)",
+    padding: "16px clamp(16px, 3vw, 40px)",
     backgroundColor: isScrolled ? "rgba(255,255,255,0.97)" : "rgba(0,0,0,0.3)",
     transition: "background-color 0.3s ease",
   };
+
+  const logoSrc = isScrolled
+    ? "/images/isr-logo-dark.svg"
+    : "/images/isr-logo-white.svg";
+  const logoAlt = "Iranian Stone Reference Logo";
 
   return (
     <>
       <header style={headerStyle}>
         {/* Logo */}
         <a href="/en/" style={{ display: "block", lineHeight: 0 }}>
-          {isScrolled ? (
-            <Image
-              src="/images/logo.png"
-              alt="Antolini® Logo"
-              width={175}
-              height={48}
-              style={{ objectFit: "contain", height: "auto" }}
-              priority
-            />
-          ) : (
-            <Image
-              src="/images/logo_white.png"
-              alt="Antolini® Logo"
-              width={175}
-              height={48}
-              style={{ objectFit: "contain", height: "auto" }}
-              priority
-            />
-          )}
+          <Image
+            src={logoSrc}
+            alt={logoAlt}
+            width={58}
+            height={68}
+            style={{ objectFit: "contain", height: "68px", width: "auto" }}
+            priority
+          />
         </a>
 
-        {/* Top-right nav + MENU — on the right */}
+        {/* Right side nav */}
         <div
           style={{
             display: "flex",
@@ -94,7 +89,7 @@ export function Navigation() {
             gap: "24px",
           }}
         >
-          {/* Nav items — hidden on small screens */}
+          {/* Desktop nav items */}
           <nav
             className="hidden md:flex"
             style={{ alignItems: "center", gap: "24px" }}
@@ -109,24 +104,36 @@ export function Navigation() {
                   letterSpacing: "1px",
                   textTransform: "uppercase",
                   textDecoration: "none",
-                  fontFamily: "Lato, sans-serif",
+                  fontFamily: isRTL
+                    ? "var(--font-vazirmatn), Vazirmatn, Tahoma, sans-serif"
+                    : "Lato, sans-serif",
                 }}
               >
                 {item.label}
               </a>
             ))}
             <span style={{ color: "#A18F7A", fontSize: "11px" }}>|</span>
-            <span
+
+            {/* Language switcher */}
+            <button
+              onClick={() => setLanguage(language === "en" ? "fa" : "en")}
               style={{
                 fontSize: "11px",
                 color: "#A18F7A",
                 letterSpacing: "1px",
                 textTransform: "uppercase",
                 cursor: "pointer",
+                background: "none",
+                border: "none",
+                padding: 0,
+                fontFamily: "Lato, sans-serif",
+                fontWeight: 600,
               }}
+              aria-label="Switch language"
             >
-              EN ▾
-            </span>
+              {t.nav.langLabel}
+            </button>
+
             <a
               href="/en/search"
               style={{ color: "#A18F7A", lineHeight: 0, display: "block" }}
@@ -136,7 +143,7 @@ export function Navigation() {
             </a>
           </nav>
 
-          {/* MENU button — far right */}
+          {/* MENU button */}
           <button
             onClick={() => setIsMenuOpen(true)}
             style={{
@@ -151,13 +158,15 @@ export function Navigation() {
               fontSize: "18px",
               letterSpacing: "2px",
               textTransform: "uppercase",
-              fontFamily: "Lato, sans-serif",
+              fontFamily: isRTL
+                ? "var(--font-vazirmatn), Vazirmatn, Tahoma, sans-serif"
+                : "Lato, sans-serif",
               fontWeight: 400,
             }}
             aria-label="Open navigation menu"
           >
             <MenuIcon />
-            <span className="hidden sm:inline">MENU</span>
+            <span className="hidden sm:inline">{t.nav.menu}</span>
           </button>
         </div>
       </header>
@@ -173,6 +182,7 @@ export function Navigation() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "60px 140px",
+          direction: isRTL ? "rtl" : "ltr",
           opacity: isMenuOpen ? 1 : 0,
           pointerEvents: isMenuOpen ? "auto" : "none",
           transition: "opacity 0.3s ease",
@@ -198,32 +208,37 @@ export function Navigation() {
         </button>
 
         {/* Logo inside panel */}
-        <a href="/en/" style={{ display: "block", lineHeight: 0, marginBottom: "40px" }}>
+        <a
+          href="/en/"
+          style={{ display: "block", lineHeight: 0, marginBottom: "40px" }}
+        >
           <Image
-            src="/images/logo.png"
-            alt="Antolini® Logo"
-            width={150}
-            height={41}
-            style={{ objectFit: "contain", height: "auto" }}
+            src="/images/isr-logo-dark.svg"
+            alt={logoAlt}
+            width={52}
+            height={61}
+            style={{ objectFit: "contain", height: "61px", width: "auto" }}
           />
         </a>
 
         {/* Main nav links */}
         <nav style={{ display: "flex", flexDirection: "column" }}>
-          {navItems.map((item) => (
+          {navItems.map((item, i) => (
             <a
-              key={item.href}
+              key={i}
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
               style={{
                 fontSize: "20px",
                 fontWeight: 600,
                 color: "#A18F7A",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
+                letterSpacing: isRTL ? "1px" : "2px",
+                textTransform: isRTL ? "none" : "uppercase",
                 textDecoration: "none",
                 lineHeight: "2.5",
-                fontFamily: "Lato, sans-serif",
+                fontFamily: isRTL
+                  ? "var(--font-vazirmatn), Vazirmatn, Tahoma, sans-serif"
+                  : "Lato, sans-serif",
               }}
             >
               {item.label}
@@ -240,21 +255,43 @@ export function Navigation() {
             flexWrap: "wrap",
           }}
         >
-          {topNavItems.map((item) => (
+          {topNavItems.map((item, i) => (
             <a
-              key={item.href}
+              key={i}
               href={item.href}
               style={{
                 fontSize: "13px",
                 color: "#A18F7A",
-                letterSpacing: "1px",
-                textTransform: "uppercase",
+                letterSpacing: isRTL ? "0px" : "1px",
+                textTransform: isRTL ? "none" : "uppercase",
                 textDecoration: "none",
+                fontFamily: isRTL
+                  ? "var(--font-vazirmatn), Vazirmatn, Tahoma, sans-serif"
+                  : "Lato, sans-serif",
               }}
             >
               {item.label}
             </a>
           ))}
+
+          {/* Language toggle in menu */}
+          <button
+            onClick={() => setLanguage(language === "en" ? "fa" : "en")}
+            style={{
+              fontSize: "13px",
+              color: "#A18F7A",
+              letterSpacing: "1px",
+              textTransform: "uppercase",
+              cursor: "pointer",
+              background: "none",
+              border: "1px solid #A18F7A",
+              padding: "2px 10px",
+              fontFamily: "Lato, sans-serif",
+              fontWeight: 600,
+            }}
+          >
+            {t.nav.langLabel}
+          </button>
         </div>
       </div>
     </>

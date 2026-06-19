@@ -1,15 +1,24 @@
+"use client";
+
 import Image from "next/image";
 import { FacebookIcon, InstagramIcon } from "@/components/icons";
-
-const footerLinks = [
-  { label: "STORE LOCATOR", href: "/en/store-locator" },
-  { label: "CONTACTS", href: "/en/contacts" },
-  { label: "TERMS", href: "/en/condvendita.php" },
-  { label: "LEGAL NOTES", href: "/en/legal-notes" },
-  { label: "COOKIES", href: "/en/cookies" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Footer() {
+  const { t, isRTL } = useLanguage();
+
+  const fontFamily = isRTL
+    ? "var(--font-vazirmatn), Vazirmatn, Tahoma, sans-serif"
+    : "Lato, sans-serif";
+
+  const footerLinks = [
+    { label: t.footer.storeLocator, href: "/en/store-locator" },
+    { label: t.footer.contacts, href: "/en/contacts" },
+    { label: t.footer.terms, href: "/en/terms" },
+    { label: t.footer.legalNotes, href: "/en/legal-notes" },
+    { label: t.footer.cookies, href: "/en/cookies" },
+  ];
+
   return (
     <footer
       style={{
@@ -17,6 +26,7 @@ export function Footer() {
         color: "#A18F7A",
         width: "100%",
         padding: "60px 0 40px",
+        direction: isRTL ? "rtl" : "ltr",
       }}
     >
       <div
@@ -41,11 +51,11 @@ export function Footer() {
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             <a href="/en/" style={{ display: "block", lineHeight: 0 }}>
               <Image
-                src="/images/logo_white.png"
-                alt="Antolini®"
-                width={125}
-                height={34}
-                style={{ objectFit: "contain", height: "auto" }}
+                src="/images/isr-logo-white.svg"
+                alt="Iranian Stone Reference"
+                width={52}
+                height={61}
+                style={{ objectFit: "contain", height: "61px", width: "auto" }}
               />
             </a>
             <p
@@ -54,14 +64,12 @@ export function Footer() {
                 color: "#A18F7A",
                 lineHeight: "1.8",
                 margin: 0,
-                fontFamily: "Lato, sans-serif",
+                fontFamily,
               }}
             >
-              Antolini Luigi® &amp; C. S.p.a.
+              {t.footer.companyName}
               <br />
-              Sant&apos;Ambrogio di Valpolicella
-              <br />
-              VERONA
+              {t.footer.address}
             </p>
           </div>
 
@@ -75,10 +83,10 @@ export function Footer() {
                   fontSize: "13px",
                   color: "#A18F7A",
                   textDecoration: "none",
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
+                  letterSpacing: isRTL ? "0px" : "1px",
+                  textTransform: isRTL ? "none" : "uppercase",
                   lineHeight: "2.2",
-                  fontFamily: "Lato, sans-serif",
+                  fontFamily,
                 }}
               >
                 {link.label}
@@ -91,7 +99,7 @@ export function Footer() {
             style={{ display: "flex", flexDirection: "column", gap: "16px" }}
           >
             <a
-              href="https://www.facebook.com/Antolini.Luigi"
+              href="https://www.facebook.com/iranianstone"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#A18F7A", lineHeight: 0 }}
@@ -100,7 +108,7 @@ export function Footer() {
               <FacebookIcon />
             </a>
             <a
-              href="https://www.instagram.com/Antolini/"
+              href="https://www.instagram.com/iranianstone"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#A18F7A", lineHeight: 0 }}
@@ -123,22 +131,22 @@ export function Footer() {
             color: "#A18F7A",
             flexWrap: "wrap",
             gap: "12px",
-            fontFamily: "Lato, sans-serif",
+            fontFamily,
           }}
         >
-          <span>P.IVA IT 0044809 023 3</span>
+          <span>{t.footer.vatNumber}</span>
           <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
             <a
-              href="mailto:al.spa@pec.antolini.it"
+              href={`mailto:${t.footer.emailInfo}`}
               style={{ color: "#A18F7A", textDecoration: "none" }}
             >
-              al.spa@pec.antolini.it
+              {t.footer.emailInfo}
             </a>
             <a
-              href="mailto:privacy@antolini.it"
+              href={`mailto:${t.footer.emailPrivacy}`}
               style={{ color: "#A18F7A", textDecoration: "none" }}
             >
-              privacy@antolini.it
+              {t.footer.emailPrivacy}
             </a>
           </div>
         </div>

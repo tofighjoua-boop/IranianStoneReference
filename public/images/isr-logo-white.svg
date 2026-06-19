@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 165" fill="none">
+  <!-- Outer circle -->
+  <circle cx="70" cy="64" r="52" stroke="white" stroke-width="1.4" fill="none"/>
+
+  <!-- ═══ I ═══ double vertical lines -->
+  <line x1="26" y1="38" x2="26" y2="90" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="31" y1="38" x2="31" y2="90" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- ═══ S ═══ double S-curve paths -->
+  <path d="M 64 38 C 37 38 35 65 50 65 C 65 65 63 90 37 90"
+    stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <path d="M 64 43 C 42 43 40 65 50 65 C 60 65 58 85 42 85"
+    stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+
+  <!-- ═══ R ═══ -->
+  <!-- R vertical double strokes -->
+  <line x1="74" y1="38" x2="74" y2="90" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="79" y1="38" x2="79" y2="90" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- R bowl outer arc -->
+  <path d="M 74 38 C 116 38 116 65 74 65"
+    stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <!-- R bowl inner arc -->
+  <path d="M 79 43 C 108 43 108 60 79 60"
+    stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <!-- R leg outer -->
+  <line x1="95" y1="65" x2="113" y2="90" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- R leg inner -->
+  <line x1="99" y1="61" x2="113" y2="84" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- Text: iranian stone -->
+  <text x="70" y="130" text-anchor="middle" fill="white"
+    font-family="Lato, Arial, sans-serif" font-size="9"
+    font-weight="300" letter-spacing="2.5">iranian stone</text>
+  <!-- Text: reference -->
+  <text x="70" y="146" text-anchor="middle" fill="white"
+    font-family="Lato, Arial, sans-serif" font-size="9"
+    font-weight="300" letter-spacing="5">reference</text>
+</svg>

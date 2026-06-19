@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
+import { Lato, Vazirmatn } from "next/font/google";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import "./globals.css";
 
 const lato = Lato({
@@ -9,12 +10,21 @@ const lato = Lato({
   display: "swap",
 });
 
+const vazirmatn = Vazirmatn({
+  variable: "--font-vazirmatn",
+  subsets: ["arabic"],
+  weight: ["300", "400", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Antolini® | Natural stone processing",
-  description: "Explore Italian excellence in natural stone processing, for unique and exclusive interiors and exteriors.",
+  title: "Iranian Stone Reference | Natural Stone",
+  description:
+    "Explore excellence in natural stone for unique and exclusive interiors and exteriors.",
   openGraph: {
-    title: "Antolini® | Natural stone processing",
-    description: "Explore Italian excellence in natural stone processing, for unique and exclusive interiors and exteriors.",
+    title: "Iranian Stone Reference | Natural Stone",
+    description:
+      "Explore excellence in natural stone for unique and exclusive interiors and exteriors.",
     type: "website",
   },
 };
@@ -25,9 +35,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${lato.variable}`}>
-      <body className="min-h-full antialiased" style={{ fontFamily: "var(--font-lato), Lato, sans-serif" }}>
-        {children}
+    <html lang="en" dir="ltr" className={`${lato.variable} ${vazirmatn.variable}`}>
+      <body
+        className="min-h-full antialiased"
+        style={{ fontFamily: "var(--font-lato), Lato, sans-serif" }}
+      >
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

@@ -1,76 +1,73 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
-interface HeroSlide {
-  id: string;
-  backgroundImage: string;
-  title: string;
-  subtitle: string;
-  linkText: string;
-  linkHref: string;
-}
-
-const heroSlides: HeroSlide[] = [
-  {
-    id: "banner-1",
-    backgroundImage: "/images/banner-1.jpg",
-    title: "ANTOLINI® HAUTE NATURE®",
-    subtitle: "Designed by Nature, Perfected in Italy.",
-    linkText: "Antolini® Exclusive Collection",
-    linkHref: "/en/c3/exclusive-collection",
-  },
-  {
-    id: "banner-2",
-    backgroundImage: "/images/banner-2.jpg",
-    title: "ANTOLINI® HAUTE NATURE®",
-    subtitle: "Designed by Nature, Perfected in Italy.",
-    linkText: "Antolini® Exclusive Collection",
-    linkHref: "/en/c3/exclusive-collection",
-  },
-  {
-    id: "banner-3",
-    backgroundImage: "/images/banner-3.jpg",
-    title: "ANTOLINI® HAUTE NATURE®",
-    subtitle: "Designed by Nature, Perfected in Italy.",
-    linkText: "Antolini® Collections",
-    linkHref: "/en/c3/exclusive-collection",
-  },
-  {
-    id: "banner-4",
-    backgroundImage: "/images/banner-4.jpg",
-    title: "ANTOLINI® HAUTE NATURE®",
-    subtitle: "Designed by Nature, Perfected in Italy.",
-    linkText: "Antolini® Collections",
-    linkHref: "/en/c3/exclusive-collection",
-  },
-  {
-    id: "banner-5",
-    backgroundImage: "/images/banner-5.jpg",
-    title: "ANTOLINI® 2024",
-    subtitle: "Designed by Nature, Perfected in Italy.",
-    linkText: "Discover More",
-    linkHref: "/en/haute-nature",
-  },
-  {
-    id: "banner-6",
-    backgroundImage: "/images/banner-6.jpg",
-    title: "ANTOLINI® HAUTE NATURE®",
-    subtitle: "Designed by Nature, Perfected in Italy.",
-    linkText: "Antolini® Collections",
-    linkHref: "/en/c3/exclusive-collection",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function HeroBanner() {
+  const { t, isRTL } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(1);
+
+  const heroSlides = [
+    {
+      id: "banner-1",
+      backgroundImage: "/images/banner-1.jpg",
+      title: t.hero.title,
+      subtitle: t.hero.subtitle,
+      linkText: t.hero.exclusiveCollection,
+      linkHref: "/en/c3/exclusive-collection",
+    },
+    {
+      id: "banner-2",
+      backgroundImage: "/images/banner-2.jpg",
+      title: t.hero.title,
+      subtitle: t.hero.subtitle,
+      linkText: t.hero.exclusiveCollection,
+      linkHref: "/en/c3/exclusive-collection",
+    },
+    {
+      id: "banner-3",
+      backgroundImage: "/images/banner-3.jpg",
+      title: t.hero.title,
+      subtitle: t.hero.subtitle,
+      linkText: t.hero.collections,
+      linkHref: "/en/c3/exclusive-collection",
+    },
+    {
+      id: "banner-4",
+      backgroundImage: "/images/banner-4.jpg",
+      title: t.hero.title,
+      subtitle: t.hero.subtitle,
+      linkText: t.hero.collections,
+      linkHref: "/en/c3/exclusive-collection",
+    },
+    {
+      id: "banner-5",
+      backgroundImage: "/images/banner-5.jpg",
+      title: t.hero.year2024,
+      subtitle: t.hero.subtitle,
+      linkText: t.hero.discoverMore,
+      linkHref: "/en/haute-nature",
+    },
+    {
+      id: "banner-6",
+      backgroundImage: "/images/banner-6.jpg",
+      title: t.hero.title,
+      subtitle: t.hero.subtitle,
+      linkText: t.hero.collections,
+      linkHref: "/en/c3/exclusive-collection",
+    },
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [heroSlides.length]);
+
+  const fontFamily = isRTL
+    ? "var(--font-vazirmatn), Vazirmatn, Tahoma, sans-serif"
+    : "Lato, sans-serif";
 
   return (
     <div
@@ -110,16 +107,17 @@ export function HeroBanner() {
               textAlign: "center",
               maxWidth: "900px",
               padding: "0 40px",
+              direction: isRTL ? "rtl" : "ltr",
             }}
           >
             <span
               style={{
                 fontSize: "22px",
                 color: "white",
-                letterSpacing: "5px",
-                textTransform: "uppercase",
+                letterSpacing: isRTL ? "2px" : "5px",
+                textTransform: isRTL ? "none" : "uppercase",
                 fontWeight: 300,
-                fontFamily: "Lato, sans-serif",
+                fontFamily,
                 marginBottom: "16px",
                 display: "block",
               }}
@@ -130,10 +128,10 @@ export function HeroBanner() {
               style={{
                 fontSize: "42px",
                 lineHeight: "1.25",
-                letterSpacing: "5px",
+                letterSpacing: isRTL ? "1px" : "5px",
                 color: "white",
                 fontWeight: 300,
-                fontFamily: "Lato, sans-serif",
+                fontFamily,
                 margin: "0 0 40px 0",
               }}
             >
@@ -144,9 +142,9 @@ export function HeroBanner() {
               style={{
                 fontSize: "18px",
                 color: "white",
-                letterSpacing: "2px",
+                letterSpacing: isRTL ? "1px" : "2px",
                 textDecoration: "none",
-                fontFamily: "Lato, sans-serif",
+                fontFamily,
                 borderBottom: "1px solid rgba(255,255,255,0.6)",
                 paddingBottom: "4px",
               }}

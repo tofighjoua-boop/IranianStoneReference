@@ -146,7 +146,35 @@
 }
 
 /* =====================================================
-   ANTOLINI GLOBAL ANIMATIONS
+   RTL / PERSIAN LANGUAGE SUPPORT
+===================================================== */
+
+html[dir="rtl"] body,
+html.fa body {
+  font-family: var(--font-vazirmatn), "Vazirmatn", "Tahoma", sans-serif !important;
+}
+
+html[dir="rtl"] * {
+  font-family: var(--font-vazirmatn), "Vazirmatn", "Tahoma", sans-serif;
+}
+
+/* RTL menu overlay: right-align nav links */
+html[dir="rtl"] .menu-nav-link {
+  text-align: right;
+}
+
+/* RTL footer: reverse flex direction */
+html[dir="rtl"] .footer-top-row {
+  flex-direction: row-reverse;
+}
+
+/* RTL header: keep logo left, nav right (natural in RTL) */
+html[dir="rtl"] .header-inner {
+  flex-direction: row;
+}
+
+/* =====================================================
+   GLOBAL ANIMATIONS
 ===================================================== */
 
 /* Banner fade animation */
