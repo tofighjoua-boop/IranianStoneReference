@@ -1,0 +1,1289 @@
+{
+  "title": "Antolini® | Natural stone processing",
+  "metaDesc": "Explore Italian excellence in natural stone processing, for unique and exclusive interiors and exteriors.",
+  "canonical": "https://www.antolini.com/en/",
+  "images": [
+    {
+      "src": "https://www.antolini.com/frontend/assets/images/logo.png",
+      "alt": "Antolini<sup>®</sup> Logo",
+      "w": 340,
+      "h": 93,
+      "parentTag": "A",
+      "parentClasses": "",
+      "position": "static",
+      "zIndex": "auto",
+      "display": "none",
+      "width": "175px",
+      "height": "auto",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/frontend/assets/images/logo_white.png",
+      "alt": "Antolini<sup>®</sup> Logo",
+      "w": 340,
+      "h": 93,
+      "parentTag": "A",
+      "parentClasses": "",
+      "position": "static",
+      "zIndex": "auto",
+      "display": "block",
+      "width": "175px",
+      "height": "47.8594px",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/frontend/assets/images/logo.png",
+      "alt": "Antolini<sup>®</sup> Logo",
+      "w": 340,
+      "h": 93,
+      "parentTag": "DIV",
+      "parentClasses": "",
+      "position": "absolute",
+      "zIndex": "auto",
+      "display": "block",
+      "width": "175px",
+      "height": "auto",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/frontend/assets/images/chiudi.png",
+      "alt": "Close menu",
+      "w": 14,
+      "h": 14,
+      "parentTag": "DIV",
+      "parentClasses": "",
+      "position": "static",
+      "zIndex": "auto",
+      "display": "none",
+      "width": "auto",
+      "height": "auto",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/frontend/assets/images/ico_cerca.svg",
+      "alt": "Search",
+      "w": 25,
+      "h": 25,
+      "parentTag": "A",
+      "parentClasses": "",
+      "position": "absolute",
+      "zIndex": "auto",
+      "display": "block",
+      "width": "auto",
+      "height": "auto",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/frontend/assets/images/freccia_bianca.svg",
+      "alt": "Choose language",
+      "w": 15,
+      "h": 8,
+      "parentTag": "DIV",
+      "parentClasses": "",
+      "position": "static",
+      "zIndex": "auto",
+      "display": "inline",
+      "width": "auto",
+      "height": "auto",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/frontend/assets/images/logo.png",
+      "alt": "Antolini<sup>®</sup> Logo",
+      "w": 340,
+      "h": 93,
+      "parentTag": "A",
+      "parentClasses": "",
+      "position": "static",
+      "zIndex": "auto",
+      "display": "inline",
+      "width": "175px",
+      "height": "auto",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/frontend/assets/images/chiudi_menu_collezioni.png",
+      "alt": "Close menu",
+      "w": 40,
+      "h": 40,
+      "parentTag": "DIV",
+      "parentClasses": "",
+      "position": "static",
+      "zIndex": "9",
+      "display": "block",
+      "width": "auto",
+      "height": "auto",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/frontend/assets/images/chiudi.svg",
+      "alt": "",
+      "w": 14,
+      "h": 14,
+      "parentTag": "DIV",
+      "parentClasses": "",
+      "position": "absolute",
+      "zIndex": "auto",
+      "display": "block",
+      "width": "15px",
+      "height": "auto",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/en/assets/images/stoneroom-logo.png",
+      "alt": "Antolini<sup>®</sup> Atelier",
+      "w": 520,
+      "h": 145,
+      "parentTag": "DIV",
+      "parentClasses": "",
+      "position": "static",
+      "zIndex": "auto",
+      "display": "inline",
+      "width": "520px",
+      "height": "145px",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/en/assets/images/tech/logo_azerocare_plus.svg",
+      "alt": "Azerocare Plus®",
+      "w": 300,
+      "h": 45,
+      "parentTag": "DIV",
+      "parentClasses": "",
+      "position": "static",
+      "zIndex": "auto",
+      "display": "inline",
+      "width": "520px",
+      "height": "50px",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/frontend/assets/images/tech/logo_azerocare_plus.svg",
+      "alt": "Azerocare Plus®",
+      "w": 300,
+      "h": 45,
+      "parentTag": "A",
+      "parentClasses": "",
+      "position": "static",
+      "zIndex": "auto",
+      "display": "inline",
+      "width": "269.328px",
+      "height": "48px",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/frontend/assets/images/Logo-AVP-bianco-outline.png",
+      "alt": "",
+      "w": 2641,
+      "h": 454,
+      "parentTag": "A",
+      "parentClasses": "",
+      "position": "static",
+      "zIndex": "auto",
+      "display": "inline",
+      "width": "308.297px",
+      "height": "53px",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/frontend/assets/images/Logo-Azerobact-plus-Bianco-outline.png",
+      "alt": "",
+      "w": 2246,
+      "h": 470,
+      "parentTag": "A",
+      "parentClasses": "",
+      "position": "static",
+      "zIndex": "auto",
+      "display": "inline",
+      "width": "253.266px",
+      "height": "53px",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/frontend/assets/images/logo_white.png",
+      "alt": "Antolini<sup>®</sup> Logo",
+      "w": 340,
+      "h": 93,
+      "parentTag": "DIV",
+      "parentClasses": "footer_box_logo",
+      "position": "static",
+      "zIndex": "auto",
+      "display": "inline",
+      "width": "125px",
+      "height": "34.1875px",
+      "objectFit": "fill"
+    },
+    {
+      "src": "https://www.antolini.com/nextgest/assets/_core/images/spinner_14.gif",
+      "alt": "Please Wait...",
+      "w": 14,
+      "h": 14,
+      "parentTag": "SPAN",
+      "parentClasses": "defaultWaiticon",
+      "position": "static",
+      "zIndex": "auto",
+      "display": "inline",
+      "width": "14px",
+      "height": "14px",
+      "objectFit": "fill"
+    }
+  ],
+  "videos": [],
+  "backgroundImages": [
+    {
+      "url": "url(\"https://www.antolini.com/image/banner-banner-1-2_1.jpg\")",
+      "element": "DIV#home_banner_2.home_banner.banner-nomobile.animated_hidden",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/bannermobile-banner-1-2_1.jpg\")",
+      "element": "DIV#home_banner_mobile_2.home_banner.banner-onlymobile.animated_hidden",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/banner-banner-1-3_1.jpg\")",
+      "element": "DIV#home_banner_4.home_banner.banner-nomobile.animated_shown",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/frontend/assets/images/linea-bianca.png\")",
+      "element": "SPAN.label_info.banner_title4.latolight",
+      "size": "auto",
+      "position": "100% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/bannermobile-banner-1-3_1.jpg\")",
+      "element": "DIV#home_banner_mobile_4.home_banner.banner-onlymobile.animated_shown",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/frontend/assets/images/linea-bianca.png\")",
+      "element": "SPAN.label_info.banner_title4.latolight",
+      "size": "auto",
+      "position": "100% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/banner-img_4277.jpg\")",
+      "element": "DIV#home_banner_7.home_banner.banner-nomobile.animated_hidden",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/bannermobile-img_4277.jpg\")",
+      "element": "DIV#home_banner_mobile_7.home_banner.banner-onlymobile.animated_hidden",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/banner-banner-1-5_1.jpg\")",
+      "element": "DIV#home_banner_21.home_banner.banner-nomobile.animated_hidden",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/bannermobile-banner-1-5_1.jpg\")",
+      "element": "DIV#home_banner_mobile_21.home_banner.banner-onlymobile.animated_hidden",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/banner-antolini-24.jpg\")",
+      "element": "DIV#home_banner_23.home_banner.banner-nomobile.animated_hidden",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/bannermobile-antolini-24.jpg\")",
+      "element": "DIV#home_banner_mobile_23.home_banner.banner-onlymobile.animated_hidden",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/banner-purpleclouds_2.jpg\")",
+      "element": "DIV#home_banner_25.home_banner.banner-nomobile.animated_hidden",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/bannermobile-purpleclouds_2.jpg\")",
+      "element": "DIV#home_banner_mobile_25.home_banner.banner-onlymobile.animated_hidden",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/banner-banner-exclusive_2.jpg\")",
+      "element": "DIV.collection_banner_hp.transition_zoom_in.banner-nomobile",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/bannermobile-banner-exclusive_2.jpg\")",
+      "element": "DIV.collection_banner_hp.transition_zoom_in.banner-onlymobile",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/banner-amd1.jpg\")",
+      "element": "DIV.collection_banner_hp.transition_zoom_in.banner-nomobile",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/bannermobile-amd1.jpg\")",
+      "element": "DIV.collection_banner_hp.transition_zoom_in.banner-onlymobile",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/banner-banner-tableware.jpg\")",
+      "element": "DIV.collection_banner_hp.transition_zoom_in.banner-nomobile",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/bannermobile-banner-tableware.jpg\")",
+      "element": "DIV.collection_banner_hp.transition_zoom_in.banner-onlymobile",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/banner-banner-tech-home_1.jpg\")",
+      "element": "DIV.collection_banner_hp.transition_zoom_in.banner-nomobile",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/bannermobile-banner-tech-home_1.jpg\")",
+      "element": "DIV.collection_banner_hp.transition_zoom_in.banner-onlymobile",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/banner-banner71_1.jpg\")",
+      "element": "DIV#home_bottom_banner_1.home_bottom_banner.banner-nomobile.animated_hidden",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/bannermobile-banner71_1.jpg\")",
+      "element": "DIV#home_bottom_banner_mobile_1.home_bottom_banner.banner-onlymobile.animated_hidden",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/banner-banner72.jpg\")",
+      "element": "DIV#home_bottom_banner_2.home_bottom_banner.banner-nomobile.animated_shown",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/bannermobile-banner72.jpg\")",
+      "element": "DIV#home_bottom_banner_mobile_2.home_bottom_banner.banner-onlymobile.animated_shown",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/banner-banner-fiere-sito.jpg\")",
+      "element": "DIV#home_bottom_banner_3.home_bottom_banner.banner-nomobile.animated_hidden",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/image/bannermobile-banner-fiere-sito.jpg\")",
+      "element": "DIV#home_bottom_banner_mobile_3.home_bottom_banner.banner-onlymobile.animated_hidden",
+      "size": "cover",
+      "position": "50% 50%"
+    },
+    {
+      "url": "url(\"https://www.antolini.com/frontend/assets/images/loading.gif\")",
+      "element": "SPAN#defaultWaiticon.defaultWaiticon",
+      "size": "20px",
+      "position": "50% 50%"
+    }
+  ],
+  "svgs": [
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"10\" viewBox=\"0 0 18 10\"><defs><style>.a{fill:#a18f7a;}</style></defs><g transform=\"translate(7118 7599)\"><rect class=\"a\" width=\"18\" height=\"2\" transform=\"translate(-7118 -7599)\"></rect><rect class=\"a\" width=\"18\" height=\"2\" transform=\"translate(-7118 -7591)\"></rect></g></svg>",
+      "width": "18",
+      "height": "10",
+      "viewBox": "0 0 18 10"
+    },
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"10\" viewBox=\"0 0 18 10\"><defs><style>.a{fill:#a18f7a;}</style></defs><g transform=\"translate(7118 7599)\"><rect class=\"a\" width=\"18\" height=\"2\" transform=\"translate(-7118 -7599)\"></rect><rect class=\"a\" width=\"18\" height=\"2\" transform=\"translate(-7118 -7591)\"></rect></g></svg>",
+      "width": "18",
+      "height": "10",
+      "viewBox": "0 0 18 10"
+    },
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"28\" height=\"28\" viewBox=\"0 0 28 28\"><defs><style>.a{fill:#fff;}</style></defs><g transform=\"translate(0)\"><path class=\"a\" d=\"M14,0A14,14,0,1,0,28,14,14,14,0,0,0,14,0Zm3.5,9.333H15.925c-.628,0-.758.258-.758.908v1.426H17.5L17.256,14h-2.09v8.167h-3.5V14H9.333V11.667h2.333V8.974c0-2.064,1.086-3.141,3.534-3.141h2.3Z\"></path></g></svg>",
+      "width": "28",
+      "height": "28",
+      "viewBox": "0 0 28 28"
+    },
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"28\" height=\"28\" viewBox=\"0 0 28 28\"><defs><style>.a{fill:#fff;}</style></defs><g transform=\"translate(0)\"><path class=\"a\" d=\"M17.3,7.352c-.861-.04-1.12-.047-3.3-.047s-2.438.008-3.3.047c-2.216.1-3.247,1.15-3.348,3.348-.038.861-.048,1.119-.048,3.3s.009,2.438.048,3.3c.1,2.193,1.128,3.247,3.348,3.348.86.039,1.119.048,3.3.048s2.44-.009,3.3-.048c2.214-.1,3.246-1.153,3.347-3.348.039-.861.048-1.119.048-3.3s-.009-2.438-.048-3.3C20.546,8.5,19.515,7.454,17.3,7.352ZM14,18.194A4.194,4.194,0,1,1,18.194,14,4.194,4.194,0,0,1,14,18.194Zm4.359-7.573a.98.98,0,1,1,.981-.98A.98.98,0,0,1,18.359,10.621ZM16.723,14A2.722,2.722,0,1,1,14,11.278,2.722,2.722,0,0,1,16.723,14ZM14,0A14,14,0,1,0,28,14,14,14,0,0,0,14,0Zm8.118,17.367c-.134,2.97-1.787,4.614-4.75,4.751-.872.04-1.15.049-3.368.049s-2.5-.009-3.367-.049c-2.968-.137-4.614-1.784-4.751-4.751-.04-.87-.049-1.149-.049-3.367s.009-2.5.049-3.367c.137-2.968,1.784-4.614,4.751-4.749.872-.041,1.149-.05,3.367-.05s2.5.009,3.368",
+      "width": "28",
+      "height": "28",
+      "viewBox": "0 0 28 28"
+    },
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><g id=\"cs-lang\" data-name=\"Cs Lang\"><g id=\"cs-lang-1\" data-name=\"Cs Lang 1\"><path class=\"cookiescript_globe\" d=\"M10,0A10,10,0,1,0,20,10,10,10,0,0,0,10,0Zm6.9,6H14a17.83,17.83,0,0,0-1.4-3.6A8,8,0,0,1,16.9,6ZM10,2a13.43,13.43,0,0,1,1.9,4H8.1A14.7,14.7,0,0,1,10,2ZM2.3,12A6.45,6.45,0,0,1,2,10a6.45,6.45,0,0,1,.3-2H5.7a13.4,13.4,0,0,0-.1,2c0,.7.1,1.3.1,2Zm.8,2h3a15.81,15.81,0,0,0,1.4,3.6A7.92,7.92,0,0,1,3.1,14ZM6,6H3A8.43,8.43,0,0,1,7.3,2.4C6.8,3.6,6.4,4.8,6,6Zm4,12a13.43,13.43,0,0,1-1.9-4h3.8A14.7,14.7,0,0,1,10,18Zm2.3-6H7.7a13.55,13.55,0,0,1-.2-2,12.31,12.31,0,0,1,.2-2h4.7a12.31,12.31,0,0,1,.2,2A13.8,13.8,0,0,1,12.3,12Zm.3,5.6A14.19,14.19,0,0,0,14,14h2.9A8.5,8.5,0,0,1,12.6,17.6ZM14.4,12a13.4,13.4,0,0,0,.1-2c0-.7-.1-1.3-.1-2h3.4a6.45,6.45,0,0,1,.3,2,6.45,6.45,0,0,1-.3,2Z\"></path></g></g></svg>",
+      "width": null,
+      "height": null,
+      "viewBox": "0 0 20 20"
+    },
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg width=\"21px\" height=\"15px\" viewBox=\"0 0 21 15\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">  <defs> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-it-linearGradient-1\"> <stop stop-color=\"#FFFFFF\" offset=\"0%\"></stop> <stop stop-color=\"#F0F0F0\" offset=\"100%\"></stop> </linearGradient> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-it-linearGradient-2\"> <stop stop-color=\"#E43D4C\" offset=\"0%\"></stop> <stop stop-color=\"#CC2E3C\" offset=\"100%\"></stop> </linearGradient> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-it-linearGradient-3\"> <stop stop-color=\"#1BB65D\" offset=\"0%\"></stop> <stop stop-color=\"#139149\" offset=\"100%\"></stop> </linearGradient> </defs> <g id=\"cookiescript-it-Symbols\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"> <g id=\"cookiescript-it-IT\"> <rect id=\"cookiescript-it-FlagBackground\" fill=\"url(#cookiescript-it-linearGradient-1)\" x=\"0\" y=\"0\" ",
+      "width": "21px",
+      "height": "15px",
+      "viewBox": "0 0 21 15"
+    },
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg width=\"21px\" height=\"15px\" viewBox=\"0 0 21 15\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">  <defs> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-en-linearGradient-1\"> <stop stop-color=\"#FFFFFF\" offset=\"0%\"></stop> <stop stop-color=\"#F0F0F0\" offset=\"100%\"></stop> </linearGradient> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-en-linearGradient-2\"> <stop stop-color=\"#0A17A7\" offset=\"0%\"></stop> <stop stop-color=\"#030E88\" offset=\"100%\"></stop> </linearGradient> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-en-linearGradient-3\"> <stop stop-color=\"#E6273E\" offset=\"0%\"></stop> <stop stop-color=\"#CF152B\" offset=\"100%\"></stop> </linearGradient> </defs> <g id=\"cookiescript-en-Symbols\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"> <g id=\"cookiescript-en-GB\"> <rect id=\"cookiescript-en-FlagBackground\" fill=\"url(#cookiescript-en-linearGradient-1)\" x=\"0\" y=\"0\" ",
+      "width": "21px",
+      "height": "15px",
+      "viewBox": "0 0 21 15"
+    },
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg width=\"21px\" height=\"15px\" viewBox=\"0 0 21 15\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">  <defs> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-es-linearGradient-1\"> <stop stop-color=\"#FFFFFF\" offset=\"0%\"></stop> <stop stop-color=\"#F0F0F0\" offset=\"100%\"></stop> </linearGradient> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-es-linearGradient-2\"> <stop stop-color=\"#DD172C\" offset=\"0%\"></stop> <stop stop-color=\"#C60B1F\" offset=\"100%\"></stop> </linearGradient> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-es-linearGradient-3\"> <stop stop-color=\"#FFD133\" offset=\"0%\"></stop> <stop stop-color=\"#FFC500\" offset=\"100%\"></stop> </linearGradient> </defs> <g id=\"cookiescript-es-Symbols\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"> <g id=\"cookiescript-es-ES\"> <rect id=\"cookiescript-es-FlagBackground\" fill=\"url(#cookiescript-es-linearGradient-1)\" x=\"0\" y=\"0\" ",
+      "width": "21px",
+      "height": "15px",
+      "viewBox": "0 0 21 15"
+    },
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg width=\"21px\" height=\"15px\" viewBox=\"0 0 21 15\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">  <defs> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-de-linearGradient-1\"> <stop stop-color=\"#FFFFFF\" offset=\"0%\"></stop> <stop stop-color=\"#F0F0F0\" offset=\"100%\"></stop> </linearGradient> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-de-linearGradient-2\"> <stop stop-color=\"#262626\" offset=\"0%\"></stop> <stop stop-color=\"#0D0D0D\" offset=\"100%\"></stop> </linearGradient> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-de-linearGradient-3\"> <stop stop-color=\"#F01515\" offset=\"0%\"></stop> <stop stop-color=\"#DE0000\" offset=\"100%\"></stop> </linearGradient> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-de-linearGradient-4\"> <stop stop-color=\"#FFD521\" offset=\"0%\"></stop> <stop stop-color=\"#FFCF00\" offset=\"100%\"></stop> </linearGradient> </defs> <g id=\"cookiescript",
+      "width": "21px",
+      "height": "15px",
+      "viewBox": "0 0 21 15"
+    },
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg width=\"21px\" height=\"15px\" viewBox=\"0 0 21 15\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">  <defs> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-ru-linearGradient-1\"> <stop stop-color=\"#FFFFFF\" offset=\"0%\"></stop> <stop stop-color=\"#F0F0F0\" offset=\"100%\"></stop> </linearGradient> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-ru-linearGradient-2\"> <stop stop-color=\"#0C47B7\" offset=\"0%\"></stop> <stop stop-color=\"#073DA4\" offset=\"100%\"></stop> </linearGradient> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-ru-linearGradient-3\"> <stop stop-color=\"#E53B35\" offset=\"0%\"></stop> <stop stop-color=\"#D32E28\" offset=\"100%\"></stop> </linearGradient> </defs> <g id=\"cookiescript-ru-Symbols\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"> <g id=\"cookiescript-ru-RU\"> <rect id=\"cookiescript-ru-FlagBackground\" fill=\"url(#cookiescript-ru-linearGradient-1)\" x=\"0\" y=\"0\" ",
+      "width": "21px",
+      "height": "15px",
+      "viewBox": "0 0 21 15"
+    },
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg width=\"21px\" height=\"15px\" viewBox=\"0 0 21 15\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">  <defs> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-fr-linearGradient-1\"> <stop stop-color=\"#FFFFFF\" offset=\"0%\"></stop> <stop stop-color=\"#F0F0F0\" offset=\"100%\"></stop> </linearGradient> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-fr-linearGradient-2\"> <stop stop-color=\"#F44653\" offset=\"0%\"></stop> <stop stop-color=\"#EE2A39\" offset=\"100%\"></stop> </linearGradient> <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"cookiescript-fr-linearGradient-3\"> <stop stop-color=\"#1035BB\" offset=\"0%\"></stop> <stop stop-color=\"#042396\" offset=\"100%\"></stop> </linearGradient> </defs> <g id=\"cookiescript-fr-Symbols\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"> <g id=\"cookiescript-fr-FR\"> <rect id=\"cookiescript-fr-FlagBackground\" fill=\"url(#cookiescript-fr-linearGradient-1)\" x=\"0\" y=\"0\" ",
+      "width": "21px",
+      "height": "15px",
+      "viewBox": "0 0 21 15"
+    },
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg role=\"none\" class=\"mdc-checkbox__checkmark\" viewBox=\"0 0 40 40\">\n              <path class=\"mdc-checkbox__checkmark-path\" fill=\"none\" d=\"M9.47,20.975 15.84,27.345 30.53,12.655\"></path>\n            </svg>",
+      "width": null,
+      "height": null,
+      "viewBox": "0 0 40 40"
+    },
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg role=\"none\" class=\"mdc-checkbox__checkmark\" viewBox=\"0 0 40 40\">\n              <path class=\"mdc-checkbox__checkmark-path\" fill=\"none\" d=\"M9.47,20.975 15.84,27.345 30.53,12.655\"></path>\n            </svg>",
+      "width": null,
+      "height": null,
+      "viewBox": "0 0 40 40"
+    },
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg role=\"none\" class=\"mdc-checkbox__checkmark\" viewBox=\"0 0 40 40\">\n              <path class=\"mdc-checkbox__checkmark-path\" fill=\"none\" d=\"M9.47,20.975 15.84,27.345 30.53,12.655\"></path>\n            </svg>",
+      "width": null,
+      "height": null,
+      "viewBox": "0 0 40 40"
+    },
+    {
+      "id": "",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg role=\"none\" class=\"mdc-checkbox__checkmark\" viewBox=\"0 0 40 40\">\n              <path class=\"mdc-checkbox__checkmark-path\" fill=\"none\" d=\"M9.47,20.975 15.84,27.345 30.53,12.655\"></path>\n            </svg>",
+      "width": null,
+      "height": null,
+      "viewBox": "0 0 40 40"
+    },
+    {
+      "id": "cookiescript_manageicon",
+      "classes": "[object SVGAnimatedString]",
+      "outerHTML": "<svg role=\"none\" id=\"cookiescript_manageicon\" viewBox=\"0 0 9.62 9.57\">\n        <g id=\"cs-manage-btn\">\n          <g id=\"cs-manage-btn-1-2\">\n            <path class=\"cookiescript_gear\" d=\"M9.46,6.06l-1.1-.78c0-.16.06-.31.06-.47a1.27,1.27,0,0,0-.06-.47L9.57,3.4l-1.15-2L7,1.93a2.74,2.74,0,0,0-.83-.47L6,0H3.61L3.35,1.46a7.14,7.14,0,0,0-.79.47L1.15,1.36,0,3.4l1.15.94c0,.16,0,.31,0,.47a1.51,1.51,0,0,0,0,.47l-1,.78A.75.75,0,0,0,0,6.17l1.15,2,1.41-.58a2.49,2.49,0,0,0,.84.47l.21,1.47H6a.53.53,0,0,1,0-.21L6.22,8.1a4,4,0,0,0,.84-.47l1.41.58,1.15-2A.75.75,0,0,0,9.46,6.06Zm-4.65.19A1.47,1.47,0,1,1,6.28,4.78,1.47,1.47,0,0,1,4.81,6.25Z\"></path>\n          </g>\n        </g>\n      </svg>",
+      "width": null,
+      "height": null,
+      "viewBox": "0 0 9.62 9.57"
+    }
+  ],
+  "fonts": [
+    "Lato, sans-serif",
+    "\"Lato Semibold\"",
+    "\"Lato Light\"",
+    "nimbus-sans, sans-serif"
+  ],
+  "fontLinks": [],
+  "favicons": [],
+  "bodyStyles": {
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "fontFamily": "Lato, sans-serif",
+    "color": "rgb(161, 143, 122)",
+    "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+    "width": "1425px",
+    "height": "900px",
+    "display": "block",
+    "flexDirection": "row",
+    "border": "0px none rgb(161, 143, 122)",
+    "borderTop": "0px none rgb(161, 143, 122)",
+    "borderBottom": "0px none rgb(161, 143, 122)",
+    "borderLeft": "0px none rgb(161, 143, 122)",
+    "borderRight": "0px none rgb(161, 143, 122)",
+    "overflow": "visible",
+    "overflowX": "visible",
+    "overflowY": "visible",
+    "position": "relative",
+    "opacity": "1",
+    "transition": "all",
+    "objectFit": "fill",
+    "objectPosition": "50% 50%",
+    "textOverflow": "clip"
+  },
+  "htmlStyles": {
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "fontFamily": "Lato, sans-serif",
+    "color": "rgb(161, 143, 122)",
+    "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+    "width": "1425px",
+    "height": "900px",
+    "display": "block",
+    "flexDirection": "row",
+    "border": "0px none rgb(161, 143, 122)",
+    "borderTop": "0px none rgb(161, 143, 122)",
+    "borderBottom": "0px none rgb(161, 143, 122)",
+    "borderLeft": "0px none rgb(161, 143, 122)",
+    "borderRight": "0px none rgb(161, 143, 122)",
+    "overflow": "visible",
+    "overflowX": "visible",
+    "overflowY": "visible",
+    "position": "relative",
+    "opacity": "1",
+    "transition": "all",
+    "objectFit": "fill",
+    "objectPosition": "50% 50%",
+    "textOverflow": "clip"
+  },
+  "colorSamples": [
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "fontFamily": "\"Lato Semibold\""
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(125, 125, 125)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(125, 125, 125)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(125, 125, 125)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(125, 125, 125)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(125, 125, 125)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(125, 125, 125)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(125, 125, 125)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(125, 125, 125)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(125, 125, 125)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(125, 125, 125)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(125, 125, 125)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(125, 125, 125)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    },
+    {
+      "tag": "A",
+      "classes": "",
+      "color": "rgb(161, 143, 122)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "fontFamily": "Lato, sans-serif"
+    }
+  ],
+  "scrollLibrary": {
+    "lenis": false,
+    "locomotive": false,
+    "smoothScroll": "auto"
+  },
+  "linkTags": [
+    {
+      "rel": "canonical",
+      "href": "https://www.antolini.com/en/",
+      "type": ""
+    },
+    {
+      "rel": "alternate",
+      "href": "https://www.antolini.com/it/",
+      "type": ""
+    },
+    {
+      "rel": "alternate",
+      "href": "https://www.antolini.com/es/",
+      "type": ""
+    },
+    {
+      "rel": "alternate",
+      "href": "https://www.antolini.com/de/",
+      "type": ""
+    },
+    {
+      "rel": "alternate",
+      "href": "https://www.antolini.com/ru/",
+      "type": ""
+    },
+    {
+      "rel": "alternate",
+      "href": "https://www.antolini.com/fr/",
+      "type": ""
+    },
+    {
+      "rel": "alternate",
+      "href": "https://www.antolini.com/en/",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.antolini.com/frontend/assets/css/main.css?v=1736419121",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.antolini.com/frontend/assets/css/add1.css?v=1773415477",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.antolini.com/frontend/assets/css/tech.css?v=1732190175",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.antolini.com/frontend/assets/css/easyScrollDots.css?v=1718199298",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.antolini.com/frontend/assets/css/mobile.css?vers=1736419121",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.antolini.com/frontend/assets/css/mobile_add1.css?vers=1732719492",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://use.typekit.net/mrz2uva.css",
+      "type": ""
+    }
+  ],
+  "scriptTags": [
+    "https://cdn.cookie-script.com/s/c3ece777a28fd97a31ba7f03319141a8.js",
+    "https://www.google-analytics.com/analytics.js",
+    "https://www.googletagmanager.com/gtag/js?id=AW-10858711041&cx=c&gtm=4e66h0",
+    "https://www.googletagmanager.com/gtag/js?id=DC-13196647&cx=c&gtm=4e66h0",
+    "https://www.google-analytics.com/analytics.js",
+    "https://www.googletagmanager.com/gtag/js?id=G-QVTK0W0KQT&cx=c&gtm=4e66h0h1",
+    "https://www.googletagmanager.com/gtm.js?id=GTM-5KWNC8M",
+    "https://www.googletagmanager.com/gtag/js?id=UA-84134348-1",
+    "https://www.antolini.com/frontend/assets/js/jquery-latest.js",
+    "https://www.antolini.com/frontend/assets/js/jquery-ui.js",
+    "https://www.antolini.com/frontend/assets/js/main.js?v=1736419121",
+    "https://www.antolini.com/frontend/assets/js/easyScrollDots.js?v=1718199304",
+    "https://www.antolini.com/frontend/assets/js/yall.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js",
+    "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/10858711041/?random=1781877458782&cv=11&fst=1781877458782&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be66h0v893476958z8859622334za20gzb859622334zd859622334xec&gcd=13t3t3t3t5l1&dma=0&tag_exp=115616985~115938465~115938469~119027224~119392696~119392704~119456239~119456247&u_w=1440&u_h=900&url=https%3A%2F%2Fwww.antolini.com%2Fen%2F&rcb=15&frm=0&tiba=Antolini%C2%AE%20%7C%20Natural%20stone%20processing&gdid=dMmY1Mm&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=286396992.1781877458&uaa=x86&uab=64&uafvl=Google%2520Chrome%3B149.0.7827.115%7CChromium%3B149.0.7827.115%7CNot)A%253BBrand%3B24.0.0.0&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=KA&data=event%3Dgtag.config&ept=9&rfmt=3&fmt=4",
+    "https://www.antolini.com/nextgest/assets/_core/js/jquery/jquery-1.8.3.js",
+    "https://www.antolini.com/nextgest/assets/_core/js/jquery/jquery-ui-1.9.2.custom.min.js",
+    "https://www.antolini.com/nextgest/assets/_core/js/qcubed.js",
+    "https://www.antolini.com/nextgest/assets/_core/js/control.js"
+  ],
+  "navItems": [],
+  "sections": [
+    {
+      "tag": "SPAN",
+      "id": "infomobile",
+      "classes": "nomobile",
+      "childCount": 0,
+      "firstText": ""
+    },
+    {
+      "tag": "FORM",
+      "id": "FrontendForm",
+      "classes": "",
+      "childCount": 22,
+      "firstText": ".a{fill:#a18f7a;}   MENU\n                .a{fill:#a18f7a;}\n            \n        \n    \n    \n         "
+    },
+    {
+      "tag": "DIV",
+      "id": "header",
+      "classes": "no_sf ",
+      "childCount": 4,
+      "firstText": ".a{fill:#a18f7a;}   MENU\n                .a{fill:#a18f7a;}\n            \n        \n    \n    \n         "
+    },
+    {
+      "tag": "DIV",
+      "id": "header_content",
+      "classes": "",
+      "childCount": 1,
+      "firstText": ".a{fill:#a18f7a;}   MENU\n                .a{fill:#a18f7a;}"
+    },
+    {
+      "tag": "IMG",
+      "id": "header_logomain",
+      "classes": "",
+      "childCount": 0,
+      "firstText": ""
+    },
+    {
+      "tag": "IMG",
+      "id": "header_logomain_white",
+      "classes": "",
+      "childCount": 0,
+      "firstText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "header_menuopen",
+      "classes": "nomobile ",
+      "childCount": 2,
+      "firstText": ".a{fill:#a18f7a;}   MENU"
+    },
+    {
+      "tag": "DIV",
+      "id": "header_menuopen_mobile",
+      "classes": "onlymobile ",
+      "childCount": 1,
+      "firstText": ".a{fill:#a18f7a;}"
+    },
+    {
+      "tag": "DIV",
+      "id": "header_breadcrumb",
+      "classes": "",
+      "childCount": 0,
+      "firstText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "header_menu_sf",
+      "classes": "",
+      "childCount": 0,
+      "firstText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "header_menu_cont",
+      "classes": "",
+      "childCount": 4,
+      "firstText": "ANTOLINI®                \n                    \n                        Haute Nature®\n               "
+    },
+    {
+      "tag": "IMG",
+      "id": "header_menu_logo",
+      "classes": "",
+      "childCount": 0,
+      "firstText": ""
+    },
+    {
+      "tag": "IMG",
+      "id": "header_menu_close",
+      "classes": "",
+      "childCount": 0,
+      "firstText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "header_menu_2",
+      "classes": "",
+      "childCount": 6,
+      "firstText": "ANTOLINI®                \n                    \n                        Haute Nature®\n               "
+    },
+    {
+      "tag": "DIV",
+      "id": "header_menu_2_elem_withchild_1",
+      "classes": "header_menu_2_elem header_menu_2_elem_withchild",
+      "childCount": 2,
+      "firstText": "ANTOLINI®                \n                    \n                        Haute Nature®\n               "
+    },
+    {
+      "tag": "DIV",
+      "id": "header_menu_2_elem_withchild_2",
+      "classes": "header_menu_2_elem header_menu_2_elem_withchild",
+      "childCount": 1,
+      "firstText": "COLLECTIONS                \n                    \n                                                   "
+    },
+    {
+      "tag": "DIV",
+      "id": "menu_collections_elem_img",
+      "classes": "header_menu_2_subelem_cont_last",
+      "childCount": 0,
+      "firstText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "header_menu_2_elem_withchild_3",
+      "classes": "header_menu_2_elem header_menu_2_elem_withchild",
+      "childCount": 1,
+      "firstText": "GEOFAMILY                \n                    \n                        Antolini® - Natural stones\n  "
+    },
+    {
+      "tag": "DIV",
+      "id": "header_menu_1",
+      "classes": "",
+      "childCount": 6,
+      "firstText": "STORE LOCATOR\n            FAIRS & EVENTS\n            CONTACT US\n            |\n            \n         "
+    },
+    {
+      "tag": "DIV",
+      "id": "header_menu_search",
+      "classes": "header_menu_1_elem",
+      "childCount": 1,
+      "firstText": ""
+    }
+  ]
+}

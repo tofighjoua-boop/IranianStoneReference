@@ -1,0 +1,288 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Lato", "Lato Semibold", "Lato Light", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Antolini custom tokens */
+  --color-antolini-gold: #A18F7A;
+  --color-antolini-dark: #090808;
+  --color-antolini-dark-2: #161414;
+  --color-antolini-gray: #777373;
+  --color-antolini-gray-light: #CFCAC3;
+  --color-antolini-border: #CFCBCB;
+}
+
+:root {
+  /* Mapped to Antolini palette */
+  --background: oklch(1 0 0); /* white */
+  --foreground: oklch(0.2 0.01 50); /* near-black for body text - uses #A18F7A for main, but section bg is white */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.01 50);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.01 50);
+  --primary: oklch(0.60 0.05 60); /* #A18F7A golden beige */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.50 0 0); /* #777373 */
+  --accent: oklch(0.60 0.05 60);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.88 0.01 60); /* #CFCAC3 */
+  --input: oklch(0.88 0.01 60);
+  --ring: oklch(0.60 0.05 60);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0px; /* Antolini uses no border radius */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.08 0 0); /* #090808 */
+  --foreground: oklch(0.60 0.05 60); /* #A18F7A */
+  --card: oklch(0.12 0 0);
+  --card-foreground: oklch(0.60 0.05 60);
+  --popover: oklch(0.12 0 0);
+  --popover-foreground: oklch(0.60 0.05 60);
+  --primary: oklch(0.60 0.05 60);
+  --primary-foreground: oklch(0.08 0 0);
+  --secondary: oklch(0.18 0 0);
+  --secondary-foreground: oklch(0.60 0.05 60);
+  --muted: oklch(0.18 0 0);
+  --muted-foreground: oklch(0.50 0 0);
+  --accent: oklch(0.18 0 0);
+  --accent-foreground: oklch(0.60 0.05 60);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.60 0.05 60);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.12 0 0);
+  --sidebar-foreground: oklch(0.60 0.05 60);
+  --sidebar-primary: oklch(0.60 0.05 60);
+  --sidebar-primary-foreground: oklch(0.08 0 0);
+  --sidebar-accent: oklch(0.18 0 0);
+  --sidebar-accent-foreground: oklch(0.60 0.05 60);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.60 0.05 60);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #A18F7A;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    font-family: "Lato", sans-serif;
+  }
+}
+
+/* =====================================================
+   ANTOLINI GLOBAL ANIMATIONS
+===================================================== */
+
+/* Banner fade animation */
+@keyframes banner-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes banner-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Slow zoom animation for collection sections */
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* =====================================================
+   ANTOLINI TYPOGRAPHY UTILITIES
+===================================================== */
+
+.font-lato { font-family: "Lato", sans-serif; }
+.font-lato-light { font-family: "Lato", sans-serif; font-weight: 300; }
+.font-lato-semibold { font-family: "Lato", sans-serif; font-weight: 600; }
+.font-lato-bold { font-family: "Lato", sans-serif; font-weight: 700; }
+
+/* Banner text styles */
+.banner-title {
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: 4.8px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.banner-title-large {
+  font-size: 50px;
+  letter-spacing: 7.6px;
+  line-height: 60px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.banner-subtitle {
+  font-size: 22px;
+  line-height: 29px;
+  letter-spacing: 2px;
+  color: white;
+  font-weight: 300;
+}
+.banner-link-text {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  color: white;
+}
+
+/* Collection CTA text */
+.collection-cta {
+  font-size: 28px;
+  color: #A18F7A;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+/* =====================================================
+   ANTOLINI LAYOUT UTILITIES
+===================================================== */
+
+.antolini-container {
+  max-width: 1640px;
+  margin: 0 auto;
+  padding-left: 140px;
+  padding-right: 140px;
+}
+
+@media (max-width: 1280px) {
+  .antolini-container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .antolini-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .antolini-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.spacer-micro { height: 8px; }
+.spacer { height: 40px; }
+.spacer-big { height: 120px; }
+
+/* Responsive visibility */
+@media (max-width: 500px) {
+  .nomobile { display: none !important; }
+}
+@media (min-width: 501px) {
+  .onlymobile { display: none !important; }
+}
+
+/* Collection banner slow zoom */
+.collection-banner-img {
+  animation: slowZoom 20s ease-in-out infinite;
+}
+
+/* =====================================================
+   ANTOLINI FOOTER
+===================================================== */
+
+.antolini-footer {
+  background-color: #090808;
+  color: #A18F7A;
+  position: relative;
+  z-index: 5;
+}
+
+/* =====================================================
+   ANTOLINI HEADER RESET
+===================================================== */
+
+.antolini-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
