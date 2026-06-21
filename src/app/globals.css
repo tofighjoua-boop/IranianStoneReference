@@ -162,6 +162,18 @@
   pointer-events: none;
 }
 
+/* WhatsApp floating button */
+.wa-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.6), 0 4px 12px rgba(0,0,0,0.25) !important;
+  background-color: #20ba5a !important;
+}
+.wa-btn:hover + .wa-tooltip,
+.wa-btn:focus + .wa-tooltip {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
 /* Responsive visibility */
 @media (max-width: 768px)  { .nomobile   { display: none !important; } }
 @media (min-width: 769px)  { .onlymobile { display: none !important; } }
