@@ -137,6 +137,31 @@
   animation: slowZoom 20s ease-in-out infinite;
 }
 
+/* Collection CTA button — antolini style */
+.collection-cta-btn {
+  font-size: 18px;
+  color: #A18F7A;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid #A18F7A;
+  padding: 12px 30px;
+  background: transparent;
+  transition: color 1s, background-color 1s;
+  display: inline-block;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+}
+.collection-cta-btn:hover {
+  background-color: #A18F7A;
+  color: #ffffff;
+}
+.collection-cta-disabled {
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
+}
+
 /* Responsive visibility */
-@media (max-width: 500px)  { .nomobile   { display: none !important; } }
-@media (min-width: 501px)  { .onlymobile { display: none !important; } }
+@media (max-width: 768px)  { .nomobile   { display: none !important; } }
+@media (min-width: 769px)  { .onlymobile { display: none !important; } }

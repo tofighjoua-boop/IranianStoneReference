@@ -5,299 +5,360 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { type Language } from "@/lib/translations";
-import { translations } from "@/lib/translations";
 import { categories } from "@/data/categories";
 
-interface HeaderProps {
-  locale: Language;
+interface NavItem {
+  label: string;
+  href: string;
+  hasDropdown?: boolean;
 }
 
-export function Header({ locale }: HeaderProps) {
-  const t = translations[locale];
-  const pathname = usePathname();
-  const router = useRouter();
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+const NAV_ITEMS: Record<Language, NavItem[]> = {
+  en: [
+    { label: "GALLERY", href: "/en/gallery", hasDropdown: true },
+    { label: "ABOUT", href: "/en/about" },
+    { label: "CONTACT US", href: "/en/contact" },
+  ],
+  fa: [
+    { label: "گالری", href: "/fa/gallery", hasDropdown: true },
+    { label: "درباره ما", href: "/fa/about" },
+    { label: "تماس با ما", href: "/fa/contact" },
+  ],
+};
+
+export function Header({ locale }: { locale: Language }) {
+  const [scrolled, setScrolled]     = useState(false);
+  const [menuOpen, setMenuOpen]     = useState(false);
   const [galleryOpen, setGalleryOpen] = useState(false);
-  const galleryRef = useRef<HTMLDivElement>(null);
+  const pathname  = usePathname();
+  const router    = useRouter();
+  const overlayRef = useRef<HTMLDivElement>(null);
   const isRTL = locale === "fa";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close gallery menu on outside click
   useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (galleryRef.current && !galleryRef.current.contains(e.target as Node)) {
-        setGalleryOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false);
+    setMenuOpen(false);
     setGalleryOpen(false);
   }, [pathname]);
 
-  // ESC closes menus
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setGalleryOpen(false);
-        setMobileOpen(false);
-      }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { setMenuOpen(false); setGalleryOpen(false); }
     };
-    document.addEventListener("keydown", handler);
-    return () => document.removeEventListener("keydown", handler);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
   const switchLocale = useCallback(() => {
-    const otherLocale: Language = locale === "fa" ? "en" : "fa";
-    const newPath = pathname.replace(`/${locale}`, `/${otherLocale}`);
-    router.push(newPath);
+    const other: Language = locale === "fa" ? "en" : "fa";
+    router.push(pathname.replace(`/${locale}`, `/${other}`));
   }, [locale, pathname, router]);
 
-  const navItems = [
-    { label: t.nav.gallery, href: `/${locale}/gallery`, hasMenu: true },
-    { label: t.nav.about, href: `/${locale}/about` },
-    { label: t.nav.contact, href: `/${locale}/contact` },
-  ];
+  const isTransparent = !scrolled && !menuOpen;
 
-  const isTransparent = !scrolled && !mobileOpen && !galleryOpen;
+  const headerStyle: React.CSSProperties = {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 1000,
+    backgroundColor: isTransparent ? "transparent" : "#ffffff",
+    transition: "background-color 0.3s ease",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "20px 40px",
+  };
+
+  const textColor = "#A18F7A";
 
   return (
     <>
-      <header
-        className={[
-          "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-          isTransparent
-            ? "bg-transparent"
-            : "bg-[#0c1626]/95 backdrop-blur-md shadow-lg shadow-black/20",
-        ].join(" ")}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-          <div
-            className={[
-              "flex items-center justify-between h-20",
-              isRTL ? "flex-row-reverse" : "",
-            ].join(" ")}
-          >
-            {/* Logo */}
-            <Link
-              href={`/${locale}`}
-              className="flex-shrink-0 flex items-center gap-3 group"
-              aria-label="Iranian Stone Reference — Home"
-            >
-              <Image
-                src="/images/isr-logo-white.svg"
-                alt="ISR Logo"
-                width={36}
-                height={36}
-                className="opacity-90 group-hover:opacity-100 transition-opacity"
-                priority
-              />
-              <span className="hidden sm:block text-[#f4f1ea] text-xs uppercase tracking-[0.25em] font-semibold group-hover:text-[#c6a25f] transition-colors">
-                {isRTL ? "مرجع سنگ ایرانیان" : "Iranian Stone Reference"}
-              </span>
-            </Link>
+      <header style={headerStyle}>
+        {/* Logo */}
+        <Link href={`/${locale}`} aria-label="ISR — Home" style={{ display: "flex", alignItems: "center" }}>
+          <Image
+            src={isTransparent ? "/images/isr-logo-white.svg" : "/images/isr-logo-dark.svg"}
+            alt="Iranian Stone Reference"
+            width={175}
+            height={48}
+            style={{ height: "40px", width: "auto", objectFit: "contain" }}
+            priority
+          />
+        </Link>
 
-            {/* Desktop Nav */}
-            <nav
-              className={[
-                "hidden md:flex items-center gap-8",
-                isRTL ? "flex-row-reverse" : "",
-              ].join(" ")}
-              aria-label="Main navigation"
-            >
-              {navItems.map((item) =>
-                item.hasMenu ? (
-                  <div key={item.href} ref={galleryRef} className="relative">
-                    <button
-                      onClick={() => setGalleryOpen((v) => !v)}
-                      className={[
-                        "text-xs uppercase tracking-[0.15em] font-semibold transition-colors duration-200 flex items-center gap-1.5",
-                        galleryOpen ? "text-[#c6a25f]" : "text-[#f4f1ea] hover:text-[#c6a25f]",
-                      ].join(" ")}
-                      aria-expanded={galleryOpen}
-                      aria-haspopup="true"
-                    >
-                      {item.label}
-                      <svg
-                        className={[
-                          "w-3 h-3 transition-transform duration-200",
-                          galleryOpen ? "rotate-180" : "",
-                        ].join(" ")}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+        {/* MENU button (desktop) */}
+        <button
+          className="nomobile"
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            color: textColor,
+            fontSize: "18px",
+            letterSpacing: "2px",
+            textTransform: "uppercase",
+            fontWeight: 400,
+            fontFamily: "Lato, sans-serif",
+          }}
+        >
+          {menuOpen ? (
+            <Image src="/images/chiudi.svg" alt="close" width={14} height={14} />
+          ) : (
+            <svg width="18" height="10" viewBox="0 0 18 10" fill={textColor}>
+              <rect y="0" width="18" height="1.5" rx="0.75" fill={textColor} />
+              <rect y="4.25" width="18" height="1.5" rx="0.75" fill={textColor} />
+              <rect y="8.5" width="18" height="1.5" rx="0.75" fill={textColor} />
+            </svg>
+          )}
+          <span>MENU</span>
+        </button>
+
+        {/* Top-right nav (desktop) */}
+        <div
+          className="nomobile"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "24px",
+          }}
+        >
+          {NAV_ITEMS[locale].map((item) =>
+            item.hasDropdown ? (
+              <div key={item.href} style={{ position: "relative" }}>
+                <button
+                  onClick={() => setGalleryOpen((v) => !v)}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    fontSize: "11px",
+                    color: textColor,
+                    letterSpacing: "1px",
+                    textTransform: "uppercase",
+                    fontFamily: "Lato, sans-serif",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "4px",
+                  }}
+                >
+                  {item.label}
+                  <Image src="/images/freccia_bianca.svg" alt="" width={10} height={6} style={{ opacity: 0.7 }} />
+                </button>
+
+                {galleryOpen && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "calc(100% + 16px)",
+                      right: 0,
+                      minWidth: "220px",
+                      backgroundColor: "#ffffff",
+                      boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
+                      padding: "20px 0",
+                      zIndex: 100,
+                    }}
+                  >
+                    {categories.map((cat) => (
+                      <Link
+                        key={cat.slug}
+                        href={`/${locale}/gallery/${cat.slug}`}
+                        onClick={() => setGalleryOpen(false)}
+                        style={{
+                          display: "block",
+                          padding: "8px 24px",
+                          fontSize: "11px",
+                          color: "#A18F7A",
+                          letterSpacing: "1px",
+                          textTransform: "uppercase",
+                          textDecoration: "none",
+                          fontFamily: "Lato, sans-serif",
+                        }}
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-
-                    {/* Mega Menu */}
-                    {galleryOpen && (
-                      <div className="absolute top-full mt-4 left-1/2 -translate-x-1/2 w-[680px] bg-[#0c1626] border border-[#c6a25f]/20 shadow-2xl shadow-black/50 p-6">
-                        <p className="text-[#c6a25f] text-[10px] uppercase tracking-[0.25em] font-bold mb-5 pb-3 border-b border-[#c6a25f]/20">
-                          {t.galleryMenu.title}
-                        </p>
-                        <div className="grid grid-cols-3 gap-4">
-                          {categories.map((cat) => (
-                            <Link
-                              key={cat.slug}
-                              href={`/${locale}/gallery/${cat.slug}`}
-                              onClick={() => setGalleryOpen(false)}
-                              className="group flex items-center gap-3 p-2 hover:bg-white/5 transition-colors"
-                            >
-                              <div className="relative w-14 h-10 flex-shrink-0 overflow-hidden">
-                                <Image
-                                  src={cat.thumbnailImage}
-                                  alt={locale === "fa" ? cat.nameFa : cat.nameEn}
-                                  fill
-                                  className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                                  sizes="56px"
-                                />
-                              </div>
-                              <span className="text-[#f4f1ea] text-xs uppercase tracking-[0.1em] group-hover:text-[#c6a25f] transition-colors">
-                                {locale === "fa" ? cat.nameFa : cat.nameEn}
-                              </span>
-                            </Link>
-                          ))}
-                        </div>
-                        <div className="mt-5 pt-3 border-t border-[#c6a25f]/20">
-                          <Link
-                            href={`/${locale}/gallery`}
-                            onClick={() => setGalleryOpen(false)}
-                            className="text-[#c6a25f] text-[10px] uppercase tracking-[0.2em] hover:text-[#d8bd86] transition-colors"
-                          >
-                            {locale === "fa" ? "مشاهدهٔ همهٔ مجموعه‌ها →" : "View All Collections →"}
-                          </Link>
-                        </div>
-                      </div>
-                    )}
+                        {locale === "fa" ? cat.nameFa : cat.nameEn}
+                      </Link>
+                    ))}
                   </div>
-                ) : (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="text-xs uppercase tracking-[0.15em] font-semibold text-[#f4f1ea] hover:text-[#c6a25f] transition-colors duration-200"
-                  >
-                    {item.label}
-                  </Link>
-                )
-              )}
-            </nav>
-
-            {/* Right Controls */}
-            <div
-              className={[
-                "flex items-center gap-4",
-                isRTL ? "flex-row-reverse" : "",
-              ].join(" ")}
-            >
-              {/* Language Toggle */}
-              <button
-                onClick={switchLocale}
-                className="hidden md:flex items-center gap-1 text-[10px] uppercase tracking-[0.2em] font-bold text-[#f4f1ea] hover:text-[#c6a25f] transition-colors border-b border-transparent hover:border-[#c6a25f] pb-0.5"
-                aria-label="Switch language"
-              >
-                {t.nav.langSwitch}
-              </button>
-
-              {/* Contact CTA */}
-              <Link
-                href={`/${locale}/contact`}
-                className="hidden lg:inline-flex items-center px-5 py-2 bg-[#c6a25f] text-[#0c1626] text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-[#d8bd86] transition-colors"
-              >
-                {t.nav.contact}
-              </Link>
-
-              {/* Hamburger */}
-              <button
-                onClick={() => setMobileOpen((v) => !v)}
-                className="md:hidden text-[#f4f1ea] hover:text-[#c6a25f] transition-colors p-1"
-                aria-label={mobileOpen ? "Close menu" : "Open menu"}
-                aria-expanded={mobileOpen}
-              >
-                {mobileOpen ? (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                ) : (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
                 )}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Gold accent line at bottom */}
-        <div className={["h-px bg-[#c6a25f]/30 transition-opacity duration-300", isTransparent ? "opacity-0" : "opacity-100"].join(" ")} />
-      </header>
-
-      {/* Mobile Menu Overlay */}
-      {mobileOpen && (
-        <div className="fixed inset-0 z-40 bg-[#0c1626] flex flex-col pt-20" dir={isRTL ? "rtl" : "ltr"}>
-          <nav className="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-6">
-            {/* Gallery with categories */}
-            <div>
-              <p className="text-[#c6a25f] text-[10px] uppercase tracking-[0.25em] mb-4">
-                {t.galleryMenu.title}
-              </p>
-              <div className="grid grid-cols-2 gap-3">
-                {categories.map((cat) => (
-                  <Link
-                    key={cat.slug}
-                    href={`/${locale}/gallery/${cat.slug}`}
-                    onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-2 text-[#f4f1ea] text-sm hover:text-[#c6a25f] transition-colors py-1"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-[#c6a25f]" />
-                    {locale === "fa" ? cat.nameFa : cat.nameEn}
-                  </Link>
-                ))}
               </div>
-            </div>
-
-            <div className="h-px bg-[#c6a25f]/20" />
-
-            {[
-              { label: t.nav.about, href: `/${locale}/about` },
-              { label: t.nav.contact, href: `/${locale}/contact` },
-            ].map((item) => (
+            ) : (
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-[#f4f1ea] text-lg uppercase tracking-[0.15em] font-semibold hover:text-[#c6a25f] transition-colors"
+                style={{
+                  fontSize: "11px",
+                  color: textColor,
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                  fontFamily: "Lato, sans-serif",
+                }}
               >
                 {item.label}
+              </Link>
+            )
+          )}
+
+          {/* Divider */}
+          <span style={{ color: textColor, opacity: 0.4, fontSize: "11px" }}>|</span>
+
+          {/* Language */}
+          <button
+            onClick={switchLocale}
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              fontSize: "11px",
+              color: textColor,
+              letterSpacing: "1px",
+              textTransform: "uppercase",
+              fontFamily: "Lato, sans-serif",
+            }}
+          >
+            {locale === "fa" ? "EN" : "FA"}
+          </button>
+
+          {/* Search icon placeholder */}
+          <Image src="/images/ico_cerca.svg" alt="Search" width={20} height={20} style={{ opacity: 0.7, cursor: "pointer" }} />
+        </div>
+
+        {/* Mobile hamburger */}
+        <button
+          className="onlymobile"
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label="Menu"
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            color: textColor,
+            padding: "4px",
+          }}
+        >
+          {menuOpen ? (
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke={textColor} strokeWidth="1.5">
+              <line x1="3" y1="3" x2="17" y2="17" />
+              <line x1="17" y1="3" x2="3" y2="17" />
+            </svg>
+          ) : (
+            <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+              <rect y="0" width="20" height="1.5" rx="0.75" fill={textColor} />
+              <rect y="6" width="20" height="1.5" rx="0.75" fill={textColor} />
+              <rect y="12" width="20" height="1.5" rx="0.75" fill={textColor} />
+            </svg>
+          )}
+        </button>
+      </header>
+
+      {/* Full-screen menu overlay */}
+      {menuOpen && (
+        <div
+          ref={overlayRef}
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 999,
+            backgroundColor: "rgba(255,255,255,0.97)",
+            display: "flex",
+            flexDirection: "column",
+            padding: "80px clamp(24px, 5vw, 140px) 40px",
+            overflowY: "auto",
+          }}
+          dir={isRTL ? "rtl" : "ltr"}
+        >
+          {/* Close button top-right */}
+          <button
+            onClick={() => setMenuOpen(false)}
+            style={{
+              position: "absolute",
+              top: "24px",
+              right: "40px",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            <Image src="/images/chiudi.svg" alt="Close" width={14} height={14} />
+          </button>
+
+          {/* Logo in overlay */}
+          <Link href={`/${locale}`} onClick={() => setMenuOpen(false)} style={{ marginBottom: "48px" }}>
+            <Image src="/images/isr-logo-dark.svg" alt="ISR" width={140} height={38} style={{ height: "34px", width: "auto" }} />
+          </Link>
+
+          {/* Main nav links */}
+          <nav style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            {[
+              { label: isRTL ? "مرجع سنگ ایرانیان®" : "IRANIAN STONE REFERENCE®", href: `/${locale}` },
+              { label: isRTL ? "مجموعهٔ مرمر" : "MARBLE COLLECTION", href: `/${locale}/gallery/marble` },
+              { label: isRTL ? "مجموعهٔ تراورتن" : "TRAVERTINE COLLECTION", href: `/${locale}/gallery/travertine` },
+              { label: isRTL ? "مجموعهٔ اونیکس" : "ONYX COLLECTION", href: `/${locale}/gallery/onyx` },
+              { label: isRTL ? "مجموعهٔ گرانیت" : "GRANITE COLLECTION", href: `/${locale}/gallery/granite` },
+              { label: isRTL ? "گالری کامل" : "FULL GALLERY", href: `/${locale}/gallery` },
+              { label: isRTL ? "درباره ما" : "ABOUT", href: `/${locale}/about` },
+              { label: isRTL ? "مشاور سنگ هوشمند" : "AI STONE ADVISOR", href: "#", comingSoon: true },
+              { label: isRTL ? "تماس با ما" : "CONTACT US", href: `/${locale}/contact` },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => !item.comingSoon && setMenuOpen(false)}
+                style={{
+                  fontSize: "20px",
+                  fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
+                  fontWeight: 600,
+                  color: "#A18F7A",
+                  letterSpacing: "2px",
+                  textTransform: isRTL ? "none" : "uppercase",
+                  textDecoration: "none",
+                  lineHeight: 2,
+                  opacity: item.comingSoon ? 0.5 : 1,
+                  cursor: item.comingSoon ? "default" : "pointer",
+                }}
+              >
+                {item.label}
+                {item.comingSoon && (
+                  <span style={{ fontSize: "10px", marginLeft: "10px", letterSpacing: "1px", opacity: 0.7 }}>
+                    {isRTL ? "به‌زودی" : "COMING SOON"}
+                  </span>
+                )}
               </Link>
             ))}
           </nav>
 
-          <div className="px-6 py-6 border-t border-[#c6a25f]/20 flex items-center justify-between">
+          {/* Language toggle at bottom */}
+          <div style={{ marginTop: "auto", paddingTop: "40px", borderTop: "1px solid rgba(161,143,122,0.2)", display: "flex", gap: "24px", alignItems: "center" }}>
             <button
-              onClick={() => { switchLocale(); setMobileOpen(false); }}
-              className="text-[#c6a25f] text-sm uppercase tracking-[0.2em] font-bold"
+              onClick={() => { switchLocale(); setMenuOpen(false); }}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                fontSize: "13px",
+                color: "#A18F7A",
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+                fontFamily: "Lato, sans-serif",
+              }}
             >
-              {t.nav.langSwitch}
+              {locale === "fa" ? "ENGLISH" : "فارسی"}
             </button>
-            <Link
-              href={`/${locale}/contact`}
-              onClick={() => setMobileOpen(false)}
-              className="px-6 py-3 bg-[#c6a25f] text-[#0c1626] text-[10px] uppercase tracking-[0.2em] font-bold"
-            >
-              {t.nav.contact}
-            </Link>
           </div>
         </div>
       )}
