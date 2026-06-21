@@ -3,6 +3,7 @@ import path from "path";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  turbopack: {},
   webpack: (config) => {
     // Fix for non-ASCII characters in parent directory path breaking module resolution
     config.resolve.modules = [

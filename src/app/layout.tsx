@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Lato, Vazirmatn } from "next/font/google";
-import { LanguageProvider } from "@/contexts/LanguageContext";
+import { Lato, Playfair_Display, Vazirmatn } from "next/font/google";
 import "./globals.css";
 
 const lato = Lato({
@@ -10,38 +9,40 @@ const lato = Lato({
   display: "swap",
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+});
+
 const vazirmatn = Vazirmatn({
   variable: "--font-vazirmatn",
   subsets: ["arabic"],
-  weight: ["300", "400", "700"],
+  weight: ["300", "400", "500", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Iranian Stone Reference | Natural Stone",
+  title: {
+    template: "%s | Iranian Stone Reference",
+    default: "Iranian Stone Reference | Premium Natural Stone",
+  },
   description:
-    "Explore excellence in natural stone for unique and exclusive interiors and exteriors.",
+    "Premium natural stone supplier — marble, travertine, onyx, granite, washbasins and stone accessories. Exporting to UAE, Qatar, Russia, Germany and USA.",
+  keywords: ["natural stone", "marble", "travertine", "onyx", "granite", "Iran stone", "سنگ طبیعی", "مرمر"],
   openGraph: {
-    title: "Iranian Stone Reference | Natural Stone",
-    description:
-      "Explore excellence in natural stone for unique and exclusive interiors and exteriors.",
+    siteName: "Iranian Stone Reference",
     type: "website",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" dir="ltr" className={`${lato.variable} ${vazirmatn.variable}`}>
-      <body
-        className="min-h-full antialiased"
-        style={{ fontFamily: "var(--font-lato), Lato, sans-serif" }}
-      >
-        <LanguageProvider>{children}</LanguageProvider>
-      </body>
+    <html className={`${lato.variable} ${playfair.variable} ${vazirmatn.variable}`} suppressHydrationWarning>
+      <body className="antialiased" suppressHydrationWarning>{children}</body>
     </html>
   );
 }
