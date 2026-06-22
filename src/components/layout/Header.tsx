@@ -64,24 +64,24 @@ export function Header({ locale }: { locale: Language }) {
   const isTransparent = !scrolled && !menuOpen;
   const textColor = "#A18F7A";
 
-  const headerStyle: React.CSSProperties = {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 1000,
-    backgroundColor: isTransparent ? "transparent" : "#ffffff",
-    transition: "background-color 0.3s ease",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "18px 40px",
-  };
-
   return (
     <>
-      <header style={headerStyle}>
-        {/* Logo — clickable */}
+      <header
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 1000,
+          backgroundColor: isTransparent ? "transparent" : "#ffffff",
+          transition: "background-color 0.3s ease",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "18px 40px",
+        }}
+      >
+        {/* Logo — left */}
         <Link href={`/${locale}`} aria-label="ISR — Home" style={{ display: "flex", alignItems: "center" }}>
           <Image
             src="/images/isr-logo-full.png"
@@ -99,43 +99,9 @@ export function Header({ locale }: { locale: Language }) {
           />
         </Link>
 
-        {/* MENU button (desktop) */}
-        <button
-          className="nomobile"
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            color: textColor,
-            fontSize: "18px",
-            letterSpacing: "2px",
-            textTransform: "uppercase",
-            fontWeight: 400,
-            fontFamily: "Lato, sans-serif",
-          }}
-        >
-          {menuOpen ? (
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke={textColor} strokeWidth="1.5">
-              <line x1="2" y1="2" x2="14" y2="14" />
-              <line x1="14" y1="2" x2="2" y2="14" />
-            </svg>
-          ) : (
-            <svg width="18" height="10" viewBox="0 0 18 10" fill={textColor}>
-              <rect y="0" width="18" height="1.5" rx="0.75" fill={textColor} />
-              <rect y="4.25" width="18" height="1.5" rx="0.75" fill={textColor} />
-              <rect y="8.5" width="18" height="1.5" rx="0.75" fill={textColor} />
-            </svg>
-          )}
-          <span>MENU</span>
-        </button>
-
-        {/* Top-right nav (desktop) */}
-        <div className="nomobile" style={{ display: "flex", alignItems: "center", gap: "24px" }}>
+        {/* Desktop right side: nav links + language + MENU */}
+        <div className="nomobile" style={{ display: "flex", alignItems: "center", gap: "28px" }}>
+          {/* Nav links */}
           {NAV_ITEMS[locale].map((item) =>
             item.hasDropdown ? (
               <div key={item.href} style={{ position: "relative" }}>
@@ -145,14 +111,14 @@ export function Header({ locale }: { locale: Language }) {
                     background: "none",
                     border: "none",
                     cursor: "pointer",
-                    fontSize: "11px",
+                    fontSize: "13px",
                     color: textColor,
-                    letterSpacing: "1px",
+                    letterSpacing: "1.5px",
                     textTransform: "uppercase",
                     fontFamily: "Lato, sans-serif",
                     display: "flex",
                     alignItems: "center",
-                    gap: "4px",
+                    gap: "5px",
                   }}
                 >
                   {item.label}
@@ -181,8 +147,8 @@ export function Header({ locale }: { locale: Language }) {
                         onClick={() => setGalleryOpen(false)}
                         style={{
                           display: "block",
-                          padding: "8px 24px",
-                          fontSize: "11px",
+                          padding: "9px 24px",
+                          fontSize: "13px",
                           color: "#A18F7A",
                           letterSpacing: "1px",
                           textTransform: "uppercase",
@@ -201,9 +167,9 @@ export function Header({ locale }: { locale: Language }) {
                 key={item.href}
                 href={item.href}
                 style={{
-                  fontSize: "11px",
+                  fontSize: "13px",
                   color: textColor,
-                  letterSpacing: "1px",
+                  letterSpacing: "1.5px",
                   textTransform: "uppercase",
                   textDecoration: "none",
                   fontFamily: "Lato, sans-serif",
@@ -214,26 +180,65 @@ export function Header({ locale }: { locale: Language }) {
             )
           )}
 
-          <span style={{ color: textColor, opacity: 0.4, fontSize: "11px" }}>|</span>
+          {/* Divider */}
+          <span style={{ color: textColor, opacity: 0.35, fontSize: "13px" }}>|</span>
 
+          {/* Language toggle */}
           <button
             onClick={switchLocale}
             style={{
               background: "none",
               border: "none",
               cursor: "pointer",
-              fontSize: "11px",
+              fontSize: "13px",
               color: textColor,
-              letterSpacing: "1px",
+              letterSpacing: "1.5px",
               textTransform: "uppercase",
               fontFamily: "Lato, sans-serif",
             }}
           >
             {locale === "fa" ? "EN" : "FA"}
           </button>
+
+          {/* Divider */}
+          <span style={{ color: textColor, opacity: 0.35, fontSize: "13px" }}>|</span>
+
+          {/* MENU button — far right */}
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "9px",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              color: textColor,
+              fontSize: "20px",
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              fontWeight: 400,
+              fontFamily: "Lato, sans-serif",
+            }}
+          >
+            {menuOpen ? (
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke={textColor} strokeWidth="1.5">
+                <line x1="2" y1="2" x2="15" y2="15" />
+                <line x1="15" y1="2" x2="2" y2="15" />
+              </svg>
+            ) : (
+              <svg width="20" height="12" viewBox="0 0 20 12" fill="none">
+                <rect y="0"    width="20" height="1.8" rx="0.9" fill={textColor} />
+                <rect y="5.1"  width="20" height="1.8" rx="0.9" fill={textColor} />
+                <rect y="10.2" width="20" height="1.8" rx="0.9" fill={textColor} />
+              </svg>
+            )}
+            <span>MENU</span>
+          </button>
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile hamburger — right */}
         <button
           className="onlymobile"
           onClick={() => setMenuOpen((v) => !v)}
@@ -241,15 +246,15 @@ export function Header({ locale }: { locale: Language }) {
           style={{ background: "none", border: "none", cursor: "pointer", color: textColor, padding: "4px" }}
         >
           {menuOpen ? (
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke={textColor} strokeWidth="1.5">
-              <line x1="3" y1="3" x2="17" y2="17" />
-              <line x1="17" y1="3" x2="3" y2="17" />
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke={textColor} strokeWidth="1.5">
+              <line x1="3" y1="3" x2="19" y2="19" />
+              <line x1="19" y1="3" x2="3" y2="19" />
             </svg>
           ) : (
-            <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
-              <rect y="0" width="20" height="1.5" rx="0.75" fill={textColor} />
-              <rect y="6" width="20" height="1.5" rx="0.75" fill={textColor} />
-              <rect y="12" width="20" height="1.5" rx="0.75" fill={textColor} />
+            <svg width="22" height="15" viewBox="0 0 22 15" fill="none">
+              <rect y="0"  width="22" height="1.8" rx="0.9" fill={textColor} />
+              <rect y="6.5" width="22" height="1.8" rx="0.9" fill={textColor} />
+              <rect y="13" width="22" height="1.8" rx="0.9" fill={textColor} />
             </svg>
           )}
         </button>
@@ -271,7 +276,7 @@ export function Header({ locale }: { locale: Language }) {
           }}
           dir={isRTL ? "rtl" : "ltr"}
         >
-          {/* Close button */}
+          {/* Close button — top right */}
           <button
             onClick={() => setMenuOpen(false)}
             style={{
@@ -282,12 +287,20 @@ export function Header({ locale }: { locale: Language }) {
               border: "none",
               cursor: "pointer",
               color: textColor,
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              fontSize: "14px",
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              fontFamily: "Lato, sans-serif",
             }}
           >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke={textColor} strokeWidth="1.5">
-              <line x1="3" y1="3" x2="17" y2="17" />
-              <line x1="17" y1="3" x2="3" y2="17" />
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke={textColor} strokeWidth="1.5">
+              <line x1="2" y1="2" x2="14" y2="14" />
+              <line x1="14" y1="2" x2="2" y2="14" />
             </svg>
+            <span style={{ color: textColor }}>CLOSE</span>
           </button>
 
           {/* Logo in overlay */}
@@ -319,7 +332,7 @@ export function Header({ locale }: { locale: Language }) {
                 href={item.href}
                 onClick={() => !item.comingSoon && setMenuOpen(false)}
                 style={{
-                  fontSize: "20px",
+                  fontSize: "22px",
                   fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
                   fontWeight: 600,
                   color: "#A18F7A",
@@ -333,7 +346,7 @@ export function Header({ locale }: { locale: Language }) {
               >
                 {item.label}
                 {item.comingSoon && (
-                  <span style={{ fontSize: "10px", marginLeft: "10px", letterSpacing: "1px", opacity: 0.7 }}>
+                  <span style={{ fontSize: "11px", marginLeft: "10px", letterSpacing: "1px", opacity: 0.7 }}>
                     {isRTL ? "به‌زودی" : "COMING SOON"}
                   </span>
                 )}
@@ -349,7 +362,7 @@ export function Header({ locale }: { locale: Language }) {
                 background: "none",
                 border: "none",
                 cursor: "pointer",
-                fontSize: "13px",
+                fontSize: "14px",
                 color: "#A18F7A",
                 letterSpacing: "2px",
                 textTransform: "uppercase",
