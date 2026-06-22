@@ -100,18 +100,19 @@ export function Header({ locale }: { locale: Language }) {
           }}
         >
           <Image
-            src={isTransparent
-              ? "/images/isr-logo-horizontal-white.svg"
-              : "/images/isr-logo-horizontal-dark.svg"}
+            src="/images/isr-logo-full.png"
             alt=""
             width={1000}
-            height={200}
+            height={281}
             style={{
               width: "100%",
               height: "auto",
-              opacity: isTransparent ? 0.07 : 0.05,
+              opacity: isTransparent ? 0.09 : 0.06,
               objectFit: "contain",
-              transition: "opacity 0.3s ease",
+              transition: "opacity 0.3s ease, filter 0.3s ease",
+              filter: isTransparent
+                ? "brightness(0) invert(1)"
+                : "none",
             }}
           />
         </div>

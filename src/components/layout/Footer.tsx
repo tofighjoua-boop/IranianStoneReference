@@ -57,15 +57,16 @@ export function Footer({ locale }: { locale: Language }) {
         }}
       >
         <Image
-          src="/images/isr-logo-horizontal-white.svg"
+          src="/images/isr-logo-full.png"
           alt=""
           width={1000}
-          height={200}
+          height={281}
           style={{
             width: "100%",
             height: "auto",
-            opacity: 0.04,
+            opacity: 0.06,
             objectFit: "contain",
+            filter: "brightness(0) invert(1)",
           }}
         />
       </div>
