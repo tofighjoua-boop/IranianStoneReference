@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200" fill="none">
+  <!-- ISR monogram in gold — same transform as white version -->
+  <g transform="matrix(1.577 0 0 1.577 -10.4 -0.9)">
+    <circle cx="70" cy="64" r="52" stroke="#C6A25F" stroke-width="1.4" fill="none"/>
+    <line x1="26" y1="38" x2="26" y2="90" stroke="#C6A25F" stroke-width="1.4" stroke-linecap="round"/>
+    <line x1="31" y1="38" x2="31" y2="90" stroke="#C6A25F" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M 64 38 C 37 38 35 65 50 65 C 65 65 63 90 37 90" stroke="#C6A25F" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    <path d="M 64 43 C 42 43 40 65 50 65 C 60 65 58 85 42 85" stroke="#C6A25F" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    <line x1="74" y1="38" x2="74" y2="90" stroke="#C6A25F" stroke-width="1.4" stroke-linecap="round"/>
+    <line x1="79" y1="38" x2="79" y2="90" stroke="#C6A25F" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M 74 38 C 116 38 116 65 74 65" stroke="#C6A25F" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    <path d="M 79 43 C 108 43 108 60 79 60" stroke="#C6A25F" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    <line x1="95" y1="65" x2="113" y2="90" stroke="#C6A25F" stroke-width="1.4" stroke-linecap="round"/>
+    <line x1="99" y1="61" x2="113" y2="84" stroke="#C6A25F" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Separator line — dark -->
+  <line x1="216" y1="28" x2="216" y2="172" stroke="#1d2330" stroke-width="1.5"/>
+
+  <!-- "Iranian Stone" — dark serif -->
+  <text x="240" y="94"
+    font-family="'Playfair Display', 'Georgia', serif"
+    font-size="76"
+    font-weight="400"
+    fill="#1d2330"
+    letter-spacing="1">Iranian Stone</text>
+
+  <!-- "Reference" — dark serif -->
+  <text x="240" y="172"
+    font-family="'Playfair Display', 'Georgia', serif"
+    font-size="76"
+    font-weight="400"
+    fill="#1d2330"
+    letter-spacing="1">Reference</text>
+</svg>

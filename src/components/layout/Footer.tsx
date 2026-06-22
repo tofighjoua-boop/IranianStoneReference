@@ -42,6 +42,34 @@ export function Footer({ locale }: { locale: Language }) {
         fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
       }}
     >
+      {/* Full-width watermark logo */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          overflow: "hidden",
+          pointerEvents: "none",
+          zIndex: 0,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Image
+          src="/images/isr-logo-horizontal-white.svg"
+          alt=""
+          width={1000}
+          height={200}
+          style={{
+            width: "100%",
+            height: "auto",
+            opacity: 0.04,
+            objectFit: "contain",
+          }}
+        />
+      </div>
+
       <div
         style={{
           maxWidth: "1640px",
@@ -50,6 +78,8 @@ export function Footer({ locale }: { locale: Language }) {
           display: "flex",
           flexDirection: "column",
           gap: "40px",
+          position: "relative",
+          zIndex: 1,
         }}
       >
         {/* Top row */}

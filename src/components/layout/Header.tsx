@@ -85,8 +85,39 @@ export function Header({ locale }: { locale: Language }) {
   return (
     <>
       <header style={headerStyle}>
-        {/* Logo */}
-        <Link href={`/${locale}`} aria-label="ISR — Home" style={{ display: "flex", alignItems: "center" }}>
+        {/* Full-width watermark logo */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            overflow: "hidden",
+            pointerEvents: "none",
+            zIndex: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Image
+            src={isTransparent
+              ? "/images/isr-logo-horizontal-white.svg"
+              : "/images/isr-logo-horizontal-dark.svg"}
+            alt=""
+            width={1000}
+            height={200}
+            style={{
+              width: "100%",
+              height: "auto",
+              opacity: isTransparent ? 0.07 : 0.05,
+              objectFit: "contain",
+              transition: "opacity 0.3s ease",
+            }}
+          />
+        </div>
+
+        {/* Logo — clickable, above watermark */}
+        <Link href={`/${locale}`} aria-label="ISR — Home" style={{ display: "flex", alignItems: "center", position: "relative", zIndex: 1 }}>
           <Image
             src={isTransparent ? "/images/isr-logo-white.svg" : "/images/isr-logo-dark.svg"}
             alt="Iranian Stone Reference"
@@ -115,6 +146,8 @@ export function Header({ locale }: { locale: Language }) {
             textTransform: "uppercase",
             fontWeight: 400,
             fontFamily: "Lato, sans-serif",
+            position: "relative",
+            zIndex: 1,
           }}
         >
           {menuOpen ? (
@@ -136,6 +169,8 @@ export function Header({ locale }: { locale: Language }) {
             display: "flex",
             alignItems: "center",
             gap: "24px",
+            position: "relative",
+            zIndex: 1,
           }}
         >
           {NAV_ITEMS[locale].map((item) =>
