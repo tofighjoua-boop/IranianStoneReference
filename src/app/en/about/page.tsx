@@ -43,16 +43,16 @@ export default function AboutEN() {
       <Header locale="en" />
       <main>
         {/* Hero */}
-        <section className="relative bg-[#0c1626] pt-36 pb-20 overflow-hidden">
+        <section className="relative bg-[#090808] pt-36 pb-20 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <Image src="/images/banner-1.jpg" alt="" fill className="object-cover" sizes="100vw" />
           </div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
-            <p className="text-[#c6a25f] text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Our Story</p>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-[#f4f1ea] mb-4">
+            <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-4" style={{ color: "#A18F7A" }}>Our Story</p>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
               About Us
             </h1>
-            <p className="text-[#f4f1ea]/60 text-lg max-w-2xl mx-auto">
+            <p className="text-lg max-w-2xl mx-auto" style={{ color: "rgba(255,255,255,0.5)" }}>
               A family-owned stone company founded in 2010, built on precision, craftsmanship, and global ambition.
             </p>
           </div>
@@ -63,7 +63,7 @@ export default function AboutEN() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
               <div>
-                <p className="text-[#c6a25f] text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Since 2010</p>
+                <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-4" style={{ color: "#A18F7A" }}>Since 2010</p>
                 <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#1d2330] mb-6 leading-tight">
                   Iranian Stone Reference
                 </h2>
@@ -87,30 +87,30 @@ export default function AboutEN() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-3/4 h-3/4 border border-[#c6a25f]/20 pointer-events-none" />
+                <div className="absolute -bottom-4 -right-4 w-3/4 h-3/4 border border-[#A18F7A]/20 pointer-events-none" />
               </div>
             </div>
           </div>
         </section>
 
         {/* Timeline */}
-        <section className="bg-[#0c1626] py-20 lg:py-28">
+        <section className="bg-[#090808] py-20 lg:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
             <div className="text-center mb-14">
-              <p className="text-[#c6a25f] text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Milestones</p>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#f4f1ea]">Our Journey</h2>
+              <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-4" style={{ color: "#A18F7A" }}>Milestones</p>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-white">Our Journey</h2>
             </div>
             <div className="relative max-w-2xl mx-auto">
-              <div className="absolute left-6 top-0 bottom-0 w-px bg-[#c6a25f]/20" />
+              <div className="absolute left-6 top-0 bottom-0 w-px" style={{ background: "rgba(161,143,122,0.2)" }} />
               <div className="space-y-8">
                 {timeline.map((t) => (
                   <div key={t.year} className="flex gap-6 items-start">
                     <div className="relative flex-shrink-0 w-12 h-12 flex items-center justify-center">
-                      <div className="w-3 h-3 bg-[#c6a25f] rounded-full" />
+                      <div className="w-3 h-3 rounded-full" style={{ background: "#A18F7A" }} />
                     </div>
                     <div className="pb-2">
-                      <p className="text-[#c6a25f] text-xs font-bold uppercase tracking-[0.2em] mb-1">{t.year}</p>
-                      <p className="text-[#f4f1ea]/70 text-sm leading-relaxed">{t.en}</p>
+                      <p className="text-xs font-bold uppercase tracking-[0.2em] mb-1" style={{ color: "#A18F7A" }}>{t.year}</p>
+                      <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>{t.en}</p>
                     </div>
                   </div>
                 ))}
@@ -124,30 +124,29 @@ export default function AboutEN() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <p className="text-[#c6a25f] text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Commitment</p>
+                <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-4" style={{ color: "#A18F7A" }}>Commitment</p>
                 <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#1d2330] mb-8 leading-tight">
                   Why Choose Iranian Stone Reference?
                 </h2>
                 <ul className="space-y-4">
                   {values.map((v) => (
                     <li key={v.en} className="flex items-start gap-3">
-                      <span className="mt-1.5 w-1.5 h-1.5 bg-[#c6a25f] rounded-full flex-shrink-0" />
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "#A18F7A" }} />
                       <span className="text-[#1d2330]/70">{v.en}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Export map placeholder */}
-              <div className="bg-[#0c1626] p-8">
-                <p className="text-[#c6a25f] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">Export Markets</p>
+              <div className="bg-[#090808] p-8">
+                <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-6" style={{ color: "#A18F7A" }}>Export Markets</p>
                 <div className="space-y-3">
                   {exportMarkets.map((m) => (
                     <div key={m.code} className="flex items-center gap-3">
-                      <span className="w-6 h-6 flex items-center justify-center text-[#c6a25f] text-xs font-bold border border-[#c6a25f]/30">
+                      <span className="w-6 h-6 flex items-center justify-center text-xs font-bold border" style={{ color: "#A18F7A", borderColor: "rgba(161,143,122,0.3)" }}>
                         {m.code}
                       </span>
-                      <span className="text-[#f4f1ea]/70 text-sm">{m.label}</span>
+                      <span className="text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>{m.label}</span>
                     </div>
                   ))}
                 </div>
@@ -157,16 +156,13 @@ export default function AboutEN() {
         </section>
 
         {/* CTA */}
-        <section className="bg-[#c6a25f] py-16">
+        <section className="bg-[#090808] py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
-            <h2 className="font-display text-3xl font-bold text-[#0c1626] mb-4">Let's Work Together</h2>
-            <p className="text-[#0c1626]/70 mb-8">
+            <h2 className="font-display text-3xl font-bold text-white mb-4">Let's Work Together</h2>
+            <p className="mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>
               Contact our team for custom stone quotes, samples, and export consultations.
             </p>
-            <Link
-              href="/en/contact"
-              className="inline-flex items-center px-8 py-4 bg-[#0c1626] text-[#f4f1ea] text-xs uppercase tracking-[0.2em] font-bold hover:bg-[#16263f] transition-colors"
-            >
+            <Link href="/en/contact" className="collection-cta-btn">
               Contact Us
             </Link>
           </div>

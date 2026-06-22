@@ -36,41 +36,10 @@ export function Footer({ locale }: { locale: Language }) {
         backgroundColor: "#090808",
         color: "#A18F7A",
         width: "100%",
-        position: "relative",
-        zIndex: 5,
         padding: "60px 0 40px",
         fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
       }}
     >
-      {/* Full-width watermark logo */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          inset: 0,
-          overflow: "hidden",
-          pointerEvents: "none",
-          zIndex: 0,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Image
-          src="/images/isr-logo-full.png"
-          alt=""
-          width={1000}
-          height={281}
-          style={{
-            width: "100%",
-            height: "auto",
-            opacity: 0.06,
-            objectFit: "contain",
-            filter: "brightness(0) invert(1)",
-          }}
-        />
-      </div>
-
       <div
         style={{
           maxWidth: "1640px",
@@ -79,8 +48,6 @@ export function Footer({ locale }: { locale: Language }) {
           display: "flex",
           flexDirection: "column",
           gap: "40px",
-          position: "relative",
-          zIndex: 1,
         }}
       >
         {/* Top row */}
@@ -98,11 +65,16 @@ export function Footer({ locale }: { locale: Language }) {
           <div style={{ display: "flex", flexDirection: "column", gap: "16px", minWidth: "180px" }}>
             <Link href={`/${locale}`}>
               <Image
-                src="/images/isr-logo-white.svg"
+                src="/images/isr-logo-full.png"
                 alt="Iranian Stone Reference"
-                width={125}
-                height={34}
-                style={{ height: "30px", width: "auto" }}
+                width={178}
+                height={50}
+                style={{
+                  height: "38px",
+                  width: "auto",
+                  objectFit: "contain",
+                  filter: "brightness(0) invert(1)",
+                }}
               />
             </Link>
             <p style={{ fontSize: "13px", color: "#A18F7A", lineHeight: 1.6, margin: 0 }}>
@@ -140,35 +112,17 @@ export function Footer({ locale }: { locale: Language }) {
 
           {/* Social + language */}
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-            <p
-              style={{
-                fontSize: "11px",
-                color: "#A18F7A",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                margin: 0,
-              }}
-            >
+            <p style={{ fontSize: "11px", color: "#A18F7A", letterSpacing: "2px", textTransform: "uppercase", margin: 0 }}>
               {isRTL ? "دنبال کنید" : "FOLLOW US"}
             </p>
 
             <div style={{ display: "flex", gap: "16px" }}>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "#A18F7A" }}
-              >
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: "#A18F7A" }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                   <path d={INSTAGRAM_PATH} />
                 </svg>
               </a>
-              <a
-                href="https://wa.me"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "#A18F7A" }}
-              >
+              <a href="https://wa.me" target="_blank" rel="noopener noreferrer" style={{ color: "#A18F7A" }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                   <path d={WHATSAPP_PATH} />
                 </svg>
@@ -177,13 +131,7 @@ export function Footer({ locale }: { locale: Language }) {
 
             <Link
               href={locale === "fa" ? "/en" : "/fa"}
-              style={{
-                fontSize: "11px",
-                color: "#A18F7A",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                textDecoration: "none",
-              }}
+              style={{ fontSize: "11px", color: "#A18F7A", letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none" }}
             >
               {locale === "fa" ? "English" : "فارسی"}
             </Link>

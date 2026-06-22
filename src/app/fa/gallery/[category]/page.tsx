@@ -58,21 +58,21 @@ export default async function CategoryPageFA({ params, searchParams }: Props) {
       <Header locale="fa" />
       <main dir="rtl">
         {/* Page header */}
-        <section className="bg-[#0c1626] pt-36 pb-12">
+        <section className="bg-[#090808] pt-36 pb-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-[10px] uppercase tracking-[0.15em] text-[#f4f1ea]/40 mb-6 flex-row-reverse justify-end">
-              <Link href="/fa" className="hover:text-[#c6a25f] transition-colors">خانه</Link>
+            <nav className="flex items-center gap-2 text-[10px] tracking-[0.15em] mb-6 flex-row-reverse justify-end" style={{ color: "rgba(255,255,255,0.35)" }}>
+              <Link href="/fa" className="hover:text-[#A18F7A] transition-colors">خانه</Link>
               <span>/</span>
-              <Link href="/fa/gallery" className="hover:text-[#c6a25f] transition-colors">گالری</Link>
+              <Link href="/fa/gallery" className="hover:text-[#A18F7A] transition-colors">گالری</Link>
               <span>/</span>
-              <span className="text-[#c6a25f]">{cat.nameFa}</span>
+              <span style={{ color: "#A18F7A" }}>{cat.nameFa}</span>
             </nav>
 
-            <h1 className="text-4xl sm:text-5xl font-bold text-[#f4f1ea] mb-3">
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-3">
               {cat.nameFa}
             </h1>
-            <p className="text-[#f4f1ea]/60 text-base max-w-2xl">
+            <p className="text-base max-w-2xl" style={{ color: "rgba(255,255,255,0.5)" }}>
               {cat.descriptionFa}
             </p>
           </div>
@@ -100,14 +100,15 @@ export default async function CategoryPageFA({ params, searchParams }: Props) {
         </section>
 
         {/* CTA */}
-        <section className="bg-[#0c1626] py-16">
+        <section className="bg-[#090808] py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
-            <p className="text-[#f4f1ea]/60 text-sm mb-6">
+            <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>
               به {cat.nameFa} علاقه‌مند هستید؟ از تیم ما نمونه و استعلام سفارشی بخواهید.
             </p>
             <Link
               href={`/fa/contact?stone=${slug}`}
-              className="inline-flex items-center px-8 py-4 bg-[#c6a25f] text-[#0c1626] text-xs uppercase tracking-[0.2em] font-bold hover:bg-[#d8bd86] transition-colors"
+              className="collection-cta-btn"
+              style={{ fontFamily: "Vazirmatn, Tahoma, sans-serif" }}
             >
               درخواست قیمت
             </Link>

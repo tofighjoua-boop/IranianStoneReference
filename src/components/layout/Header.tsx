@@ -27,11 +27,11 @@ const NAV_ITEMS: Record<Language, NavItem[]> = {
 };
 
 export function Header({ locale }: { locale: Language }) {
-  const [scrolled, setScrolled]     = useState(false);
-  const [menuOpen, setMenuOpen]     = useState(false);
+  const [scrolled, setScrolled]       = useState(false);
+  const [menuOpen, setMenuOpen]       = useState(false);
   const [galleryOpen, setGalleryOpen] = useState(false);
-  const pathname  = usePathname();
-  const router    = useRouter();
+  const pathname   = usePathname();
+  const router     = useRouter();
   const overlayRef = useRef<HTMLDivElement>(null);
   const isRTL = locale === "fa";
 
@@ -41,10 +41,7 @@ export function Header({ locale }: { locale: Language }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setMenuOpen(false);
-    setGalleryOpen(false);
-  }, [pathname]);
+  useEffect(() => { setMenuOpen(false); setGalleryOpen(false); }, [pathname]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -65,6 +62,7 @@ export function Header({ locale }: { locale: Language }) {
   }, [locale, pathname, router]);
 
   const isTransparent = !scrolled && !menuOpen;
+  const textColor = "#A18F7A";
 
   const headerStyle: React.CSSProperties = {
     position: "fixed",
@@ -77,54 +75,26 @@ export function Header({ locale }: { locale: Language }) {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "20px 40px",
+    padding: "18px 40px",
   };
-
-  const textColor = "#A18F7A";
 
   return (
     <>
       <header style={headerStyle}>
-        {/* Full-width watermark logo */}
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            inset: 0,
-            overflow: "hidden",
-            pointerEvents: "none",
-            zIndex: 0,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+        {/* Logo — clickable */}
+        <Link href={`/${locale}`} aria-label="ISR — Home" style={{ display: "flex", alignItems: "center" }}>
           <Image
             src="/images/isr-logo-full.png"
-            alt=""
-            width={1000}
-            height={281}
-            style={{
-              width: "100%",
-              height: "auto",
-              opacity: isTransparent ? 0.09 : 0.06,
-              objectFit: "contain",
-              transition: "opacity 0.3s ease, filter 0.3s ease",
-              filter: isTransparent
-                ? "brightness(0) invert(1)"
-                : "none",
-            }}
-          />
-        </div>
-
-        {/* Logo — clickable, above watermark */}
-        <Link href={`/${locale}`} aria-label="ISR — Home" style={{ display: "flex", alignItems: "center", position: "relative", zIndex: 1 }}>
-          <Image
-            src={isTransparent ? "/images/isr-logo-white.svg" : "/images/isr-logo-dark.svg"}
             alt="Iranian Stone Reference"
-            width={175}
-            height={48}
-            style={{ height: "40px", width: "auto", objectFit: "contain" }}
+            width={178}
+            height={50}
+            style={{
+              height: "44px",
+              width: "auto",
+              objectFit: "contain",
+              transition: "filter 0.3s ease",
+              filter: isTransparent ? "brightness(0) invert(1)" : "none",
+            }}
             priority
           />
         </Link>
@@ -147,12 +117,13 @@ export function Header({ locale }: { locale: Language }) {
             textTransform: "uppercase",
             fontWeight: 400,
             fontFamily: "Lato, sans-serif",
-            position: "relative",
-            zIndex: 1,
           }}
         >
           {menuOpen ? (
-            <Image src="/images/chiudi.svg" alt="close" width={14} height={14} />
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke={textColor} strokeWidth="1.5">
+              <line x1="2" y1="2" x2="14" y2="14" />
+              <line x1="14" y1="2" x2="2" y2="14" />
+            </svg>
           ) : (
             <svg width="18" height="10" viewBox="0 0 18 10" fill={textColor}>
               <rect y="0" width="18" height="1.5" rx="0.75" fill={textColor} />
@@ -164,16 +135,7 @@ export function Header({ locale }: { locale: Language }) {
         </button>
 
         {/* Top-right nav (desktop) */}
-        <div
-          className="nomobile"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "24px",
-            position: "relative",
-            zIndex: 1,
-          }}
-        >
+        <div className="nomobile" style={{ display: "flex", alignItems: "center", gap: "24px" }}>
           {NAV_ITEMS[locale].map((item) =>
             item.hasDropdown ? (
               <div key={item.href} style={{ position: "relative" }}>
@@ -194,7 +156,9 @@ export function Header({ locale }: { locale: Language }) {
                   }}
                 >
                   {item.label}
-                  <Image src="/images/freccia_bianca.svg" alt="" width={10} height={6} style={{ opacity: 0.7 }} />
+                  <svg width="8" height="5" viewBox="0 0 8 5" fill="none">
+                    <path d="M1 1l3 3 3-3" stroke={textColor} strokeWidth="1.2" strokeLinecap="round"/>
+                  </svg>
                 </button>
 
                 {galleryOpen && (
@@ -250,10 +214,8 @@ export function Header({ locale }: { locale: Language }) {
             )
           )}
 
-          {/* Divider */}
           <span style={{ color: textColor, opacity: 0.4, fontSize: "11px" }}>|</span>
 
-          {/* Language */}
           <button
             onClick={switchLocale}
             style={{
@@ -269,9 +231,6 @@ export function Header({ locale }: { locale: Language }) {
           >
             {locale === "fa" ? "EN" : "FA"}
           </button>
-
-          {/* Search icon placeholder */}
-          <Image src="/images/ico_cerca.svg" alt="Search" width={20} height={20} style={{ opacity: 0.7, cursor: "pointer" }} />
         </div>
 
         {/* Mobile hamburger */}
@@ -279,13 +238,7 @@ export function Header({ locale }: { locale: Language }) {
           className="onlymobile"
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Menu"
-          style={{
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            color: textColor,
-            padding: "4px",
-          }}
+          style={{ background: "none", border: "none", cursor: "pointer", color: textColor, padding: "4px" }}
         >
           {menuOpen ? (
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke={textColor} strokeWidth="1.5">
@@ -318,7 +271,7 @@ export function Header({ locale }: { locale: Language }) {
           }}
           dir={isRTL ? "rtl" : "ltr"}
         >
-          {/* Close button top-right */}
+          {/* Close button */}
           <button
             onClick={() => setMenuOpen(false)}
             style={{
@@ -328,14 +281,24 @@ export function Header({ locale }: { locale: Language }) {
               background: "none",
               border: "none",
               cursor: "pointer",
+              color: textColor,
             }}
           >
-            <Image src="/images/chiudi.svg" alt="Close" width={14} height={14} />
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke={textColor} strokeWidth="1.5">
+              <line x1="3" y1="3" x2="17" y2="17" />
+              <line x1="17" y1="3" x2="3" y2="17" />
+            </svg>
           </button>
 
           {/* Logo in overlay */}
-          <Link href={`/${locale}`} onClick={() => setMenuOpen(false)} style={{ marginBottom: "48px" }}>
-            <Image src="/images/isr-logo-dark.svg" alt="ISR" width={140} height={38} style={{ height: "34px", width: "auto" }} />
+          <Link href={`/${locale}`} onClick={() => setMenuOpen(false)} style={{ marginBottom: "48px", display: "inline-block" }}>
+            <Image
+              src="/images/isr-logo-full.png"
+              alt="Iranian Stone Reference"
+              width={178}
+              height={50}
+              style={{ height: "40px", width: "auto", objectFit: "contain" }}
+            />
           </Link>
 
           {/* Main nav links */}
@@ -378,7 +341,7 @@ export function Header({ locale }: { locale: Language }) {
             ))}
           </nav>
 
-          {/* Language toggle at bottom */}
+          {/* Language toggle */}
           <div style={{ marginTop: "auto", paddingTop: "40px", borderTop: "1px solid rgba(161,143,122,0.2)", display: "flex", gap: "24px", alignItems: "center" }}>
             <button
               onClick={() => { switchLocale(); setMenuOpen(false); }}

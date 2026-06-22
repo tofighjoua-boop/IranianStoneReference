@@ -38,7 +38,6 @@ export default async function CategoryPageEN({ params, searchParams }: Props) {
 
   const allProducts = getProductsByCategory(slug);
 
-  // Build filter options
   const colors = [...new Set(allProducts.map((p) => p.color))].map((c) => ({
     value: c,
     label: c,
@@ -48,7 +47,6 @@ export default async function CategoryPageEN({ params, searchParams }: Props) {
     label: f,
   }));
 
-  // Apply filters
   const filtered = allProducts.filter((p) => {
     if (filterColor && filterColor !== "all" && p.color !== filterColor) return false;
     if (filterFinish && filterFinish !== "all" && !p.finishes.includes(filterFinish)) return false;
@@ -60,21 +58,21 @@ export default async function CategoryPageEN({ params, searchParams }: Props) {
       <Header locale="en" />
       <main>
         {/* Page header */}
-        <section className="bg-[#0c1626] pt-36 pb-12">
+        <section className="bg-[#090808] pt-36 pb-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-[10px] uppercase tracking-[0.15em] text-[#f4f1ea]/40 mb-6">
-              <Link href="/en" className="hover:text-[#c6a25f] transition-colors">Home</Link>
+            <nav className="flex items-center gap-2 text-[10px] uppercase tracking-[0.15em] mb-6" style={{ color: "rgba(255,255,255,0.35)" }}>
+              <Link href="/en" className="hover:text-[#A18F7A] transition-colors">Home</Link>
               <span>/</span>
-              <Link href="/en/gallery" className="hover:text-[#c6a25f] transition-colors">Gallery</Link>
+              <Link href="/en/gallery" className="hover:text-[#A18F7A] transition-colors">Gallery</Link>
               <span>/</span>
-              <span className="text-[#c6a25f]">{cat.nameEn}</span>
+              <span style={{ color: "#A18F7A" }}>{cat.nameEn}</span>
             </nav>
 
-            <h1 className="font-display text-4xl sm:text-5xl font-bold text-[#f4f1ea] mb-3">
+            <h1 className="font-display text-4xl sm:text-5xl font-bold text-white mb-3">
               {cat.nameEn}
             </h1>
-            <p className="text-[#f4f1ea]/60 text-base max-w-2xl">
+            <p className="text-base max-w-2xl" style={{ color: "rgba(255,255,255,0.5)" }}>
               {cat.descriptionEn}
             </p>
           </div>
@@ -106,14 +104,14 @@ export default async function CategoryPageEN({ params, searchParams }: Props) {
         </section>
 
         {/* CTA */}
-        <section className="bg-[#0c1626] py-16">
+        <section className="bg-[#090808] py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
-            <p className="text-[#f4f1ea]/60 text-sm mb-6">
+            <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>
               Interested in {cat.nameEn}? Request samples and custom quotes from our team.
             </p>
             <Link
               href={`/en/contact?stone=${slug}`}
-              className="inline-flex items-center px-8 py-4 bg-[#c6a25f] text-[#0c1626] text-xs uppercase tracking-[0.2em] font-bold hover:bg-[#d8bd86] transition-colors"
+              className="collection-cta-btn"
             >
               Request a Quote
             </Link>
