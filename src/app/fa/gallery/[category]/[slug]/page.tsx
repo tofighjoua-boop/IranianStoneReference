@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = getProductBySlug(slug);
   if (!product) return {};
   return {
-    title: `${product.nameFa} — سنگ طبیعی`,
+    title: `${product.nameEn} — سنگ طبیعی`,
     description: product.descriptionFa.replace("[PLACEHOLDER] ", ""),
   };
 }
@@ -61,7 +61,7 @@ export default async function ProductPageFA({ params }: Props) {
               )}
               <Link href={`/fa/gallery/${catSlug}`} className="hover:text-[#c6a25f] transition-colors">{cat.nameFa}</Link>
               <span>/</span>
-              <span className="text-[#c6a25f]">{product.nameFa}</span>
+              <span className="text-[#c6a25f]">{product.nameEn}</span>
             </nav>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default async function ProductPageFA({ params }: Props) {
               <div className="relative aspect-square overflow-hidden order-2 lg:order-1">
                 <Image
                   src={product.images[0]}
-                  alt={product.nameFa}
+                  alt={product.nameEn}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -93,7 +93,7 @@ export default async function ProductPageFA({ params }: Props) {
                   {cat.nameFa}
                 </p>
                 <h1 className="text-3xl sm:text-4xl font-bold text-[#1d2330] mb-2">
-                  {product.nameFa}
+                  {product.nameEn}
                 </h1>
                 <p className="text-[#1d2330]/50 text-sm uppercase tracking-[0.1em] mb-6">
                   {product.colorFa}

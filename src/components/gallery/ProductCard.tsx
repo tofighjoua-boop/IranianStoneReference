@@ -23,7 +23,7 @@ export function ProductCard({ product, locale }: ProductCardProps) {
       <div className="relative overflow-hidden" style={{ aspectRatio: "3/4" }}>
         <Image
           src={product.thumbnail}
-          alt={locale === "fa" ? product.nameFa : product.nameEn}
+          alt={product.nameEn}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-700"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -49,7 +49,7 @@ export function ProductCard({ product, locale }: ProductCardProps) {
             isRTL ? "" : "",
           ].join(" ")}
         >
-          {locale === "fa" ? product.nameFa : product.nameEn}
+          {product.nameEn}
         </h3>
         <p className="text-[#1d2330]/50 text-xs uppercase tracking-[0.1em]">
           {locale === "fa" ? product.colorFa : product.color}
