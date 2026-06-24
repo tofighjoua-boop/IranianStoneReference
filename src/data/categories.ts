@@ -98,8 +98,8 @@ export const categories: StoneCategory[] = [
       "CNC-crafted stone washbasins — round, oval, rectangular, and vessel styles. Custom dimensions and stone selection available.",
     descriptionFa:
       "روشویی‌های سنگی CNC — گرد، بیضی، مستطیل و سینک. ابعاد سفارشی و انتخاب سنگ موجود است.",
-    image: "/images/banner-stone-dark.jpg",
-    thumbnailImage: "/images/banner-stone-dark.jpg",
+    image: "/images/gallery/washbasins/b43.jpg",
+    thumbnailImage: "/images/gallery/washbasins/b43.jpg",
     productCount: 0,
   },
   {
