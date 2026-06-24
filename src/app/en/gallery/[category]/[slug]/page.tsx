@@ -72,11 +72,25 @@ export default async function ProductPageEN({ params }: Props) {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
               {/* Image */}
               <div className="relative aspect-square overflow-hidden">
+                {product.categorySlug === "washbasins" && (
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      position: "absolute",
+                      inset: "-40px",
+                      backgroundImage: `url(${product.images[0]})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      filter: "blur(32px) brightness(1.08) saturate(0.9)",
+                      transform: "scale(1.2)",
+                    }}
+                  />
+                )}
                 <Image
                   src={product.images[0]}
                   alt={product.nameEn}
                   fill
-                  className="object-cover"
+                  className={product.categorySlug === "washbasins" ? "object-contain p-6" : "object-cover"}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
