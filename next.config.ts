@@ -10,9 +10,10 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     // Quality: 90 for sharp stone textures and fine grain detail
     qualities: [90],
-    // Responsive breakpoints matching our grid (25vw / 50vw / 100vw)
-    deviceSizes: [640, 828, 1080, 1200, 1920],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // Full-width breakpoints — includes 2560 for 2K/Retina displays
+    deviceSizes: [640, 828, 1080, 1200, 1920, 2560],
+    // Fixed-width image breakpoints — covers gallery cards at 25vw/33vw/50vw
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 480, 640],
     // Serve optimized images for 1 year (Vercel CDN)
     minimumCacheTTL: 31536000,
   },
