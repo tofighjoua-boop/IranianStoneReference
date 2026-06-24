@@ -90,29 +90,17 @@ export function HeroSection({ locale }: { locale: Language }) {
 
             <div
               style={{
-                fontSize: isRTL ? "28px" : "32px",
+                fontSize: isRTL ? "34px" : "36px",
                 lineHeight: "1.2",
                 letterSpacing: isRTL ? "2px" : "4.8px",
                 color: "white",
                 textTransform: "uppercase",
                 fontWeight: 300,
                 fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
+                whiteSpace: "nowrap",
               }}
             >
-              {isRTL ? "از دل کوه" : "FROM THE HEART OF THE MOUNTAIN"}
-            </div>
-
-            <div
-              style={{
-                fontSize: "22px",
-                lineHeight: "29px",
-                letterSpacing: "2px",
-                color: "white",
-                fontWeight: 300,
-                fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
-              }}
-            >
-              {isRTL ? "تا قلب معماری." : "TO THE HEART OF ARCHITECTURE."}
+              {isRTL ? "از دل کوه تا قلب معماری" : "FROM THE HEART OF THE MOUNTAIN TO THE HEART OF ARCHITECTURE"}
             </div>
           </div>
         </div>
