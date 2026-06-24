@@ -41,31 +41,35 @@ export default function ContactFA() {
                 </h2>
 
                 <div className="space-y-6">
-                  {[
-                    { label: "آدرس", value: "تهران، ایران" },
-                    { label: "تلفن", value: "۰۲۱-XXXX-XXXX" },
-                    { label: "واتس‌اپ", value: "+98 912 XXX XXXX" },
-                    { label: "ایمیل", value: "info@iranianstone.ir" },
-                  ].map((item) => (
-                    <div key={item.label}>
-                      <p className="text-[10px] uppercase tracking-[0.2em] text-[#c6a25f] font-bold mb-1">
-                        {item.label}
-                      </p>
-                      <p className="text-[#1d2330]/70 text-sm">{item.value}</p>
-                    </div>
-                  ))}
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#c6a25f] font-bold mb-1">آدرس</p>
+                    <p className="text-[#1d2330]/70 text-sm leading-relaxed">
+                      ایران، تهران، شهرک صنعتی شمس آباد،<br />
+                      بلوار بوستان، خیابان گلبن ۱۴، پلاک ۹
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#c6a25f] font-bold mb-1">تلفن</p>
+                    <a href="tel:+989044640033" className="block text-[#1d2330]/70 text-sm hover:text-[#c6a25f] transition-colors" dir="ltr">+98 912 638 8525</a>
+                    <a href="tel:+989126384150" className="block text-[#1d2330]/70 text-sm hover:text-[#c6a25f] transition-colors" dir="ltr">+98 912 638 4150</a>
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#c6a25f] font-bold mb-1">واتس‌اپ</p>
+                    <a href="https://wa.me/989126388525" target="_blank" rel="noopener noreferrer" className="text-[#1d2330]/70 text-sm hover:text-[#c6a25f] transition-colors" dir="ltr">+98 912 638 8525</a>
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#c6a25f] font-bold mb-1">ایمیل</p>
+                    <a href="mailto:info@iranianstonereference.com" className="text-[#1d2330]/70 text-sm hover:text-[#c6a25f] transition-colors" dir="ltr">info@iranianstonereference.com</a>
+                  </div>
                 </div>
 
                 <div className="mt-8">
                   <p className="text-[10px] uppercase tracking-[0.2em] text-[#c6a25f] font-bold mb-3">
                     دنبال کنید
                   </p>
-                  <div className="flex gap-4">
-                    {["Instagram", "LinkedIn", "YouTube"].map((s) => (
-                      <a key={s} href="#" className="text-sm text-[#1d2330]/50 hover:text-[#c6a25f] transition-colors">
-                        {s}
-                      </a>
-                    ))}
+                  <div className="flex flex-col gap-1">
+                    <a href="https://www.instagram.com/iranian.stone.reference" target="_blank" rel="noopener noreferrer" className="text-sm text-[#1d2330]/50 hover:text-[#c6a25f] transition-colors">Instagram</a>
+                    <a href="https://www.instagram.com/iranian.stone.reference" target="_blank" rel="noopener noreferrer" className="text-xs text-[#c6a25f]/70 hover:text-[#c6a25f] transition-colors" dir="ltr">@iranian.stone.reference</a>
                   </div>
                 </div>
 

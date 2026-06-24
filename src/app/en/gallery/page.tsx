@@ -17,7 +17,7 @@ export default function GalleryEN() {
       <Header locale="en" />
       <main>
         {/* Page header */}
-        <section className="bg-[#090808] pt-36 pb-16">
+        <section className="bg-[#0c1626] pt-36 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
             <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-4" style={{ color: "#A18F7A" }}>
               Collections
@@ -41,7 +41,7 @@ export default function GalleryEN() {
         </section>
 
         {/* CTA */}
-        <section className="bg-[#090808] py-16">
+        <section className="bg-[#0c1626] py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
             <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>
               Looking for a specific stone or quantity? Our team will help you find the perfect match.

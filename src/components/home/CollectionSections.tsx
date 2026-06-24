@@ -24,7 +24,7 @@ const SECTIONS: Section[] = [
     href: "/gallery/marble",
   },
   {
-    bg: "/images/collection-stoneroom.jpg",
+    bg: "/images/banner-2.jpg",
     label: { en: "ISR®", fa: "مرجع سنگ ایرانیان®" },
     title: { en: "TRAVERTINE", fa: "تراورتن" },
     body: {

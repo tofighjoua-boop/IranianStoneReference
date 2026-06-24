@@ -43,7 +43,7 @@ export default function AboutEN() {
       <Header locale="en" />
       <main>
         {/* Hero */}
-        <section className="relative bg-[#090808] pt-36 pb-20 overflow-hidden">
+        <section className="relative bg-[#0c1626] pt-36 pb-20 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <Image src="/images/banner-1.jpg" alt="" fill className="object-cover" sizes="100vw" />
           </div>
@@ -94,7 +94,7 @@ export default function AboutEN() {
         </section>
 
         {/* Timeline */}
-        <section className="bg-[#090808] py-20 lg:py-28">
+        <section className="bg-[#0c1626] py-20 lg:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
             <div className="text-center mb-14">
               <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-4" style={{ color: "#A18F7A" }}>Milestones</p>
@@ -138,7 +138,7 @@ export default function AboutEN() {
                 </ul>
               </div>
 
-              <div className="bg-[#090808] p-8">
+              <div className="bg-[#0c1626] p-8">
                 <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-6" style={{ color: "#A18F7A" }}>Export Markets</p>
                 <div className="space-y-3">
                   {exportMarkets.map((m) => (
@@ -156,7 +156,7 @@ export default function AboutEN() {
         </section>
 
         {/* CTA */}
-        <section className="bg-[#090808] py-16">
+        <section className="bg-[#0c1626] py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
             <h2 className="font-display text-3xl font-bold text-white mb-4">Let's Work Together</h2>
             <p className="mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>

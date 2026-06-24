@@ -20,7 +20,7 @@ const placeholderArticles = [
     title_fa: "راهنمای کامل نصب اونیکس با نورپشتی",
     category_en: "Knowledge",
     category_fa: "دانش",
-    image: "/images/banner-3.jpg",
+    image: "/images/collection-exclusive.jpg",
   },
   {
     slug: "stone-care-tips",

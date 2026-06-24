@@ -48,8 +48,8 @@ export const projects: Project[] = [
     applicationEn: "Residential — Exterior Facade",
     applicationFa: "مسکونی — نمای خارجی",
     stonesUsed: ["classic-beige-travertine"],
-    image: "/images/collection-stoneroom.jpg",
-    images: ["/images/collection-stoneroom.jpg", "/images/banner-2.jpg"],
+    image: "/images/bottom-banner-1.jpg",
+    images: ["/images/bottom-banner-1.jpg", "/images/banner-2.jpg"],
     year: "2023",
   },
   {
@@ -65,8 +65,8 @@ export const projects: Project[] = [
     applicationEn: "Hospitality — Restaurant",
     applicationFa: "هتل‌داری — رستوران",
     stonesUsed: ["green-onyx"],
-    image: "/images/bottom-banner-2.jpg",
-    images: ["/images/bottom-banner-2.jpg", "/images/banner-3.jpg"],
+    image: "/images/banner-1.jpg",
+    images: ["/images/banner-1.jpg", "/images/collection-exclusive.jpg"],
     year: "2022",
   },
   {
@@ -82,8 +82,8 @@ export const projects: Project[] = [
     applicationEn: "Wellness — Spa & Pool",
     applicationFa: "سلامت — اسپا و استخر",
     stonesUsed: ["oval-travertine-basin", "white-crystal-marble"],
-    image: "/images/bottom-banner-3.jpg",
-    images: ["/images/bottom-banner-3.jpg", "/images/banner-5.jpg"],
+    image: "/images/banner-2.jpg",
+    images: ["/images/banner-2.jpg", "/images/collection-tech.jpg"],
     year: "2022",
   },
 ];

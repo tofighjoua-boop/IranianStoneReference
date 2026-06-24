@@ -33,7 +33,7 @@ export function Footer({ locale }: { locale: Language }) {
     <footer
       dir={isRTL ? "rtl" : "ltr"}
       style={{
-        backgroundColor: "#090808",
+        backgroundColor: "#0c1626",
         color: "#A18F7A",
         width: "100%",
         padding: "60px 0 40px",
@@ -77,16 +77,13 @@ export function Footer({ locale }: { locale: Language }) {
                 }}
               />
             </Link>
-            <p style={{ fontSize: "13px", color: "#A18F7A", lineHeight: 1.6, margin: 0 }}>
-              {isRTL ? "مرجع سنگ ایرانیان" : "Iranian Stone Reference"}<br />
-              {isRTL ? "تهران، ایران" : "Tehran, Iran"}
+            <p style={{ fontSize: "13px", color: "#A18F7A", lineHeight: 1.8, margin: 0 }}>
+              {isRTL
+                ? <>ایران، تهران، شهرک صنعتی شمس آباد<br />بلوار بوستان، گلبن ۱۴، پلاک ۹</>
+                : <>Iran, Tehran, Shamsabad Industrial Town<br />Boustan Blvd, Golbon 14 St., No. 9</>}
             </p>
-            <a
-              href="mailto:info@iranianstone.ir"
-              style={{ fontSize: "13px", color: "#A18F7A", textDecoration: "none" }}
-            >
-              info@iranianstone.ir
-            </a>
+            <a href="tel:+989126388525" style={{ fontSize: "13px", color: "#A18F7A", textDecoration: "none", direction: "ltr", display: "block" }}>+98 912 638 8525</a>
+            <a href="mailto:info@iranianstonereference.com" style={{ fontSize: "13px", color: "#A18F7A", textDecoration: "none" }}>info@iranianstonereference.com</a>
           </div>
 
           {/* Nav links */}
@@ -117,12 +114,12 @@ export function Footer({ locale }: { locale: Language }) {
             </p>
 
             <div style={{ display: "flex", gap: "16px" }}>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: "#A18F7A" }}>
+              <a href="https://www.instagram.com/iranian.stone.reference" target="_blank" rel="noopener noreferrer" style={{ color: "#A18F7A" }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                   <path d={INSTAGRAM_PATH} />
                 </svg>
               </a>
-              <a href="https://wa.me" target="_blank" rel="noopener noreferrer" style={{ color: "#A18F7A" }}>
+              <a href="https://wa.me/989126388525" target="_blank" rel="noopener noreferrer" style={{ color: "#A18F7A" }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                   <path d={WHATSAPP_PATH} />
                 </svg>

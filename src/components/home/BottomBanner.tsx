@@ -6,21 +6,28 @@ import { type Language } from "@/lib/translations";
 
 const SLIDES = [
   {
-    bg: "/images/bottom-banner-2.jpg",
+    bg: "/images/bottom-banner-1.jpg",
     title: { en: "UAE · QATAR · RUSSIA", fa: "امارات · قطر · روسیه" },
     sub: { en: "Premium Stone for Global Projects", fa: "سنگ پریمیوم برای پروژه‌های جهانی" },
     cta: { en: "Contact Export Team", fa: "تیم صادرات" },
     href: "/contact",
   },
   {
-    bg: "/images/bottom-banner-1.jpg",
+    bg: "/images/banner-new-4.png",
+    title: { en: "NATURE'S FINEST STONE", fa: "برترین سنگ طبیعت" },
+    sub: { en: "From Iran's Legendary Quarries to the World", fa: "از معادن افسانه‌ای ایران به سراسر جهان" },
+    cta: { en: "Explore Gallery", fa: "مشاهده گالری" },
+    href: "/gallery",
+  },
+  {
+    bg: "/images/banner-1.jpg",
     title: { en: "GERMANY · USA · GCC", fa: "آلمان · آمریکا · شورای خلیج" },
     sub: { en: "15+ Years of Export Excellence", fa: "بیش از ۱۵ سال تجربهٔ صادراتی" },
     cta: { en: "Our Markets", fa: "بازارهای ما" },
     href: "/about",
   },
   {
-    bg: "/images/bottom-banner-3.jpg",
+    bg: "/images/banner-2.jpg",
     title: { en: "CUSTOM PROCESSING", fa: "فرآوری سفارشی" },
     sub: { en: "CNC Cutting · Polished · Honed · Leather Finish", fa: "برش CNC · پولیش · مات · فینیش چرم" },
     cta: { en: "Production Process", fa: "فرآیند تولید" },

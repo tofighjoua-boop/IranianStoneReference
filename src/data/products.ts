@@ -74,8 +74,8 @@ export const products: Product[] = [
     finishes: ["Polished", "Leather"],
     finishesFa: ["پولیش", "چرم"],
     dimensions: "Slabs: up to 260×150 cm",
-    images: ["/images/banner-3.jpg"],
-    thumbnail: "/images/banner-3.jpg",
+    images: ["/images/collection-exclusive.jpg"],
+    thumbnail: "/images/collection-exclusive.jpg",
     isExclusive: true,
   },
 
@@ -130,8 +130,8 @@ export const products: Product[] = [
     finishes: ["Polished"],
     finishesFa: ["پولیش"],
     dimensions: "Slabs: up to 200×120 cm",
-    images: ["/images/banner-3.jpg"],
-    thumbnail: "/images/banner-3.jpg",
+    images: ["/images/collection-exclusive.jpg"],
+    thumbnail: "/images/collection-exclusive.jpg",
     isExclusive: true,
   },
   {
@@ -147,8 +147,8 @@ export const products: Product[] = [
       "[PLACEHOLDER] اونیکس سبز زمرد زنده با کیفیت شفاف. به‌طور انحصاری از معادن ایران، ایده‌آل برای پانل‌های لهجهٔ لوکس.",
     finishes: ["Polished"],
     finishesFa: ["پولیش"],
-    images: ["/images/banner-4.jpg"],
-    thumbnail: "/images/banner-4.jpg",
+    images: ["/images/collection-tableware.jpg"],
+    thumbnail: "/images/collection-tableware.jpg",
     isExclusive: true,
   },
 
@@ -167,8 +167,8 @@ export const products: Product[] = [
     finishes: ["Polished", "Flamed"],
     finishesFa: ["پولیش", "شعله‌ای"],
     dimensions: "Slabs: up to 300×180 cm",
-    images: ["/images/banner-4.jpg"],
-    thumbnail: "/images/banner-4.jpg",
+    images: ["/images/collection-tableware.jpg"],
+    thumbnail: "/images/collection-tableware.jpg",
   },
   {
     slug: "bianco-crystal-granite",
@@ -183,8 +183,8 @@ export const products: Product[] = [
       "[PLACEHOLDER] گرانیت سفید با مواد معدنی کریستالی خاکستری. سختی برتر آن را ایده‌آل برای پیشخوان‌های آشپزخانه و کف‌های پرتردد می‌کند.",
     finishes: ["Polished", "Honed", "Flamed", "Bushhammered"],
     finishesFa: ["پولیش", "مات", "شعله‌ای", "بوشهمر"],
-    images: ["/images/banner-5.jpg"],
-    thumbnail: "/images/banner-5.jpg",
+    images: ["/images/collection-tech.jpg"],
+    thumbnail: "/images/collection-tech.jpg",
   },
 
   // ── Washbasins ───────────────────────────────────────────────────────
@@ -202,8 +202,8 @@ export const products: Product[] = [
     finishes: ["Honed", "Polished"],
     finishesFa: ["مات", "پولیش"],
     dimensions: "Standard: 60×40×15 cm. Custom available.",
-    images: ["/images/banner-5.jpg"],
-    thumbnail: "/images/banner-5.jpg",
+    images: ["/images/collection-tech.jpg"],
+    thumbnail: "/images/collection-tech.jpg",
     isNew: true,
   },
   {

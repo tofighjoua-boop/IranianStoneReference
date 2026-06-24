@@ -162,16 +162,81 @@
   pointer-events: none;
 }
 
-/* WhatsApp floating button */
-.wa-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 28px rgba(37,211,102,0.6), 0 4px 12px rgba(0,0,0,0.25) !important;
-  background-color: #20ba5a !important;
+/* ── Floating action buttons ──────────────────────────────── */
+@keyframes float-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-7px); }
 }
-.wa-btn:hover + .wa-tooltip,
-.wa-btn:focus + .wa-tooltip {
+@keyframes float-pulse-wa {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.55); }
+  50%       { box-shadow: 0 4px 20px rgba(37,211,102,0.45), 0 0 0 12px rgba(37,211,102,0); }
+}
+@keyframes float-pulse-ig {
+  0%, 100% { box-shadow: 0 4px 20px rgba(225,48,108,0.45), 0 0 0 0 rgba(225,48,108,0.55); }
+  50%       { box-shadow: 0 4px 20px rgba(225,48,108,0.45), 0 0 0 12px rgba(225,48,108,0); }
+}
+
+.float-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.float-btn-wa {
+  background: #25D366;
+  animation: float-bounce 2.8s ease-in-out infinite, float-pulse-wa 2.8s ease-in-out infinite;
+}
+.float-btn-ig {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  animation: float-bounce 2.8s ease-in-out 1.4s infinite, float-pulse-ig 2.8s ease-in-out 1.4s infinite;
+}
+
+.float-btn:hover {
+  animation-play-state: paused;
+  transform: scale(1.14) !important;
+}
+.float-btn-wa:hover  { box-shadow: 0 6px 28px rgba(37,211,102,0.7)  !important; }
+.float-btn-ig:hover  { box-shadow: 0 6px 28px rgba(225,48,108,0.7)  !important; }
+
+.float-tooltip {
+  font-size: 10px;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+}
+.float-tooltip-wa { background: #25D366; }
+.float-tooltip-ig { background: #d6249f; }
+
+.float-btn:hover ~ .float-tooltip,
+.float-btn:focus ~ .float-tooltip {
   opacity: 1 !important;
   transform: translateY(0) !important;
+}
+
+/* Workshop gallery */
+.workshop-card:hover .workshop-img     { transform: scale(1.06); opacity: 0.7; }
+.workshop-card:hover .workshop-overlay { opacity: 1 !important; }
+.workshop-card:hover .workshop-zoom    { opacity: 1 !important; }
+
+/* Knowledge article cards */
+.knowledge-card:hover .knowledge-img  { transform: scale(1.05); }
+.knowledge-card:hover .knowledge-title { color: #A18F7A !important; }
+
+/* Production page responsive grid */
+@media (max-width: 768px) {
+  .production-grid { grid-template-columns: 1fr !important; }
+  .production-grid > div { order: unset !important; }
 }
 
 /* Responsive visibility */

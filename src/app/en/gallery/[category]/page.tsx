@@ -58,7 +58,7 @@ export default async function CategoryPageEN({ params, searchParams }: Props) {
       <Header locale="en" />
       <main>
         {/* Page header */}
-        <section className="bg-[#090808] pt-36 pb-12">
+        <section className="bg-[#0c1626] pt-36 pb-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
             {/* Breadcrumb */}
             <nav className="flex items-center gap-2 text-[10px] uppercase tracking-[0.15em] mb-6" style={{ color: "rgba(255,255,255,0.35)" }}>
@@ -104,7 +104,7 @@ export default async function CategoryPageEN({ params, searchParams }: Props) {
         </section>
 
         {/* CTA */}
-        <section className="bg-[#090808] py-16">
+        <section className="bg-[#0c1626] py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
             <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>
               Interested in {cat.nameEn}? Request samples and custom quotes from our team.

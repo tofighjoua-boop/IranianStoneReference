@@ -16,11 +16,15 @@ interface NavItem {
 const NAV_ITEMS: Record<Language, NavItem[]> = {
   en: [
     { label: "GALLERY", href: "/en/gallery", hasDropdown: true },
+    { label: "KNOWLEDGE", href: "/en/knowledge" },
+    { label: "PRODUCTION", href: "/en/production" },
     { label: "ABOUT", href: "/en/about" },
     { label: "CONTACT US", href: "/en/contact" },
   ],
   fa: [
     { label: "گالری", href: "/fa/gallery", hasDropdown: true },
+    { label: "دانش سنگ", href: "/fa/knowledge" },
+    { label: "مراحل تولید", href: "/fa/production" },
     { label: "درباره ما", href: "/fa/about" },
     { label: "تماس با ما", href: "/fa/contact" },
   ],
@@ -238,26 +242,44 @@ export function Header({ locale }: { locale: Language }) {
           </button>
         </div>
 
-        {/* Mobile hamburger — right */}
-        <button
-          className="onlymobile"
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label="Menu"
-          style={{ background: "none", border: "none", cursor: "pointer", color: textColor, padding: "4px" }}
-        >
-          {menuOpen ? (
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke={textColor} strokeWidth="1.5">
-              <line x1="3" y1="3" x2="19" y2="19" />
-              <line x1="19" y1="3" x2="3" y2="19" />
-            </svg>
-          ) : (
-            <svg width="22" height="15" viewBox="0 0 22 15" fill="none">
-              <rect y="0"  width="22" height="1.8" rx="0.9" fill={textColor} />
-              <rect y="6.5" width="22" height="1.8" rx="0.9" fill={textColor} />
-              <rect y="13" width="22" height="1.8" rx="0.9" fill={textColor} />
-            </svg>
-          )}
-        </button>
+        {/* Mobile right side: language toggle + hamburger */}
+        <div className="onlymobile" style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <button
+            onClick={switchLocale}
+            style={{
+              background: "none",
+              border: `1px solid ${textColor}`,
+              cursor: "pointer",
+              fontSize: "11px",
+              color: textColor,
+              letterSpacing: "1.5px",
+              fontFamily: "Lato, sans-serif",
+              padding: "4px 10px",
+              lineHeight: 1,
+            }}
+          >
+            {locale === "fa" ? "EN" : "FA"}
+          </button>
+
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label="Menu"
+            style={{ background: "none", border: "none", cursor: "pointer", color: textColor, padding: "4px" }}
+          >
+            {menuOpen ? (
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke={textColor} strokeWidth="1.5">
+                <line x1="3" y1="3" x2="19" y2="19" />
+                <line x1="19" y1="3" x2="3" y2="19" />
+              </svg>
+            ) : (
+              <svg width="22" height="15" viewBox="0 0 22 15" fill="none">
+                <rect y="0"   width="22" height="1.8" rx="0.9" fill={textColor} />
+                <rect y="6.5" width="22" height="1.8" rx="0.9" fill={textColor} />
+                <rect y="13"  width="22" height="1.8" rx="0.9" fill={textColor} />
+              </svg>
+            )}
+          </button>
+        </div>
       </header>
 
       {/* Full-screen menu overlay */}
@@ -303,26 +325,13 @@ export function Header({ locale }: { locale: Language }) {
             <span style={{ color: textColor }}>CLOSE</span>
           </button>
 
-          {/* Logo in overlay */}
-          <Link href={`/${locale}`} onClick={() => setMenuOpen(false)} style={{ marginBottom: "48px", display: "inline-block" }}>
-            <Image
-              src="/images/isr-logo-full.png"
-              alt="Iranian Stone Reference"
-              width={178}
-              height={50}
-              style={{ height: "40px", width: "auto", objectFit: "contain" }}
-            />
-          </Link>
-
           {/* Main nav links */}
           <nav style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
             {[
               { label: isRTL ? "مرجع سنگ ایرانیان®" : "IRANIAN STONE REFERENCE®", href: `/${locale}` },
-              { label: isRTL ? "مجموعهٔ مرمر" : "MARBLE COLLECTION", href: `/${locale}/gallery/marble` },
-              { label: isRTL ? "مجموعهٔ تراورتن" : "TRAVERTINE COLLECTION", href: `/${locale}/gallery/travertine` },
-              { label: isRTL ? "مجموعهٔ اونیکس" : "ONYX COLLECTION", href: `/${locale}/gallery/onyx` },
-              { label: isRTL ? "مجموعهٔ گرانیت" : "GRANITE COLLECTION", href: `/${locale}/gallery/granite` },
-              { label: isRTL ? "گالری کامل" : "FULL GALLERY", href: `/${locale}/gallery` },
+              { label: isRTL ? "گالری" : "GALLERY", href: `/${locale}/gallery` },
+              { label: isRTL ? "دانش سنگ" : "STONE KNOWLEDGE", href: `/${locale}/knowledge` },
+              { label: isRTL ? "مراحل تولید" : "PRODUCTION PROCESS", href: `/${locale}/production` },
               { label: isRTL ? "درباره ما" : "ABOUT", href: `/${locale}/about` },
               { label: isRTL ? "مشاور سنگ هوشمند" : "AI STONE ADVISOR", href: "#", comingSoon: true },
               { label: isRTL ? "تماس با ما" : "CONTACT US", href: `/${locale}/contact` },

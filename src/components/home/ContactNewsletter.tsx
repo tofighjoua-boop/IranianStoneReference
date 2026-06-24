@@ -24,7 +24,7 @@ export function ContactNewsletter({ locale }: ContactNewsletterProps) {
   };
 
   return (
-    <section style={{ backgroundColor: "#090808", padding: "80px 0" }} dir={isRTL ? "rtl" : "ltr"}>
+    <section style={{ backgroundColor: "#0c1626", padding: "80px 0" }} dir={isRTL ? "rtl" : "ltr"}>
       <div style={{ maxWidth: "1640px", margin: "0 auto", padding: "0 clamp(20px, 5vw, 140px)" }}>
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* CTA */}

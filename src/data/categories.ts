@@ -42,8 +42,8 @@ export const categories: StoneCategory[] = [
       "The stone of light. Translucent onyx creates breathtaking backlit feature walls, countertops, and luxury installations.",
     descriptionFa:
       "سنگ نور. اونیکس شفاف دیوارهای ویژهٔ با نور پشت، پیشخوان‌ها و نصب‌های لوکس شگفت‌انگیزی ایجاد می‌کند.",
-    image: "/images/banner-3.jpg",
-    thumbnailImage: "/images/banner-3.jpg",
+    image: "/images/collection-exclusive.jpg",
+    thumbnailImage: "/images/collection-exclusive.jpg",
     productCount: 0,
   },
   {
@@ -54,8 +54,8 @@ export const categories: StoneCategory[] = [
       "Strength and beauty combined. Granite offers superior hardness for high-traffic flooring, facades, and outdoor applications.",
     descriptionFa:
       "ترکیب قدرت و زیبایی. گرانیت سختی برتری برای کف‌های پرتردد، نماها و کاربردهای فضای باز ارائه می‌دهد.",
-    image: "/images/banner-4.jpg",
-    thumbnailImage: "/images/banner-4.jpg",
+    image: "/images/collection-tableware.jpg",
+    thumbnailImage: "/images/collection-tableware.jpg",
     productCount: 0,
   },
   {
@@ -66,8 +66,8 @@ export const categories: StoneCategory[] = [
       "CNC-crafted stone washbasins — round, oval, rectangular, and vessel styles. Custom dimensions and stone selection available.",
     descriptionFa:
       "روشویی‌های سنگی CNC — گرد، بیضی، مستطیل و سینک. ابعاد سفارشی و انتخاب سنگ موجود است.",
-    image: "/images/banner-5.jpg",
-    thumbnailImage: "/images/banner-5.jpg",
+    image: "/images/collection-tech.jpg",
+    thumbnailImage: "/images/collection-tech.jpg",
     productCount: 0,
   },
   {
