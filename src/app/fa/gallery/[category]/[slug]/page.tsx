@@ -7,7 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CTAFloat } from "@/components/layout/CTAFloat";
 import { Badge } from "@/components/ui/Badge";
 import { ProductCard } from "@/components/gallery/ProductCard";
-import { getCategoryBySlug, categories } from "@/data/categories";
+import { getCategoryBySlug, getParentCategory, categories } from "@/data/categories";
 import { getProductBySlug, getRelatedProducts, products } from "@/data/products";
 
 interface Props {
@@ -38,6 +38,7 @@ export default async function ProductPageFA({ params }: Props) {
   const cat = getCategoryBySlug(catSlug);
   if (!product || !cat || product.categorySlug !== catSlug) notFound();
 
+  const parentCat = getParentCategory(catSlug);
   const related = getRelatedProducts(product, 4);
 
   return (
@@ -52,6 +53,12 @@ export default async function ProductPageFA({ params }: Props) {
               <span>/</span>
               <Link href="/fa/gallery" className="hover:text-[#c6a25f] transition-colors">گالری</Link>
               <span>/</span>
+              {parentCat && (
+                <>
+                  <Link href={`/fa/gallery/${parentCat.slug}`} className="hover:text-[#c6a25f] transition-colors">{parentCat.nameFa}</Link>
+                  <span>/</span>
+                </>
+              )}
               <Link href={`/fa/gallery/${catSlug}`} className="hover:text-[#c6a25f] transition-colors">{cat.nameFa}</Link>
               <span>/</span>
               <span className="text-[#c6a25f]">{product.nameFa}</span>

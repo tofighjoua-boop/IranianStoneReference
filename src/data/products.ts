@@ -19,12 +19,12 @@ export interface Product {
   code?: string;
 }
 
-// ── Marble (سنگ مرمر) ─────────────────────────────────────────────────────
+// ── Marble / سنگ مرمر (categorySlug: "sang-marmar") ──────────────────────
 const marbleProducts: Product[] = [
   {
     slug: "creamy-isr016",
     code: "ISR016",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Creamy",
     nameFa: "کریمی",
     color: "Cream/Beige",
@@ -42,7 +42,7 @@ const marbleProducts: Product[] = [
   {
     slug: "valentino-grey-isr017",
     code: "ISR017",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Valentino Grey",
     nameFa: "والنتینو گری",
     color: "Grey",
@@ -60,7 +60,7 @@ const marbleProducts: Product[] = [
   {
     slug: "pietra-grey-isr018",
     code: "ISR018",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Pietra Grey",
     nameFa: "پیترا گری",
     color: "Dark Grey",
@@ -79,7 +79,7 @@ const marbleProducts: Product[] = [
   {
     slug: "creamy-valentino-isr019",
     code: "ISR019",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Creamy Valentino",
     nameFa: "کریمی والنتینو",
     color: "Cream/Grey",
@@ -97,7 +97,7 @@ const marbleProducts: Product[] = [
   {
     slug: "kamelia-isr020",
     code: "ISR020",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Kamelia",
     nameFa: "کاملیا",
     color: "White/Pink",
@@ -115,7 +115,7 @@ const marbleProducts: Product[] = [
   {
     slug: "persian-silk-emprador-isr021",
     code: "ISR021",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Persian Silk Emprador",
     nameFa: "پرشین سیلک امپرادور",
     color: "Brown/Gold",
@@ -134,7 +134,7 @@ const marbleProducts: Product[] = [
   {
     slug: "grey-ocean-isr022",
     code: "ISR022",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Grey Ocean",
     nameFa: "گری اوشن",
     color: "Grey/Blue",
@@ -152,7 +152,7 @@ const marbleProducts: Product[] = [
   {
     slug: "persian-arc-isr023",
     code: "ISR023",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Persian Arc",
     nameFa: "پرشین آرک",
     color: "Multi-tone",
@@ -171,7 +171,7 @@ const marbleProducts: Product[] = [
   {
     slug: "golden-black-isr024",
     code: "ISR024",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Golden Black",
     nameFa: "گولدن بلک",
     color: "Black/Gold",
@@ -190,7 +190,7 @@ const marbleProducts: Product[] = [
   {
     slug: "red-fandango-isr025",
     code: "ISR025",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Red Fandango",
     nameFa: "رد فانداگو",
     color: "Red/Burgundy",
@@ -209,7 +209,7 @@ const marbleProducts: Product[] = [
   {
     slug: "toranj-isr026",
     code: "ISR026",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Toranj",
     nameFa: "ترنج",
     color: "White/Grey",
@@ -227,7 +227,7 @@ const marbleProducts: Product[] = [
   {
     slug: "buche-latte-isr027",
     code: "ISR027",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Buche Latte",
     nameFa: "بوچه لاته",
     color: "Beige/Cream",
@@ -246,7 +246,7 @@ const marbleProducts: Product[] = [
   {
     slug: "beauty-black-isr028",
     code: "ISR028",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Beauty Black",
     nameFa: "بیوتی بلک",
     color: "Black",
@@ -265,7 +265,7 @@ const marbleProducts: Product[] = [
   {
     slug: "navy-blue-isr029",
     code: "ISR029",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Navy Blue",
     nameFa: "نیوی بلو",
     color: "Blue/Grey",
@@ -284,7 +284,7 @@ const marbleProducts: Product[] = [
   {
     slug: "persian-nero-isr030",
     code: "ISR030",
-    categorySlug: "marble",
+    categorySlug: "sang-marmar",
     nameEn: "Persian Nero",
     nameFa: "پرشین نرو",
     color: "Black/White",

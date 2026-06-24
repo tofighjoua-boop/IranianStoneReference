@@ -7,11 +7,27 @@ export interface StoneCategory {
   image: string;
   thumbnailImage: string;
   productCount: number;
+  parentSlug?: string;
 }
 
 export const categories: StoneCategory[] = [
+  // ── Top-level parent ──────────────────────────────────────────────────
   {
     slug: "marble",
+    nameEn: "Marble",
+    nameFa: "مرمر",
+    descriptionEn:
+      "Iranian marble in all its forms — from classic veined stone to rare high-crystallinity varieties prized worldwide.",
+    descriptionFa:
+      "مرمر ایرانی در تمام اشکال آن — از سنگ رگه‌دار کلاسیک تا انواع کریستالی نادر که در سراسر جهان ارزشمند هستند.",
+    image: "/images/gallery/marble/PIETRA-GREY-ISR018-1024x684.jpg",
+    thumbnailImage: "/images/gallery/marble/PIETRA-GREY-ISR018-1024x684.jpg",
+    productCount: 30,
+  },
+
+  // ── Marble subcategories ──────────────────────────────────────────────
+  {
+    slug: "sang-marmar",
     nameEn: "Marble",
     nameFa: "سنگ مرمر",
     descriptionEn:
@@ -21,6 +37,7 @@ export const categories: StoneCategory[] = [
     image: "/images/gallery/marble/PIETRA-GREY-ISR018-1024x684.jpg",
     thumbnailImage: "/images/gallery/marble/PIETRA-GREY-ISR018-1024x684.jpg",
     productCount: 15,
+    parentSlug: "marble",
   },
   {
     slug: "crystalline-marble",
@@ -33,7 +50,10 @@ export const categories: StoneCategory[] = [
     image: "/images/gallery/crystalline-marble/TIARA-MARBLE-ISR001-1024x783.jpg",
     thumbnailImage: "/images/gallery/crystalline-marble/TIARA-MARBLE-ISR001-1024x783.jpg",
     productCount: 15,
+    parentSlug: "marble",
   },
+
+  // ── Other top-level categories ────────────────────────────────────────
   {
     slug: "travertine",
     nameEn: "Travertine",
@@ -98,4 +118,18 @@ export const categories: StoneCategory[] = [
 
 export function getCategoryBySlug(slug: string): StoneCategory | undefined {
   return categories.find((c) => c.slug === slug);
+}
+
+export function getSubcategories(parentSlug: string): StoneCategory[] {
+  return categories.filter((c) => c.parentSlug === parentSlug);
+}
+
+export function getParentCategory(childSlug: string): StoneCategory | undefined {
+  const child = getCategoryBySlug(childSlug);
+  if (!child?.parentSlug) return undefined;
+  return getCategoryBySlug(child.parentSlug);
+}
+
+export function getTopLevelCategories(): StoneCategory[] {
+  return categories.filter((c) => !c.parentSlug);
 }

@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CTAFloat } from "@/components/layout/CTAFloat";
 import { CategoryCard } from "@/components/gallery/CategoryCard";
-import { categories } from "@/data/categories";
+import { getTopLevelCategories } from "@/data/categories";
 
 export const metadata: Metadata = {
   title: "Gallery — Natural Stone Collections",
@@ -34,7 +34,7 @@ export default function GalleryEN() {
         {/* Category grid */}
         <section className="bg-[#fbfaf6]">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((cat) => (
+            {getTopLevelCategories().map((cat) => (
               <CategoryCard key={cat.slug} category={cat} locale="en" />
             ))}
           </div>
