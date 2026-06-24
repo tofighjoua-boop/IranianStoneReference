@@ -4,14 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { type Language } from "@/lib/translations";
 
-const GALLERY_LINKS = [
-  { slug: "marble",      en: "Marble",            fa: "مرمر" },
-  { slug: "travertine",  en: "Travertine",         fa: "تراورتن" },
-  { slug: "onyx",        en: "Onyx",               fa: "اونیکس" },
-  { slug: "granite",     en: "Granite",            fa: "گرانیت" },
-  { slug: "washbasins",  en: "Washbasins",         fa: "روشویی" },
-  { slug: "accessories", en: "Stone Accessories",  fa: "اکسسوری" },
-] as const;
 
 const SLIDES = [
   { bg: "/images/banner-new-1.png", mobileBg: "/images/banner-new-1.png", category: "marble" },
@@ -126,46 +118,6 @@ export function HeroSection({ locale }: { locale: Language }) {
         </div>
       ))}
 
-      {/* Gallery collection links — fixed at bottom of hero */}
-      <div
-        dir={isRTL ? "rtl" : "ltr"}
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: 10,
-          display: "flex",
-          justifyContent: "center",
-          flexWrap: "wrap",
-          gap: "0",
-          background: "rgba(0,0,0,0.35)",
-          backdropFilter: "blur(4px)",
-        }}
-      >
-        {GALLERY_LINKS.map((item, i) => (
-          <Link
-            key={item.slug}
-            href={`/${locale}/gallery/${item.slug}`}
-            style={{
-              fontSize: isRTL ? "13px" : "11px",
-              color: "rgba(255,255,255,0.75)",
-              letterSpacing: isRTL ? "0.5px" : "2px",
-              textTransform: isRTL ? "none" : "uppercase",
-              textDecoration: "none",
-              fontWeight: 300,
-              fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
-              padding: "14px 20px",
-              borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.15)" : "none",
-              transition: "color 0.2s, background 0.2s",
-            }}
-            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = "#fff"; (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.08)"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.75)"; (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; }}
-          >
-            {item[locale]}
-          </Link>
-        ))}
-      </div>
     </div>
   );
 }
