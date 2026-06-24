@@ -172,7 +172,7 @@ export const translations = {
       accessories: "اکسسوری سنگی",
     },
     hero: {
-      tagline: "طراحی شده توسط طبیعت. کامل شده در ایران.",
+      tagline: "از دل کوه تا قلب معماری.",
       cta_gallery: "مشاهدهٔ گالری",
       cta_contact: "درخواست قیمت",
     },

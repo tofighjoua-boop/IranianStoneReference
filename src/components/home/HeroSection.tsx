@@ -98,7 +98,7 @@ export function HeroSection({ locale }: { locale: Language }) {
                 fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
               }}
             >
-              {isRTL ? "طراحی شده توسط طبیعت" : "DESIGNED BY NATURE"}
+              {isRTL ? "از دل کوه" : "FROM THE HEART OF THE MOUNTAIN"}
             </div>
 
             <div
@@ -111,7 +111,7 @@ export function HeroSection({ locale }: { locale: Language }) {
                 fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
               }}
             >
-              {isRTL ? "کامل شده در ایران." : "PERFECTED IN IRAN."}
+              {isRTL ? "تا قلب معماری." : "TO THE HEART OF ARCHITECTURE."}
             </div>
 
             <Link
