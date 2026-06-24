@@ -5,6 +5,7 @@ import { CTAFloat } from "@/components/layout/CTAFloat";
 import { HeroSection } from "@/components/home/HeroSection";
 import { CollectionSections } from "@/components/home/CollectionSections";
 import { BottomBanner } from "@/components/home/BottomBanner";
+import { BannerProvider } from "@/components/home/BannerProvider";
 import { TechnologySection } from "@/components/home/TechnologySection";
 import { ContactNewsletter } from "@/components/home/ContactNewsletter";
 
@@ -22,9 +23,11 @@ export default function HomeEN() {
     <>
       <Header locale="en" />
       <main>
-        <HeroSection locale="en" />
-        <CollectionSections locale="en" />
-        <BottomBanner locale="en" />
+        <BannerProvider>
+          <HeroSection locale="en" />
+          <CollectionSections locale="en" />
+          <BottomBanner locale="en" />
+        </BannerProvider>
         <TechnologySection locale="en" />
         <ContactNewsletter locale="en" />
       </main>

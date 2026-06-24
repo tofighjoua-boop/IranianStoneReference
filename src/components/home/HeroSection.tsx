@@ -1,36 +1,11 @@
-﻿"use client";
+"use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { type Language } from "@/lib/translations";
-
-
-const SLIDES = [
-  { bg: "/images/banner-new-1.jpg",      category: "marble" },
-  { bg: "/images/12 copy.jpg",            category: "travertine" },
-  { bg: "/images/banner-new-3.jpg",      category: "onyx" },
-  { bg: "/images/banner-stone-dark.jpg", category: "granite" },
-  { bg: "/images/banner-new-2.jpg",       category: "washbasins" },
-  { bg: "/images/banner-new-4.jpg",      category: "accessories" },
-] as const;
-
-const CAT_LABELS = {
-  marble:     { en: "Marble Collection",     fa: "مجموعهٔ مرمریت" },
-  travertine: { en: "Travertine Collection", fa: "مجموعهٔ تراورتن" },
-  onyx:       { en: "Onyx Collection",       fa: "مجموعهٔ مرمر" },
-  granite:    { en: "Granite Collection",    fa: "مجموعهٔ گرانیت" },
-  washbasins: { en: "Stone Washbasins",      fa: "روشویی‌های سنگی" },
-  accessories:{ en: "Stone Accessories",     fa: "اکسسوری سنگی" },
-} as const;
+import { useBanner } from "./BannerProvider";
 
 export function HeroSection({ locale }: { locale: Language }) {
-  const [active, setActive] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => setActive((p) => (p + 1) % SLIDES.length), 5000);
-    return () => clearInterval(id);
-  }, []);
-
+  const { active, slides } = useBanner();
   const isRTL = locale === "fa";
 
   return (
@@ -45,7 +20,7 @@ export function HeroSection({ locale }: { locale: Language }) {
         overflow: "hidden",
       }}
     >
-      {SLIDES.map((slide, i) => (
+      {slides.map((slide, i) => (
         <div
           key={i}
           style={{
@@ -112,10 +87,54 @@ export function HeroSection({ locale }: { locale: Language }) {
                 </>
               )}
             </div>
+
+            <Link
+              href={`/${locale}${slide.href}`}
+              style={{
+                marginTop: "8px",
+                fontSize: "12px",
+                color: "rgba(255,255,255,0.75)",
+                letterSpacing: "3px",
+                textTransform: "uppercase",
+                textDecoration: "none",
+                border: "1px solid rgba(255,255,255,0.4)",
+                padding: "10px 28px",
+                fontWeight: 300,
+                fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
+                transition: "all 0.3s",
+              }}
+            >
+              {slide.cta[locale]}
+            </Link>
           </div>
         </div>
       ))}
 
+      {/* Slide dots */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: "24px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          display: "flex",
+          gap: "8px",
+          zIndex: 2,
+        }}
+      >
+        {slides.map((_, i) => (
+          <div
+            key={i}
+            style={{
+              width: i === active ? "24px" : "6px",
+              height: "6px",
+              background: i === active ? "#c6a25f" : "rgba(255,255,255,0.4)",
+              transition: "all 0.4s ease",
+              borderRadius: "3px",
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 }
