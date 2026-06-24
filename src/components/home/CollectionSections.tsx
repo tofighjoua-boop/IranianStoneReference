@@ -12,7 +12,7 @@ interface Section {
 
 const SECTIONS: Section[] = [
   {
-    bg: "/images/collection-exclusive.jpg",
+    bg: "/images/collection-marble-dark.jpg",
     label: { en: "ISR®", fa: "مرجع سنگ ایرانیان®" },
     title: { en: "EXCLUSIVE MARBLE", fa: "مرمریت ویژه" },
     body: {
@@ -23,7 +23,7 @@ const SECTIONS: Section[] = [
     href: "/gallery",
   },
   {
-    bg: "/images/banner-2.jpg",
+    bg: "/images/collection-stone-amber.jpg",
     label: { en: "ISR®", fa: "مرجع سنگ ایرانیان®" },
     title: { en: "TRAVERTINE", fa: "تراورتن" },
     body: {
@@ -34,7 +34,7 @@ const SECTIONS: Section[] = [
     href: "/knowledge",
   },
   {
-    bg: "/images/collection-tableware.jpg",
+    bg: "/images/collection-marble-green.jpg",
     label: { en: "ISR®", fa: "مرجع سنگ ایرانیان®" },
     title: { en: "ONYX & GRANITE", fa: "مرمر و گرانیت" },
     body: {
@@ -45,7 +45,7 @@ const SECTIONS: Section[] = [
     href: "/production",
   },
   {
-    bg: "/images/collection-tech.jpg",
+    bg: "/images/collection-outdoor.jpg",
     label: { en: "ISR® INNOVATION", fa: "نوآوری مرجع سنگ" },
     title: { en: "AI STONE ADVISOR", fa: "مشاور سنگ هوشمند" },
     body: {
