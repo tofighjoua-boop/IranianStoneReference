@@ -12,7 +12,7 @@ const placeholderArticles = [
     title_fa: "مرمریت در مقابل تراورتن: کدام سنگ برای پروژه‌تان مناسب‌تر است؟",
     category_en: "Knowledge",
     category_fa: "دانش",
-    image: "/images/banner-2.jpg",
+    image: "/images/banner-new-3.jpg",
   },
   {
     slug: "onyx-backlit-guide",
@@ -20,7 +20,7 @@ const placeholderArticles = [
     title_fa: "راهنمای کامل نصب مرمر با نورپشتی",
     category_en: "Knowledge",
     category_fa: "دانش",
-    image: "/images/collection-exclusive.jpg",
+    image: "/images/collection-marble-dark.jpg",
   },
   {
     slug: "stone-care-tips",
@@ -28,7 +28,7 @@ const placeholderArticles = [
     title_fa: "۵ نکتهٔ اساسی مراقبت از سنگ از متخصصان ما",
     category_en: "Care Guide",
     category_fa: "راهنمای مراقبت",
-    image: "/images/banner-1.jpg",
+    image: "/images/banner-new-1.jpg",
   },
 ];
 

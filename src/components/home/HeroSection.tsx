@@ -10,7 +10,7 @@ const SLIDES = [
   { bg: "/images/banner-arch.jpg",       category: "travertine" },
   { bg: "/images/banner-new-3.jpg",      category: "onyx" },
   { bg: "/images/banner-stone-dark.jpg", category: "granite" },
-  { bg: "/images/banner-washbasin.jpg",  category: "washbasins" },
+  { bg: "/images/banner-new-2.jpg",       category: "washbasins" },
   { bg: "/images/banner-new-4.jpg",      category: "accessories" },
 ] as const;
 

@@ -93,7 +93,7 @@ export function AboutTeaser({ locale }: AboutTeaserProps) {
           ].join(" ")}>
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="/images/collection-exclusive.jpg"
+                src="/images/collection-marble-dark.jpg"
                 alt="ISR Showroom"
                 fill
                 className="object-cover"

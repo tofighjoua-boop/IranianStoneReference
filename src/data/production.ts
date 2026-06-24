@@ -28,7 +28,7 @@ export const productionSteps: ProductionStep[] = [
     descriptionFa: 'بلوک‌های سنگ خام به وزن ۵ تا ۲۵ تن با دقت از معدن به کارخانه فرآوری ما در تهران منتقل می‌شوند. هر بلوک به صورت جداگانه ردیابی، مستند و در بدو ورود بازرسی می‌شود.',
     detailsEn: ['Heavy transport logistics', 'Block weight & dimension recording', 'Photographic documentation', 'Chain-of-custody tracking'],
     detailsFa: ['لجستیک حمل سنگین', 'ثبت وزن و ابعاد بلوک', 'مستندسازی عکاسی', 'ردیابی زنجیره حضانت'],
-    image: '/images/banner-1.jpg',
+    image: '/images/banner-new-1.jpg',
   },
   {
     step: 3,
@@ -48,7 +48,7 @@ export const productionSteps: ProductionStep[] = [
     descriptionFa: 'دال‌های خام با تلرانس ضخامت دقیق (±۰.۵ میلیمتر) کالیبره می‌شوند و با رزین تیمار می‌شوند تا حفرات طبیعی پر شوند — فرآیندی که به ویژه برای تراورتن و مرمر حیاتی است.',
     detailsEn: ['±0.5mm thickness tolerance', 'Epoxy resin void-filling', 'UV-stable resin options', 'Fibre mesh backing (on request)'],
     detailsFa: ['تلرانس ضخامت ±۰.۵ میلیمتر', 'پرکردن حفرات با رزین اپوکسی', 'گزینه‌های رزین مقاوم UV', 'پشتیبان مش الیاف (در صورت درخواست)'],
-    image: '/images/banner-2.jpg',
+    image: '/images/banner-new-3.jpg',
   },
   {
     step: 5,
@@ -58,7 +58,7 @@ export const productionSteps: ProductionStep[] = [
     descriptionFa: 'دال‌ها از خطوط پرداخت خودکار ما عبور می‌کنند و پرداخت سطح مشخص‌شده را دریافت می‌کنند. ما پولیش، مات، براش، چرم و شعله‌ای را برای همه انواع سنگ ارائه می‌دهیم.',
     detailsEn: ['Diamond abrasive polishing (up to 3000 grit)', 'Honing to 400-grit satin finish', 'Wire brush antique texturing', 'Leather finish diamond brushing'],
     detailsFa: ['پولیش ساینده الماسی (تا ۳۰۰۰ گریت)', 'هون تا پوشش ساتن ۴۰۰ گریت', 'بافت آنتیک با برس سیمی', 'پرداخت چرم با برس الماسی'],
-    image: '/images/collection-exclusive.jpg',
+    image: '/images/collection-marble-dark.jpg',
   },
   {
     step: 6,
@@ -68,7 +68,7 @@ export const productionSteps: ProductionStep[] = [
     descriptionFa: 'هر دال در شرایط روشنایی یکنواخت به صورت جداگانه بازرسی می‌شود. تیم کنترل کیفیت ما هر قطعه را برای یکنواختی رنگ، رگه‌بندی و کیفیت سطح درجه‌بندی می‌کند.',
     detailsEn: ['Individual slab inspection', 'Colour matching & batch sorting', 'A / B / Commercial grade classification', 'Digital photography & measurement'],
     detailsFa: ['بازرسی فردی هر دال', 'تطبیق رنگ و مرتب‌سازی دسته', 'طبقه‌بندی A / B / تجاری', 'عکاسی دیجیتال و اندازه‌گیری'],
-    image: '/images/bottom-banner-1.jpg',
+    image: '/images/banner-arch.jpg',
   },
   {
     step: 7,
@@ -78,7 +78,7 @@ export const productionSteps: ProductionStep[] = [
     descriptionFa: 'برای پروژه‌های سفارشی، ماشین‌آلات CNC ما قطعات دقیق، لبه‌های پروفیل‌شده، تراشکاری روشویی و عناصر معماری سفارشی را طبق مشخصات دقیق مشتری تولید می‌کند.',
     detailsEn: ['5-axis CNC routing', 'Waterjet precision cutting', 'Edge profiling (ogee, bullnose, mitre)', 'Washbasin & furniture carving'],
     detailsFa: ['روتر CNC ۵ محوره', 'برش دقیق واترجت', 'پروفیل لبه (اوجی، بولنوز، مایتر)', 'تراشکاری روشویی و مبلمان'],
-    image: '/images/collection-tech.jpg',
+    image: '/images/banner-stone-dark.jpg',
   },
   {
     step: 8,
@@ -88,6 +88,6 @@ export const productionSteps: ProductionStep[] = [
     descriptionFa: 'سنگ نهایی در صندوق‌های چوبی با لایه‌گذاری فوم و مقوا بسته‌بندی می‌شود. ما به بیش از ۲۰ کشور از طریق دریا، هوا و باربری زمینی صادر می‌کنیم.',
     detailsEn: ['Wooden crate export packaging', 'Foam & paper interleaving', 'Fumigation certificate (if required)', 'Sea, air & land freight options'],
     detailsFa: ['بسته‌بندی صادراتی صندوق چوبی', 'لایه‌گذاری فوم و کاغذ', 'گواهی ضدعفونی (در صورت نیاز)', 'گزینه‌های باربری دریایی، هوایی و زمینی'],
-    image: '/images/collection-tableware.jpg',
+    image: '/images/collection-marble-green.jpg',
   },
 ];

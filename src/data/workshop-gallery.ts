@@ -43,7 +43,7 @@ export const workshopGallery: WorkshopItem[] = [
   },
   {
     id: "wg-03",
-    image: "/images/collection-exclusive.jpg",
+    image: "/images/collection-marble-dark.jpg",
     captionEn: "Premium green marble slabs after polishing — ready for quality grading.",
     captionFa: "دال‌های مرمریت سبز پریمیوم پس از پولیش — آماده درجه‌بندی کیفی.",
     tagEn: "Polishing",
@@ -59,7 +59,7 @@ export const workshopGallery: WorkshopItem[] = [
   },
   {
     id: "wg-05",
-    image: "/images/collection-tech.jpg",
+    image: "/images/banner-stone-dark.jpg",
     captionEn: "CNC precision routing — custom washbasin carving from a single block of travertine.",
     captionFa: "روتر دقیق CNC — تراشکاری روشویی سفارشی از یک بلوک تراورتن.",
     tagEn: "CNC Processing",
@@ -67,7 +67,7 @@ export const workshopGallery: WorkshopItem[] = [
   },
   {
     id: "wg-06",
-    image: "/images/bottom-banner-1.jpg",
+    image: "/images/banner-arch.jpg",
     captionEn: "ISR showroom corridor — finished travertine floor and wall cladding on display.",
     captionFa: "راهروی نمایشگاه ISR — کف و روکش دیوار تراورتن تمام‌شده در نمایش.",
     tagEn: "Showroom",
@@ -75,7 +75,7 @@ export const workshopGallery: WorkshopItem[] = [
   },
   {
     id: "wg-07",
-    image: "/images/collection-tableware.jpg",
+    image: "/images/collection-marble-green.jpg",
     captionEn: "Hand-finished stone accessories and decorative objects from ISR's artisan workshop.",
     captionFa: "اکسسوری سنگی دست‌ساز و اشیاء تزئینی از کارگاه هنری ISR.",
     tagEn: "Accessories",
@@ -83,7 +83,7 @@ export const workshopGallery: WorkshopItem[] = [
   },
   {
     id: "wg-08",
-    image: "/images/banner-1.jpg",
+    image: "/images/banner-new-1.jpg",
     captionEn: "Export-ready slabs stacked and documented before wooden crate packaging.",
     captionFa: "دال‌های آماده صادرات — چیده‌شده و مستندشده قبل از بسته‌بندی در صندوق چوبی.",
     tagEn: "Export",

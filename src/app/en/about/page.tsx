@@ -83,7 +83,7 @@ export default function AboutEN() {
               <div className="relative">
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <Image
-                    src="/images/collection-exclusive.jpg"
+                    src="/images/collection-marble-dark.jpg"
                     alt="ISR Showroom — Tehran"
                     fill
                     className="object-cover"

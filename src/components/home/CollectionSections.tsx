@@ -12,7 +12,7 @@ interface Section {
 
 const SECTIONS: Section[] = [
   {
-    bg: "/images/collection-marble-dark.jpg",
+    bg: "/images/banner-washbasin.jpg",
     label: { en: "ISR®", fa: "مرجع سنگ ایرانیان®" },
     title: { en: "EXCLUSIVE MARBLE", fa: "مرمریت ویژه" },
     body: {

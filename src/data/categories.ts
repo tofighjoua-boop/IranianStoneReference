@@ -62,8 +62,8 @@ export const categories: StoneCategory[] = [
       "Warm, textured, and full of character. Iranian travertine is prized worldwide for its natural porosity and rich earth tones.",
     descriptionFa:
       "گرم، بافت‌دار و پر از شخصیت. تراورتن ایرانی به خاطر تخلخل طبیعی و تُن‌های غنی خاکی در سراسر جهان مورد توجه است.",
-    image: "/images/banner-2.jpg",
-    thumbnailImage: "/images/banner-2.jpg",
+    image: "/images/banner-new-3.jpg",
+    thumbnailImage: "/images/banner-new-3.jpg",
     productCount: 0,
   },
   {
@@ -74,8 +74,8 @@ export const categories: StoneCategory[] = [
       "The stone of light. Translucent onyx creates breathtaking backlit feature walls, countertops, and luxury installations.",
     descriptionFa:
       "سنگ نور. مرمر شفاف دیوارهای ویژهٔ با نور پشت، پیشخوان‌ها و نصب‌های لوکس شگفت‌انگیزی ایجاد می‌کند.",
-    image: "/images/collection-exclusive.jpg",
-    thumbnailImage: "/images/collection-exclusive.jpg",
+    image: "/images/collection-marble-dark.jpg",
+    thumbnailImage: "/images/collection-marble-dark.jpg",
     productCount: 0,
   },
   {
@@ -86,8 +86,8 @@ export const categories: StoneCategory[] = [
       "Strength and beauty combined. Granite offers superior hardness for high-traffic flooring, facades, and outdoor applications.",
     descriptionFa:
       "ترکیب قدرت و زیبایی. گرانیت سختی برتری برای کف‌های پرتردد، نماها و کاربردهای فضای باز ارائه می‌دهد.",
-    image: "/images/collection-tableware.jpg",
-    thumbnailImage: "/images/collection-tableware.jpg",
+    image: "/images/collection-marble-green.jpg",
+    thumbnailImage: "/images/collection-marble-green.jpg",
     productCount: 0,
   },
   {
@@ -98,8 +98,8 @@ export const categories: StoneCategory[] = [
       "CNC-crafted stone washbasins — round, oval, rectangular, and vessel styles. Custom dimensions and stone selection available.",
     descriptionFa:
       "روشویی‌های سنگی CNC — گرد، بیضی، مستطیل و سینک. ابعاد سفارشی و انتخاب سنگ موجود است.",
-    image: "/images/collection-tech.jpg",
-    thumbnailImage: "/images/collection-tech.jpg",
+    image: "/images/banner-stone-dark.jpg",
+    thumbnailImage: "/images/banner-stone-dark.jpg",
     productCount: 0,
   },
   {
@@ -110,8 +110,8 @@ export const categories: StoneCategory[] = [
       "Decorative and functional stone objects — tableware, vases, candle holders, and artisan décor pieces crafted from signature Iranian stones.",
     descriptionFa:
       "اشیاء سنگی تزئینی و کاربردی — ظروف، گلدان، شمعدان و قطعات دکور هنری از سنگ‌های شاخص ایرانی.",
-    image: "/images/banner-6.jpg",
-    thumbnailImage: "/images/banner-6.jpg",
+    image: "/images/banner-new-4.jpg",
+    thumbnailImage: "/images/banner-new-4.jpg",
     productCount: 0,
   },
 ];

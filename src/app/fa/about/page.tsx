@@ -83,7 +83,7 @@ export default function AboutFA() {
               <div className="relative">
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <Image
-                    src="/images/collection-exclusive.jpg"
+                    src="/images/collection-marble-dark.jpg"
                     alt="شوروم مرجع سنگ ایرانیان — تهران"
                     fill
                     className="object-cover"
