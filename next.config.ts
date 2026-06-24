@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
   images: {
     // Prefer AVIF then WebP — Next.js serves best format per browser automatically
     formats: ["image/avif", "image/webp"],
-    // Quality: 90 for sharp stone textures and fine grain detail
-    qualities: [90],
+    // Quality: 100 — maximum fidelity for stone textures (AVIF/WebP at 100 is near-lossless)
+    qualities: [100],
     // Full-width breakpoints — includes 2560 for 2K/Retina displays
     deviceSizes: [640, 828, 1080, 1200, 1920, 2560],
     // Fixed-width image breakpoints — covers gallery cards at 25vw/33vw/50vw
