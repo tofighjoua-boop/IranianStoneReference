@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CTAFloat } from "@/components/layout/CTAFloat";
 import { Badge } from "@/components/ui/Badge";
 import { ProductCard } from "@/components/gallery/ProductCard";
+import { WashbasinViewer } from "@/components/gallery/WashbasinViewer";
 import { getCategoryBySlug, getParentCategory, categories } from "@/data/categories";
 import { getProductBySlug, getRelatedProducts, products } from "@/data/products";
 
@@ -71,32 +72,28 @@ export default async function ProductPageEN({ params }: Props) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
               {/* Image */}
-              <div className="relative aspect-square overflow-hidden">
-                {product.categorySlug === "washbasins" && (
-                  <div
-                    aria-hidden="true"
-                    style={{
-                      position: "absolute",
-                      inset: "-40px",
-                      backgroundImage: `url(${product.images[0]})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      filter: "blur(32px) brightness(1.08) saturate(0.9)",
-                      transform: "scale(1.2)",
-                    }}
+              <div className="order-2 lg:order-1">
+                {product.categorySlug === "washbasins" ? (
+                  <WashbasinViewer
+                    images={product.images}
+                    productName={product.nameEn}
+                    locale="en"
                   />
-                )}
-                <Image
-                  src={product.images[0]}
-                  alt={product.nameEn}
-                  fill
-                  className={product.categorySlug === "washbasins" ? "object-contain p-6" : "object-cover"}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
-                />
-                {product.isExclusive && (
-                  <div className="absolute top-4 left-4">
-                    <Badge variant="exclusive">Exclusive</Badge>
+                ) : (
+                  <div className="relative aspect-square overflow-hidden">
+                    <Image
+                      src={product.images[0]}
+                      alt={product.nameEn}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      priority
+                    />
+                    {product.isExclusive && (
+                      <div className="absolute top-4 left-4">
+                        <Badge variant="exclusive">Exclusive</Badge>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
