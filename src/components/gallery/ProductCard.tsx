@@ -21,44 +21,22 @@ export function ProductCard({ product, locale }: ProductCardProps) {
       className="group block bg-white"
     >
       {/* Image */}
-      <div className="relative overflow-hidden" style={{ aspectRatio: "3/4" }}>
-
-        {/* Washbasin: blurred image as background so edges blend seamlessly */}
-        {isWashbasin && (
-          <div
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              inset: "-40px",
-              backgroundImage: `url(${product.thumbnail})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              filter: "blur(28px) brightness(1.08) saturate(0.9)",
-              transform: "scale(1.2)",
-            }}
-          />
-        )}
-
+      <div
+        className="relative overflow-hidden"
+        style={{ aspectRatio: isWashbasin ? "3/2" : "3/4" }}
+      >
         <Image
           src={product.thumbnail}
           alt={product.nameEn}
           fill
-          className={
-            isWashbasin
-              ? "object-contain p-5 transition-transform duration-700 group-hover:scale-105"
-              : "object-cover group-hover:scale-105 transition-transform duration-700"
-          }
+          className="object-cover group-hover:scale-105 transition-transform duration-700"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
 
-        {/* Overlay — lighter for washbasins so blurred bg stays visible */}
+        {/* Overlay */}
         <div
           className="absolute inset-0 transition-colors duration-300"
-          style={{
-            background: isWashbasin
-              ? "rgba(12,22,38,0.08)"
-              : "rgba(12,22,38,0.20)",
-          }}
+          style={{ background: "rgba(12,22,38,0.20)" }}
         />
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
