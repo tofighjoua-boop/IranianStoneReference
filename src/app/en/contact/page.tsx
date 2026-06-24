@@ -52,6 +52,7 @@ export default function ContactEN() {
                     <p className="text-[10px] uppercase tracking-[0.2em] text-[#c6a25f] font-bold mb-1">Phone</p>
                     <a href="tel:+989044640033" className="block text-[#1d2330]/70 text-sm hover:text-[#c6a25f] transition-colors">+98 912 638 8525</a>
                     <a href="tel:+989126384150" className="block text-[#1d2330]/70 text-sm hover:text-[#c6a25f] transition-colors">+98 912 638 4150</a>
+                    <a href="tel:+982156232370" className="block text-[#1d2330]/70 text-sm hover:text-[#c6a25f] transition-colors">+98 21 5623 2370</a>
                   </div>
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.2em] text-[#c6a25f] font-bold mb-1">WhatsApp</p>
