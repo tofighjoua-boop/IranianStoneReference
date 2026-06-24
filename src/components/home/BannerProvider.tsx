@@ -12,7 +12,7 @@ export const BANNER_SLIDES = [
     href: "/gallery/marble",
   },
   {
-    bg: "/images/7W4A9926.jpg",
+    bg: "/images/banner-stone-showroom.jpg",
     category: "travertine",
     title: { en: "TRAVERTINE", fa: "تراورتن" },
     sub: { en: "Classic and exclusive from Iran's most prestigious quarries", fa: "کلاسیک و اکسکلوسیو از معتبرترین معادن ایران" },
