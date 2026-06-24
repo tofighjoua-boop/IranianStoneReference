@@ -96,8 +96,8 @@ export function HeroSection({ locale }: { locale: Language }) {
                 letterSpacing: isRTL ? "2px" : "3px",
                 color: "white",
                 textTransform: "uppercase",
-                fontWeight: 300,
                 fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
+                fontWeight: isRTL ? 300 : 700,
                 whiteSpace: isRTL ? "nowrap" : "normal",
                 textAlign: "center",
               }}
