@@ -13,15 +13,15 @@ interface Section {
 
 const SECTIONS: Section[] = [
   {
-    bg: "/images/banner-washbasin.jpg",
+    bg: "/images/collection-marble-green.jpg",
     label: { en: "ISR®", fa: "مرجع سنگ ایرانیان®" },
-    title: { en: "EXCLUSIVE MARBLE", fa: "مرمریت ویژه" },
+    title: { en: "ONYX & GRANITE", fa: "مرمر و گرانیت" },
     body: {
-      en: "Exclusivity through tradition and expertise. ISR is curator to Iran's most desired and recognisable natural stone masterpieces.",
-      fa: "انحصار از طریق سنت و تخصص. مرجع سنگ ایرانیان، گردآورنده‌ی شاهکارهای سنگ طبیعی ایران است.",
+      en: "Rare and precious onyx for extraordinary spaces. Premium granites for high-performance facades and surfaces.",
+      fa: "مرمر نادر و قیمتی برای فضاهای استثنایی. گرانیت پریمیوم برای نماها و سطوح با عملکرد بالا.",
     },
-    cta: { en: "GALLERY", fa: "گالری" },
-    href: "/gallery",
+    cta: { en: "PRODUCTION", fa: "مراحل تولید" },
+    href: "/production",
   },
   {
     bg: "/images/banner-arch.jpg",
@@ -35,15 +35,15 @@ const SECTIONS: Section[] = [
     href: "/knowledge",
   },
   {
-    bg: "/images/collection-marble-green.jpg",
+    bg: "/images/banner-washbasin.jpg",
     label: { en: "ISR®", fa: "مرجع سنگ ایرانیان®" },
-    title: { en: "ONYX & GRANITE", fa: "مرمر و گرانیت" },
+    title: { en: "EXCLUSIVE MARBLE", fa: "مرمریت ویژه" },
     body: {
-      en: "Rare and precious onyx for extraordinary spaces. Premium granites for high-performance facades and surfaces.",
-      fa: "مرمر نادر و قیمتی برای فضاهای استثنایی. گرانیت پریمیوم برای نماها و سطوح با عملکرد بالا.",
+      en: "Exclusivity through tradition and expertise. ISR is curator to Iran's most desired and recognisable natural stone masterpieces.",
+      fa: "انحصار از طریق سنت و تخصص. مرجع سنگ ایرانیان، گردآورنده‌ی شاهکارهای سنگ طبیعی ایران است.",
     },
-    cta: { en: "PRODUCTION", fa: "مراحل تولید" },
-    href: "/production",
+    cta: { en: "GALLERY", fa: "گالری" },
+    href: "/gallery",
   },
   {
     bg: "/images/collection-outdoor.jpg",
