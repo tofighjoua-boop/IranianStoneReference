@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { type Language } from "@/lib/translations";
-import { categories } from "@/data/categories";
+import { getTopLevelCategories } from "@/data/categories";
 
 interface NavItem {
   label: string;
@@ -144,7 +144,7 @@ export function Header({ locale }: { locale: Language }) {
                       zIndex: 100,
                     }}
                   >
-                    {categories.map((cat) => (
+                    {getTopLevelCategories().map((cat) => (
                       <Link
                         key={cat.slug}
                         href={`/${locale}/gallery/${cat.slug}`}
