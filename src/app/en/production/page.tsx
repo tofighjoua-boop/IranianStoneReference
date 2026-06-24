@@ -19,7 +19,6 @@ export default function ProductionEN() {
       <main>
         {/* Hero */}
         <section style={{ position: "relative", backgroundColor: "#0c1626", paddingTop: "140px", paddingBottom: "80px", overflow: "hidden" }}>
-          <div className="absolute inset-0 opacity-15" style={{ backgroundImage: "url('/images/banner-new-2.png')", backgroundSize: "cover", backgroundPosition: "center" }} />
           <div style={{ position: "relative", maxWidth: "1280px", margin: "0 auto", padding: "0 clamp(16px,5vw,80px)", textAlign: "center" }}>
             <p style={{ fontSize: "10px", color: "#A18F7A", letterSpacing: "4px", textTransform: "uppercase", fontFamily: "Lato, sans-serif", marginBottom: "16px" }}>
               ISR — Process

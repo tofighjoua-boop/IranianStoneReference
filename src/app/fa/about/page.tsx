@@ -43,11 +43,8 @@ export default function AboutFA() {
       <Header locale="fa" />
       <main dir="rtl">
         {/* Hero */}
-        <section className="relative bg-[#0c1626] pt-36 pb-20 overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <Image src="/images/banner-1.jpg" alt="" fill className="object-cover" sizes="100vw" />
-          </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
+        <section className="bg-[#0c1626] pt-36 pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
             <p className="text-[#c6a25f] text-[10px] uppercase tracking-[0.3em] font-bold mb-4">داستان ما</p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#f4f1ea] mb-4">
               درباره ما

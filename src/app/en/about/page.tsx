@@ -43,11 +43,8 @@ export default function AboutEN() {
       <Header locale="en" />
       <main>
         {/* Hero */}
-        <section className="relative bg-[#0c1626] pt-36 pb-20 overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <Image src="/images/banner-1.jpg" alt="" fill className="object-cover" sizes="100vw" />
-          </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
+        <section className="bg-[#0c1626] pt-36 pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
             <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-4" style={{ color: "#A18F7A" }}>Our Story</p>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
               About Us

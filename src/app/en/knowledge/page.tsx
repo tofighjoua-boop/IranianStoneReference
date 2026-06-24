@@ -14,12 +14,8 @@ export default function KnowledgeEN() {
     <>
       <Header locale="en" />
       <main>
-        <section className="bg-[#0c1626] pt-36 pb-20 relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-10"
-            style={{ backgroundImage: "url('/images/banner-1.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
-          />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
+        <section className="bg-[#0c1626] pt-36 pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
             <p style={{ fontSize: "10px", color: "#A18F7A", letterSpacing: "4px", textTransform: "uppercase", fontFamily: "Lato, sans-serif", marginBottom: "16px" }}>
               ISR Knowledge Base
             </p>
