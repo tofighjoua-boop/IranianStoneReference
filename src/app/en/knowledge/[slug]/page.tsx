@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CTAFloat } from "@/components/layout/CTAFloat";
 import { articles, getArticleBySlug, CATEGORY_LABELS } from "@/data/articles";
+import { formatDate } from "@/lib/date";
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
@@ -35,7 +36,7 @@ export default async function ArticleEN({ params }: { params: Promise<{ slug: st
               Stone Knowledge
             </Link>
             <p style={{ fontSize: "11px", color: "#A18F7A", letterSpacing: "2px", textTransform: "uppercase", fontFamily: "Lato, sans-serif", marginBottom: "14px" }}>
-              {CATEGORY_LABELS[article.category].en} · {article.readTime} min read
+              {CATEGORY_LABELS[article.category].en} · {article.readTime} min read · {formatDate(article.publishedAt, 'en')}
             </p>
             <h1 style={{ fontSize: "clamp(26px,4vw,42px)", fontWeight: 300, color: "#fff", lineHeight: 1.3, letterSpacing: "1px", fontFamily: "Lato, sans-serif", marginBottom: "0" }}>
               {article.titleEn}

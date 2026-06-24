@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CTAFloat } from "@/components/layout/CTAFloat";
 import { articles, getArticleBySlug, CATEGORY_LABELS } from "@/data/articles";
+import { formatDate } from "@/lib/date";
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
@@ -35,7 +36,7 @@ export default async function ArticleFA({ params }: { params: Promise<{ slug: st
               دانش سنگ
             </Link>
             <p style={{ fontSize: "11px", color: "#A18F7A", letterSpacing: "1px", fontFamily: "Vazirmatn, Tahoma, sans-serif", marginBottom: "14px" }}>
-              {CATEGORY_LABELS[article.category].fa} · {article.readTime} دقیقه
+              {CATEGORY_LABELS[article.category].fa} · {article.readTime} دقیقه · {formatDate(article.publishedAt, 'fa')}
             </p>
             <h1 style={{ fontSize: "clamp(24px,4vw,40px)", fontWeight: 400, color: "#fff", lineHeight: 1.4, fontFamily: "Vazirmatn, Tahoma, sans-serif", marginBottom: "0" }}>
               {article.titleFa}

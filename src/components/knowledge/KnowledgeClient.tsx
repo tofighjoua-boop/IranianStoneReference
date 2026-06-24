@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { articles, ARTICLE_CATEGORIES, CATEGORY_LABELS, type ArticleCategory } from "@/data/articles";
 import { type Language } from "@/lib/translations";
+import { formatDate } from "@/lib/date";
 
 export function KnowledgeClient({ locale }: { locale: Language }) {
   const [search, setSearch] = useState("");
@@ -122,13 +123,17 @@ export function KnowledgeClient({ locale }: { locale: Language }) {
                   />
                 </div>
 
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px", flexWrap: "wrap" }}>
                   <span style={{ fontSize: "10px", color: "#A18F7A", letterSpacing: "1.5px", textTransform: "uppercase", fontFamily: "Lato, sans-serif" }}>
                     {CATEGORY_LABELS[article.category][locale]}
                   </span>
                   <span style={{ color: "rgba(161,143,122,0.4)", fontSize: "10px" }}>·</span>
-                  <span style={{ fontSize: "10px", color: "rgba(29,35,48,0.45)", fontFamily: "Lato, sans-serif" }}>
+                  <span style={{ fontSize: "10px", color: "rgba(29,35,48,0.45)", fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif" }}>
                     {article.readTime} {isRTL ? "دقیقه" : "min read"}
+                  </span>
+                  <span style={{ color: "rgba(161,143,122,0.4)", fontSize: "10px" }}>·</span>
+                  <span style={{ fontSize: "10px", color: "rgba(29,35,48,0.45)", fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif" }}>
+                    {formatDate(article.publishedAt, locale)}
                   </span>
                 </div>
 
