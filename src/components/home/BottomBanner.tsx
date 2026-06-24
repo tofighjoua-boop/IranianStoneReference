@@ -6,7 +6,7 @@ import { type Language } from "@/lib/translations";
 
 const SLIDES = [
   {
-    bg: "/images/banner-arch.jpg",
+    bg: "/images/7W4A9926.jpg",
     title: { en: "UAE · QATAR · RUSSIA", fa: "امارات · قطر · روسیه" },
     sub: { en: "Premium Stone for Global Projects", fa: "سنگ پریمیوم برای پروژه‌های جهانی" },
     cta: { en: "Contact Export Team", fa: "تیم صادرات" },
