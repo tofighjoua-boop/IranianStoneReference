@@ -98,20 +98,6 @@ export function CollectionSections({ locale }: { locale: Language }) {
               padding: "0 24px",
             }}
           >
-            <p
-              style={{
-                fontSize: "12px",
-                color: "#A18F7A",
-                letterSpacing: "3px",
-                textTransform: "uppercase",
-                fontWeight: 400,
-                margin: 0,
-                fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
-              }}
-            >
-              {section.label[locale]}
-            </p>
-
             <h2
               style={{
                 fontSize: isRTL ? "24px" : "28px",
