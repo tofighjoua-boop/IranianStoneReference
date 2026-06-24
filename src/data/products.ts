@@ -23,7 +23,7 @@
 const marbleProducts: Product[] = [
   {
     slug: "creamy-isr016",
-    code: "ISR016",
+    code: "ISR-MB-001",
     categorySlug: "sang-marmar",
     nameEn: "Creamy",
     nameFa: "کریمی",
@@ -41,7 +41,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "valentino-grey-isr017",
-    code: "ISR017",
+    code: "ISR-MB-002",
     categorySlug: "sang-marmar",
     nameEn: "Valentino Grey",
     nameFa: "والنتینو گری",
@@ -59,7 +59,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "pietra-grey-isr018",
-    code: "ISR018",
+    code: "ISR-MB-003",
     categorySlug: "sang-marmar",
     nameEn: "Pietra Grey",
     nameFa: "پیترا گری",
@@ -78,7 +78,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "creamy-valentino-isr019",
-    code: "ISR019",
+    code: "ISR-MB-004",
     categorySlug: "sang-marmar",
     nameEn: "Creamy Valentino",
     nameFa: "کریمی والنتینو",
@@ -96,7 +96,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "kamelia-isr020",
-    code: "ISR020",
+    code: "ISR-MB-005",
     categorySlug: "sang-marmar",
     nameEn: "Kamelia",
     nameFa: "کاملیا",
@@ -114,7 +114,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "persian-silk-emprador-isr021",
-    code: "ISR021",
+    code: "ISR-MB-006",
     categorySlug: "sang-marmar",
     nameEn: "Persian Silk Emprador",
     nameFa: "پرشین سیلک امپرادور",
@@ -133,7 +133,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "grey-ocean-isr022",
-    code: "ISR022",
+    code: "ISR-MB-007",
     categorySlug: "sang-marmar",
     nameEn: "Grey Ocean",
     nameFa: "گری اوشن",
@@ -151,7 +151,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "persian-arc-isr023",
-    code: "ISR023",
+    code: "ISR-MB-008",
     categorySlug: "sang-marmar",
     nameEn: "Persian Arc",
     nameFa: "پرشین آرک",
@@ -170,7 +170,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "golden-black-isr024",
-    code: "ISR024",
+    code: "ISR-MB-009",
     categorySlug: "sang-marmar",
     nameEn: "Golden Black",
     nameFa: "گولدن بلک",
@@ -189,7 +189,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "red-fandango-isr025",
-    code: "ISR025",
+    code: "ISR-MB-010",
     categorySlug: "sang-marmar",
     nameEn: "Red Fandango",
     nameFa: "رد فانداگو",
@@ -208,7 +208,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "toranj-isr026",
-    code: "ISR026",
+    code: "ISR-MB-011",
     categorySlug: "sang-marmar",
     nameEn: "Toranj",
     nameFa: "ترنج",
@@ -226,7 +226,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "buche-latte-isr027",
-    code: "ISR027",
+    code: "ISR-MB-012",
     categorySlug: "sang-marmar",
     nameEn: "Buche Latte",
     nameFa: "بوچه لاته",
@@ -245,7 +245,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "beauty-black-isr028",
-    code: "ISR028",
+    code: "ISR-MB-013",
     categorySlug: "sang-marmar",
     nameEn: "Beauty Black",
     nameFa: "بیوتی بلک",
@@ -264,7 +264,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "navy-blue-isr029",
-    code: "ISR029",
+    code: "ISR-MB-014",
     categorySlug: "sang-marmar",
     nameEn: "Navy Blue",
     nameFa: "نیوی بلو",
@@ -283,7 +283,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "persian-nero-isr030",
-    code: "ISR030",
+    code: "ISR-MB-015",
     categorySlug: "sang-marmar",
     nameEn: "Persian Nero",
     nameFa: "پرشین نرو",
@@ -306,7 +306,7 @@ const marbleProducts: Product[] = [
 const crystallineMarbleProducts: Product[] = [
   {
     slug: "tiara-marble-isr001",
-    code: "ISR001",
+    code: "ISR-CM-001",
     categorySlug: "crystalline-marble",
     nameEn: "Tiara Marble",
     nameFa: "تیارا مربل",
@@ -325,7 +325,7 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "vein-white-beauty-isr002",
-    code: "ISR002",
+    code: "ISR-CM-002",
     categorySlug: "crystalline-marble",
     nameEn: "Vein White Beauty",
     nameFa: "وین وایت بیوتی",
@@ -343,7 +343,7 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "white-beauty-extra-isr003",
-    code: "ISR003",
+    code: "ISR-CM-003",
     categorySlug: "crystalline-marble",
     nameEn: "White Beauty Extra",
     nameFa: "وایت بیوتی اکسترا",
@@ -362,7 +362,7 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "statuario-altisimo-isr004",
-    code: "ISR004",
+    code: "ISR-CM-004",
     categorySlug: "crystalline-marble",
     nameEn: "Statuario Altisimo",
     nameFa: "استاتواریو آلتیسیمو",
@@ -381,7 +381,7 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "wavy-black-isr005",
-    code: "ISR005",
+    code: "ISR-CM-005",
     categorySlug: "crystalline-marble",
     nameEn: "Wavy Black",
     nameFa: "ویوی بلک",
@@ -399,7 +399,7 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "persian-bianco-isr006",
-    code: "ISR006",
+    code: "ISR-CM-006",
     categorySlug: "crystalline-marble",
     nameEn: "Persian Bianco",
     nameFa: "پرشین بیانکو",
@@ -418,7 +418,7 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "fusion-isr009",
-    code: "ISR009",
+    code: "ISR-CM-009",
     categorySlug: "crystalline-marble",
     nameEn: "Fusion",
     nameFa: "فیوژن",
@@ -437,7 +437,7 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "versalys-livorno-isr010",
-    code: "ISR010",
+    code: "ISR-CM-010",
     categorySlug: "crystalline-marble",
     nameEn: "Versalys Livorno",
     nameFa: "ورسالیس لیورنو",
@@ -456,7 +456,7 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "rainbow-isr011",
-    code: "ISR011",
+    code: "ISR-CM-011",
     categorySlug: "crystalline-marble",
     nameEn: "Rainbow",
     nameFa: "رینبو",
@@ -474,7 +474,7 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "rainbow-light-isr012",
-    code: "ISR012",
+    code: "ISR-CM-012",
     categorySlug: "crystalline-marble",
     nameEn: "Rainbow Light",
     nameFa: "رینبو لایت",
@@ -492,7 +492,7 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "rainbow-classic-isr013",
-    code: "ISR013",
+    code: "ISR-CM-013",
     categorySlug: "crystalline-marble",
     nameEn: "Rainbow Classic",
     nameFa: "رینبو کلاسیک",
@@ -510,7 +510,7 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "rainbow-deep-isr014",
-    code: "ISR014",
+    code: "ISR-CM-014",
     categorySlug: "crystalline-marble",
     nameEn: "Rainbow Deep",
     nameFa: "رینبو دیپ",
@@ -529,7 +529,7 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "rainbow-extra-isr015",
-    code: "ISR015",
+    code: "ISR-CM-015",
     categorySlug: "crystalline-marble",
     nameEn: "Rainbow Extra",
     nameFa: "رینبو اکسترا",
@@ -548,7 +548,7 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "rainbow-black-isr014",
-    code: "RAINBOW-BL-ISR014",
+    code: "ISR-CM-007",
     categorySlug: "crystalline-marble",
     nameEn: "Rainbow Black",
     nameFa: "رینبو بلک",
@@ -567,7 +567,7 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "rainbow-black-extra-isr015",
-    code: "RAINBOW-BL-ISR015",
+    code: "ISR-CM-008",
     categorySlug: "crystalline-marble",
     nameEn: "Rainbow Black Extra",
     nameFa: "رینبو بلک اکسترا",
@@ -591,6 +591,7 @@ const washasinProducts: Product[] = [
   // B-series
   {
     slug: "washbasin-b1",
+    code: "ISR-WB-001",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin B1",
     nameFa: "روشویی سنگی B1",
@@ -605,6 +606,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-b2",
+    code: "ISR-WB-002",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin B2",
     nameFa: "روشویی سنگی B2",
@@ -619,6 +621,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-b3",
+    code: "ISR-WB-003",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin B3",
     nameFa: "روشویی سنگی B3",
@@ -633,6 +636,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-b4",
+    code: "ISR-WB-004",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin B4",
     nameFa: "روشویی سنگی B4",
@@ -647,6 +651,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-b5",
+    code: "ISR-WB-005",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin B5",
     nameFa: "روشویی سنگی B5",
@@ -661,6 +666,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-b6",
+    code: "ISR-WB-006",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin B6",
     nameFa: "روشویی سنگی B6",
@@ -676,6 +682,7 @@ const washasinProducts: Product[] = [
   // C-series
   {
     slug: "washbasin-c1",
+    code: "ISR-WB-007",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin C1",
     nameFa: "روشویی سنگی C1",
@@ -690,6 +697,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-c2",
+    code: "ISR-WB-008",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin C2",
     nameFa: "روشویی سنگی C2",
@@ -704,6 +712,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-c3",
+    code: "ISR-WB-009",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin C3",
     nameFa: "روشویی سنگی C3",
@@ -718,6 +727,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-c4",
+    code: "ISR-WB-010",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin C4",
     nameFa: "روشویی سنگی C4",
@@ -732,6 +742,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-c5",
+    code: "ISR-WB-011",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin C5",
     nameFa: "روشویی سنگی C5",
@@ -746,6 +757,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-c6",
+    code: "ISR-WB-012",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin C6",
     nameFa: "روشویی سنگی C6",
@@ -760,6 +772,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-c7",
+    code: "ISR-WB-013",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin C7",
     nameFa: "روشویی سنگی C7",
@@ -775,6 +788,7 @@ const washasinProducts: Product[] = [
   // CK-series
   {
     slug: "washbasin-ck1",
+    code: "ISR-WB-014",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin CK1",
     nameFa: "روشویی سنگی CK1",
@@ -789,6 +803,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-ck2",
+    code: "ISR-WB-015",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin CK2",
     nameFa: "روشویی سنگی CK2",
@@ -803,6 +818,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-ck3",
+    code: "ISR-WB-016",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin CK3",
     nameFa: "روشویی سنگی CK3",
@@ -817,6 +833,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-ck4",
+    code: "ISR-WB-017",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin CK4",
     nameFa: "روشویی سنگی CK4",
@@ -831,6 +848,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-ck5",
+    code: "ISR-WB-018",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin CK5",
     nameFa: "روشویی سنگی CK5",
@@ -845,6 +863,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-ck6",
+    code: "ISR-WB-019",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin CK6",
     nameFa: "روشویی سنگی CK6",
@@ -859,6 +878,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-ck7",
+    code: "ISR-WB-020",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin CK7",
     nameFa: "روشویی سنگی CK7",
@@ -874,6 +894,7 @@ const washasinProducts: Product[] = [
   // K-series
   {
     slug: "washbasin-k1",
+    code: "ISR-WB-021",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin K1",
     nameFa: "روشویی سنگی K1",
@@ -888,6 +909,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-k2",
+    code: "ISR-WB-022",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin K2",
     nameFa: "روشویی سنگی K2",
@@ -902,6 +924,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-k3",
+    code: "ISR-WB-023",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin K3",
     nameFa: "روشویی سنگی K3",
@@ -916,6 +939,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-k4",
+    code: "ISR-WB-024",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin K4",
     nameFa: "روشویی سنگی K4",
@@ -930,6 +954,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-k5",
+    code: "ISR-WB-025",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin K5",
     nameFa: "روشویی سنگی K5",
@@ -944,6 +969,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-k6",
+    code: "ISR-WB-026",
     categorySlug: "washbasins",
     nameEn: "Stone Washbasin K6",
     nameFa: "روشویی سنگی K6",
@@ -959,6 +985,7 @@ const washasinProducts: Product[] = [
   // Kashkol series (کاشکول)
   {
     slug: "washbasin-kashkol-1",
+    code: "ISR-WB-027",
     categorySlug: "washbasins",
     nameEn: "Kashkol Washbasin 1",
     nameFa: "روشویی کاشکول ۱",
@@ -973,6 +1000,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-kashkol-2",
+    code: "ISR-WB-028",
     categorySlug: "washbasins",
     nameEn: "Kashkol Washbasin 2",
     nameFa: "روشویی کاشکول ۲",
@@ -987,6 +1015,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-kashkol-3",
+    code: "ISR-WB-029",
     categorySlug: "washbasins",
     nameEn: "Kashkol Washbasin 3",
     nameFa: "روشویی کاشکول ۳",
@@ -1001,6 +1030,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-kashkol-4",
+    code: "ISR-WB-030",
     categorySlug: "washbasins",
     nameEn: "Kashkol Washbasin 4",
     nameFa: "روشویی کاشکول ۴",
@@ -1015,6 +1045,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-kashkol-5",
+    code: "ISR-WB-031",
     categorySlug: "washbasins",
     nameEn: "Kashkol Washbasin 5",
     nameFa: "روشویی کاشکول ۵",
@@ -1029,6 +1060,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-kashkol-6",
+    code: "ISR-WB-032",
     categorySlug: "washbasins",
     nameEn: "Kashkol Washbasin 6",
     nameFa: "روشویی کاشکول ۶",
@@ -1043,6 +1075,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-kashkol-7",
+    code: "ISR-WB-033",
     categorySlug: "washbasins",
     nameEn: "Kashkol Washbasin 7",
     nameFa: "روشویی کاشکول ۷",
@@ -1058,6 +1091,7 @@ const washasinProducts: Product[] = [
   // Ostovane series (استوانه)
   {
     slug: "washbasin-ostovane-1",
+    code: "ISR-WB-034",
     categorySlug: "washbasins",
     nameEn: "Cylindrical Washbasin 1",
     nameFa: "روشویی استوانه ۱",
@@ -1072,6 +1106,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-ostovane-2",
+    code: "ISR-WB-035",
     categorySlug: "washbasins",
     nameEn: "Cylindrical Washbasin 2",
     nameFa: "روشویی استوانه ۲",
@@ -1086,6 +1121,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-ostovane-3",
+    code: "ISR-WB-036",
     categorySlug: "washbasins",
     nameEn: "Cylindrical Washbasin 3",
     nameFa: "روشویی استوانه ۳",
@@ -1100,6 +1136,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-ostovane-4",
+    code: "ISR-WB-037",
     categorySlug: "washbasins",
     nameEn: "Cylindrical Washbasin 4",
     nameFa: "روشویی استوانه ۴",
@@ -1114,6 +1151,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-ostovane-5",
+    code: "ISR-WB-038",
     categorySlug: "washbasins",
     nameEn: "Cylindrical Washbasin 5",
     nameFa: "روشویی استوانه ۵",
@@ -1128,6 +1166,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-ostovane-6",
+    code: "ISR-WB-039",
     categorySlug: "washbasins",
     nameEn: "Cylindrical Washbasin 6",
     nameFa: "روشویی استوانه ۶",
@@ -1142,6 +1181,7 @@ const washasinProducts: Product[] = [
   },
   {
     slug: "washbasin-ostovane-7",
+    code: "ISR-WB-040",
     categorySlug: "washbasins",
     nameEn: "Cylindrical Washbasin 7",
     nameFa: "روشویی استوانه ۷",
