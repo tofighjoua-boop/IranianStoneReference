@@ -42,7 +42,7 @@ export function ProductCard({ product, locale }: ProductCardProps) {
 
         {/* ISR Code */}
         {product.code && (
-          <span className="absolute bottom-3 left-3 text-[10px] font-mono tracking-widest text-white/70 bg-[#0c1626]/60 px-2 py-0.5 backdrop-blur-sm">
+          <span className="absolute bottom-3 left-3 text-[11px] font-sans font-semibold tracking-wider text-white bg-[#0c1626]/70 px-2 py-1 backdrop-blur-sm">
             {product.code}
           </span>
         )}
