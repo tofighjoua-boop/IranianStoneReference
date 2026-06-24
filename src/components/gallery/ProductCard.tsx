@@ -39,6 +39,13 @@ export function ProductCard({ product, locale }: ProductCardProps) {
             <Badge variant="new">New</Badge>
           )}
         </div>
+
+        {/* ISR Code */}
+        {product.code && (
+          <span className="absolute bottom-3 left-3 text-[10px] font-mono tracking-widest text-white/70 bg-[#0c1626]/60 px-2 py-0.5 backdrop-blur-sm">
+            {product.code}
+          </span>
+        )}
       </div>
 
       {/* Info */}
