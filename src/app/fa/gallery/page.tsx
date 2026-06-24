@@ -8,7 +8,7 @@ import { getTopLevelCategories } from "@/data/categories";
 export const metadata: Metadata = {
   title: "گالری — مجموعه‌های سنگ طبیعی",
   description:
-    "مجموعه‌های سنگ طبیعی پریمیوم ما را کشف کنید — مرمریت، تراورتن، اونیکس، گرانیت، روشویی و اکسسوری.",
+    "مجموعه‌های سنگ طبیعی پریمیوم ما را کشف کنید — مرمریت، تراورتن، مرمر، گرانیت، روشویی و اکسسوری.",
 };
 
 export default function GalleryFA() {

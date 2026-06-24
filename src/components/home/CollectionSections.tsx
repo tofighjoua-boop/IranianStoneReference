@@ -36,10 +36,10 @@ const SECTIONS: Section[] = [
   {
     bg: "/images/collection-tableware.jpg",
     label: { en: "ISR®", fa: "مرجع سنگ ایرانیان®" },
-    title: { en: "ONYX & GRANITE", fa: "اونیکس و گرانیت" },
+    title: { en: "ONYX & GRANITE", fa: "مرمر و گرانیت" },
     body: {
       en: "Rare and precious onyx for extraordinary spaces. Premium granites for high-performance facades and surfaces.",
-      fa: "اونیکس نادر و قیمتی برای فضاهای استثنایی. گرانیت پریمیوم برای نماها و سطوح با عملکرد بالا.",
+      fa: "مرمر نادر و قیمتی برای فضاهای استثنایی. گرانیت پریمیوم برای نماها و سطوح با عملکرد بالا.",
     },
     cta: { en: "PRODUCTION", fa: "مراحل تولید" },
     href: "/production",

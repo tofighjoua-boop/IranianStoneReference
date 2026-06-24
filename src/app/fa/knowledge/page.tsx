@@ -6,7 +6,7 @@ import { KnowledgeClient } from "@/components/knowledge/KnowledgeClient";
 
 export const metadata: Metadata = {
   title: "دانش سنگ — راهنماها و مقالات تخصصی",
-  description: "راهنماهای تخصصی درباره سنگ طبیعی — مرمریت، تراورتن، اونیکس، گرانیت، مراقبت و نگهداری و صنعت سنگ ایران.",
+  description: "راهنماهای تخصصی درباره سنگ طبیعی — مرمریت، تراورتن، مرمر، گرانیت، مراقبت و نگهداری و صنعت سنگ ایران.",
 };
 
 export default function KnowledgeFA() {

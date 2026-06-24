@@ -24,7 +24,7 @@ export const projects: Project[] = [
     descriptionEn:
       "[PLACEHOLDER] 2,000 m² of White Crystal Marble and Honey Onyx installed across the lobby, reception, and corridor of a 5-star hotel in Downtown Dubai.",
     descriptionFa:
-      "[PLACEHOLDER] ۲٬۰۰۰ متر مربع مرمریت کریستال سفید و اونیکس عسلی در لابی، پذیرش و راهرو یک هتل ۵ ستاره در داون‌تاون دبی نصب شد.",
+      "[PLACEHOLDER] ۲٬۰۰۰ متر مربع مرمریت کریستال سفید و مرمر عسلی در لابی، پذیرش و راهرو یک هتل ۵ ستاره در داون‌تاون دبی نصب شد.",
     location: "Dubai, UAE",
     locationFa: "دبی، امارات",
     applicationEn: "Hospitality — Lobby & Reception",
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     descriptionEn:
       "[PLACEHOLDER] Bar counter and feature walls in Green Onyx with backlit panels creating an otherworldly dining atmosphere. 120 m².",
     descriptionFa:
-      "[PLACEHOLDER] پیشخوان بار و دیوارهای ویژه در اونیکس سبز با پانل‌های نورپشتی که فضایی دیگرگونه برای صرف غذا ایجاد می‌کند. ۱۲۰ متر مربع.",
+      "[PLACEHOLDER] پیشخوان بار و دیوارهای ویژه در مرمر سبز با پانل‌های نورپشتی که فضایی دیگرگونه برای صرف غذا ایجاد می‌کند. ۱۲۰ متر مربع.",
     location: "Moscow, Russia",
     locationFa: "مسکو، روسیه",
     applicationEn: "Hospitality — Restaurant",

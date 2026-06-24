@@ -37,7 +37,7 @@ export const workshopGallery: WorkshopItem[] = [
     id: "wg-02",
     image: "/images/banner-new-1.png",
     captionEn: "Finished marble kitchen island and luxury onyx installation — showcasing ISR export-grade output.",
-    captionFa: "جزیره آشپزخانه مرمریت و نصب اونیکس لوکس — نمایش محصول صادراتی ISR.",
+    captionFa: "جزیره آشپزخانه مرمریت و نصب مرمر لوکس — نمایش محصول صادراتی ISR.",
     tagEn: "Finished Product",
     tagFa: "محصول نهایی",
   },

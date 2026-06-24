@@ -17,7 +17,7 @@ const placeholderArticles = [
   {
     slug: "onyx-backlit-guide",
     title_en: "The Complete Guide to Backlit Onyx Installations",
-    title_fa: "راهنمای کامل نصب اونیکس با نورپشتی",
+    title_fa: "راهنمای کامل نصب مرمر با نورپشتی",
     category_en: "Knowledge",
     category_fa: "دانش",
     image: "/images/collection-exclusive.jpg",

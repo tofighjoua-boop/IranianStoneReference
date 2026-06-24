@@ -1,4 +1,4 @@
-export interface ProductionStep {
+﻿export interface ProductionStep {
   step: number;
   titleEn: string;
   titleFa: string;
@@ -45,7 +45,7 @@ export const productionSteps: ProductionStep[] = [
     titleEn: 'Calibration & Resin Treatment',
     titleFa: 'کالیبراسیون و تیمار رزین',
     descriptionEn: 'Rough slabs are calibrated to precise thickness tolerances (±0.5mm) and treated with resin to fill natural voids — a process particularly critical for travertine and onyx to ensure surface integrity.',
-    descriptionFa: 'دال‌های خام با تلرانس ضخامت دقیق (±۰.۵ میلیمتر) کالیبره می‌شوند و با رزین تیمار می‌شوند تا حفرات طبیعی پر شوند — فرآیندی که به ویژه برای تراورتن و اونیکس حیاتی است.',
+    descriptionFa: 'دال‌های خام با تلرانس ضخامت دقیق (±۰.۵ میلیمتر) کالیبره می‌شوند و با رزین تیمار می‌شوند تا حفرات طبیعی پر شوند — فرآیندی که به ویژه برای تراورتن و مرمر حیاتی است.',
     detailsEn: ['±0.5mm thickness tolerance', 'Epoxy resin void-filling', 'UV-stable resin options', 'Fibre mesh backing (on request)'],
     detailsFa: ['تلرانس ضخامت ±۰.۵ میلیمتر', 'پرکردن حفرات با رزین اپوکسی', 'گزینه‌های رزین مقاوم UV', 'پشتیبان مش الیاف (در صورت درخواست)'],
     image: '/images/banner-2.jpg',

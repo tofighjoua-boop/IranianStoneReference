@@ -17,7 +17,7 @@ const SLIDES = [
 const CAT_LABELS = {
   marble:     { en: "Marble Collection",     fa: "مجموعهٔ مرمریت" },
   travertine: { en: "Travertine Collection", fa: "مجموعهٔ تراورتن" },
-  onyx:       { en: "Onyx Collection",       fa: "مجموعهٔ اونیکس" },
+  onyx:       { en: "Onyx Collection",       fa: "مجموعهٔ مرمر" },
   granite:    { en: "Granite Collection",    fa: "مجموعهٔ گرانیت" },
   washbasins: { en: "Stone Washbasins",      fa: "روشویی‌های سنگی" },
   accessories:{ en: "Stone Accessories",     fa: "اکسسوری سنگی" },

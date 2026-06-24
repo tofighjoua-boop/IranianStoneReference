@@ -69,11 +69,11 @@ export const categories: StoneCategory[] = [
   {
     slug: "onyx",
     nameEn: "Onyx",
-    nameFa: "اونیکس",
+    nameFa: "مرمر",
     descriptionEn:
       "The stone of light. Translucent onyx creates breathtaking backlit feature walls, countertops, and luxury installations.",
     descriptionFa:
-      "سنگ نور. اونیکس شفاف دیوارهای ویژهٔ با نور پشت، پیشخوان‌ها و نصب‌های لوکس شگفت‌انگیزی ایجاد می‌کند.",
+      "سنگ نور. مرمر شفاف دیوارهای ویژهٔ با نور پشت، پیشخوان‌ها و نصب‌های لوکس شگفت‌انگیزی ایجاد می‌کند.",
     image: "/images/collection-exclusive.jpg",
     thumbnailImage: "/images/collection-exclusive.jpg",
     productCount: 0,
