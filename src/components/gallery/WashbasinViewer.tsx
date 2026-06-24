@@ -15,24 +15,12 @@ export function WashbasinViewer({ images, productName, locale }: Props) {
   return (
     <div>
       {/* Main image */}
-      <div className="relative aspect-square overflow-hidden">
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: "-40px",
-            backgroundImage: `url(${selected})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "blur(32px) brightness(1.08) saturate(0.9)",
-            transform: "scale(1.2)",
-          }}
-        />
+      <div className="relative overflow-hidden" style={{ aspectRatio: "3/2" }}>
         <Image
           src={selected}
           alt={productName}
           fill
-          className="object-contain p-6 transition-opacity duration-300"
+          className="object-cover transition-opacity duration-300"
           sizes="(max-width: 1024px) 100vw, 50vw"
           priority
         />
@@ -52,7 +40,7 @@ export function WashbasinViewer({ images, productName, locale }: Props) {
                 aria-label={`${locale === "fa" ? "نمونه" : "Variant"} ${i + 1}`}
                 style={{
                   width: 72,
-                  height: 72,
+                  height: 48,
                   padding: 0,
                   border: selected === img
                     ? "2px solid #c6a25f"
@@ -66,24 +54,11 @@ export function WashbasinViewer({ images, productName, locale }: Props) {
                   flexShrink: 0,
                 }}
               >
-                {/* Thumbnail blur background */}
-                <div
-                  aria-hidden="true"
-                  style={{
-                    position: "absolute",
-                    inset: "-8px",
-                    backgroundImage: `url(${img})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    filter: "blur(8px) brightness(1.05)",
-                    transform: "scale(1.2)",
-                  }}
-                />
                 <Image
                   src={img}
                   alt={`${productName} ${i + 1}`}
                   fill
-                  className="object-contain p-1"
+                  className="object-cover"
                   sizes="72px"
                 />
               </button>
