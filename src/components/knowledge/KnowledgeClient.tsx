@@ -13,13 +13,15 @@ export function KnowledgeClient({ locale }: { locale: Language }) {
   const isRTL = locale === "fa";
 
   const filtered = useMemo(() => {
-    return articles.filter((a) => {
-      const matchCat = activeCategory === "all" || a.category === activeCategory;
-      const q = search.toLowerCase();
-      const title = (isRTL ? a.titleFa : a.titleEn).toLowerCase();
-      const excerpt = (isRTL ? a.excerptFa : a.excerptEn).toLowerCase();
-      return matchCat && (!q || title.includes(q) || excerpt.includes(q));
-    });
+    return articles
+      .filter((a) => {
+        const matchCat = activeCategory === "all" || a.category === activeCategory;
+        const q = search.toLowerCase();
+        const title = (isRTL ? a.titleFa : a.titleEn).toLowerCase();
+        const excerpt = (isRTL ? a.excerptFa : a.excerptEn).toLowerCase();
+        return matchCat && (!q || title.includes(q) || excerpt.includes(q));
+      })
+      .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
   }, [search, activeCategory, isRTL]);
 
   const font = isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif";
