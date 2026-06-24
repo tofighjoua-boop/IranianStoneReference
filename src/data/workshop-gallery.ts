@@ -27,7 +27,7 @@ export interface WorkshopItem {
 export const workshopGallery: WorkshopItem[] = [
   {
     id: "wg-01",
-    image: "/images/banner-new-2.png",
+    image: "/images/banner-new-2.jpg",
     captionEn: "Gang saw cutting line — multi-blade system processing marble blocks into precision slabs.",
     captionFa: "خط برش گنگ — سیستم چندتیغه در حال تبدیل بلوک‌های مرمریت به دال‌های دقیق.",
     tagEn: "Cutting",
@@ -35,7 +35,7 @@ export const workshopGallery: WorkshopItem[] = [
   },
   {
     id: "wg-02",
-    image: "/images/banner-new-1.png",
+    image: "/images/banner-new-1.jpg",
     captionEn: "Finished marble kitchen island and luxury onyx installation — showcasing ISR export-grade output.",
     captionFa: "جزیره آشپزخانه مرمریت و نصب مرمر لوکس — نمایش محصول صادراتی ISR.",
     tagEn: "Finished Product",
@@ -51,7 +51,7 @@ export const workshopGallery: WorkshopItem[] = [
   },
   {
     id: "wg-04",
-    image: "/images/banner-new-3.png",
+    image: "/images/banner-new-3.jpg",
     captionEn: "Quarry extraction site — diamond wire saw operation in the mountains of central Iran.",
     captionFa: "محل استخراج معدن — عملیات اره سیم الماسی در کوه‌های مرکز ایران.",
     tagEn: "Quarrying",

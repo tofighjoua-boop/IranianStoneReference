@@ -42,6 +42,15 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html className={`${lato.variable} ${playfair.variable} ${vazirmatn.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Preload the first hero banner — biggest LCP element */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/banner-new-1.jpg"
+          fetchPriority="high"
+        />
+      </head>
       <body className="antialiased" suppressHydrationWarning>{children}</body>
     </html>
   );

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -13,7 +13,7 @@ const SLIDES = [
     href: "/contact",
   },
   {
-    bg: "/images/banner-new-4.png",
+    bg: "/images/banner-new-4.jpg",
     title: { en: "NATURE'S FINEST STONE", fa: "برترین سنگ طبیعت" },
     sub: { en: "From Iran's Legendary Quarries to the World", fa: "از معادن افسانه‌ای ایران به سراسر جهان" },
     cta: { en: "Explore Gallery", fa: "مشاهده گالری" },

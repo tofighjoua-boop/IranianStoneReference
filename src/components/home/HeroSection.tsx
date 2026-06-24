@@ -6,11 +6,11 @@ import { type Language } from "@/lib/translations";
 
 
 const SLIDES = [
-  { bg: "/images/banner-new-1.png", mobileBg: "/images/banner-new-1.png", category: "marble" },
+  { bg: "/images/banner-new-1.jpg", mobileBg: "/images/banner-new-1.jpg", category: "marble" },
   { bg: "/images/banner-2.jpg", mobileBg: "/images/banner-mobile-2.jpg", category: "travertine" },
-  { bg: "/images/banner-new-3.png", mobileBg: "/images/banner-new-3.png", category: "onyx" },
+  { bg: "/images/banner-new-3.jpg", mobileBg: "/images/banner-new-3.jpg", category: "onyx" },
   { bg: "/images/banner-1.jpg", mobileBg: "/images/banner-mobile-1.jpg", category: "granite" },
-  { bg: "/images/banner-new-2.png", mobileBg: "/images/banner-new-2.png", category: "washbasins" },
+  { bg: "/images/banner-new-2.jpg", mobileBg: "/images/banner-new-2.jpg", category: "washbasins" },
   { bg: "/images/banner-6.jpg", mobileBg: "/images/banner-mobile-1.jpg", category: "accessories" },
 ] as const;
 

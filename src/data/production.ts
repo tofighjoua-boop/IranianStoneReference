@@ -18,7 +18,7 @@ export const productionSteps: ProductionStep[] = [
     descriptionFa: 'هر سنگ ISR از اعماق رشته‌کوه‌های ایرانی آغاز می‌شود. تیم زمین‌شناسی ما کیفیت ذخایر را قبل از هر استخراجی شناسایی و تأیید می‌کند و اطمینان می‌دهد که فقط بهترین مواد انتخاب شوند.',
     detailsEn: ['Core sample & quality analysis', 'Geological survey & mapping', 'Diamond wire saw extraction', 'Block size optimisation'],
     detailsFa: ['آنالیز نمونه مغزه و کیفیت', 'بررسی و نقشه‌برداری زمین‌شناختی', 'استخراج با اره سیم الماسی', 'بهینه‌سازی اندازه بلوک'],
-    image: '/images/banner-new-3.png',
+    image: '/images/banner-new-3.jpg',
   },
   {
     step: 2,
@@ -38,7 +38,7 @@ export const productionSteps: ProductionStep[] = [
     descriptionFa: 'بلوک‌ها از طریق اره‌های گنگ چندتیغه عبور داده می‌شوند تا دال‌های خام با ضخامت مورد نیاز تولید شوند. این فرایند بسته به سختی سنگ و تعداد تیغه‌ها ۱۲ تا ۳۶ ساعت طول می‌کشد.',
     detailsEn: ['Multi-blade gang saw system', 'Continuous water cooling', 'Standard slab thickness: 18–30mm', 'Real-time quality monitoring'],
     detailsFa: ['سیستم اره گنگ چندتیغه', 'خنک‌کاری مستمر با آب', 'ضخامت استاندارد دال: ۱۸–۳۰ میلیمتر', 'پایش کیفیت در لحظه'],
-    image: '/images/banner-new-2.png',
+    image: '/images/banner-new-2.jpg',
   },
   {
     step: 4,
