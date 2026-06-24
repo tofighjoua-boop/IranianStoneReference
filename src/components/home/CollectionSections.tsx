@@ -23,7 +23,7 @@ const SECTIONS: Section[] = [
     href: "/gallery",
   },
   {
-    bg: "/images/collection-stone-amber.jpg",
+    bg: "/images/banner-arch.jpg",
     label: { en: "ISR®", fa: "مرجع سنگ ایرانیان®" },
     title: { en: "TRAVERTINE", fa: "تراورتن" },
     body: {

@@ -7,11 +7,11 @@ import { type Language } from "@/lib/translations";
 
 const SLIDES = [
   { bg: "/images/banner-new-1.jpg",      category: "marble" },
-  { bg: "/images/banner-interior.jpg",   category: "travertine" },
+  { bg: "/images/banner-arch.jpg",       category: "travertine" },
   { bg: "/images/banner-new-3.jpg",      category: "onyx" },
   { bg: "/images/banner-stone-dark.jpg", category: "granite" },
-  { bg: "/images/banner-new-2.jpg",      category: "washbasins" },
-  { bg: "/images/banner-6.jpg",          category: "accessories" },
+  { bg: "/images/banner-washbasin.jpg",  category: "washbasins" },
+  { bg: "/images/banner-new-4.jpg",      category: "accessories" },
 ] as const;
 
 const CAT_LABELS = {
