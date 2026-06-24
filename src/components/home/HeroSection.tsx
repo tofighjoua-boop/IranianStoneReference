@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { type Language } from "@/lib/translations";
 import { useBanner } from "./BannerProvider";
 
@@ -105,23 +104,6 @@ export function HeroSection({ locale }: { locale: Language }) {
                 )}
               </div>
 
-              <Link
-                href={`/${locale}${slide.href}`}
-                style={{
-                  marginTop: "8px",
-                  fontSize: "12px",
-                  color: "rgba(255,255,255,0.75)",
-                  letterSpacing: "3px",
-                  textTransform: "uppercase",
-                  textDecoration: "none",
-                  border: "1px solid rgba(255,255,255,0.4)",
-                  padding: "10px 28px",
-                  fontWeight: 300,
-                  fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
-                }}
-              >
-                {slide.cta[locale]}
-              </Link>
             </div>
           </div>
         </div>

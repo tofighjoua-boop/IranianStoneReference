@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { type Language } from "@/lib/translations";
 import { useBanner } from "./BannerProvider";
 
@@ -88,23 +87,6 @@ export function BottomBanner({ locale }: { locale: Language }) {
                 {slide.sub[locale]}
               </div>
 
-              <Link
-                href={`/${locale}${slide.href}`}
-                style={{
-                  marginTop: "24px",
-                  fontSize: "14px",
-                  color: "white",
-                  letterSpacing: "2px",
-                  textTransform: "uppercase",
-                  textDecoration: "none",
-                  border: "1px solid rgba(255,255,255,0.6)",
-                  padding: "12px 32px",
-                  fontWeight: 300,
-                  fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
-                }}
-              >
-                {slide.cta[locale]}
-              </Link>
             </div>
           </div>
         </div>
