@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Lato, Playfair_Display, Vazirmatn } from "next/font/google";
 import "./globals.css";
 
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   description:
     "Premium natural stone supplier — marble, travertine, onyx, granite, washbasins and stone accessories. Exporting to UAE, Qatar, Russia, Germany and USA.",
-  keywords: ["natural stone", "marble", "travertine", "onyx", "granite", "Iran stone", "سنگ طبیعی", "مرمر"],
+  keywords: ["natural stone", "marble", "travertine", "onyx", "granite", "Iran stone", "سنگ طبیعی", "مرمریت"],
   openGraph: {
     siteName: "Iranian Stone Reference",
     type: "website",

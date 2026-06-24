@@ -1,4 +1,4 @@
-export interface Project {
+﻿export interface Project {
   slug: string;
   titleEn: string;
   titleFa: string;
@@ -24,7 +24,7 @@ export const projects: Project[] = [
     descriptionEn:
       "[PLACEHOLDER] 2,000 m² of White Crystal Marble and Honey Onyx installed across the lobby, reception, and corridor of a 5-star hotel in Downtown Dubai.",
     descriptionFa:
-      "[PLACEHOLDER] ۲٬۰۰۰ متر مربع مرمر کریستال سفید و اونیکس عسلی در لابی، پذیرش و راهرو یک هتل ۵ ستاره در داون‌تاون دبی نصب شد.",
+      "[PLACEHOLDER] ۲٬۰۰۰ متر مربع مرمریت کریستال سفید و اونیکس عسلی در لابی، پذیرش و راهرو یک هتل ۵ ستاره در داون‌تاون دبی نصب شد.",
     location: "Dubai, UAE",
     locationFa: "دبی، امارات",
     applicationEn: "Hospitality — Lobby & Reception",
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     descriptionEn:
       "[PLACEHOLDER] Oval travertine basins, polished marble floors, and stone accessories throughout a private luxury spa in Munich.",
     descriptionFa:
-      "[PLACEHOLDER] روشویی‌های بیضی تراورتن، کف‌های مرمر پولیش و اکسسوری سنگی در سراسر یک اسپای خصوصی لوکس در مونیخ.",
+      "[PLACEHOLDER] روشویی‌های بیضی تراورتن، کف‌های مرمریت پولیش و اکسسوری سنگی در سراسر یک اسپای خصوصی لوکس در مونیخ.",
     location: "Munich, Germany",
     locationFa: "مونیخ، آلمان",
     applicationEn: "Wellness — Spa & Pool",

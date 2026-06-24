@@ -1,4 +1,4 @@
-export interface StoneCategory {
+﻿export interface StoneCategory {
   slug: string;
   nameEn: string;
   nameFa: string;
@@ -15,11 +15,11 @@ export const categories: StoneCategory[] = [
   {
     slug: "marble",
     nameEn: "Marble",
-    nameFa: "مرمر",
+    nameFa: "مرمریت",
     descriptionEn:
       "Iranian marble in all its forms — from classic veined stone to rare high-crystallinity varieties prized worldwide.",
     descriptionFa:
-      "مرمر ایرانی در تمام اشکال آن — از سنگ رگه‌دار کلاسیک تا انواع کریستالی نادر که در سراسر جهان ارزشمند هستند.",
+      "مرمریت ایرانی در تمام اشکال آن — از سنگ رگه‌دار کلاسیک تا انواع کریستالی نادر که در سراسر جهان ارزشمند هستند.",
     image: "/images/gallery/marble/PIETRA-GREY-ISR018-1024x684.jpg",
     thumbnailImage: "/images/gallery/marble/PIETRA-GREY-ISR018-1024x684.jpg",
     productCount: 30,
@@ -29,11 +29,11 @@ export const categories: StoneCategory[] = [
   {
     slug: "sang-marmar",
     nameEn: "Marble",
-    nameFa: "سنگ مرمر",
+    nameFa: "سنگ مرمریت",
     descriptionEn:
       "The timeless classic. Iranian marble offers unmatched veining and colour depth — from warm creams and rich greys to dramatic golds and deep blacks.",
     descriptionFa:
-      "کلاسیک ابدی. مرمر ایرانی رگه‌بندی و عمق رنگ بی‌نظیری دارد — از کرم‌های گرم و خاکستری‌های غنی تا طلایی‌های درام‌تیک و سیاه‌های عمیق.",
+      "کلاسیک ابدی. مرمریت ایرانی رگه‌بندی و عمق رنگ بی‌نظیری دارد — از کرم‌های گرم و خاکستری‌های غنی تا طلایی‌های درام‌تیک و سیاه‌های عمیق.",
     image: "/images/gallery/marble/PIETRA-GREY-ISR018-1024x684.jpg",
     thumbnailImage: "/images/gallery/marble/PIETRA-GREY-ISR018-1024x684.jpg",
     productCount: 15,
@@ -42,11 +42,11 @@ export const categories: StoneCategory[] = [
   {
     slug: "crystalline-marble",
     nameEn: "Crystalline Marble",
-    nameFa: "سنگ مرمر کریستالی",
+    nameFa: "سنگ مرمریت کریستالی",
     descriptionEn:
       "The purest form of Iranian marble — high-crystallinity stone with exceptional translucency, white brilliance, and fine grain structure. Quarried from Iran's most prized deposits.",
     descriptionFa:
-      "خالص‌ترین شکل مرمر ایرانی — سنگی با کریستالینیتی بالا، شفافیت استثنایی، درخشندگی سفید و ساختار دانه‌بندی ظریف. استخراج‌شده از ارزشمندترین معادن ایران.",
+      "خالص‌ترین شکل مرمریت ایرانی — سنگی با کریستالینیتی بالا، شفافیت استثنایی، درخشندگی سفید و ساختار دانه‌بندی ظریف. استخراج‌شده از ارزشمندترین معادن ایران.",
     image: "/images/gallery/crystalline-marble/TIARA-MARBLE-ISR001-1024x783.jpg",
     thumbnailImage: "/images/gallery/crystalline-marble/TIARA-MARBLE-ISR001-1024x783.jpg",
     productCount: 15,

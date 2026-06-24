@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const timeline = [
-  { year: "۱۳۸۹", fa: "تأسیس در تهران با تمرکز بر صادرات مرمر و تراورتن." },
+  { year: "۱۳۸۹", fa: "تأسیس در تهران با تمرکز بر صادرات مرمریت و تراورتن." },
   { year: "۱۳۹۲", fa: "اولین قراردادهای صادراتی با امارات و قطر." },
   { year: "۱۳۹۵", fa: "گسترش به اونیکس و گرانیت. افتتاح شوروم پریمیوم." },
   { year: "۱۳۹۸", fa: "راه‌اندازی خط تولید روشویی CNC." },

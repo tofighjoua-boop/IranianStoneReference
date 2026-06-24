@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { type Language } from "@/lib/translations";
 
 interface Section {
@@ -14,7 +14,7 @@ const SECTIONS: Section[] = [
   {
     bg: "/images/collection-exclusive.jpg",
     label: { en: "ISR®", fa: "مرجع سنگ ایرانیان®" },
-    title: { en: "EXCLUSIVE MARBLE", fa: "مرمر ویژه" },
+    title: { en: "EXCLUSIVE MARBLE", fa: "مرمریت ویژه" },
     body: {
       en: "Exclusivity through tradition and expertise. ISR is curator to Iran's most desired and recognisable natural stone masterpieces.",
       fa: "انحصار از طریق سنت و تخصص. مرجع سنگ ایرانیان، گردآورنده‌ی شاهکارهای سنگ طبیعی ایران است.",

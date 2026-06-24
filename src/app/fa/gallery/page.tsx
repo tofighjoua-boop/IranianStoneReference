@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CTAFloat } from "@/components/layout/CTAFloat";
@@ -8,7 +8,7 @@ import { getTopLevelCategories } from "@/data/categories";
 export const metadata: Metadata = {
   title: "گالری — مجموعه‌های سنگ طبیعی",
   description:
-    "مجموعه‌های سنگ طبیعی پریمیوم ما را کشف کنید — مرمر، تراورتن، اونیکس، گرانیت، روشویی و اکسسوری.",
+    "مجموعه‌های سنگ طبیعی پریمیوم ما را کشف کنید — مرمریت، تراورتن، اونیکس، گرانیت، روشویی و اکسسوری.",
 };
 
 export default function GalleryFA() {

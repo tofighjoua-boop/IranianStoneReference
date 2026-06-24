@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CTAFloat } from "@/components/layout/CTAFloat";
@@ -9,9 +9,9 @@ import { TechnologySection } from "@/components/home/TechnologySection";
 import { ContactNewsletter } from "@/components/home/ContactNewsletter";
 
 export const metadata: Metadata = {
-  title: "سنگ طبیعی پریمیوم — مرمر، تراورتن، اونیکس و گرانیت | مرجع سنگ ایرانیان",
+  title: "سنگ طبیعی پریمیوم — مرمریت، تراورتن، اونیکس و گرانیت | مرجع سنگ ایرانیان",
   description:
-    "مرجع سنگ ایرانیان — تأمین‌کنندهٔ پیشرو سنگ طبیعی پریمیوم. مرمر، تراورتن، اونیکس، گرانیت، روشویی و اکسسوری سنگی. صادرات به سراسر جهان از سال ۱۳۸۹.",
+    "مرجع سنگ ایرانیان — تأمین‌کنندهٔ پیشرو سنگ طبیعی پریمیوم. مرمریت، تراورتن، اونیکس، گرانیت، روشویی و اکسسوری سنگی. صادرات به سراسر جهان از سال ۱۳۸۹.",
   alternates: {
     languages: { en: "/en" },
   },

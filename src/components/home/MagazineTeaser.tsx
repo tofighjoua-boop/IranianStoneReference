@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { type Language, translations } from "@/lib/translations";
 
 interface MagazineTeaserProps {
@@ -9,7 +9,7 @@ const placeholderArticles = [
   {
     slug: "marble-vs-travertine",
     title_en: "Marble vs. Travertine: Which Stone is Right for Your Project?",
-    title_fa: "مرمر در مقابل تراورتن: کدام سنگ برای پروژه‌تان مناسب‌تر است؟",
+    title_fa: "مرمریت در مقابل تراورتن: کدام سنگ برای پروژه‌تان مناسب‌تر است؟",
     category_en: "Knowledge",
     category_fa: "دانش",
     image: "/images/banner-2.jpg",

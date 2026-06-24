@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CTAFloat } from "@/components/layout/CTAFloat";
@@ -6,7 +6,7 @@ import { KnowledgeClient } from "@/components/knowledge/KnowledgeClient";
 
 export const metadata: Metadata = {
   title: "دانش سنگ — راهنماها و مقالات تخصصی",
-  description: "راهنماهای تخصصی درباره سنگ طبیعی — مرمر، تراورتن، اونیکس، گرانیت، مراقبت و نگهداری و صنعت سنگ ایران.",
+  description: "راهنماهای تخصصی درباره سنگ طبیعی — مرمریت، تراورتن، اونیکس، گرانیت، مراقبت و نگهداری و صنعت سنگ ایران.",
 };
 
 export default function KnowledgeFA() {

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 export const metadata: Metadata = {
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     default: "مرجع سنگ ایرانیان | سنگ طبیعی پریمیوم",
   },
   description:
-    "تأمین‌کنندهٔ سنگ طبیعی پریمیوم — مرمر، تراورتن، اونیکس، گرانیت، روشویی و اکسسوری سنگی. صادرات به امارات، قطر، روسیه، آلمان و آمریکا.",
+    "تأمین‌کنندهٔ سنگ طبیعی پریمیوم — مرمریت، تراورتن، اونیکس، گرانیت، روشویی و اکسسوری سنگی. صادرات به امارات، قطر، روسیه، آلمان و آمریکا.",
 };
 
 export default function FaLayout({ children }: { children: React.ReactNode }) {

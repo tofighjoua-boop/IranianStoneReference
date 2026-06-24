@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -15,7 +15,7 @@ const SLIDES = [
 ] as const;
 
 const CAT_LABELS = {
-  marble:     { en: "Marble Collection",     fa: "مجموعهٔ مرمر" },
+  marble:     { en: "Marble Collection",     fa: "مجموعهٔ مرمریت" },
   travertine: { en: "Travertine Collection", fa: "مجموعهٔ تراورتن" },
   onyx:       { en: "Onyx Collection",       fa: "مجموعهٔ اونیکس" },
   granite:    { en: "Granite Collection",    fa: "مجموعهٔ گرانیت" },

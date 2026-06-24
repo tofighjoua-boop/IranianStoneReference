@@ -1,4 +1,4 @@
-/**
+﻿/**
  * WORKSHOP GALLERY
  * ──────────────────────────────────────────────────────────────
  * برای اضافه کردن عکس جدید، یک شی جدید به آرایه اضافه کنید:
@@ -29,7 +29,7 @@ export const workshopGallery: WorkshopItem[] = [
     id: "wg-01",
     image: "/images/banner-new-2.png",
     captionEn: "Gang saw cutting line — multi-blade system processing marble blocks into precision slabs.",
-    captionFa: "خط برش گنگ — سیستم چندتیغه در حال تبدیل بلوک‌های مرمر به دال‌های دقیق.",
+    captionFa: "خط برش گنگ — سیستم چندتیغه در حال تبدیل بلوک‌های مرمریت به دال‌های دقیق.",
     tagEn: "Cutting",
     tagFa: "برش",
   },
@@ -37,7 +37,7 @@ export const workshopGallery: WorkshopItem[] = [
     id: "wg-02",
     image: "/images/banner-new-1.png",
     captionEn: "Finished marble kitchen island and luxury onyx installation — showcasing ISR export-grade output.",
-    captionFa: "جزیره آشپزخانه مرمر و نصب اونیکس لوکس — نمایش محصول صادراتی ISR.",
+    captionFa: "جزیره آشپزخانه مرمریت و نصب اونیکس لوکس — نمایش محصول صادراتی ISR.",
     tagEn: "Finished Product",
     tagFa: "محصول نهایی",
   },
@@ -45,7 +45,7 @@ export const workshopGallery: WorkshopItem[] = [
     id: "wg-03",
     image: "/images/collection-exclusive.jpg",
     captionEn: "Premium green marble slabs after polishing — ready for quality grading.",
-    captionFa: "دال‌های مرمر سبز پریمیوم پس از پولیش — آماده درجه‌بندی کیفی.",
+    captionFa: "دال‌های مرمریت سبز پریمیوم پس از پولیش — آماده درجه‌بندی کیفی.",
     tagEn: "Polishing",
     tagFa: "پولیش",
   },

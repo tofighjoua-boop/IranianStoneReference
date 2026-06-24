@@ -1,4 +1,4 @@
-export type Language = "en" | "fa";
+﻿export type Language = "en" | "fa";
 
 export const translations = {
   en: {
@@ -164,7 +164,7 @@ export const translations = {
     },
     galleryMenu: {
       title: "مجموعه‌ها",
-      marble: "مرمر",
+      marble: "مرمریت",
       travertine: "تراورتن",
       onyx: "اونیکس",
       granite: "گرانیت",
@@ -280,7 +280,7 @@ export const translations = {
       fieldMessagePlaceholder: "پروژه‌تان را توصیف کنید — ابعاد، مقدار، کاربری...",
       submit: "ارسال درخواست",
       success: "ممنون! ظرف ۲۴ ساعت با شما تماس می‌گیریم.",
-      stoneOptions: ["مرمر", "تراورتن", "اونیکس", "گرانیت", "روشویی", "اکسسوری", "هنوز مطمئن نیستم"],
+      stoneOptions: ["مرمریت", "تراورتن", "اونیکس", "گرانیت", "روشویی", "اکسسوری", "هنوز مطمئن نیستم"],
       projectOptions: ["فضای داخلی مسکونی", "فضای داخلی تجاری", "نما / فضای بیرونی", "هتل‌داری", "محوطه‌سازی", "سایر"],
     },
     footer: {
