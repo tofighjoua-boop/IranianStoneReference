@@ -588,35 +588,52 @@ const crystallineMarbleProducts: Product[] = [
 
 // ── Washbasins / روشویی ──────────────────────────────────────────────────────
 const washasinProducts: Product[] = [
-  // B-series — merged, 13 variants across 6 models
+  // B-series Model 1 — Flat Elongated (کشیده / قایقی), 7 stone colors
   {
-    slug: "washbasin-b",
+    slug: "washbasin-b-flat",
     code: "ISR-WB-001",
     categorySlug: "washbasins",
-    nameEn: "Stone Washbasin — B Series",
-    nameFa: "روشویی سنگی — سری B",
+    nameEn: "Stone Washbasin — B Series (Flat)",
+    nameFa: "روشویی سنگی — سری B (مدل کشیده)",
     color: "Multiple Stone Colors",
     colorFa: "رنگ‌بندی متنوع",
-    descriptionEn: "Handcrafted natural stone washbasin — elegant form with smooth polished finish, available in 13 stone variants.",
-    descriptionFa: "روشویی دست‌ساز از سنگ طبیعی با فرم ظریف و پرداخت پولیش — موجود در ۱۳ رنگ‌بندی سنگی.",
+    descriptionEn: "Handcrafted elongated stone washbasin — sleek low-profile boat shape on a square foot, available in 7 stone colors.",
+    descriptionFa: "روشویی سنگی دست‌ساز — فرم کشیده و کم‌ارتفاع با پایه مربع، موجود در ۷ رنگ سنگ طبیعی.",
     finishes: ["Polished"],
     finishesFa: ["پولیش"],
     images: [
       "/images/gallery/washbasins/b1.jpg",
-      "/images/gallery/washbasins/b12.jpg",
       "/images/gallery/washbasins/b21.jpg",
-      "/images/gallery/washbasins/b22.jpg",
       "/images/gallery/washbasins/b31.jpg",
-      "/images/gallery/washbasins/b32.jpg",
       "/images/gallery/washbasins/b41.jpg",
-      "/images/gallery/washbasins/b42.jpg",
       "/images/gallery/washbasins/b43.jpg",
       "/images/gallery/washbasins/b51.jpg",
-      "/images/gallery/washbasins/b52.jpg",
       "/images/gallery/washbasins/b61.jpg",
-      "/images/gallery/washbasins/b62.jpg",
     ],
     thumbnail: "/images/gallery/washbasins/b1.jpg",
+  },
+  // B-series Model 2 — Deep Bowl (کاسه‌ای / عمیق), 6 stone colors
+  {
+    slug: "washbasin-b-bowl",
+    code: "ISR-WB-002",
+    categorySlug: "washbasins",
+    nameEn: "Stone Washbasin — B Series (Deep Bowl)",
+    nameFa: "روشویی سنگی — سری B (مدل کاسه‌ای)",
+    color: "Multiple Stone Colors",
+    colorFa: "رنگ‌بندی متنوع",
+    descriptionEn: "Handcrafted deep bowl stone washbasin — compact upright form with circular foot, available in 6 stone colors.",
+    descriptionFa: "روشویی سنگی دست‌ساز — فرم کاسه‌ای عمیق با پایه گرد، موجود در ۶ رنگ سنگ طبیعی.",
+    finishes: ["Polished"],
+    finishesFa: ["پولیش"],
+    images: [
+      "/images/gallery/washbasins/b12.jpg",
+      "/images/gallery/washbasins/b22.jpg",
+      "/images/gallery/washbasins/b32.jpg",
+      "/images/gallery/washbasins/b42.jpg",
+      "/images/gallery/washbasins/b52.jpg",
+      "/images/gallery/washbasins/b62.jpg",
+    ],
+    thumbnail: "/images/gallery/washbasins/b12.jpg",
   },
   // C-series — same rectangular shape, 7 stone colors
   {
