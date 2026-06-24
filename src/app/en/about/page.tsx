@@ -65,13 +65,19 @@ export default function AboutEN() {
                   Iranian Stone Reference
                 </h2>
                 <p className="text-[#1d2330]/70 leading-relaxed mb-5">
-                  Founded in 2010, Iranian Stone Reference has established itself as a leading B2B supplier of premium natural stone products. We specialize in supplying architects, designers, and contractors with the finest natural stones from Iran and around the world.
+                  Iranian Stone Reference was founded by the Vassigh Family in 2010, soon becoming one of the main players in the Iranian natural stone market.
                 </p>
                 <p className="text-[#1d2330]/70 leading-relaxed mb-5">
-                  We are committed to delivering exceptional quality, reliability, and service to our clients across the globe. With a state-of-the-art showroom and processing facility in Tehran, we ensure every project meets the highest standards.
+                  Our entrepreneurial vision and constant investment in modern equipment, marketing, research and development at every step of the process have contributed to building a role-model company that never stops challenging and reinventing itself.
                 </p>
-                <p className="text-[#1d2330]/70 leading-relaxed">
-                  Our products are exported to UAE, Qatar, Russia, Germany, and the United States. We pride ourselves on our international reach and dedication to client satisfaction.
+                <p className="text-[#1d2330]/70 leading-relaxed mb-5">
+                  Despite its significant market share in Iran, the company also supplies its high-quality exotic stones to international markets — fulfilling its mission of bringing the diversity and unique beauty of Iranian natural stones to the world, to elevate spaces with practicality and enduring character.
+                </p>
+                <p className="text-[#1d2330]/70 leading-relaxed mb-5">
+                  Guided by our clients, we go all the way — delivering on our mission and supporting their dreams. Always present for each one of them, with their own special needs and tastes.
+                </p>
+                <p className="text-[#1d2330]/70 leading-relaxed font-medium">
+                  Unique as their nature. Unique as our stones.
                 </p>
               </div>
               <div className="relative">
