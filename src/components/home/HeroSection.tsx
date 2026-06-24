@@ -89,18 +89,28 @@ export function HeroSection({ locale }: { locale: Language }) {
             </span>
 
             <div
+              className={isRTL ? "" : "text-[22px] sm:text-[28px] lg:text-[36px]"}
               style={{
-                fontSize: isRTL ? "34px" : "36px",
-                lineHeight: "1.2",
-                letterSpacing: isRTL ? "2px" : "4.8px",
+                fontSize: isRTL ? "34px" : undefined,
+                lineHeight: "1.35",
+                letterSpacing: isRTL ? "2px" : "3px",
                 color: "white",
                 textTransform: "uppercase",
                 fontWeight: 300,
                 fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
-                whiteSpace: "nowrap",
+                whiteSpace: isRTL ? "nowrap" : "normal",
+                textAlign: "center",
               }}
             >
-              {isRTL ? "از دل کوه تا قلب معماری" : "FROM THE HEART OF THE MOUNTAIN TO THE HEART OF ARCHITECTURE"}
+              {isRTL ? (
+                "از دل کوه تا قلب معماری"
+              ) : (
+                <>
+                  FROM THE HEART OF THE MOUNTAIN
+                  <br className="sm:hidden" />
+                  {" "}TO THE HEART OF ARCHITECTURE
+                </>
+              )}
             </div>
           </div>
         </div>
