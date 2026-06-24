@@ -38,9 +38,14 @@ export function HeroSection({ locale }: { locale: Language }) {
             transition: "opacity 2s ease-out",
           }}
         >
+          {/* Dark overlay so all images work as backgrounds */}
+          <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.38)" }} />
+
           <div
             dir={isRTL ? "rtl" : "ltr"}
             style={{
+              position: "relative",
+              zIndex: 1,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
