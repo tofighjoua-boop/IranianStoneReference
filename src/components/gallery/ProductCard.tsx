@@ -20,33 +20,48 @@ export function ProductCard({ product, locale }: ProductCardProps) {
       className="group block bg-white"
     >
       {/* Image */}
-      <div className="relative overflow-hidden" style={{ aspectRatio: "3/4" }}>
-        <Image
-          src={product.thumbnail}
-          alt={product.nameEn}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-700"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-        />
-        <div className="absolute inset-0 bg-[#0c1626]/20 group-hover:bg-[#0c1626]/10 transition-colors duration-300" />
+      {(() => {
+        const isWashbasin = product.categorySlug === "washbasins";
+        return (
+          <div
+            className="relative overflow-hidden"
+            style={{
+              aspectRatio: "3/4",
+              backgroundColor: isWashbasin ? "#f5f3ef" : undefined,
+            }}
+          >
+            <Image
+              src={product.thumbnail}
+              alt={product.nameEn}
+              fill
+              className={
+                isWashbasin
+                  ? "object-contain p-4 transition-transform duration-700 group-hover:scale-105"
+                  : "object-cover group-hover:scale-105 transition-transform duration-700"
+              }
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
+            <div className="absolute inset-0 bg-[#0c1626]/20 group-hover:bg-[#0c1626]/10 transition-colors duration-300" />
 
-        {/* Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1">
-          {product.isExclusive && (
-            <Badge variant="exclusive">{g.exclusive}</Badge>
-          )}
-          {product.isNew && (
-            <Badge variant="new">New</Badge>
-          )}
-        </div>
+            {/* Badges */}
+            <div className="absolute top-3 left-3 flex flex-col gap-1">
+              {product.isExclusive && (
+                <Badge variant="exclusive">{g.exclusive}</Badge>
+              )}
+              {product.isNew && (
+                <Badge variant="new">New</Badge>
+              )}
+            </div>
 
-        {/* ISR Code */}
-        {product.code && (
-          <span className="absolute bottom-3 left-3 text-[11px] font-sans font-semibold tracking-wider text-white bg-[#0c1626]/70 px-2 py-1 backdrop-blur-sm">
-            {product.code}
-          </span>
-        )}
-      </div>
+            {/* ISR Code */}
+            {product.code && (
+              <span className="absolute bottom-3 left-3 text-[11px] font-sans font-semibold tracking-wider text-white bg-[#0c1626]/70 px-2 py-1 backdrop-blur-sm">
+                {product.code}
+              </span>
+            )}
+          </div>
+        );
+      })()}
 
       {/* Info */}
       <div className="p-4 border border-t-0 border-[#e5e0d8]">
