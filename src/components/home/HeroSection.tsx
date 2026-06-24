@@ -42,7 +42,7 @@ export function HeroSection({ locale }: { locale: Language }) {
           />
 
           {/* Dark overlay */}
-          <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.38)" }} />
+          <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.22)" }} />
 
           {/* Content */}
           <div

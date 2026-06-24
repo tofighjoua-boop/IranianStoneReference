@@ -67,7 +67,7 @@ export function TechnologySection({ locale }: { locale: Language }) {
   return (
     <section
       style={{
-        backgroundColor: "#0c1626",
+        backgroundColor: "#1a2d42",
         width: "100%",
         padding: "80px 0",
       }}
