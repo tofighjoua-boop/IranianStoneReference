@@ -341,7 +341,7 @@ export function Header({ locale }: { locale: Language }) {
                 href={item.href}
                 onClick={() => !item.comingSoon && setMenuOpen(false)}
                 style={{
-                  fontSize: "22px",
+                  fontSize: "16px",
                   fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
                   fontWeight: 600,
                   color: "#A18F7A",
