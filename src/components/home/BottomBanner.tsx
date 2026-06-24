@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { type Language } from "@/lib/translations";
 import { useBanner } from "./BannerProvider";
@@ -23,76 +24,88 @@ export function BottomBanner({ locale }: { locale: Language }) {
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: `url(${slide.bg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "50% 50%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            color: "#ffffff",
             opacity: i === active ? 1 : 0,
             transition: "opacity 2s ease-out",
           }}
         >
+          {/* Next.js optimized image — AVIF/WebP, quality 90 */}
+          <Image
+            src={slide.bg}
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+
+          {/* Dark overlay */}
           <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.45)" }} />
 
+          {/* Content */}
           <div
-            dir={isRTL ? "rtl" : "ltr"}
             style={{
-              position: "relative",
-              zIndex: 1,
+              position: "absolute",
+              inset: 0,
               display: "flex",
               flexDirection: "column",
+              justifyContent: "center",
               alignItems: "center",
-              gap: "16px",
-              textAlign: "center",
-              padding: "0 24px",
-              maxWidth: "835px",
             }}
           >
             <div
+              dir={isRTL ? "rtl" : "ltr"}
               style={{
-                fontSize: isRTL ? "24px" : "32px",
-                letterSpacing: isRTL ? "1px" : "4.8px",
-                textTransform: "uppercase",
-                fontWeight: 300,
-                color: "white",
-                fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "16px",
+                textAlign: "center",
+                padding: "0 24px",
+                maxWidth: "835px",
               }}
             >
-              {slide.title[locale]}
-            </div>
+              <div
+                style={{
+                  fontSize: isRTL ? "24px" : "32px",
+                  letterSpacing: isRTL ? "1px" : "4.8px",
+                  textTransform: "uppercase",
+                  fontWeight: 300,
+                  color: "white",
+                  fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
+                }}
+              >
+                {slide.title[locale]}
+              </div>
 
-            <div
-              style={{
-                fontSize: "18px",
-                letterSpacing: "2px",
-                color: "rgba(255,255,255,0.8)",
-                fontWeight: 300,
-                fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
-              }}
-            >
-              {slide.sub[locale]}
-            </div>
+              <div
+                style={{
+                  fontSize: "18px",
+                  letterSpacing: "2px",
+                  color: "rgba(255,255,255,0.8)",
+                  fontWeight: 300,
+                  fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
+                }}
+              >
+                {slide.sub[locale]}
+              </div>
 
-            <Link
-              href={`/${locale}${slide.href}`}
-              style={{
-                marginTop: "24px",
-                fontSize: "14px",
-                color: "white",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                textDecoration: "none",
-                border: "1px solid rgba(255,255,255,0.6)",
-                padding: "12px 32px",
-                fontWeight: 300,
-                fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
-              }}
-            >
-              {slide.cta[locale]}
-            </Link>
+              <Link
+                href={`/${locale}${slide.href}`}
+                style={{
+                  marginTop: "24px",
+                  fontSize: "14px",
+                  color: "white",
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                  border: "1px solid rgba(255,255,255,0.6)",
+                  padding: "12px 32px",
+                  fontWeight: 300,
+                  fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
+                }}
+              >
+                {slide.cta[locale]}
+              </Link>
+            </div>
           </div>
         </div>
       ))}

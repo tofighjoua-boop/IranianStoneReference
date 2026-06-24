@@ -1,4 +1,5 @@
-﻿import Link from "next/link";
+﻿import Image from "next/image";
+import Link from "next/link";
 import { type Language } from "@/lib/translations";
 
 interface Section {
@@ -67,17 +68,20 @@ export function CollectionSections({ locale }: { locale: Language }) {
           key={i}
           style={{ position: "relative", width: "100%", height: "600px", overflow: "hidden" }}
         >
-          {/* Slow-zoom background */}
+          {/* Slow-zoom background — Next.js optimized image */}
           <div
             className="collection-banner-img"
-            style={{
-              position: "absolute",
-              inset: "-30px",
-              backgroundImage: `url(${section.bg})`,
-              backgroundSize: "cover",
-              backgroundPosition: "50% 50%",
-            }}
-          />
+            style={{ position: "absolute", inset: "-30px" }}
+          >
+            <Image
+              src={section.bg}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority={i === 0}
+            />
+          </div>
 
           {/* Dark overlay */}
           <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.38)" }} />
