@@ -8,7 +8,6 @@ interface Section {
   body: { en: string; fa: string };
   cta: { en: string; fa: string };
   href: string;
-  disabled?: boolean;
 }
 
 const SECTIONS: Section[] = [
@@ -20,8 +19,8 @@ const SECTIONS: Section[] = [
       en: "Exclusivity through tradition and expertise. ISR is curator to Iran's most desired and recognisable natural stone masterpieces.",
       fa: "انحصار از طریق سنت و تخصص. مرجع سنگ ایرانیان، گردآورنده‌ی شاهکارهای سنگ طبیعی ایران است.",
     },
-    cta: { en: "DISCOVER THIS MATERIAL", fa: "کشف این ماده" },
-    href: "/gallery/marble",
+    cta: { en: "GALLERY", fa: "گالری" },
+    href: "/gallery",
   },
   {
     bg: "/images/banner-2.jpg",
@@ -31,8 +30,8 @@ const SECTIONS: Section[] = [
       en: "Classic and exclusive travertine from Iran's most prestigious quarries — for timeless interiors and facades.",
       fa: "تراورتن کلاسیک و اکسکلوسیو از معتبرترین معادن ایران — برای فضاهای داخلی و نماهای ماندگار.",
     },
-    cta: { en: "DISCOVER", fa: "کشف کنید" },
-    href: "/gallery/travertine",
+    cta: { en: "KNOWLEDGE", fa: "دانش سنگ" },
+    href: "/knowledge",
   },
   {
     bg: "/images/collection-tableware.jpg",
@@ -42,8 +41,8 @@ const SECTIONS: Section[] = [
       en: "Rare and precious onyx for extraordinary spaces. Premium granites for high-performance facades and surfaces.",
       fa: "اونیکس نادر و قیمتی برای فضاهای استثنایی. گرانیت پریمیوم برای نماها و سطوح با عملکرد بالا.",
     },
-    cta: { en: "DISCOVER", fa: "کشف کنید" },
-    href: "/gallery/onyx",
+    cta: { en: "PRODUCTION", fa: "مراحل تولید" },
+    href: "/production",
   },
   {
     bg: "/images/collection-tech.jpg",
@@ -53,9 +52,8 @@ const SECTIONS: Section[] = [
       en: "Describe your project and our AI will recommend the perfect stone. Intelligent matching for architects and designers — coming soon.",
       fa: "پروژه‌ی خود را توصیف کنید و هوش مصنوعی ما بهترین سنگ را پیشنهاد می‌دهد. تطبیق هوشمند برای معماران و طراحان — به‌زودی.",
     },
-    cta: { en: "COMING SOON", fa: "به‌زودی" },
-    href: "#",
-    disabled: true,
+    cta: { en: "ABOUT", fa: "درباره ما" },
+    href: "/about",
   },
 ];
 
@@ -141,15 +139,9 @@ export function CollectionSections({ locale }: { locale: Language }) {
               {section.body[locale]}
             </p>
 
-            {section.disabled ? (
-              <span className="collection-cta-btn collection-cta-disabled">
-                {section.cta[locale]}
-              </span>
-            ) : (
-              <Link href={`/${locale}${section.href}`} className="collection-cta-btn">
-                {section.cta[locale]}
-              </Link>
-            )}
+            <Link href={`/${locale}${section.href}`} className="collection-cta-btn">
+              {section.cta[locale]}
+            </Link>
           </div>
         </div>
       ))}
