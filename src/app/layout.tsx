@@ -31,6 +31,11 @@ export const metadata: Metadata = {
   description:
     "Premium natural stone supplier — marble, travertine, onyx, granite, washbasins and stone accessories. Exporting to UAE, Qatar, Russia, Germany and USA.",
   keywords: ["natural stone", "marble", "travertine", "onyx", "granite", "Iran stone", "سنگ طبیعی", "مرمریت"],
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
   openGraph: {
     siteName: "Iranian Stone Reference",
     type: "website",

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Loader2, Pencil } from 'lucide-react'
 import { Toast } from '@/components/admin/Toast'
+import { useAdminLang } from '@/components/admin/AdminLangContext'
 
 interface GalleryProduct {
   slug: string
@@ -17,6 +18,7 @@ interface GalleryProduct {
 
 export default function GalleryPage() {
   const router = useRouter()
+  const { t } = useAdminLang()
   const [products, setProducts] = useState<GalleryProduct[]>([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('all')
@@ -48,7 +50,7 @@ export default function GalleryPage() {
       )}
 
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-[#f4f1ea] text-2xl font-semibold">Gallery</h1>
+        <h1 className="text-[#f4f1ea] text-2xl font-semibold">{t('Gallery', 'گالری')}</h1>
         {!loading && (
           <p className="text-[#f4f1ea]/40 text-sm">{filtered.length} product{filtered.length !== 1 ? 's' : ''}</p>
         )}
@@ -106,7 +108,7 @@ export default function GalleryPage() {
                   className="mt-3 w-full flex items-center justify-center gap-1.5 border border-[#c6a25f]/30 text-[#c6a25f] hover:bg-[#c6a25f]/10 py-1.5 rounded text-xs transition-colors"
                 >
                   <Pencil className="w-3 h-3" />
-                  Edit Images
+                  {t('Edit Images', 'ویرایش تصاویر')}
                 </button>
               </div>
             </div>

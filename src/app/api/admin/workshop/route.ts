@@ -5,27 +5,35 @@ import type { WorkshopItem } from '@/data/workshop-gallery'
 export const dynamic = 'force-dynamic'
 
 export async function GET() {
-  const items = await getWorkshopItems()
-  return NextResponse.json(items)
+  try {
+    const items = await getWorkshopItems()
+    return NextResponse.json(items)
+  } catch {
+    return NextResponse.json({ error: 'Internal error' }, { status: 500 })
+  }
 }
 
 export async function POST(request: NextRequest) {
-  const body = await request.json() as Partial<WorkshopItem>
-  const items = await getWorkshopItems()
+  try {
+    const body = await request.json() as Partial<WorkshopItem>
+    const items = await getWorkshopItems()
 
-  if (!body.image || !body.captionEn) {
-    return NextResponse.json({ error: 'image and captionEn are required' }, { status: 400 })
+    if (!body.image || !body.captionEn) {
+      return NextResponse.json({ error: 'image and captionEn are required' }, { status: 400 })
+    }
+
+    const item: WorkshopItem = {
+      id: body.id ?? `wg-${Date.now()}`,
+      image: body.image,
+      captionEn: body.captionEn,
+      captionFa: body.captionFa ?? '',
+      tagEn: body.tagEn,
+      tagFa: body.tagFa,
+    }
+
+    await saveWorkshopItems([...items, item])
+    return NextResponse.json(item, { status: 201 })
+  } catch {
+    return NextResponse.json({ error: 'Internal error' }, { status: 500 })
   }
-
-  const item: WorkshopItem = {
-    id: body.id ?? `wg-${Date.now()}`,
-    image: body.image,
-    captionEn: body.captionEn,
-    captionFa: body.captionFa ?? '',
-    tagEn: body.tagEn,
-    tagFa: body.tagFa,
-  }
-
-  await saveWorkshopItems([...items, item])
-  return NextResponse.json(item, { status: 201 })
 }

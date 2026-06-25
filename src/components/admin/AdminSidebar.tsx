@@ -4,22 +4,25 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { LayoutDashboard, FileText, Images, Wrench, LogOut } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useAdminLang } from '@/components/admin/AdminLangContext'
 
 interface NavItem {
-  label: string
+  labelEn: string
+  labelFa: string
   href: string
   icon: React.ComponentType<{ className?: string }>
 }
 
 const navItems: NavItem[] = [
-  { label: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
-  { label: 'Articles', href: '/admin/articles', icon: FileText },
-  { label: 'Gallery', href: '/admin/gallery', icon: Images },
-  { label: 'Workshop', href: '/admin/workshop', icon: Wrench },
+  { labelEn: 'Dashboard', labelFa: 'داشبورد', href: '/admin/dashboard', icon: LayoutDashboard },
+  { labelEn: 'Articles', labelFa: 'مقالات', href: '/admin/articles', icon: FileText },
+  { labelEn: 'Gallery', labelFa: 'گالری', href: '/admin/gallery', icon: Images },
+  { labelEn: 'Workshop', labelFa: 'کارگاه', href: '/admin/workshop', icon: Wrench },
 ]
 
 export function AdminSidebar({ currentPath }: { currentPath: string }) {
   const router = useRouter()
+  const { lang, setLang, t } = useAdminLang()
 
   const handleLogout = async () => {
     await fetch('/api/admin/auth/logout', { method: 'POST' })
@@ -52,11 +55,39 @@ export function AdminSidebar({ currentPath }: { currentPath: string }) {
               )}
             >
               <Icon className="w-4 h-4 flex-shrink-0" />
-              {item.label}
+              {t(item.labelEn, item.labelFa)}
             </Link>
           )
         })}
       </nav>
+
+      {/* Language toggle */}
+      <div className="px-4 py-3 border-t border-[#c6a25f]/20">
+        <div className="flex gap-2">
+          <button
+            onClick={() => setLang('en')}
+            className={cn(
+              'flex-1 py-1.5 rounded text-xs font-semibold transition-colors',
+              lang === 'en'
+                ? 'bg-[#c6a25f] text-[#0c1626]'
+                : 'border border-[#c6a25f]/30 text-[#f4f1ea]/60 hover:text-[#c6a25f] hover:border-[#c6a25f]/60'
+            )}
+          >
+            EN
+          </button>
+          <button
+            onClick={() => setLang('fa')}
+            className={cn(
+              'flex-1 py-1.5 rounded text-xs font-semibold transition-colors',
+              lang === 'fa'
+                ? 'bg-[#c6a25f] text-[#0c1626]'
+                : 'border border-[#c6a25f]/30 text-[#f4f1ea]/60 hover:text-[#c6a25f] hover:border-[#c6a25f]/60'
+            )}
+          >
+            FA
+          </button>
+        </div>
+      </div>
 
       {/* Logout */}
       <div className="px-4 py-4 border-t border-[#c6a25f]/20">
@@ -65,7 +96,7 @@ export function AdminSidebar({ currentPath }: { currentPath: string }) {
           className="flex items-center gap-3 w-full px-2 py-2 text-sm text-[#f4f1ea]/60 hover:text-[#f4f1ea] transition-colors rounded"
         >
           <LogOut className="w-4 h-4 flex-shrink-0" />
-          Logout
+          {t('Logout', 'خروج')}
         </button>
       </div>
     </aside>

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { AdminSidebar } from '@/components/admin/AdminSidebar'
+import { AdminLangProvider } from '@/components/admin/AdminLangContext'
 import { Loader2 } from 'lucide-react'
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -44,11 +45,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }
 
   return (
-    <div className="min-h-screen flex bg-[#16263f]">
-      <AdminSidebar currentPath={pathname} />
-      <main className="flex-1 overflow-auto">
-        {children}
-      </main>
-    </div>
+    <AdminLangProvider>
+      <div className="min-h-screen flex bg-[#16263f]">
+        <AdminSidebar currentPath={pathname} />
+        <main className="flex-1 overflow-auto">
+          {children}
+        </main>
+      </div>
+    </AdminLangProvider>
   )
 }

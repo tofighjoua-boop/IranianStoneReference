@@ -10,6 +10,9 @@ export default function LoginPage() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [lang, setLang] = useState<'en' | 'fa'>('fa')
+
+  const t = (en: string, fa: string) => lang === 'fa' ? fa : en
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
@@ -24,17 +27,17 @@ export default function LoginPage() {
       if (res.ok) {
         router.push('/admin/dashboard')
       } else {
-        setError('Invalid username or password.')
+        setError(t('Invalid username or password.', 'نام کاربری یا رمز عبور اشتباه است'))
       }
     } catch {
-      setError('Network error. Please try again.')
+      setError(t('Network error. Please try again.', 'خطای شبکه. لطفاً دوباره تلاش کنید.'))
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <div className="min-h-screen bg-[#0c1626] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#0c1626] flex items-center justify-center px-4" dir={lang === 'fa' ? 'rtl' : 'ltr'}>
       <div className="w-full max-w-sm">
         {/* Brand */}
         <div className="text-center mb-8">
@@ -42,18 +45,38 @@ export default function LoginPage() {
             ISR
           </h1>
           <p className="text-[#f4f1ea]/60 text-sm tracking-widest uppercase">
-            Admin Panel
+            {t('Admin Panel', 'پنل مدیریت')}
           </p>
         </div>
 
         {/* Card */}
         <div className="bg-[#16263f] border border-[#c6a25f]/20 rounded-lg p-8">
-          <h2 className="text-[#f4f1ea] text-lg font-medium mb-6">Sign In</h2>
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-[#f4f1ea] text-lg font-medium">{t('Sign In', 'ورود')}</h2>
+            <div className="flex gap-1.5">
+              <button
+                onClick={() => setLang('en')}
+                className={`px-2 py-1 rounded text-xs font-semibold transition-colors ${
+                  lang === 'en' ? 'bg-[#c6a25f] text-[#0c1626]' : 'border border-[#c6a25f]/30 text-[#f4f1ea]/60 hover:text-[#c6a25f]'
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLang('fa')}
+                className={`px-2 py-1 rounded text-xs font-semibold transition-colors ${
+                  lang === 'fa' ? 'bg-[#c6a25f] text-[#0c1626]' : 'border border-[#c6a25f]/30 text-[#f4f1ea]/60 hover:text-[#c6a25f]'
+                }`}
+              >
+                FA
+              </button>
+            </div>
+          </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-xs text-[#f4f1ea]/60 uppercase tracking-wider mb-1.5">
-                Username
+                {t('Username', 'نام کاربری')}
               </label>
               <input
                 type="text"
@@ -67,7 +90,7 @@ export default function LoginPage() {
 
             <div>
               <label className="block text-xs text-[#f4f1ea]/60 uppercase tracking-wider mb-1.5">
-                Password
+                {t('Password', 'رمز عبور')}
               </label>
               <input
                 type="password"
@@ -93,7 +116,7 @@ export default function LoginPage() {
               ) : (
                 <LogIn className="w-4 h-4" />
               )}
-              {loading ? 'Signing in…' : 'Sign In'}
+              {loading ? t('Signing in…', 'در حال ورود...') : t('Sign In', 'ورود')}
             </button>
           </form>
         </div>

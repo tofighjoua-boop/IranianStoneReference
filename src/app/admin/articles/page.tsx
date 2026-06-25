@@ -5,8 +5,10 @@ import Link from 'next/link'
 import { Plus, Pencil, Trash2, Loader2 } from 'lucide-react'
 import { Toast } from '@/components/admin/Toast'
 import type { Article } from '@/data/articles'
+import { useAdminLang } from '@/components/admin/AdminLangContext'
 
 export default function ArticlesPage() {
+  const { t } = useAdminLang()
   const [articles, setArticles] = useState<Article[]>([])
   const [loading, setLoading] = useState(true)
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null)
@@ -56,7 +58,7 @@ export default function ArticlesPage() {
 
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-[#f4f1ea] text-2xl font-semibold">Articles</h1>
+          <h1 className="text-[#f4f1ea] text-2xl font-semibold">{t('Articles', 'مقالات')}</h1>
           {!loading && (
             <p className="text-[#f4f1ea]/40 text-sm mt-1">{articles.length} article{articles.length !== 1 ? 's' : ''}</p>
           )}
@@ -66,7 +68,7 @@ export default function ArticlesPage() {
           className="flex items-center gap-2 bg-[#c6a25f] hover:bg-[#b8904a] text-[#0c1626] font-semibold px-4 py-2 rounded text-sm transition-colors"
         >
           <Plus className="w-4 h-4" />
-          New Article
+          {t('New Article', 'مقاله جدید')}
         </Link>
       </div>
 
@@ -88,11 +90,11 @@ export default function ArticlesPage() {
             <thead>
               <tr className="border-b border-[#c6a25f]/20">
                 <th className="text-left px-4 py-3 text-xs text-[#f4f1ea]/40 uppercase tracking-wider w-14">Image</th>
-                <th className="text-left px-4 py-3 text-xs text-[#f4f1ea]/40 uppercase tracking-wider">Title (FA)</th>
-                <th className="text-left px-4 py-3 text-xs text-[#f4f1ea]/40 uppercase tracking-wider w-28">Category</th>
-                <th className="text-left px-4 py-3 text-xs text-[#f4f1ea]/40 uppercase tracking-wider w-28">Date</th>
-                <th className="text-left px-4 py-3 text-xs text-[#f4f1ea]/40 uppercase tracking-wider w-20">Read</th>
-                <th className="text-right px-4 py-3 text-xs text-[#f4f1ea]/40 uppercase tracking-wider w-24">Actions</th>
+                <th className="text-left px-4 py-3 text-xs text-[#f4f1ea]/40 uppercase tracking-wider">{t('Title', 'عنوان')}</th>
+                <th className="text-left px-4 py-3 text-xs text-[#f4f1ea]/40 uppercase tracking-wider w-28">{t('Category', 'دسته‌بندی')}</th>
+                <th className="text-left px-4 py-3 text-xs text-[#f4f1ea]/40 uppercase tracking-wider w-28">{t('Date', 'تاریخ')}</th>
+                <th className="text-left px-4 py-3 text-xs text-[#f4f1ea]/40 uppercase tracking-wider w-20">{t('Read Time', 'زمان مطالعه')}</th>
+                <th className="text-right px-4 py-3 text-xs text-[#f4f1ea]/40 uppercase tracking-wider w-24">{t('Actions', 'عملیات')}</th>
               </tr>
             </thead>
             <tbody>

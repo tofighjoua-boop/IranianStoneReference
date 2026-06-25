@@ -1,26 +1,19 @@
+import fs from 'node:fs'
+import path from 'node:path'
 import type { Article } from '@/data/articles'
 import type { WorkshopItem } from '@/data/workshop-gallery'
 import type { Product } from '@/data/products'
 
-// Vercel KV when deployed, filesystem fallback for local dev
-async function getStore() {
-  if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
-    const { kv } = await import('@vercel/kv')
-    return kv
-  }
-  return null
-}
-
-// ── Filesystem fallback (local dev) ─────────────────────────────────────────
-import fs from 'node:fs'
-import path from 'node:path'
-
-const DATA_DIR = path.join(process.cwd(), 'data')
+// On Vercel: use /tmp (writable, ephemeral per-container)
+// Locally: use data/ in project root (persistent)
+const DATA_DIR = process.env.VERCEL === '1'
+  ? '/tmp/isr-data'
+  : path.join(process.cwd(), 'data')
 
 function fsRead<T>(key: string): T | null {
-  const filePath = path.join(DATA_DIR, `${key}.json`)
-  if (!fs.existsSync(filePath)) return null
   try {
+    const filePath = path.join(DATA_DIR, `${key}.json`)
+    if (!fs.existsSync(filePath)) return null
     return JSON.parse(fs.readFileSync(filePath, 'utf-8')) as T
   } catch {
     return null
@@ -28,61 +21,73 @@ function fsRead<T>(key: string): T | null {
 }
 
 function fsWrite<T>(key: string, data: T): void {
-  if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true })
-  fs.writeFileSync(path.join(DATA_DIR, `${key}.json`), JSON.stringify(data, null, 2), 'utf-8')
+  try {
+    if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true })
+    fs.writeFileSync(path.join(DATA_DIR, `${key}.json`), JSON.stringify(data, null, 2), 'utf-8')
+  } catch {
+    // Silently fail — data just won't persist this request
+  }
 }
 
-// ── Generic get/set ──────────────────────────────────────────────────────────
 async function kvGet<T>(key: string): Promise<T | null> {
-  const store = await getStore()
-  if (store) return store.get<T>(key)
+  try {
+    if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
+      const { kv } = await import('@vercel/kv')
+      return await kv.get<T>(key)
+    }
+  } catch {}
   return fsRead<T>(key)
 }
 
 async function kvSet<T>(key: string, value: T): Promise<void> {
-  const store = await getStore()
-  if (store) {
-    await store.set(key, value)
-  } else {
-    fsWrite(key, value)
-  }
+  try {
+    if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
+      const { kv } = await import('@vercel/kv')
+      await kv.set(key, value)
+      return
+    }
+  } catch {}
+  fsWrite(key, value)
 }
 
-// ── Articles ─────────────────────────────────────────────────────────────────
 export async function getArticles(): Promise<Article[]> {
-  const cached = await kvGet<Article[]>('articles')
-  if (cached) return cached
+  try {
+    const cached = await kvGet<Article[]>('articles')
+    if (cached && cached.length > 0) return cached
+  } catch {}
   const { articles } = await import('@/data/articles')
-  await kvSet('articles', articles)
+  try { await kvSet('articles', articles) } catch {}
   return articles
 }
 
 export async function saveArticles(articles: Article[]): Promise<void> {
-  await kvSet('articles', articles)
+  try { await kvSet('articles', articles) } catch {}
 }
 
-// ── Workshop gallery ─────────────────────────────────────────────────────────
 export async function getWorkshopItems(): Promise<WorkshopItem[]> {
-  const cached = await kvGet<WorkshopItem[]>('workshop-gallery')
-  if (cached) return cached
+  try {
+    const cached = await kvGet<WorkshopItem[]>('workshop-gallery')
+    if (cached && cached.length > 0) return cached
+  } catch {}
   const { workshopGallery } = await import('@/data/workshop-gallery')
-  await kvSet('workshop-gallery', workshopGallery)
+  try { await kvSet('workshop-gallery', workshopGallery) } catch {}
   return workshopGallery
 }
 
 export async function saveWorkshopItems(items: WorkshopItem[]): Promise<void> {
-  await kvSet('workshop-gallery', items)
+  try { await kvSet('workshop-gallery', items) } catch {}
 }
 
-// ── Products (gallery images) ────────────────────────────────────────────────
 export async function getProducts(): Promise<Product[]> {
-  const cached = await kvGet<Product[]>('products')
-  if (cached) return cached
+  try {
+    const cached = await kvGet<Product[]>('products')
+    if (cached && cached.length > 0) return cached
+  } catch {}
   const { products } = await import('@/data/products')
-  await kvSet('products', products)
+  try { await kvSet('products', products) } catch {}
   return products
 }
 
 export async function saveProducts(products: Product[]): Promise<void> {
-  await kvSet('products', products)
+  try { await kvSet('products', products) } catch {}
 }

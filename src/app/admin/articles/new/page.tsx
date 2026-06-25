@@ -6,9 +6,11 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { ArticleForm, type ArticleFormData } from '@/components/admin/ArticleForm'
 import { Toast } from '@/components/admin/Toast'
+import { useAdminLang } from '@/components/admin/AdminLangContext'
 
 export default function NewArticlePage() {
   const router = useRouter()
+  const { t } = useAdminLang()
   const [saving, setSaving] = useState(false)
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null)
 
@@ -55,7 +57,7 @@ export default function NewArticlePage() {
         <Link href="/admin/articles" className="text-[#f4f1ea]/40 hover:text-[#c6a25f] transition-colors">
           <ArrowLeft className="w-5 h-5" />
         </Link>
-        <h1 className="text-[#f4f1ea] text-2xl font-semibold">New Article</h1>
+        <h1 className="text-[#f4f1ea] text-2xl font-semibold">{t('New Article', 'مقاله جدید')}</h1>
       </div>
       <div className="max-w-4xl">
         <ArticleForm onSave={handleSave} saving={saving} isNew={true} />

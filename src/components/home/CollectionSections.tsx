@@ -4,6 +4,7 @@ import { type Language } from "@/lib/translations";
 
 interface Section {
   bg: string;
+  objectPosition?: string;
   label: { en: string; fa: string };
   title: { en: string; fa: string };
   body: { en: string; fa: string };
@@ -36,6 +37,7 @@ const SECTIONS: Section[] = [
   },
   {
     bg: "/images/banner-washbasin.jpg",
+    objectPosition: "center 60%",
     label: { en: "ISR®", fa: "مرجع سنگ ایرانیان®" },
     title: { en: "EXCLUSIVE MARBLE", fa: "مرمریت ویژه" },
     body: {
@@ -78,6 +80,7 @@ export function CollectionSections({ locale }: { locale: Language }) {
               alt=""
               fill
               className="object-cover"
+              style={{ objectPosition: section.objectPosition ?? "center" }}
               sizes="100vw"
               priority={i === 0}
             />

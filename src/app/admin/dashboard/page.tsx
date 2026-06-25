@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { FileText, Images, Wrench, Loader2, Plus } from 'lucide-react'
 import type { Article } from '@/data/articles'
 import type { WorkshopItem } from '@/data/workshop-gallery'
+import { useAdminLang } from '@/components/admin/AdminLangContext'
 
 interface GalleryProduct {
   slug: string
@@ -30,6 +31,7 @@ interface RecentArticle {
 }
 
 export default function DashboardPage() {
+  const { t } = useAdminLang()
   const [stats, setStats] = useState<Stats | null>(null)
   const [recentArticles, setRecentArticles] = useState<RecentArticle[]>([])
   const [loading, setLoading] = useState(true)
@@ -73,14 +75,14 @@ export default function DashboardPage() {
   }, [])
 
   const statCards = [
-    { label: 'Total Articles', value: stats?.articles, icon: FileText, href: '/admin/articles' },
-    { label: 'Gallery Products', value: stats?.gallery, icon: Images, href: '/admin/gallery' },
-    { label: 'Workshop Items', value: stats?.workshop, icon: Wrench, href: '/admin/workshop' },
+    { labelEn: 'Total Articles', labelFa: 'کل مقالات', value: stats?.articles, icon: FileText, href: '/admin/articles' },
+    { labelEn: 'Gallery Products', labelFa: 'محصولات گالری', value: stats?.gallery, icon: Images, href: '/admin/gallery' },
+    { labelEn: 'Workshop Items', labelFa: 'آیتم‌های کارگاه', value: stats?.workshop, icon: Wrench, href: '/admin/workshop' },
   ]
 
   return (
     <div className="p-8">
-      <h1 className="text-[#f4f1ea] text-2xl font-semibold mb-8">Dashboard</h1>
+      <h1 className="text-[#f4f1ea] text-2xl font-semibold mb-8">{t('Dashboard', 'داشبورد')}</h1>
 
       {/* Stat cards */}
       {loading ? (
@@ -94,7 +96,7 @@ export default function DashboardPage() {
             const Icon = card.icon
             return (
               <Link
-                key={card.label}
+                key={card.labelEn}
                 href={card.href}
                 className="bg-[#0c1626] border border-[#c6a25f]/20 rounded-lg p-6 hover:border-[#c6a25f]/50 transition-colors"
               >
@@ -103,7 +105,7 @@ export default function DashboardPage() {
                     <p className="text-[#c6a25f] text-3xl font-bold mb-1">
                       {card.value ?? '—'}
                     </p>
-                    <p className="text-[#f4f1ea]/60 text-sm">{card.label}</p>
+                    <p className="text-[#f4f1ea]/60 text-sm">{t(card.labelEn, card.labelFa)}</p>
                   </div>
                   <Icon className="w-6 h-6 text-[#c6a25f]/40" />
                 </div>
@@ -116,7 +118,7 @@ export default function DashboardPage() {
       {/* Quick actions */}
       <div className="mb-10">
         <h2 className="text-[#f4f1ea]/80 text-sm uppercase tracking-widest mb-4">
-          Quick Actions
+          {t('Quick Actions', 'دسترسی سریع')}
         </h2>
         <div className="flex flex-wrap gap-3">
           <Link
@@ -124,14 +126,14 @@ export default function DashboardPage() {
             className="flex items-center gap-2 bg-[#c6a25f] hover:bg-[#b8904a] text-[#0c1626] font-semibold px-4 py-2 rounded text-sm transition-colors"
           >
             <Plus className="w-4 h-4" />
-            New Article
+            {t('New Article', 'مقاله جدید')}
           </Link>
           <Link
             href="/admin/workshop"
             className="flex items-center gap-2 border border-[#c6a25f] text-[#c6a25f] hover:bg-[#c6a25f]/10 px-4 py-2 rounded text-sm transition-colors"
           >
             <Plus className="w-4 h-4" />
-            New Workshop Item
+            {t('New Workshop Item', 'آیتم کارگاه جدید')}
           </Link>
         </div>
       </div>
@@ -139,7 +141,7 @@ export default function DashboardPage() {
       {/* Recent articles */}
       <div>
         <h2 className="text-[#f4f1ea]/80 text-sm uppercase tracking-widest mb-4">
-          Recent Articles
+          {t('Recent Articles', 'آخرین مقالات')}
         </h2>
         {loading ? (
           <div className="flex items-center gap-2 text-[#f4f1ea]/60">

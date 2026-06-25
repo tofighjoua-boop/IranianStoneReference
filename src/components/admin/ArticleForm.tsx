@@ -3,6 +3,7 @@
 import { useState, useRef, ChangeEvent } from 'react'
 import { Upload, Loader2 } from 'lucide-react'
 import type { Article } from '@/data/articles'
+import { useAdminLang } from '@/components/admin/AdminLangContext'
 
 type ArticleFormData = Omit<Article, 'bodyEn' | 'bodyFa'> & {
   bodyEnText: string
@@ -54,6 +55,7 @@ const uploadFile = async (file: File): Promise<string> => {
 }
 
 export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps) {
+  const { t } = useAdminLang()
   const [form, setForm] = useState<ArticleFormData>(initial ?? emptyForm)
   const [slugManual, setSlugManual] = useState(!isNew)
   const [uploading, setUploading] = useState(false)
@@ -93,7 +95,7 @@ export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps
       {/* Title row */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className={labelClass}>Title (English)</label>
+          <label className={labelClass}>{t('Title (English)', 'عنوان (انگلیسی)')}</label>
           <input
             type="text"
             value={form.titleEn}
@@ -103,7 +105,7 @@ export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps
           />
         </div>
         <div>
-          <label className={labelClass}>Title (Persian)</label>
+          <label className={labelClass}>{t('Title (Persian)', 'عنوان (فارسی)')}</label>
           <input
             type="text"
             dir="rtl"
@@ -118,7 +120,7 @@ export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps
       {/* Slug + Category + ReadTime + Date */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="lg:col-span-2">
-          <label className={labelClass}>Slug</label>
+          <label className={labelClass}>{t('Slug', 'اسلاگ')}</label>
           <input
             type="text"
             value={form.slug}
@@ -130,7 +132,7 @@ export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps
           />
         </div>
         <div>
-          <label className={labelClass}>Category</label>
+          <label className={labelClass}>{t('Category', 'دسته‌بندی')}</label>
           <select
             value={form.category}
             onChange={(e) => set('category', e.target.value as ArticleCategory)}
@@ -144,7 +146,7 @@ export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className={labelClass}>Read Time (min)</label>
+            <label className={labelClass}>{t('Read Time (min)', 'زمان مطالعه (دقیقه)')}</label>
             <input
               type="number"
               min={1}
@@ -156,7 +158,7 @@ export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps
             />
           </div>
           <div>
-            <label className={labelClass}>Published</label>
+            <label className={labelClass}>{t('Publish Date', 'تاریخ انتشار')}</label>
             <input
               type="date"
               value={form.publishedAt}
@@ -170,7 +172,7 @@ export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps
 
       {/* Image */}
       <div>
-        <label className={labelClass}>Cover Image</label>
+        <label className={labelClass}>{t('Cover Image', 'تصویر جلد')}</label>
         <div className="flex gap-2 items-start">
           <input
             type="text"
@@ -186,7 +188,7 @@ export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps
             className="flex items-center gap-1.5 border border-[#c6a25f]/40 text-[#c6a25f] px-3 py-2.5 rounded text-sm hover:bg-[#c6a25f]/10 transition-colors disabled:opacity-60 flex-shrink-0"
           >
             {uploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
-            Upload
+            {t('Upload', 'آپلود')}
           </button>
           <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
         </div>
@@ -198,7 +200,7 @@ export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps
       {/* Excerpts */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className={labelClass}>Excerpt (English)</label>
+          <label className={labelClass}>{t('Excerpt (English)', 'خلاصه (انگلیسی)')}</label>
           <textarea
             value={form.excerptEn}
             onChange={(e) => set('excerptEn', e.target.value)}
@@ -208,7 +210,7 @@ export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps
           />
         </div>
         <div>
-          <label className={labelClass}>Excerpt (Persian)</label>
+          <label className={labelClass}>{t('Excerpt (Persian)', 'خلاصه (فارسی)')}</label>
           <textarea
             dir="rtl"
             value={form.excerptFa}
@@ -222,8 +224,8 @@ export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps
 
       {/* Body */}
       <div>
-        <label className={labelClass}>Body (English)</label>
-        <p className="text-xs text-[#f4f1ea]/40 mb-2">Separate paragraphs with a blank line</p>
+        <label className={labelClass}>{t('Body (English)', 'متن (انگلیسی)')}</label>
+        <p className="text-xs text-[#f4f1ea]/40 mb-2">{t('Each paragraph on a new blank line', 'هر پاراگراف با یک خط خالی جدا شود')}</p>
         <textarea
           value={form.bodyEnText}
           onChange={(e) => set('bodyEnText', e.target.value)}
@@ -233,8 +235,8 @@ export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps
         />
       </div>
       <div>
-        <label className={labelClass}>Body (Persian)</label>
-        <p className="text-xs text-[#f4f1ea]/40 mb-2">هر پاراگراف را با یک خط خالی از هم جدا کنید</p>
+        <label className={labelClass}>{t('Body (Persian)', 'متن (فارسی)')}</label>
+        <p className="text-xs text-[#f4f1ea]/40 mb-2">{t('Each paragraph on a new blank line', 'هر پاراگراف با یک خط خالی جدا شود')}</p>
         <textarea
           dir="rtl"
           value={form.bodyFaText}
@@ -253,7 +255,7 @@ export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps
           className="flex items-center gap-2 bg-[#c6a25f] hover:bg-[#b8904a] text-[#0c1626] font-semibold px-6 py-2.5 rounded text-sm transition-colors disabled:opacity-60"
         >
           {saving && <Loader2 className="w-4 h-4 animate-spin" />}
-          {saving ? 'Saving…' : isNew ? 'Create Article' : 'Save Changes'}
+          {saving ? t('Saving...', 'در حال ذخیره...') : isNew ? t('New Article', 'مقاله جدید') : t('Save', 'ذخیره')}
         </button>
       </div>
     </form>

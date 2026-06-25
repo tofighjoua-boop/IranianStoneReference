@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback, useRef, ChangeEvent } from 'react'
 import { Loader2, Upload, Pencil, Trash2, X, Check } from 'lucide-react'
 import { Toast } from '@/components/admin/Toast'
 import type { WorkshopItem } from '@/data/workshop-gallery'
+import { useAdminLang } from '@/components/admin/AdminLangContext'
 
 type WorkshopFormData = Omit<WorkshopItem, 'id'>
 
@@ -34,12 +35,14 @@ function WorkshopItemForm({
   onCancel,
   saving,
   submitLabel,
+  cancelLabel,
 }: {
   initial: WorkshopFormData
   onSave: (data: WorkshopFormData) => Promise<void>
   onCancel?: () => void
   saving: boolean
   submitLabel: string
+  cancelLabel?: string
 }) {
   const [form, setForm] = useState<WorkshopFormData>(initial)
   const [uploading, setUploading] = useState(false)
@@ -70,7 +73,7 @@ function WorkshopItemForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
       <div>
-        <label className={labelClass}>Image</label>
+        <label className={labelClass}>Image URL or upload</label>
         <div className="flex gap-2 items-center">
           <input
             type="text"
@@ -128,7 +131,7 @@ function WorkshopItemForm({
             className="flex items-center gap-1.5 border border-[#c6a25f]/30 text-[#f4f1ea]/60 hover:text-[#f4f1ea] px-4 py-2 rounded text-sm transition-colors"
           >
             <X className="w-3.5 h-3.5" />
-            Cancel
+            {cancelLabel ?? 'Cancel'}
           </button>
         )}
       </div>
@@ -137,6 +140,7 @@ function WorkshopItemForm({
 }
 
 export default function WorkshopPage() {
+  const { t } = useAdminLang()
   const [items, setItems] = useState<WorkshopItem[]>([])
   const [loading, setLoading] = useState(true)
   const [addSaving, setAddSaving] = useState(false)
@@ -236,16 +240,16 @@ export default function WorkshopPage() {
         <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />
       )}
 
-      <h1 className="text-[#f4f1ea] text-2xl font-semibold mb-8">Workshop Gallery</h1>
+      <h1 className="text-[#f4f1ea] text-2xl font-semibold mb-8">{t('Workshop Gallery', 'گالری کارگاه')}</h1>
 
       {/* Add new item */}
       <div className="bg-[#0c1626] border border-[#c6a25f]/20 rounded-lg p-5 mb-8">
-        <h2 className="text-[#c6a25f] text-xs uppercase tracking-widest mb-4">Add New Item</h2>
+        <h2 className="text-[#c6a25f] text-xs uppercase tracking-widest mb-4">{t('Add New Item', 'افزودن آیتم جدید')}</h2>
         <WorkshopItemForm
           initial={emptyForm}
           onSave={handleAdd}
           saving={addSaving}
-          submitLabel="Add Item"
+          submitLabel={t('Add Item', 'افزودن آیتم')}
         />
       </div>
 
@@ -283,7 +287,8 @@ export default function WorkshopPage() {
                       onSave={(form) => handleEdit(item.id, form)}
                       onCancel={() => setEditId(null)}
                       saving={editSaving}
-                      submitLabel="Save"
+                      submitLabel={t('Save', 'ذخیره')}
+                      cancelLabel={t('Cancel', 'انصراف')}
                     />
                   </div>
                 ) : (
@@ -303,14 +308,14 @@ export default function WorkshopPage() {
                           className="flex items-center gap-1.5 border border-[#c6a25f]/30 text-[#c6a25f] hover:bg-[#c6a25f]/10 px-3 py-1.5 rounded text-xs transition-colors"
                         >
                           <Pencil className="w-3 h-3" />
-                          Edit
+                          {t('Edit', 'ویرایش')}
                         </button>
                         <button
                           onClick={() => handleDelete(item.id)}
                           className="flex items-center gap-1.5 border border-red-500/30 text-red-400 hover:bg-red-900/20 px-3 py-1.5 rounded text-xs transition-colors"
                         >
                           <Trash2 className="w-3 h-3" />
-                          Delete
+                          {t('Delete', 'حذف')}
                         </button>
                       </div>
                     </div>
