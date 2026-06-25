@@ -5,10 +5,14 @@ export async function POST(request: NextRequest) {
   const body = await request.json() as { username?: string; password?: string }
   const { username, password } = body
 
-  if (
-    username !== process.env.ADMIN_USERNAME ||
-    password !== process.env.ADMIN_PASSWORD
-  ) {
+  const envUser = (process.env.ADMIN_USERNAME ?? '').trim()
+  const envPass = (process.env.ADMIN_PASSWORD ?? '').trim()
+
+  if (!envUser || !envPass) {
+    return NextResponse.json({ error: 'Server misconfigured' }, { status: 500 })
+  }
+
+  if (username !== envUser || password !== envPass) {
     return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 })
   }
 
