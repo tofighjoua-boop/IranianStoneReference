@@ -44,13 +44,13 @@ export default function NewProductPage() {
   const [saving, setSaving] = useState(false)
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null)
 
-  // Auto-load next sequential code on mount
+  // Reload the next category-specific code whenever the category changes
   useEffect(() => {
-    fetch('/api/admin/gallery?nextCode=1')
+    fetch(`/api/admin/gallery?nextCode=1&category=${categorySlug}`)
       .then(r => r.json())
       .then((d: { code?: string }) => { if (d.code) setCode(d.code) })
       .catch(() => {})
-  }, [])
+  }, [categorySlug])
 
   const genSlug = (en: string) =>
     en.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
@@ -60,13 +60,14 @@ export default function NewProductPage() {
     if (!slug || slug === genSlug(nameEn)) setSlug(genSlug(v))
   }
 
-  const uploadFile = async (file: File): Promise<string> => {
+  const uploadFile = async (file: File): Promise<{ url: string; code: string }> => {
     const fd = new FormData()
     fd.append('file', file)
+    fd.append('category', categorySlug)
     const res = await fetch('/api/admin/upload', { method: 'POST', body: fd })
-    const data = await res.json() as { url?: string; error?: string }
+    const data = await res.json() as { url?: string; code?: string; error?: string }
     if (!data.url) throw new Error(data.error ?? 'Upload failed')
-    return data.url
+    return { url: data.url, code: data.code ?? '' }
   }
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,7 +75,7 @@ export default function NewProductPage() {
     if (!file) return
     setUploading(true)
     try {
-      const url = await uploadFile(file)
+      const { url } = await uploadFile(file)
       const entry: ImageEntry = { url, name: uploadName || file.name.replace(/\.[^.]+$/, '') }
       setImages(prev => [...prev, entry])
       if (!thumbnail) setThumbnail(url)

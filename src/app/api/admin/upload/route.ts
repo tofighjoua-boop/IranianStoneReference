@@ -1,21 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server'
 import fs from 'node:fs'
 import path from 'node:path'
+import { categoryPrefix } from '@/lib/storage'
 
 const UPLOAD_DIR = path.join(process.cwd(), 'public', 'images', 'uploads')
 const ALLOWED_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp']
 const MAX_SIZE = 10 * 1024 * 1024 // 10 MB
 
-// ─── Sequential image code generator ──────────────────────────────────────
-// Stores a global counter in Blob (isr-data/img-counter.json).
-// Format: ISR-001, ISR-002, … (consistent across all admin sections)
+// ─── Per-category sequential image code ────────────────────────────────────
+// Format: ISR-{PREFIX}-{NNN}
+// Counter stored in isr-data/counter-{PREFIX}.json (separate from product counter)
+// so image uploads don't consume product code slots.
 
-async function nextImageCode(): Promise<string> {
+async function nextImageCode(categorySlug: string): Promise<string> {
   if (!process.env.BLOB_READ_WRITE_TOKEN) return ''
+  const prefix = categoryPrefix(categorySlug)
+  const pathname = `isr-data/img-${prefix}.json`
   try {
     const { list, put } = await import('@vercel/blob')
-    const { blobs } = await list({ prefix: 'isr-data/img-counter', limit: 2 })
-    const blob = blobs.find(b => b.pathname === 'isr-data/img-counter.json')
+    const { blobs } = await list({ prefix: `isr-data/img-${prefix}`, limit: 2 })
+    const blob = blobs.find(b => b.pathname === pathname)
 
     let count = 1
     if (blob) {
@@ -26,65 +30,56 @@ async function nextImageCode(): Promise<string> {
       }
     }
 
-    await put('isr-data/img-counter.json', JSON.stringify({ count }), {
+    await put(pathname, JSON.stringify({ count }), {
       access: 'public',
       addRandomSuffix: false,
       allowOverwrite: true,
       contentType: 'application/json',
     })
 
-    return `ISR-${String(count).padStart(3, '0')}`
+    return `ISR-${prefix}-${String(count).padStart(3, '0')}`
   } catch {
-    return ''
+    return `ISR-${prefix}-XXX`
   }
 }
 
 export async function POST(request: NextRequest) {
   const formData = await request.formData()
   const file = formData.get('file')
+  const categorySlug = (formData.get('category') as string | null) ?? ''
 
   if (!(file instanceof File)) {
     return NextResponse.json({ error: 'No file provided' }, { status: 400 })
   }
-
   if (!ALLOWED_TYPES.includes(file.type)) {
     return NextResponse.json({ error: 'Only jpg, png, webp allowed' }, { status: 400 })
   }
-
   if (file.size > MAX_SIZE) {
     return NextResponse.json({ error: 'File too large (max 10MB)' }, { status: 400 })
   }
 
   const ext = file.name.split('.').pop()?.toLowerCase() ?? 'jpg'
 
-  // Use Vercel Blob when token is available (production)
   if (process.env.BLOB_READ_WRITE_TOKEN) {
     try {
-      const code = await nextImageCode()
-      // Name the file after its code for clarity: ISR-001-<random>.jpg
-      const codePart = code ? `${code}-` : ''
-      const safeName = `${codePart}${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
-
+      const code = await nextImageCode(categorySlug)
+      // Filename: ISR-TR-001-<timestamp>-<random>.jpg
+      const safeName = `${code}-${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
       const { put } = await import('@vercel/blob')
       const blob = await put(`uploads/${safeName}`, file, { access: 'public' })
       return NextResponse.json({ url: blob.url, code })
     } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Blob upload failed'
-      return NextResponse.json({ error: msg }, { status: 500 })
+      return NextResponse.json({ error: err instanceof Error ? err.message : 'Upload failed' }, { status: 500 })
     }
   }
 
   // Local dev fallback
   try {
-    if (!fs.existsSync(UPLOAD_DIR)) {
-      fs.mkdirSync(UPLOAD_DIR, { recursive: true })
-    }
+    if (!fs.existsSync(UPLOAD_DIR)) fs.mkdirSync(UPLOAD_DIR, { recursive: true })
     const safeName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
-    const buffer = Buffer.from(await file.arrayBuffer())
-    fs.writeFileSync(path.join(UPLOAD_DIR, safeName), buffer)
+    fs.writeFileSync(path.join(UPLOAD_DIR, safeName), Buffer.from(await file.arrayBuffer()))
     return NextResponse.json({ url: `/images/uploads/${safeName}`, code: '' })
   } catch (err) {
-    const msg = err instanceof Error ? err.message : 'File write failed'
-    return NextResponse.json({ error: msg }, { status: 500 })
+    return NextResponse.json({ error: err instanceof Error ? err.message : 'File write failed' }, { status: 500 })
   }
 }

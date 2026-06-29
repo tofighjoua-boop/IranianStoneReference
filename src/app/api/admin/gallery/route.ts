@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getProducts, saveProducts, nextProductCode } from '@/lib/storage'
+import { getProducts, saveProducts, nextCategoryCode, categoryPrefix } from '@/lib/storage'
 import type { Product } from '@/data/products'
 
 export const dynamic = 'force-dynamic'
@@ -7,10 +7,11 @@ export const dynamic = 'force-dynamic'
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url)
-    // Return next auto-increment code when asked
+    // ?nextCode=1&category=travertine → returns { code: 'ISR-TR-001' }
     if (searchParams.get('nextCode') === '1') {
-      const code = await nextProductCode()
-      return NextResponse.json({ code })
+      const cat = searchParams.get('category') ?? ''
+      const code = await nextCategoryCode(cat)
+      return NextResponse.json({ code, prefix: categoryPrefix(cat) })
     }
     const products = await getProducts()
     const summary = products.map(p => ({
@@ -23,8 +24,8 @@ export async function GET(request: NextRequest) {
       code: p.code,
     }))
     return NextResponse.json(summary)
-  } catch {
-    return NextResponse.json({ error: 'Internal error' }, { status: 500 })
+  } catch (err) {
+    return NextResponse.json({ error: String(err) }, { status: 500 })
   }
 }
 
@@ -40,6 +41,9 @@ export async function POST(request: NextRequest) {
     if (products.find(p => p.slug === body.slug)) {
       return NextResponse.json({ error: 'Slug already exists' }, { status: 409 })
     }
+
+    // Auto-assign ISR-{PREFIX}-{NNN} code based on category
+    const code = body.code || await nextCategoryCode(body.categorySlug)
 
     const product: Product = {
       slug: body.slug,
@@ -59,13 +63,12 @@ export async function POST(request: NextRequest) {
       isNew: body.isNew,
       characteristics: body.characteristics,
       characteristicsFa: body.characteristicsFa,
-      // Auto-assign sequential code if not provided
-      code: body.code || await nextProductCode(),
+      code,
     }
 
     await saveProducts([...products, product])
     return NextResponse.json(product, { status: 201 })
-  } catch {
-    return NextResponse.json({ error: 'Internal error' }, { status: 500 })
+  } catch (err) {
+    return NextResponse.json({ error: String(err) }, { status: 500 })
   }
 }

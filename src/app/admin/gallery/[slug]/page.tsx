@@ -104,6 +104,7 @@ export default function EditGalleryPage() {
     try {
       const fd = new FormData()
       fd.append('file', file)
+      fd.append('category', categorySlug)
       const res = await fetch('/api/admin/upload', { method: 'POST', body: fd })
       const data = await res.json() as { url?: string; code?: string; error?: string }
       if (!data.url) throw new Error(data.error ?? 'Upload failed')

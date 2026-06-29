@@ -7,6 +7,22 @@ import type { Product } from '@/data/products'
 const DATA_DIR = path.join(process.cwd(), 'data')
 const BLOB_PREFIX = 'isr-data'
 
+// ─── Category → 2-letter prefix mapping ────────────────────────────────────
+// Format: ISR-{PREFIX}-{NNN}  e.g. ISR-MA-001, ISR-TR-003
+export const CATEGORY_PREFIX: Record<string, string> = {
+  'sang-marmar':        'MA', // Marble
+  'crystalline-marble': 'CR', // Crystalline marble
+  'travertine':         'TR', // Travertine
+  'onyx':               'ON', // Onyx
+  'granite':            'GR', // Granite
+  'washbasins':         'WA', // Washbasins
+  'accessories':        'AC', // Accessories
+}
+
+export function categoryPrefix(categorySlug: string): string {
+  return CATEGORY_PREFIX[categorySlug] ?? categorySlug.slice(0, 2).toUpperCase()
+}
+
 // ─── Local filesystem (dev only) ───────────────────────────────────────────
 
 function fsRead<T>(key: string): T | null {
@@ -25,8 +41,6 @@ function fsWrite<T>(key: string, data: T): void {
 }
 
 // ─── Vercel Blob (production) ───────────────────────────────────────────────
-// Blob is persistent and shared across all serverless function instances.
-// Data stored as JSON files under the isr-data/ prefix.
 
 async function blobGet<T>(key: string): Promise<T | null> {
   try {
@@ -34,8 +48,7 @@ async function blobGet<T>(key: string): Promise<T | null> {
     const { blobs } = await list({ prefix: `${BLOB_PREFIX}/${key}`, limit: 5 })
     const blob = blobs.find(b => b.pathname === `${BLOB_PREFIX}/${key}.json`)
     if (!blob) return null
-    // Cache-bust so we always get the latest version
-    const res = await fetch(`${blob.url}?v=${Date.now()}`, { cache: 'no-store' })
+    const res = await fetch(blob.url, { cache: 'no-store' })
     if (!res.ok) return null
     return await res.json() as T
   } catch { return null }
@@ -43,7 +56,6 @@ async function blobGet<T>(key: string): Promise<T | null> {
 
 async function blobSet<T>(key: string, data: T): Promise<void> {
   const { put } = await import('@vercel/blob')
-  // addRandomSuffix: false keeps the pathname stable across writes
   await put(`${BLOB_PREFIX}/${key}.json`, JSON.stringify(data, null, 2), {
     access: 'public',
     addRandomSuffix: false,
@@ -102,16 +114,32 @@ export async function saveWorkshopItems(items: WorkshopItem[]): Promise<void> {
   await storageSet('workshop-gallery', items)
 }
 
-// ─── Auto-increment product code ────────────────────────────────────────────
-// Returns next available ISR-XXX code (e.g. ISR-042)
+// ─── Per-category sequential code generator ─────────────────────────────────
+// Format: ISR-{PREFIX}-{NNN}
+// Each category keeps its own counter in isr-data/counter-{PREFIX}.json
+// so ISR-TR-001 is the 1st Travertine entry, ISR-MA-001 is the 1st Marble entry.
 
-export async function nextProductCode(): Promise<string> {
-  const products = await getProducts()
-  let max = 0
-  for (const p of products) {
-    if (!p.code) continue
-    const m = p.code.match(/ISR-(\d+)$/)
-    if (m) max = Math.max(max, parseInt(m[1], 10))
+export async function nextCategoryCode(categorySlug: string): Promise<string> {
+  const prefix = categoryPrefix(categorySlug)
+  const counterKey = `counter-${prefix}`
+
+  let count = 1
+
+  if (process.env.BLOB_READ_WRITE_TOKEN) {
+    // Read current counter from Blob
+    const current = await blobGet<{ count: number }>(counterKey)
+    count = (current?.count ?? 0) + 1
+    await blobSet(counterKey, { count })
+  } else {
+    // Fallback: scan existing products to derive count
+    const products = await getProducts()
+    const re = new RegExp(`^ISR-${prefix}-(\\d+)$`)
+    for (const p of products) {
+      if (!p.code) continue
+      const m = p.code.match(re)
+      if (m) count = Math.max(count, parseInt(m[1], 10) + 1)
+    }
   }
-  return `ISR-${String(max + 1).padStart(3, '0')}`
+
+  return `ISR-${prefix}-${String(count).padStart(3, '0')}`
 }
