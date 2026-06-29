@@ -63,8 +63,9 @@ export default function EditGalleryPage({ params }: { params: Promise<{ slug: st
       const url = await uploadFile(file)
       setImages((prev) => [...prev, url])
       setToast({ message: 'Image uploaded.', type: 'success' })
-    } catch {
-      setToast({ message: 'Upload failed.', type: 'error' })
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Upload failed'
+      setToast({ message: msg, type: 'error' })
     } finally {
       setUploading(false)
       if (fileRef.current) fileRef.current.value = ''

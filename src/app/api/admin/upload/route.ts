@@ -25,20 +25,25 @@ export async function POST(request: NextRequest) {
   const ext = file.name.split('.').pop()?.toLowerCase() ?? 'jpg'
   const safeName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
 
-  // On Vercel: use Blob storage (persistent, CDN-served)
-  // Works with either BLOB_READ_WRITE_TOKEN or OIDC (BLOB_STORE_ID + VERCEL_OIDC_TOKEN)
-  if (process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID) {
+  const hasRwToken = !!process.env.BLOB_READ_WRITE_TOKEN
+  const hasStoreId = !!process.env.BLOB_STORE_ID
+  const hasOidcToken = !!process.env.VERCEL_OIDC_TOKEN
+  console.log(`[upload] auth: rw=${hasRwToken} storeId=${hasStoreId} oidc=${hasOidcToken}`)
+
+  if (hasRwToken || hasStoreId) {
     try {
       const { put } = await import('@vercel/blob')
       const blob = await put(`uploads/${safeName}`, file, { access: 'public' })
+      console.log(`[upload] blob ok: ${blob.url}`)
       return NextResponse.json({ url: blob.url })
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Blob upload failed'
+      console.error(`[upload] blob error: ${msg}`)
       return NextResponse.json({ error: msg }, { status: 500 })
     }
   }
 
-  // Local dev: save to public/images/uploads/
+  // Local dev fallback
   try {
     if (!fs.existsSync(UPLOAD_DIR)) {
       fs.mkdirSync(UPLOAD_DIR, { recursive: true })

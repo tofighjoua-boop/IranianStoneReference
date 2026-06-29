@@ -72,8 +72,9 @@ export default function NewProductPage() {
       if (!thumbnail) setThumbnail(url)
       setUploadName('')
       if (fileRef.current) fileRef.current.value = ''
-    } catch {
-      setToast({ message: t('Upload failed', 'آپلود ناموفق بود'), type: 'error' })
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Upload failed'
+      setToast({ message: msg, type: 'error' })
     } finally {
       setUploading(false)
     }
