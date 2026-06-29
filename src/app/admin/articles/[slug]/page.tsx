@@ -1,15 +1,16 @@
 'use client'
 
-import { useEffect, useState, use } from 'react'
-import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { useRouter, useParams } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, Trash2, Loader2 } from 'lucide-react'
 import { ArticleForm, type ArticleFormData } from '@/components/admin/ArticleForm'
 import { Toast } from '@/components/admin/Toast'
 import type { Article } from '@/data/articles'
 
-export default function EditArticlePage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params)
+export default function EditArticlePage() {
+  const params = useParams()
+  const slug = params.slug as string
   const router = useRouter()
   const [initial, setInitial] = useState<ArticleFormData | null>(null)
   const [loading, setLoading] = useState(true)
