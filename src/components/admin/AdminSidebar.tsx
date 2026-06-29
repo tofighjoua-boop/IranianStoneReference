@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { LayoutDashboard, FileText, Images, Wrench, LogOut } from 'lucide-react'
+import { LayoutDashboard, FileText, Images, Wrench, Inbox, LogOut } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useAdminLang } from '@/components/admin/AdminLangContext'
 
@@ -18,6 +18,7 @@ const navItems: NavItem[] = [
   { labelEn: 'Articles', labelFa: 'مقالات', href: '/admin/articles', icon: FileText },
   { labelEn: 'Gallery', labelFa: 'گالری', href: '/admin/gallery', icon: Images },
   { labelEn: 'Workshop', labelFa: 'کارگاه', href: '/admin/workshop', icon: Wrench },
+  { labelEn: 'Contacts', labelFa: 'درخواست‌ها', href: '/admin/contacts', icon: Inbox },
 ]
 
 export function AdminSidebar({ currentPath }: { currentPath: string }) {

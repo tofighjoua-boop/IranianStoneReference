@@ -114,6 +114,28 @@ export async function saveWorkshopItems(items: WorkshopItem[]): Promise<void> {
   await storageSet('workshop-gallery', items)
 }
 
+// ─── Contacts ────────────────────────────────────────────────────────────────
+
+export interface ContactSubmission {
+  id: string
+  name: string
+  company: string
+  country: string
+  stone: string
+  projectType: string
+  message: string
+  locale: string
+  submittedAt: string
+}
+
+export async function getContacts(): Promise<ContactSubmission[]> {
+  return (await storageGet<ContactSubmission[]>('contacts')) ?? []
+}
+
+export async function saveContacts(contacts: ContactSubmission[]): Promise<void> {
+  await storageSet('contacts', contacts)
+}
+
 // ─── Per-category sequential code generator ─────────────────────────────────
 // Format: ISR-{PREFIX}-{NNN}
 //
