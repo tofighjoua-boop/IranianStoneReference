@@ -62,8 +62,8 @@ export const categories: StoneCategory[] = [
       "Warm, textured, and full of character. Iranian travertine is prized worldwide for its natural porosity and rich earth tones.",
     descriptionFa:
       "گرم، بافت‌دار و پر از شخصیت. تراورتن ایرانی به خاطر تخلخل طبیعی و تُن‌های غنی خاکی در سراسر جهان مورد توجه است.",
-    image: "/images/banner-new-3.jpg",
-    thumbnailImage: "/images/banner-new-3.jpg",
+    image: "/images/gallery/travertine/travertine-cover.png",
+    thumbnailImage: "/images/gallery/travertine/travertine-cover.png",
     productCount: 0,
   },
   {
