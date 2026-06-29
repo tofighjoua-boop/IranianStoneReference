@@ -4,8 +4,6 @@ import path from 'node:path'
 
 const UPLOAD_DIR = path.join(process.cwd(), 'public', 'images', 'uploads')
 const ALLOWED_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp']
-const MAX_SIZE = 10 * 1024 * 1024 // 10 MB
-
 export async function POST(request: NextRequest) {
   const formData = await request.formData()
   const file = formData.get('file')
@@ -15,9 +13,6 @@ export async function POST(request: NextRequest) {
   }
   if (!ALLOWED_TYPES.includes(file.type)) {
     return NextResponse.json({ error: 'Only jpg, png, webp allowed' }, { status: 400 })
-  }
-  if (file.size > MAX_SIZE) {
-    return NextResponse.json({ error: 'File too large (max 10MB)' }, { status: 400 })
   }
 
   const ext = file.name.split('.').pop()?.toLowerCase() ?? 'jpg'
