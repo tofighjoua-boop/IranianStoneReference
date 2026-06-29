@@ -17,12 +17,13 @@ interface GalleryProduct {
 }
 
 const ALL_CATEGORIES = [
-  { slug: 'sang-marmar',  nameEn: 'Marble',           nameFa: 'مرمریت' },
-  { slug: 'travertine',   nameEn: 'Travertine',        nameFa: 'تراورتن' },
-  { slug: 'onyx',         nameEn: 'Onyx',              nameFa: 'مرمر' },
-  { slug: 'granite',      nameEn: 'Granite',           nameFa: 'گرانیت' },
-  { slug: 'washbasins',   nameEn: 'Washbasins',        nameFa: 'روشویی‌ها' },
-  { slug: 'accessories',  nameEn: 'Stone Accessories', nameFa: 'اکسسوری سنگی' },
+  { slug: 'sang-marmar',        nameEn: 'Marble',            nameFa: 'سنگ مرمریت' },
+  { slug: 'crystalline-marble', nameEn: 'Crystalline Marble', nameFa: 'مرمریت کریستالی' },
+  { slug: 'travertine',         nameEn: 'Travertine',         nameFa: 'تراورتن' },
+  { slug: 'onyx',               nameEn: 'Onyx',               nameFa: 'مرمر' },
+  { slug: 'granite',            nameEn: 'Granite',            nameFa: 'گرانیت' },
+  { slug: 'washbasins',         nameEn: 'Washbasins',         nameFa: 'روشویی‌ها' },
+  { slug: 'accessories',        nameEn: 'Stone Accessories',  nameFa: 'اکسسوری سنگی' },
 ]
 
 export default function GalleryPage() {

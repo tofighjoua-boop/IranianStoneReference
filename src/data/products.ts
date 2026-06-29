@@ -23,7 +23,7 @@
 const marbleProducts: Product[] = [
   {
     slug: "creamy-isr016",
-    code: "ISR-MA-001",
+    code: "ISR-MB-001",
     categorySlug: "sang-marmar",
     nameEn: "Creamy",
     nameFa: "کریمی",
@@ -41,7 +41,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "valentino-grey-isr017",
-    code: "ISR-MA-002",
+    code: "ISR-MB-002",
     categorySlug: "sang-marmar",
     nameEn: "Valentino Grey",
     nameFa: "والنتینو گری",
@@ -59,7 +59,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "pietra-grey-isr018",
-    code: "ISR-MA-003",
+    code: "ISR-MB-003",
     categorySlug: "sang-marmar",
     nameEn: "Pietra Grey",
     nameFa: "پیترا گری",
@@ -78,7 +78,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "creamy-valentino-isr019",
-    code: "ISR-MA-004",
+    code: "ISR-MB-004",
     categorySlug: "sang-marmar",
     nameEn: "Creamy Valentino",
     nameFa: "کریمی والنتینو",
@@ -96,7 +96,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "kamelia-isr020",
-    code: "ISR-MA-005",
+    code: "ISR-MB-005",
     categorySlug: "sang-marmar",
     nameEn: "Kamelia",
     nameFa: "کاملیا",
@@ -114,7 +114,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "persian-silk-emprador-isr021",
-    code: "ISR-MA-006",
+    code: "ISR-MB-006",
     categorySlug: "sang-marmar",
     nameEn: "Persian Silk Emprador",
     nameFa: "پرشین سیلک امپرادور",
@@ -133,7 +133,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "grey-ocean-isr022",
-    code: "ISR-MA-007",
+    code: "ISR-MB-007",
     categorySlug: "sang-marmar",
     nameEn: "Grey Ocean",
     nameFa: "گری اوشن",
@@ -151,7 +151,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "persian-arc-isr023",
-    code: "ISR-MA-008",
+    code: "ISR-MB-008",
     categorySlug: "sang-marmar",
     nameEn: "Persian Arc",
     nameFa: "پرشین آرک",
@@ -170,7 +170,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "golden-black-isr024",
-    code: "ISR-MA-009",
+    code: "ISR-MB-009",
     categorySlug: "sang-marmar",
     nameEn: "Golden Black",
     nameFa: "گولدن بلک",
@@ -189,7 +189,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "red-fandango-isr025",
-    code: "ISR-MA-010",
+    code: "ISR-MB-010",
     categorySlug: "sang-marmar",
     nameEn: "Red Fandango",
     nameFa: "رد فانداگو",
@@ -208,7 +208,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "toranj-isr026",
-    code: "ISR-MA-011",
+    code: "ISR-MB-011",
     categorySlug: "sang-marmar",
     nameEn: "Toranj",
     nameFa: "ترنج",
@@ -226,7 +226,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "buche-latte-isr027",
-    code: "ISR-MA-012",
+    code: "ISR-MB-012",
     categorySlug: "sang-marmar",
     nameEn: "Buche Latte",
     nameFa: "بوچه لاته",
@@ -245,7 +245,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "beauty-black-isr028",
-    code: "ISR-MA-013",
+    code: "ISR-MB-013",
     categorySlug: "sang-marmar",
     nameEn: "Beauty Black",
     nameFa: "بیوتی بلک",
@@ -264,7 +264,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "navy-blue-isr029",
-    code: "ISR-MA-014",
+    code: "ISR-MB-014",
     categorySlug: "sang-marmar",
     nameEn: "Navy Blue",
     nameFa: "نیوی بلو",
@@ -283,7 +283,7 @@ const marbleProducts: Product[] = [
   },
   {
     slug: "persian-nero-isr030",
-    code: "ISR-MA-015",
+    code: "ISR-MB-015",
     categorySlug: "sang-marmar",
     nameEn: "Persian Nero",
     nameFa: "پرشین نرو",
@@ -306,8 +306,8 @@ const marbleProducts: Product[] = [
 const crystallineMarbleProducts: Product[] = [
   {
     slug: "tiara-marble-isr001",
-    code: "ISR-MA-016",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-001",
+    categorySlug: "crystalline-marble",
     nameEn: "Tiara Marble",
     nameFa: "تیارا مربل",
     color: "White/Gold",
@@ -325,8 +325,8 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "vein-white-beauty-isr002",
-    code: "ISR-MA-017",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-002",
+    categorySlug: "crystalline-marble",
     nameEn: "Vein White Beauty",
     nameFa: "وین وایت بیوتی",
     color: "White",
@@ -343,8 +343,8 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "white-beauty-extra-isr003",
-    code: "ISR-MA-018",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-003",
+    categorySlug: "crystalline-marble",
     nameEn: "White Beauty Extra",
     nameFa: "وایت بیوتی اکسترا",
     color: "White",
@@ -362,8 +362,8 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "statuario-altisimo-isr004",
-    code: "ISR-MA-019",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-004",
+    categorySlug: "crystalline-marble",
     nameEn: "Statuario Altisimo",
     nameFa: "استاتواریو آلتیسیمو",
     color: "White/Grey",
@@ -381,8 +381,8 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "wavy-black-isr005",
-    code: "ISR-MA-020",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-005",
+    categorySlug: "crystalline-marble",
     nameEn: "Wavy Black",
     nameFa: "ویوی بلک",
     color: "Black/White",
@@ -399,8 +399,8 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "persian-bianco-isr006",
-    code: "ISR-MA-021",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-006",
+    categorySlug: "crystalline-marble",
     nameEn: "Persian Bianco",
     nameFa: "پرشین بیانکو",
     color: "White",
@@ -418,8 +418,8 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "fusion-isr009",
-    code: "ISR-MA-022",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-009",
+    categorySlug: "crystalline-marble",
     nameEn: "Fusion",
     nameFa: "فیوژن",
     color: "Multi-tone",
@@ -437,8 +437,8 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "versalys-livorno-isr010",
-    code: "ISR-MA-023",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-010",
+    categorySlug: "crystalline-marble",
     nameEn: "Versalys Livorno",
     nameFa: "ورسالیس لیورنو",
     color: "Beige/Gold",
@@ -456,8 +456,8 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "rainbow-isr011",
-    code: "ISR-MA-024",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-011",
+    categorySlug: "crystalline-marble",
     nameEn: "Rainbow",
     nameFa: "رینبو",
     color: "White/Gold",
@@ -474,8 +474,8 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "rainbow-light-isr012",
-    code: "ISR-MA-025",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-012",
+    categorySlug: "crystalline-marble",
     nameEn: "Rainbow Light",
     nameFa: "رینبو لایت",
     color: "White/Light Gold",
@@ -492,8 +492,8 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "rainbow-classic-isr013",
-    code: "ISR-MA-026",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-013",
+    categorySlug: "crystalline-marble",
     nameEn: "Rainbow Classic",
     nameFa: "رینبو کلاسیک",
     color: "White/Gold",
@@ -510,8 +510,8 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "rainbow-deep-isr014",
-    code: "ISR-MA-027",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-014",
+    categorySlug: "crystalline-marble",
     nameEn: "Rainbow Deep",
     nameFa: "رینبو دیپ",
     color: "White/Deep Gold",
@@ -529,8 +529,8 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "rainbow-extra-isr015",
-    code: "ISR-MA-028",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-015",
+    categorySlug: "crystalline-marble",
     nameEn: "Rainbow Extra",
     nameFa: "رینبو اکسترا",
     color: "White/Gold",
@@ -548,8 +548,8 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "rainbow-black-isr014",
-    code: "ISR-MA-029",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-007",
+    categorySlug: "crystalline-marble",
     nameEn: "Rainbow Black",
     nameFa: "رینبو بلک",
     color: "Black/Gold",
@@ -567,8 +567,8 @@ const crystallineMarbleProducts: Product[] = [
   },
   {
     slug: "rainbow-black-extra-isr015",
-    code: "ISR-MA-030",
-    categorySlug: "sang-marmar",
+    code: "ISR-CM-008",
+    categorySlug: "crystalline-marble",
     nameEn: "Rainbow Black Extra",
     nameFa: "رینبو بلک اکسترا",
     color: "Black/Gold",

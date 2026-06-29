@@ -10,12 +10,13 @@ const BLOB_PREFIX = 'isr-data'
 // ─── Category → 2-letter prefix mapping ────────────────────────────────────
 // Format: ISR-{PREFIX}-{NNN}  e.g. ISR-MA-001, ISR-TR-003
 export const CATEGORY_PREFIX: Record<string, string> = {
-  'sang-marmar': 'MA', // Marble (unified — covers former crystalline-marble too)
-  'travertine':  'TR', // Travertine
-  'onyx':        'ON', // Onyx
-  'granite':     'GR', // Granite
-  'washbasins':  'WB', // Washbasins
-  'accessories': 'AC', // Accessories
+  'sang-marmar':        'MA', // Marble
+  'crystalline-marble': 'CM', // Crystalline Marble
+  'travertine':         'TR', // Travertine
+  'onyx':               'ON', // Onyx
+  'granite':            'GR', // Granite
+  'washbasins':         'WB', // Washbasins
+  'accessories':        'AC', // Accessories
 }
 
 export function categoryPrefix(categorySlug: string): string {
