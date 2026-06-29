@@ -110,8 +110,8 @@ export const categories: StoneCategory[] = [
       "Decorative and functional stone objects — tableware, vases, candle holders, and artisan décor pieces crafted from signature Iranian stones.",
     descriptionFa:
       "اشیاء سنگی تزئینی و کاربردی — ظروف، گلدان، شمعدان و قطعات دکور هنری از سنگ‌های شاخص ایرانی.",
-    image: "/images/banner-new-4.jpg",
-    thumbnailImage: "/images/banner-new-4.jpg",
+    image: "/images/gallery/stone-accessories/accessories-cover.png",
+    thumbnailImage: "/images/gallery/stone-accessories/accessories-cover.png",
     productCount: 0,
   },
 ];
