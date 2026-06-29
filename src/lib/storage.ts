@@ -56,12 +56,11 @@ export async function getArticles(): Promise<Article[]> {
     if (cached && cached.length > 0) return cached
   } catch {}
   const { articles } = await import('@/data/articles')
-  try { await kvSet('articles', articles) } catch {}
   return articles
 }
 
 export async function saveArticles(articles: Article[]): Promise<void> {
-  try { await kvSet('articles', articles) } catch {}
+  await kvSet('articles', articles)
 }
 
 export async function getWorkshopItems(): Promise<WorkshopItem[]> {
@@ -70,12 +69,11 @@ export async function getWorkshopItems(): Promise<WorkshopItem[]> {
     if (cached && cached.length > 0) return cached
   } catch {}
   const { workshopGallery } = await import('@/data/workshop-gallery')
-  try { await kvSet('workshop-gallery', workshopGallery) } catch {}
   return workshopGallery
 }
 
 export async function saveWorkshopItems(items: WorkshopItem[]): Promise<void> {
-  try { await kvSet('workshop-gallery', items) } catch {}
+  await kvSet('workshop-gallery', items)
 }
 
 export async function getProducts(): Promise<Product[]> {
@@ -84,10 +82,9 @@ export async function getProducts(): Promise<Product[]> {
     if (cached && cached.length > 0) return cached
   } catch {}
   const { products } = await import('@/data/products')
-  try { await kvSet('products', products) } catch {}
   return products
 }
 
 export async function saveProducts(products: Product[]): Promise<void> {
-  try { await kvSet('products', products) } catch {}
+  await kvSet('products', products)
 }
