@@ -32,6 +32,7 @@ const NAV_ITEMS: Record<Language, NavItem[]> = {
 export function Header({ locale }: { locale: Language }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [headerLocked, setHeaderLocked] = useState(false);
   const pathname   = usePathname();
   const router     = useRouter();
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -43,7 +44,7 @@ export function Header({ locale }: { locale: Language }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => { setMenuOpen(false); }, [pathname]);
+  useEffect(() => { setMenuOpen(false); setHeaderLocked(false); }, [pathname]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -63,7 +64,7 @@ export function Header({ locale }: { locale: Language }) {
     router.push(pathname.replace(`/${locale}`, `/${other}`));
   }, [locale, pathname, router]);
 
-  const isTransparent = !scrolled && !menuOpen;
+  const isTransparent = !scrolled && !menuOpen && !headerLocked;
   const textColor = "#A18F7A";
 
   return (
@@ -146,10 +147,10 @@ export function Header({ locale }: { locale: Language }) {
           {/* Divider */}
           <span style={{ color: textColor, opacity: 0.35, fontSize: "13px" }}>|</span>
 
-          {/* MENU button — far right */}
+          {/* MENU button — far right (desktop: only toggles white header) */}
           <button
-            onClick={() => setMenuOpen((v) => !v)}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setHeaderLocked((v) => !v)}
+            aria-label="Menu"
             style={{
               display: "flex",
               alignItems: "center",
@@ -165,18 +166,11 @@ export function Header({ locale }: { locale: Language }) {
               fontFamily: "Lato, sans-serif",
             }}
           >
-            {menuOpen ? (
-              <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke={textColor} strokeWidth="1.5">
-                <line x1="2" y1="2" x2="15" y2="15" />
-                <line x1="15" y1="2" x2="2" y2="15" />
-              </svg>
-            ) : (
-              <svg width="20" height="12" viewBox="0 0 20 12" fill="none">
-                <rect y="0"    width="20" height="1.8" rx="0.9" fill={textColor} />
-                <rect y="5.1"  width="20" height="1.8" rx="0.9" fill={textColor} />
-                <rect y="10.2" width="20" height="1.8" rx="0.9" fill={textColor} />
-              </svg>
-            )}
+            <svg width="20" height="12" viewBox="0 0 20 12" fill="none">
+              <rect y="0"    width="20" height="1.8" rx="0.9" fill={textColor} />
+              <rect y="5.1"  width="20" height="1.8" rx="0.9" fill={textColor} />
+              <rect y="10.2" width="20" height="1.8" rx="0.9" fill={textColor} />
+            </svg>
             <span>MENU</span>
           </button>
         </div>
