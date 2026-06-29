@@ -20,9 +20,6 @@ export default function ProductionFA() {
         {/* Hero */}
         <section style={{ position: "relative", backgroundColor: "#0c1626", paddingTop: "140px", paddingBottom: "80px", overflow: "hidden" }}>
           <div style={{ position: "relative", maxWidth: "1280px", margin: "0 auto", padding: "0 clamp(16px,5vw,80px)", textAlign: "center" }}>
-            <p style={{ fontSize: "10px", color: "#A18F7A", letterSpacing: "2px", fontFamily: "Vazirmatn, Tahoma, sans-serif", marginBottom: "16px" }}>
-              ISR — فرآیند
-            </p>
             <h1 style={{ fontSize: "clamp(32px,5vw,56px)", fontWeight: 300, color: "#fff", fontFamily: "Vazirmatn, Tahoma, sans-serif", marginBottom: "20px" }}>
               مراحل تولید
             </h1>
