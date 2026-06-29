@@ -7,8 +7,7 @@ import { Toast } from '@/components/admin/Toast'
 import { useAdminLang } from '@/components/admin/AdminLangContext'
 
 const CATEGORIES = [
-  { slug: 'sang-marmar', nameEn: 'Marble', nameFa: 'سنگ مرمریت' },
-  { slug: 'crystalline-marble', nameEn: 'Crystalline Marble', nameFa: 'مرمریت کریستالی' },
+  { slug: 'sang-marmar', nameEn: 'Marble', nameFa: 'مرمریت' },
   { slug: 'travertine', nameEn: 'Travertine', nameFa: 'تراورتن' },
   { slug: 'onyx', nameEn: 'Onyx', nameFa: 'مرمر' },
   { slug: 'granite', nameEn: 'Granite', nameFa: 'گرانیت' },

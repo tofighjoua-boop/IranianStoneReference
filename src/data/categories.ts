@@ -25,31 +25,18 @@ export const categories: StoneCategory[] = [
     productCount: 30,
   },
 
-  // ── Marble subcategories ──────────────────────────────────────────────
+  // ── Marble (unified) ──────────────────────────────────────────────────
   {
     slug: "sang-marmar",
     nameEn: "Marble",
-    nameFa: "سنگ مرمریت",
+    nameFa: "مرمریت",
     descriptionEn:
-      "The timeless classic. Iranian marble offers unmatched veining and colour depth — from warm creams and rich greys to dramatic golds and deep blacks.",
+      "Iranian marble in all its varieties — from classic veined stone to rare high-crystallinity types prized worldwide. Warm creams, rich greys, dramatic golds, and deep blacks.",
     descriptionFa:
-      "کلاسیک ابدی. مرمریت ایرانی رگه‌بندی و عمق رنگ بی‌نظیری دارد — از کرم‌های گرم و خاکستری‌های غنی تا طلایی‌های درام‌تیک و سیاه‌های عمیق.",
+      "مرمریت ایرانی در تمام انواعش — از سنگ رگه‌دار کلاسیک تا انواع کریستالی نادر که در سراسر جهان ارزشمند هستند. کرم‌های گرم، خاکستری‌های غنی، طلایی‌های درام‌تیک و سیاه‌های عمیق.",
     image: "/images/gallery/marble/PIETRA-GREY-ISR018-1024x684.jpg",
     thumbnailImage: "/images/gallery/marble/PIETRA-GREY-ISR018-1024x684.jpg",
-    productCount: 15,
-    parentSlug: "marble",
-  },
-  {
-    slug: "crystalline-marble",
-    nameEn: "Crystalline Marble",
-    nameFa: "سنگ مرمریت کریستالی",
-    descriptionEn:
-      "The purest form of Iranian marble — high-crystallinity stone with exceptional translucency, white brilliance, and fine grain structure. Quarried from Iran's most prized deposits.",
-    descriptionFa:
-      "خالص‌ترین شکل مرمریت ایرانی — سنگی با کریستالینیتی بالا، شفافیت استثنایی، درخشندگی سفید و ساختار دانه‌بندی ظریف. استخراج‌شده از ارزشمندترین معادن ایران.",
-    image: "/images/gallery/crystalline-marble/TIARA-MARBLE-ISR001-1024x783.jpg",
-    thumbnailImage: "/images/gallery/crystalline-marble/TIARA-MARBLE-ISR001-1024x783.jpg",
-    productCount: 15,
+    productCount: 30,
     parentSlug: "marble",
   },
 
