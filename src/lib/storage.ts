@@ -116,30 +116,27 @@ export async function saveWorkshopItems(items: WorkshopItem[]): Promise<void> {
 
 // ─── Per-category sequential code generator ─────────────────────────────────
 // Format: ISR-{PREFIX}-{NNN}
-// Each category keeps its own counter in isr-data/counter-{PREFIX}.json
-// so ISR-TR-001 is the 1st Travertine entry, ISR-MA-001 is the 1st Marble entry.
+//
+// Gap-filling strategy:
+//  1. Collect all used numbers for this prefix among existing products
+//  2. Scan 1, 2, 3, … and return the first number NOT already in use
+//  3. This automatically reuses gaps left by deleted products
 
 export async function nextCategoryCode(categorySlug: string): Promise<string> {
   const prefix = categoryPrefix(categorySlug)
-  const counterKey = `counter-${prefix}`
+  const re = new RegExp(`^ISR-${prefix}-(\\d+)$`)
 
-  let count = 1
-
-  if (process.env.BLOB_READ_WRITE_TOKEN) {
-    // Read current counter from Blob
-    const current = await blobGet<{ count: number }>(counterKey)
-    count = (current?.count ?? 0) + 1
-    await blobSet(counterKey, { count })
-  } else {
-    // Fallback: scan existing products to derive count
-    const products = await getProducts()
-    const re = new RegExp(`^ISR-${prefix}-(\\d+)$`)
-    for (const p of products) {
-      if (!p.code) continue
-      const m = p.code.match(re)
-      if (m) count = Math.max(count, parseInt(m[1], 10) + 1)
-    }
+  const products = await getProducts()
+  const used = new Set<number>()
+  for (const p of products) {
+    if (!p.code) continue
+    const m = p.code.match(re)
+    if (m) used.add(parseInt(m[1], 10))
   }
 
-  return `ISR-${prefix}-${String(count).padStart(3, '0')}`
+  // First gap starting from 1 (fills deleted slots before appending new)
+  let n = 1
+  while (used.has(n)) n++
+
+  return `ISR-${prefix}-${String(n).padStart(3, '0')}`
 }
