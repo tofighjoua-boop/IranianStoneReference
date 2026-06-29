@@ -9,7 +9,10 @@ import { Badge } from "@/components/ui/Badge";
 import { ProductCard } from "@/components/gallery/ProductCard";
 import { WashbasinViewer } from "@/components/gallery/WashbasinViewer";
 import { getCategoryBySlug, getParentCategory, categories } from "@/data/categories";
-import { getProductBySlug, getRelatedProducts, products } from "@/data/products";
+import { products } from "@/data/products";
+import { getProducts } from "@/lib/storage";
+
+export const dynamic = 'force-dynamic';
 
 interface Props {
   params: Promise<{ category: string; slug: string }>;
@@ -24,7 +27,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const allProducts = await getProducts();
+  const product = allProducts.find((p) => p.slug === slug);
   if (!product) return {};
   return {
     title: `${product.nameEn} — سنگ طبیعی`,
@@ -35,12 +39,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProductPageFA({ params }: Props) {
   const { category: catSlug, slug } = await params;
 
-  const product = getProductBySlug(slug);
+  const allProducts = await getProducts();
+  const product = allProducts.find((p) => p.slug === slug);
   const cat = getCategoryBySlug(catSlug);
   if (!product || !cat || product.categorySlug !== catSlug) notFound();
 
   const parentCat = getParentCategory(catSlug);
-  const related = getRelatedProducts(product, 4);
+  const related = allProducts
+    .filter((p) => p.categorySlug === product.categorySlug && p.slug !== product.slug)
+    .slice(0, 4);
 
   return (
     <>

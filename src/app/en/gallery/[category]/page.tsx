@@ -9,7 +9,10 @@ import { CategoryCard } from "@/components/gallery/CategoryCard";
 import { ProductCard } from "@/components/gallery/ProductCard";
 import { ProductFilter } from "@/components/gallery/ProductFilter";
 import { getCategoryBySlug, getSubcategories, categories } from "@/data/categories";
-import { getProductsByCategory } from "@/data/products";
+import { type Product } from "@/data/products";
+import { getProducts } from "@/lib/storage";
+
+export const dynamic = 'force-dynamic';
 
 interface Props {
   params: Promise<{ category: string }>;
@@ -72,7 +75,7 @@ export default async function CategoryPageEN({ params, searchParams }: Props) {
           </section>
         ) : (
           /* ── Leaf: show product listing ── */
-          <ProductListing
+          <ProductListingWrapper
             slug={slug}
             filterColor={filterColor}
             filterFinish={filterFinish}
@@ -100,7 +103,7 @@ export default async function CategoryPageEN({ params, searchParams }: Props) {
   );
 }
 
-function ProductListing({
+async function ProductListingWrapper({
   slug,
   filterColor,
   filterFinish,
@@ -111,7 +114,7 @@ function ProductListing({
   filterFinish?: string;
   catNameEn: string;
 }) {
-  const allProducts = getProductsByCategory(slug);
+  const allProducts = (await getProducts()).filter((p: Product) => p.categorySlug === slug);
 
   const colors = [...new Set(allProducts.map((p) => p.color))].map((c) => ({
     value: c,
