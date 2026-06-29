@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { type Language } from "@/lib/translations";
-import { getTopLevelCategories } from "@/data/categories";
 
 interface NavItem {
   label: string;
@@ -15,14 +14,14 @@ interface NavItem {
 
 const NAV_ITEMS: Record<Language, NavItem[]> = {
   en: [
-    { label: "GALLERY", href: "/en/gallery", hasDropdown: true },
+    { label: "GALLERY", href: "/en/gallery" },
     { label: "KNOWLEDGE", href: "/en/knowledge" },
     { label: "PRODUCTION", href: "/en/production" },
     { label: "ABOUT", href: "/en/about" },
     { label: "CONTACT US", href: "/en/contact" },
   ],
   fa: [
-    { label: "گالری", href: "/fa/gallery", hasDropdown: true },
+    { label: "گالری", href: "/fa/gallery" },
     { label: "دانش سنگ", href: "/fa/knowledge" },
     { label: "مراحل تولید", href: "/fa/production" },
     { label: "درباره ما", href: "/fa/about" },
@@ -31,9 +30,8 @@ const NAV_ITEMS: Record<Language, NavItem[]> = {
 };
 
 export function Header({ locale }: { locale: Language }) {
-  const [scrolled, setScrolled]       = useState(false);
-  const [menuOpen, setMenuOpen]       = useState(false);
-  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const pathname   = usePathname();
   const router     = useRouter();
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -45,11 +43,11 @@ export function Header({ locale }: { locale: Language }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => { setMenuOpen(false); setGalleryOpen(false); }, [pathname]);
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") { setMenuOpen(false); setGalleryOpen(false); }
+      if (e.key === "Escape") { setMenuOpen(false); }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
@@ -107,66 +105,7 @@ export function Header({ locale }: { locale: Language }) {
         <div className="nomobile" style={{ display: "flex", alignItems: "center", gap: "28px" }}>
           {/* Nav links */}
           {NAV_ITEMS[locale].map((item) =>
-            item.hasDropdown ? (
-              <div key={item.href} style={{ position: "relative" }}>
-                <button
-                  onClick={() => setGalleryOpen((v) => !v)}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
-                    fontSize: "13px",
-                    color: textColor,
-                    letterSpacing: "1.5px",
-                    textTransform: "uppercase",
-                    fontFamily: "Lato, sans-serif",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "5px",
-                  }}
-                >
-                  {item.label}
-                  <svg width="8" height="5" viewBox="0 0 8 5" fill="none">
-                    <path d="M1 1l3 3 3-3" stroke={textColor} strokeWidth="1.2" strokeLinecap="round"/>
-                  </svg>
-                </button>
-
-                {galleryOpen && (
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "calc(100% + 16px)",
-                      right: 0,
-                      minWidth: "220px",
-                      backgroundColor: "#ffffff",
-                      boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
-                      padding: "20px 0",
-                      zIndex: 100,
-                    }}
-                  >
-                    {getTopLevelCategories().map((cat) => (
-                      <Link
-                        key={cat.slug}
-                        href={`/${locale}/gallery/${cat.slug}`}
-                        onClick={() => setGalleryOpen(false)}
-                        style={{
-                          display: "block",
-                          padding: "9px 24px",
-                          fontSize: "13px",
-                          color: "#A18F7A",
-                          letterSpacing: "1px",
-                          textTransform: "uppercase",
-                          textDecoration: "none",
-                          fontFamily: "Lato, sans-serif",
-                        }}
-                      >
-                        {locale === "fa" ? cat.nameFa : cat.nameEn}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
+            (
               <Link
                 key={item.href}
                 href={item.href}
