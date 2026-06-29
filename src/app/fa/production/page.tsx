@@ -60,24 +60,6 @@ export default function ProductionFA() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                     style={{ objectFit: "contain" }}
                   />
-                  <div style={{
-                    position: "absolute",
-                    top: "24px",
-                    right: "24px",
-                    width: "52px",
-                    height: "52px",
-                    border: "1px solid rgba(161,143,122,0.6)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "13px",
-                    fontFamily: "Lato, sans-serif",
-                    letterSpacing: "1px",
-                    color: "#A18F7A",
-                    background: "rgba(0,0,0,0.4)",
-                  }}>
-                    {String(step.step).padStart(2, "0")}
-                  </div>
                 </div>
 
                 {/* Content */}
