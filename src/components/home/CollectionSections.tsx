@@ -105,33 +105,6 @@ export function CollectionSections({ locale }: { locale: Language }) {
               padding: "0 24px",
             }}
           >
-            <h2
-              style={{
-                fontSize: isRTL ? "24px" : "28px",
-                color: "#A18F7A",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                fontWeight: 400,
-                margin: 0,
-                fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
-              }}
-            >
-              {section.title[locale]}
-            </h2>
-
-            <p
-              style={{
-                fontSize: "15px",
-                color: "rgba(161,143,122,0.85)",
-                maxWidth: "520px",
-                lineHeight: 1.7,
-                margin: 0,
-                fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
-              }}
-            >
-              {section.body[locale]}
-            </p>
-
             <Link href={`/${locale}${section.href}`} className="collection-cta-btn">
               {section.cta[locale]}
             </Link>

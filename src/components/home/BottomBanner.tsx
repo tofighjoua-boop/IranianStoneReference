@@ -4,9 +4,8 @@ import Image from "next/image";
 import { type Language } from "@/lib/translations";
 import { useBanner } from "./BannerProvider";
 
-export function BottomBanner({ locale }: { locale: Language }) {
+export function BottomBanner({}: { locale: Language }) {
   const { active, slides } = useBanner();
-  const isRTL = locale === "fa";
 
   return (
     <div
@@ -39,56 +38,6 @@ export function BottomBanner({ locale }: { locale: Language }) {
           {/* Dark overlay */}
           <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.22)" }} />
 
-          {/* Content */}
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <div
-              dir={isRTL ? "rtl" : "ltr"}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "16px",
-                textAlign: "center",
-                padding: "0 24px",
-                maxWidth: "835px",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: isRTL ? "24px" : "32px",
-                  letterSpacing: isRTL ? "1px" : "4.8px",
-                  textTransform: "uppercase",
-                  fontWeight: 300,
-                  color: "white",
-                  fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
-                }}
-              >
-                {slide.title[locale]}
-              </div>
-
-              <div
-                style={{
-                  fontSize: "18px",
-                  letterSpacing: "2px",
-                  color: "rgba(255,255,255,0.8)",
-                  fontWeight: 300,
-                  fontFamily: isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif",
-                }}
-              >
-                {slide.sub[locale]}
-              </div>
-
-            </div>
-          </div>
         </div>
       ))}
 
