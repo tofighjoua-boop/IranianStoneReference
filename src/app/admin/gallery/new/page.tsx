@@ -60,14 +60,13 @@ export default function NewProductPage() {
     if (!slug || slug === genSlug(nameEn)) setSlug(genSlug(v))
   }
 
-  const uploadFile = async (file: File): Promise<{ url: string; code: string }> => {
+  const uploadFile = async (file: File): Promise<string> => {
     const fd = new FormData()
     fd.append('file', file)
-    fd.append('category', categorySlug)
     const res = await fetch('/api/admin/upload', { method: 'POST', body: fd })
-    const data = await res.json() as { url?: string; code?: string; error?: string }
+    const data = await res.json() as { url?: string; error?: string }
     if (!data.url) throw new Error(data.error ?? 'Upload failed')
-    return { url: data.url, code: data.code ?? '' }
+    return data.url
   }
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -75,7 +74,7 @@ export default function NewProductPage() {
     if (!file) return
     setUploading(true)
     try {
-      const { url } = await uploadFile(file)
+      const url = await uploadFile(file)
       const entry: ImageEntry = { url, name: uploadName || file.name.replace(/\.[^.]+$/, '') }
       setImages(prev => [...prev, entry])
       if (!thumbnail) setThumbnail(url)
