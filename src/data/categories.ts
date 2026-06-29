@@ -74,8 +74,8 @@ export const categories: StoneCategory[] = [
       "The stone of light. Translucent onyx creates breathtaking backlit feature walls, countertops, and luxury installations.",
     descriptionFa:
       "سنگ نور. مرمر شفاف دیوارهای ویژهٔ با نور پشت، پیشخوان‌ها و نصب‌های لوکس شگفت‌انگیزی ایجاد می‌کند.",
-    image: "/images/collection-marble-dark.jpg",
-    thumbnailImage: "/images/collection-marble-dark.jpg",
+    image: "/images/gallery/onyx/onyx-cover.png",
+    thumbnailImage: "/images/gallery/onyx/onyx-cover.png",
     productCount: 0,
   },
   {
