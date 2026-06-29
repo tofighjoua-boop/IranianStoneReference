@@ -22,14 +22,32 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'File too large (max 10MB)' }, { status: 400 })
   }
 
-  if (!fs.existsSync(UPLOAD_DIR)) {
-    fs.mkdirSync(UPLOAD_DIR, { recursive: true })
+  const ext = file.name.split('.').pop()?.toLowerCase() ?? 'jpg'
+  const safeName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
+
+  // On Vercel: use Blob storage (persistent, CDN-served)
+  // Works with either BLOB_READ_WRITE_TOKEN or OIDC (BLOB_STORE_ID + VERCEL_OIDC_TOKEN)
+  if (process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID) {
+    try {
+      const { put } = await import('@vercel/blob')
+      const blob = await put(`uploads/${safeName}`, file, { access: 'public' })
+      return NextResponse.json({ url: blob.url })
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Blob upload failed'
+      return NextResponse.json({ error: msg }, { status: 500 })
+    }
   }
 
-  const ext = file.name.split('.').pop() ?? 'jpg'
-  const filename = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
-  const buffer = Buffer.from(await file.arrayBuffer())
-  fs.writeFileSync(path.join(UPLOAD_DIR, filename), buffer)
-
-  return NextResponse.json({ url: `/images/uploads/${filename}` })
+  // Local dev: save to public/images/uploads/
+  try {
+    if (!fs.existsSync(UPLOAD_DIR)) {
+      fs.mkdirSync(UPLOAD_DIR, { recursive: true })
+    }
+    const buffer = Buffer.from(await file.arrayBuffer())
+    fs.writeFileSync(path.join(UPLOAD_DIR, safeName), buffer)
+    return NextResponse.json({ url: `/images/uploads/${safeName}` })
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : 'File write failed'
+    return NextResponse.json({ error: msg }, { status: 500 })
+  }
 }

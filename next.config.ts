@@ -6,16 +6,18 @@ const nextConfig: NextConfig = {
   turbopack: {},
 
   images: {
-    // Prefer AVIF then WebP — Next.js serves best format per browser automatically
     formats: ["image/avif", "image/webp"],
-    // Quality: 100 — maximum fidelity for stone textures (AVIF/WebP at 100 is near-lossless)
     qualities: [100],
-    // Full-width breakpoints — includes 2560 for 2K/Retina displays
     deviceSizes: [640, 828, 1080, 1200, 1920, 2560],
-    // Fixed-width image breakpoints — covers gallery cards at 25vw/33vw/50vw
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 480, 640],
-    // Serve optimized images for 1 year (Vercel CDN)
     minimumCacheTTL: 31536000,
+    remotePatterns: [
+      // Vercel Blob storage URLs (for runtime-uploaded images)
+      {
+        protocol: 'https',
+        hostname: '*.public.blob.vercel-storage.com',
+      },
+    ],
   },
 
   webpack: (config) => {
