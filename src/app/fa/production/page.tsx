@@ -58,7 +58,7 @@ export default function ProductionFA() {
                     alt={step.titleFa}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "contain" }}
                   />
                   <div style={{
                     position: "absolute",
