@@ -20,8 +20,8 @@ export const categories: StoneCategory[] = [
       "Iranian marble in all its forms — from classic veined stone to rare high-crystallinity varieties prized worldwide.",
     descriptionFa:
       "مرمریت ایرانی در تمام اشکال آن — از سنگ رگه‌دار کلاسیک تا انواع کریستالی نادر که در سراسر جهان ارزشمند هستند.",
-    image: "/images/gallery/marble/PIETRA-GREY-ISR018-1024x684.jpg",
-    thumbnailImage: "/images/gallery/marble/PIETRA-GREY-ISR018-1024x684.jpg",
+    image: "/images/gallery/marble/marble-cover.png",
+    thumbnailImage: "/images/gallery/marble/marble-cover.png",
     productCount: 30,
   },
 
@@ -34,8 +34,8 @@ export const categories: StoneCategory[] = [
       "The timeless classic. Iranian marble offers unmatched veining and colour depth — from warm creams and rich greys to dramatic golds and deep blacks.",
     descriptionFa:
       "کلاسیک ابدی. مرمریت ایرانی رگه‌بندی و عمق رنگ بی‌نظیری دارد — از کرم‌های گرم و خاکستری‌های غنی تا طلایی‌های درام‌تیک و سیاه‌های عمیق.",
-    image: "/images/gallery/marble/PIETRA-GREY-ISR018-1024x684.jpg",
-    thumbnailImage: "/images/gallery/marble/PIETRA-GREY-ISR018-1024x684.jpg",
+    image: "/images/gallery/marble/marble-cover.png",
+    thumbnailImage: "/images/gallery/marble/marble-cover.png",
     productCount: 15,
     parentSlug: "marble",
   },
