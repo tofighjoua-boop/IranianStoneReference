@@ -29,6 +29,7 @@ async function nextImageCode(): Promise<string> {
     await put('isr-data/img-counter.json', JSON.stringify({ count }), {
       access: 'public',
       addRandomSuffix: false,
+      allowOverwrite: true,
       contentType: 'application/json',
     })
 
