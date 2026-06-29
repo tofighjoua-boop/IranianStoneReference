@@ -54,7 +54,7 @@ export default function ProductionFA() {
                 {/* Image */}
                 <div style={{ order: imageLeft ? 0 : 1, position: "relative", minHeight: "400px" }}>
                   <Image
-                    src={step.image}
+                    src={step.imageFa}
                     alt={step.titleFa}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"

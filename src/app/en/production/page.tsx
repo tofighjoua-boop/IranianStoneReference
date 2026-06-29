@@ -54,7 +54,7 @@ export default function ProductionEN() {
                 {/* Image */}
                 <div style={{ order: imageLeft ? 0 : 1, position: "relative", minHeight: "400px" }}>
                   <Image
-                    src={step.image}
+                    src={step.imageEn}
                     alt={step.titleEn}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
