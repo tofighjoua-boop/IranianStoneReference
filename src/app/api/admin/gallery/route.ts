@@ -1,11 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getProducts, saveProducts } from '@/lib/storage'
+import { getProducts, saveProducts, nextProductCode } from '@/lib/storage'
 import type { Product } from '@/data/products'
 
 export const dynamic = 'force-dynamic'
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
+    const { searchParams } = new URL(request.url)
+    // Return next auto-increment code when asked
+    if (searchParams.get('nextCode') === '1') {
+      const code = await nextProductCode()
+      return NextResponse.json({ code })
+    }
     const products = await getProducts()
     const summary = products.map(p => ({
       slug: p.slug,
@@ -15,7 +21,6 @@ export async function GET() {
       thumbnail: p.thumbnail,
       images: p.images,
       code: p.code,
-      imageNames: (p as unknown as { imageNames?: Record<string, string> }).imageNames,
     }))
     return NextResponse.json(summary)
   } catch {
@@ -54,7 +59,8 @@ export async function POST(request: NextRequest) {
       isNew: body.isNew,
       characteristics: body.characteristics,
       characteristicsFa: body.characteristicsFa,
-      code: body.code,
+      // Auto-assign sequential code if not provided
+      code: body.code || await nextProductCode(),
     }
 
     await saveProducts([...products, product])

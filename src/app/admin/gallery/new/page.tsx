@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { ArrowLeft, Upload, Plus, X, Loader2 } from 'lucide-react'
 import { Toast } from '@/components/admin/Toast'
@@ -43,6 +43,14 @@ export default function NewProductPage() {
   const [uploading, setUploading] = useState(false)
   const [saving, setSaving] = useState(false)
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null)
+
+  // Auto-load next sequential code on mount
+  useEffect(() => {
+    fetch('/api/admin/gallery?nextCode=1')
+      .then(r => r.json())
+      .then((d: { code?: string }) => { if (d.code) setCode(d.code) })
+      .catch(() => {})
+  }, [])
 
   const genSlug = (en: string) =>
     en.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
