@@ -20,17 +20,9 @@ export function WorkshopGallery({ locale }: { locale: Language }) {
         dir={isRTL ? "rtl" : "ltr"}
         style={{ textAlign: "center", marginBottom: "56px" }}
       >
-        <p style={{ fontSize: "10px", color: "#A18F7A", letterSpacing: "4px", textTransform: "uppercase", fontFamily: "Lato, sans-serif", marginBottom: "12px" }}>
-          {isRTL ? "کارگاه ما" : "Our Workshop"}
-        </p>
-        <h2 style={{ fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 300, color: "#1d2330", letterSpacing: "2px", textTransform: isRTL ? "none" : "uppercase", fontFamily: font, marginBottom: "16px" }}>
+        <h2 style={{ fontSize: "clamp(26px,3.5vw,40px)", fontWeight: 300, color: "#1d2330", letterSpacing: "2px", textTransform: isRTL ? "none" : "uppercase", fontFamily: font }}>
           {isRTL ? "گالری عکس کارگاهی" : "Production Gallery"}
         </h2>
-        <p style={{ fontSize: "14px", color: "rgba(29,35,48,0.55)", maxWidth: "520px", margin: "0 auto", fontFamily: font, lineHeight: 1.8 }}>
-          {isRTL
-            ? "تصاویر واقعی از خطوط تولید، معادن و محصولات نهایی ISR."
-            : "Real photographs from ISR's production lines, quarry operations, and finished products."}
-        </p>
       </div>
 
       {/* Grid */}
