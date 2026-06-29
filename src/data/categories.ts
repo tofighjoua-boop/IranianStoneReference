@@ -86,8 +86,8 @@ export const categories: StoneCategory[] = [
       "Strength and beauty combined. Granite offers superior hardness for high-traffic flooring, facades, and outdoor applications.",
     descriptionFa:
       "ترکیب قدرت و زیبایی. گرانیت سختی برتری برای کف‌های پرتردد، نماها و کاربردهای فضای باز ارائه می‌دهد.",
-    image: "/images/collection-marble-green.jpg",
-    thumbnailImage: "/images/collection-marble-green.jpg",
+    image: "/images/gallery/granite/granite-cover.png",
+    thumbnailImage: "/images/gallery/granite/granite-cover.png",
     productCount: 0,
   },
   {
