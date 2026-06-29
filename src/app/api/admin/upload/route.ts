@@ -25,25 +25,19 @@ export async function POST(request: NextRequest) {
   const ext = file.name.split('.').pop()?.toLowerCase() ?? 'jpg'
   const safeName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
 
-  const hasRwToken = !!process.env.BLOB_READ_WRITE_TOKEN
-  const hasStoreId = !!process.env.BLOB_STORE_ID
-  const hasOidcToken = !!process.env.VERCEL_OIDC_TOKEN
-  console.log(`[upload] auth: rw=${hasRwToken} storeId=${hasStoreId} oidc=${hasOidcToken}`)
-
-  if (hasRwToken || hasStoreId) {
+  // Use Vercel Blob when token is available (production + local with pulled env vars)
+  if (process.env.BLOB_READ_WRITE_TOKEN) {
     try {
       const { put } = await import('@vercel/blob')
       const blob = await put(`uploads/${safeName}`, file, { access: 'public' })
-      console.log(`[upload] blob ok: ${blob.url}`)
       return NextResponse.json({ url: blob.url })
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Blob upload failed'
-      console.error(`[upload] blob error: ${msg}`)
       return NextResponse.json({ error: msg }, { status: 500 })
     }
   }
 
-  // Local dev fallback
+  // Local dev fallback (no token configured)
   try {
     if (!fs.existsSync(UPLOAD_DIR)) {
       fs.mkdirSync(UPLOAD_DIR, { recursive: true })
