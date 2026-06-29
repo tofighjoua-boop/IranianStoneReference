@@ -64,6 +64,7 @@ export function WorkshopGallery({ locale }: { locale: Language }) {
               src={item.image}
               alt={isRTL ? item.captionFa : item.captionEn}
               fill
+              unoptimized
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               style={{ objectFit: "cover", transition: "transform 0.5s ease, opacity 0.3s ease" }}
               className="workshop-img"
@@ -176,6 +177,7 @@ export function WorkshopGallery({ locale }: { locale: Language }) {
                 src={workshopGallery[lightbox].image}
                 alt={isRTL ? workshopGallery[lightbox].captionFa : workshopGallery[lightbox].captionEn}
                 fill
+                unoptimized
                 sizes="90vw"
                 style={{ objectFit: "contain" }}
                 priority
