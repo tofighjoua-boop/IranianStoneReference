@@ -58,9 +58,14 @@ export type BannerSlide = (typeof BANNER_SLIDES)[number];
 interface BannerCtx {
   active: number;
   slides: typeof BANNER_SLIDES;
+  preloaded: Set<number>;
 }
 
-const BannerContext = createContext<BannerCtx>({ active: 0, slides: BANNER_SLIDES });
+const BannerContext = createContext<BannerCtx>({
+  active: 0,
+  slides: BANNER_SLIDES,
+  preloaded: new Set([0, 1]),
+});
 
 export function useBanner() {
   return useContext(BannerContext);
@@ -68,6 +73,8 @@ export function useBanner() {
 
 export function BannerProvider({ children }: { children: React.ReactNode }) {
   const [active, setActive] = useState(0);
+  // Start by preloading only slides 0 and 1
+  const [preloaded, setPreloaded] = useState<Set<number>>(new Set([0, 1]));
 
   useEffect(() => {
     const id = setInterval(
@@ -77,8 +84,20 @@ export function BannerProvider({ children }: { children: React.ReactNode }) {
     return () => clearInterval(id);
   }, []);
 
+  // Whenever active changes, preload the next slide
+  useEffect(() => {
+    const next = (active + 1) % BANNER_SLIDES.length;
+    setPreloaded((prev) => {
+      if (prev.has(next) && prev.has(active)) return prev;
+      const s = new Set(prev);
+      s.add(active);
+      s.add(next);
+      return s;
+    });
+  }, [active]);
+
   return (
-    <BannerContext.Provider value={{ active, slides: BANNER_SLIDES }}>
+    <BannerContext.Provider value={{ active, slides: BANNER_SLIDES, preloaded }}>
       {children}
     </BannerContext.Provider>
   );

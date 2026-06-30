@@ -5,7 +5,7 @@ import { type Language } from "@/lib/translations";
 import { useBanner } from "./BannerProvider";
 
 export function BottomBanner({}: { locale: Language }) {
-  const { active, slides } = useBanner();
+  const { active, slides, preloaded } = useBanner();
 
   return (
     <div
@@ -26,18 +26,20 @@ export function BottomBanner({}: { locale: Language }) {
             transition: "opacity 2s ease-out",
           }}
         >
-          {/* Next.js optimized image — AVIF/WebP, quality 90 */}
-          <Image
-            src={slide.bg}
-            alt=""
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
+          {/* Only load image when slide has been/will be shown */}
+          {preloaded.has(i) && (
+            <Image
+              src={slide.bg}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="100vw"
+              loading="lazy"
+            />
+          )}
 
           {/* Dark overlay */}
           <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.22)" }} />
-
         </div>
       ))}
 

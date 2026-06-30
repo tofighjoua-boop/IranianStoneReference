@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     qualities: [100],
     deviceSizes: [640, 828, 1080, 1200, 1920, 2560],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 480, 640],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000,
     remotePatterns: [
       // Vercel Blob storage URLs (for runtime-uploaded images)

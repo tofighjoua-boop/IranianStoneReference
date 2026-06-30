@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { type Language } from "@/lib/translations";
 
@@ -70,7 +70,7 @@ export function CollectionSections({ locale }: { locale: Language }) {
           key={i}
           style={{ position: "relative", width: "100%", height: "600px", overflow: "hidden" }}
         >
-          {/* Slow-zoom background — Next.js optimized image */}
+          {/* All collection banners are below the fold — lazy load */}
           <div
             className="collection-banner-img"
             style={{ position: "absolute", inset: "-30px" }}
@@ -82,7 +82,7 @@ export function CollectionSections({ locale }: { locale: Language }) {
               className="object-cover"
               style={{ objectPosition: section.objectPosition ?? "center" }}
               sizes="100vw"
-              priority={i === 0}
+              loading="lazy"
             />
           </div>
 
