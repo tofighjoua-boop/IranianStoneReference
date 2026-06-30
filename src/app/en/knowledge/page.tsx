@@ -3,13 +3,18 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CTAFloat } from "@/components/layout/CTAFloat";
 import { KnowledgeClient } from "@/components/knowledge/KnowledgeClient";
+import { getArticles } from "@/lib/storage";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Stone Knowledge — Expert Guides & Articles",
   description: "Expert guides on natural stone — marble, travertine, onyx, granite, care & maintenance, and the Iranian stone industry.",
 };
 
-export default function KnowledgeEN() {
+export default async function KnowledgeEN() {
+  const articles = await getArticles();
+
   return (
     <>
       <Header locale="en" />
@@ -28,7 +33,7 @@ export default function KnowledgeEN() {
           </div>
         </section>
 
-        <KnowledgeClient locale="en" />
+        <KnowledgeClient locale="en" articles={articles} />
       </main>
       <Footer locale="en" />
       <CTAFloat locale="en" />

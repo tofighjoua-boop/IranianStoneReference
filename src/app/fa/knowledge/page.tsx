@@ -1,15 +1,20 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CTAFloat } from "@/components/layout/CTAFloat";
 import { KnowledgeClient } from "@/components/knowledge/KnowledgeClient";
+import { getArticles } from "@/lib/storage";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "دانش سنگ — راهنماها و مقالات تخصصی",
   description: "راهنماهای تخصصی درباره سنگ طبیعی — مرمریت، تراورتن، مرمر، گرانیت، مراقبت و نگهداری و صنعت سنگ ایران.",
 };
 
-export default function KnowledgeFA() {
+export default async function KnowledgeFA() {
+  const articles = await getArticles();
+
   return (
     <>
       <Header locale="fa" />
@@ -28,7 +33,7 @@ export default function KnowledgeFA() {
           </div>
         </section>
 
-        <KnowledgeClient locale="fa" />
+        <KnowledgeClient locale="fa" articles={articles} />
       </main>
       <Footer locale="fa" />
       <CTAFloat locale="fa" />

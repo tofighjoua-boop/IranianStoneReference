@@ -5,23 +5,24 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CTAFloat } from "@/components/layout/CTAFloat";
-import { articles, getArticleBySlug, CATEGORY_LABELS } from "@/data/articles";
+import { CATEGORY_LABELS } from "@/data/articles";
+import { getArticles } from "@/lib/storage";
 import { formatDate } from "@/lib/date";
 
-export function generateStaticParams() {
-  return articles.map((a) => ({ slug: a.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const articles = await getArticles();
+  const article = articles.find(a => a.slug === slug);
   if (!article) return {};
   return { title: article.titleEn, description: article.excerptEn };
 }
 
 export default async function ArticleEN({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const articles = await getArticles();
+  const article = articles.find(a => a.slug === slug);
   if (!article) notFound();
 
   return (

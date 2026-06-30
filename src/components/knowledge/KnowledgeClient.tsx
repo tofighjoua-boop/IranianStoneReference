@@ -3,11 +3,16 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { articles, ARTICLE_CATEGORIES, CATEGORY_LABELS, type ArticleCategory } from "@/data/articles";
+import { ARTICLE_CATEGORIES, CATEGORY_LABELS, type ArticleCategory, type Article } from "@/data/articles";
 import { type Language } from "@/lib/translations";
 import { formatDate } from "@/lib/date";
 
-export function KnowledgeClient({ locale }: { locale: Language }) {
+interface Props {
+  locale: Language;
+  articles: Article[];
+}
+
+export function KnowledgeClient({ locale, articles }: Props) {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<ArticleCategory>("all");
   const isRTL = locale === "fa";
@@ -22,7 +27,7 @@ export function KnowledgeClient({ locale }: { locale: Language }) {
         return matchCat && (!q || title.includes(q) || excerpt.includes(q));
       })
       .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
-  }, [search, activeCategory, isRTL]);
+  }, [search, activeCategory, isRTL, articles]);
 
   const font = isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif";
 
