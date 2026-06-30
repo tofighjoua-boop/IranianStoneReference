@@ -64,19 +64,19 @@ export default function AboutEN() {
                 <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#1d2330] mb-6 leading-tight">
                   Iranian Stone Reference
                 </h2>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5">
+                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
                   Iranian Stone Reference was founded by the Vassigh Family in 2010, soon becoming one of the main players in the Iranian natural stone market.
                 </p>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5">
+                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
                   Our entrepreneurial vision and constant investment in modern equipment, marketing, research and development at every step of the process have contributed to building a role-model company that never stops challenging and reinventing itself.
                 </p>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5">
+                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
                   Despite its significant market share in Iran, the company also supplies its high-quality exotic stones to international markets — fulfilling its mission of bringing the diversity and unique beauty of Iranian natural stones to the world, to elevate spaces with practicality and enduring character.
                 </p>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5">
+                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
                   Guided by our clients, we go all the way — delivering on our mission and supporting their dreams. Always present for each one of them, with their own special needs and tastes.
                 </p>
-                <p className="text-[#1d2330]/70 leading-relaxed font-medium">
+                <p className="text-[#1d2330]/70 leading-relaxed font-medium text-justify">
                   Unique as their nature. Unique as our stones.
                 </p>
               </div>

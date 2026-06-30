@@ -64,19 +64,19 @@ export default function AboutFA() {
                 <h2 className="text-3xl sm:text-4xl font-bold text-[#1d2330] mb-6 leading-tight">
                   مرجع سنگ ایرانیان
                 </h2>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5">
+                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
                   مرجع سنگ ایرانیان در سال ۱۳۸۹ توسط خانواده وثیق تأسیس شد و به زودی به یکی از بازیگران اصلی بازار سنگ طبیعی ایران تبدیل گردید.
                 </p>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5">
+                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
                   چشم‌انداز کارآفرینانه و سرمایه‌گذاری مستمر در تجهیزات مدرن، بازاریابی، تحقیق و توسعه در تمامی مراحل فرآیند، به شکل‌گیری شرکتی الگو انجامیده که هرگز از چالش‌پذیری و بازآفرینی خود دست برنمی‌دارد.
                 </p>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5">
+                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
                   با وجود سهم قابل توجه در بازار داخلی ایران، این مجموعه سنگ‌های اکزوتیک با کیفیت برتر خود را به بازارهای بین‌المللی نیز عرضه می‌کند و در راستای رسالت خود، تنوع و زیبایی منحصربه‌فرد سنگ‌های طبیعی ایران را به سراسر جهان می‌رساند تا فضاها را با کاربردی‌پذیری و دوامی ابدی متمایز سازد.
                 </p>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5">
+                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
                   به راهنمایی مشتریانمان تا انتهای مسیر پیش می‌رویم؛ رسالت خود را ادا می‌کنیم و رویاهایشان را پشتیبانی می‌نماییم. همیشه در کنار هر یک از آن‌هاییم — با نیازها و سلیقه‌های خاص خودشان.
                 </p>
-                <p className="text-[#1d2330]/70 leading-relaxed font-medium">
+                <p className="text-[#1d2330]/70 leading-relaxed font-medium text-justify">
                   منحصربه‌فرد، مثل طبیعتشان. منحصربه‌فرد، مثل سنگ‌های ما.
                 </p>
               </div>
