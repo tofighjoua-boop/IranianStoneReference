@@ -8,6 +8,70 @@ interface ContactFormProps {
   prefillStone?: string;
 }
 
+const COUNTRIES: { en: string; fa: string }[] = [
+  { en: "Iran", fa: "ایران" },
+  { en: "United Arab Emirates", fa: "امارات متحده عربی" },
+  { en: "Saudi Arabia", fa: "عربستان سعودی" },
+  { en: "Qatar", fa: "قطر" },
+  { en: "Kuwait", fa: "کویت" },
+  { en: "Bahrain", fa: "بحرین" },
+  { en: "Oman", fa: "عمان" },
+  { en: "Iraq", fa: "عراق" },
+  { en: "Turkey", fa: "ترکیه" },
+  { en: "Russia", fa: "روسیه" },
+  { en: "Germany", fa: "آلمان" },
+  { en: "France", fa: "فرانسه" },
+  { en: "Italy", fa: "ایتالیا" },
+  { en: "Spain", fa: "اسپانیا" },
+  { en: "United Kingdom", fa: "انگلستان" },
+  { en: "Netherlands", fa: "هلند" },
+  { en: "Belgium", fa: "بلژیک" },
+  { en: "Switzerland", fa: "سوئیس" },
+  { en: "Austria", fa: "اتریش" },
+  { en: "Sweden", fa: "سوئد" },
+  { en: "Norway", fa: "نروژ" },
+  { en: "Denmark", fa: "دانمارک" },
+  { en: "Finland", fa: "فنلاند" },
+  { en: "Poland", fa: "لهستان" },
+  { en: "Czech Republic", fa: "جمهوری چک" },
+  { en: "Greece", fa: "یونان" },
+  { en: "Ukraine", fa: "اوکراین" },
+  { en: "United States", fa: "ایالات متحده آمریکا" },
+  { en: "Canada", fa: "کانادا" },
+  { en: "Australia", fa: "استرالیا" },
+  { en: "New Zealand", fa: "نیوزیلند" },
+  { en: "China", fa: "چین" },
+  { en: "Japan", fa: "ژاپن" },
+  { en: "South Korea", fa: "کره جنوبی" },
+  { en: "India", fa: "هند" },
+  { en: "Pakistan", fa: "پاکستان" },
+  { en: "Afghanistan", fa: "افغانستان" },
+  { en: "Azerbaijan", fa: "آذربایجان" },
+  { en: "Armenia", fa: "ارمنستان" },
+  { en: "Georgia", fa: "گرجستان" },
+  { en: "Kazakhstan", fa: "قزاقستان" },
+  { en: "Turkmenistan", fa: "ترکمنستان" },
+  { en: "Uzbekistan", fa: "ازبکستان" },
+  { en: "Tajikistan", fa: "تاجیکستان" },
+  { en: "Egypt", fa: "مصر" },
+  { en: "Jordan", fa: "اردن" },
+  { en: "Lebanon", fa: "لبنان" },
+  { en: "Syria", fa: "سوریه" },
+  { en: "Algeria", fa: "الجزایر" },
+  { en: "Morocco", fa: "مراکش" },
+  { en: "Nigeria", fa: "نیجریه" },
+  { en: "South Africa", fa: "آفریقای جنوبی" },
+  { en: "Brazil", fa: "برزیل" },
+  { en: "Argentina", fa: "آرژانتین" },
+  { en: "Mexico", fa: "مکزیک" },
+  { en: "Malaysia", fa: "مالزی" },
+  { en: "Singapore", fa: "سنگاپور" },
+  { en: "Thailand", fa: "تایلند" },
+  { en: "Indonesia", fa: "اندونزی" },
+  { en: "Vietnam", fa: "ویتنام" },
+  { en: "Other", fa: "سایر" },
+];
+
 export function ContactForm({ locale, prefillStone }: ContactFormProps) {
   const t = translations[locale].contact;
   const isRTL = locale === "fa";
@@ -102,14 +166,14 @@ export function ContactForm({ locale, prefillStone }: ContactFormProps) {
           <label className="block text-[10px] uppercase tracking-[0.2em] text-[#1d2330]/50 font-bold mb-1.5">
             {t.fieldCountry} *
           </label>
-          <input
-            type="text"
-            required
-            value={fields.country}
-            onChange={set("country")}
-            placeholder={isRTL ? "کشور شما" : "Your country"}
-            className={inputClass}
-          />
+          <select required value={fields.country} onChange={set("country")} className={inputClass}>
+            <option value="">{isRTL ? "کشور خود را انتخاب کنید..." : "Select your country..."}</option>
+            {COUNTRIES.map((c) => (
+              <option key={c.en} value={c.en}>
+                {c.fa} — {c.en}
+              </option>
+            ))}
+          </select>
         </div>
         <div>
           <label className="block text-[10px] uppercase tracking-[0.2em] text-[#1d2330]/50 font-bold mb-1.5">
