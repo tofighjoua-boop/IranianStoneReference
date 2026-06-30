@@ -29,9 +29,9 @@ export default async function ArticleEN({ params }: { params: Promise<{ slug: st
     <>
       <Header locale="en" />
       <main>
-        {/* Hero */}
-        <section style={{ backgroundColor: "#0c1626", paddingTop: "120px", paddingBottom: "0", position: "relative" }}>
-          <div style={{ maxWidth: "800px", margin: "0 auto", padding: "32px clamp(16px,5vw,48px) 48px" }}>
+        {/* Hero header */}
+        <section style={{ backgroundColor: "#0c1626", paddingTop: "120px", paddingBottom: "72px" }}>
+          <div style={{ maxWidth: "800px", margin: "0 auto", padding: "32px clamp(16px,5vw,48px) 0" }}>
             <Link href="/en/knowledge" style={{ fontSize: "11px", color: "#A18F7A", letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none", fontFamily: "Lato, sans-serif", display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: "32px" }}>
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M8 6H2M5 3l-3 3 3 3" stroke="#A18F7A" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
               Stone Knowledge
@@ -45,14 +45,17 @@ export default async function ArticleEN({ params }: { params: Promise<{ slug: st
           </div>
         </section>
 
-        {/* Cover image */}
-        <div style={{ position: "relative", height: "clamp(260px,40vw,520px)", overflow: "hidden" }}>
-          <Image src={article.image} alt={article.titleEn} fill sizes="100vw" style={{ objectFit: "cover" }} priority />
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, #0c1626 0%, transparent 30%)" }} />
+        {/* Cover image — clean card below header */}
+        <div style={{ backgroundColor: "#fbfaf6", paddingTop: "48px" }}>
+          <div style={{ maxWidth: "960px", margin: "0 auto", padding: "0 clamp(16px,5vw,48px)" }}>
+            <div style={{ position: "relative", height: "clamp(280px,45vw,540px)", overflow: "hidden", borderRadius: "8px", boxShadow: "0 16px 48px rgba(12,22,38,0.15)" }}>
+              <Image src={article.image} alt={article.titleEn} fill sizes="(max-width:1000px) 100vw, 960px" style={{ objectFit: "cover" }} priority />
+            </div>
+          </div>
         </div>
 
         {/* Body */}
-        <section style={{ backgroundColor: "#fbfaf6", padding: "64px 0 100px" }}>
+        <section style={{ backgroundColor: "#fbfaf6", padding: "56px 0 100px" }}>
           <div style={{ maxWidth: "760px", margin: "0 auto", padding: "0 clamp(16px,5vw,48px)" }}>
             <p style={{ fontSize: "17px", color: "rgba(29,35,48,0.8)", lineHeight: 1.8, marginBottom: "32px", fontFamily: "Lato, sans-serif", fontStyle: "italic" }}>
               {article.excerptEn}
