@@ -168,11 +168,16 @@ export function ContactForm({ locale, prefillStone }: ContactFormProps) {
           </label>
           <select required value={fields.country} onChange={set("country")} className={inputClass}>
             <option value="">{isRTL ? "کشور خود را انتخاب کنید..." : "Select your country..."}</option>
-            {COUNTRIES.map((c) => (
-              <option key={c.en} value={c.en}>
-                {c.fa} — {c.en}
-              </option>
-            ))}
+            {[...COUNTRIES]
+              .sort((a, b) => isRTL
+                ? a.fa.localeCompare(b.fa, "fa")
+                : a.en.localeCompare(b.en, "en")
+              )
+              .map((c) => (
+                <option key={c.en} value={isRTL ? c.fa : c.en}>
+                  {isRTL ? c.fa : c.en}
+                </option>
+              ))}
           </select>
         </div>
         <div>
