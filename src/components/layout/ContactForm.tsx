@@ -16,6 +16,8 @@ export function ContactForm({ locale, prefillStone }: ContactFormProps) {
     name: "",
     company: "",
     country: "",
+    phone: "",
+    email: "",
     stone: prefillStone ?? "",
     projectType: "",
     message: "",
@@ -107,6 +109,36 @@ export function ContactForm({ locale, prefillStone }: ContactFormProps) {
             onChange={set("country")}
             placeholder={isRTL ? "کشور شما" : "Your country"}
             className={inputClass}
+          />
+        </div>
+        <div>
+          <label className="block text-[10px] uppercase tracking-[0.2em] text-[#1d2330]/50 font-bold mb-1.5">
+            {t.fieldPhone} *
+          </label>
+          <input
+            type="tel"
+            required
+            value={fields.phone}
+            onChange={set("phone")}
+            placeholder={isRTL ? "مثال: +989121234567" : "e.g. +989121234567"}
+            className={inputClass}
+            dir="ltr"
+          />
+        </div>
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label className="block text-[10px] uppercase tracking-[0.2em] text-[#1d2330]/50 font-bold mb-1.5">
+            {t.fieldEmail}
+          </label>
+          <input
+            type="email"
+            value={fields.email}
+            onChange={set("email")}
+            placeholder={isRTL ? "ایمیل شما" : "Your email address"}
+            className={inputClass}
+            dir="ltr"
           />
         </div>
         <div>

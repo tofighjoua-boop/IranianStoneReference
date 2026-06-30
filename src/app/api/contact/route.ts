@@ -37,6 +37,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json() as {
       name?: string; company?: string; country?: string;
+      phone?: string; email?: string;
       stone?: string; projectType?: string; message?: string; locale?: string;
     };
 
@@ -45,6 +46,8 @@ export async function POST(req: NextRequest) {
       name: body.name ?? "",
       company: body.company ?? "",
       country: body.country ?? "",
+      phone: body.phone ?? "",
+      email: body.email ?? "",
       stone: body.stone ?? "",
       projectType: body.projectType ?? "",
       message: body.message ?? "",
@@ -67,6 +70,8 @@ export async function POST(req: NextRequest) {
 👤 <b>نام:</b> ${submission.name || "—"}
 🏢 <b>شرکت:</b> ${submission.company || "—"}
 🌍 <b>کشور:</b> ${submission.country || "—"}
+📞 <b>تلفن:</b> ${submission.phone || "—"}
+📧 <b>ایمیل:</b> ${submission.email || "—"}
 💎 <b>سنگ:</b> ${submission.stone || "—"}
 🏗️ <b>نوع پروژه:</b> ${submission.projectType || "—"}
 💬 <b>پیام:</b> ${submission.message || "—"}

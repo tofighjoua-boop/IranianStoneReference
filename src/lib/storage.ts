@@ -121,6 +121,8 @@ export interface ContactSubmission {
   name: string
   company: string
   country: string
+  phone: string
+  email: string
   stone: string
   projectType: string
   message: string

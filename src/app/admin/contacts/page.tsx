@@ -62,8 +62,8 @@ export default function ContactsPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-[#c6a25f]/70 text-xs">{c.country || '—'}</span>
+                  {c.phone && <span className="text-[#f4f1ea]/60 text-xs">· {c.phone}</span>}
                   {c.stone && <span className="text-[#f4f1ea]/40 text-xs">· {c.stone}</span>}
-                  {c.company && <span className="text-[#f4f1ea]/40 text-xs">· {c.company}</span>}
                 </div>
                 <p className="text-[#f4f1ea]/40 text-xs mt-1 truncate">{c.message}</p>
               </button>
@@ -85,6 +85,8 @@ export default function ContactsPage() {
                   [t('Name', 'نام'), selected.name],
                   [t('Company', 'شرکت'), selected.company],
                   [t('Country', 'کشور'), selected.country],
+                  [t('Phone', 'تلفن'), selected.phone],
+                  [t('Email', 'ایمیل'), selected.email],
                   [t('Stone', 'سنگ'), selected.stone],
                   [t('Project Type', 'نوع پروژه'), selected.projectType],
                   [t('Language', 'زبان'), selected.locale === 'fa' ? 'فارسی' : 'English'],
