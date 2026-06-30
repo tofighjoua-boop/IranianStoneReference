@@ -1,5 +1,4 @@
-﻿import type { Metadata } from "next";
-import Image from "next/image";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -58,40 +57,26 @@ export default function AboutFA() {
         {/* Story */}
         <section className="bg-[#fbfaf6] py-20 lg:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-              <div>
-                <p className="text-[#c6a25f] text-[10px] uppercase tracking-[0.3em] font-bold mb-4">از سال ۱۳۸۹</p>
-                <h2 className="text-3xl sm:text-4xl font-bold text-[#1d2330] mb-6 leading-tight">
-                  مرجع سنگ ایرانیان
-                </h2>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
-                  مرجع سنگ ایرانیان در سال ۱۳۸۹ توسط خانواده وثیق تأسیس شد و به زودی به یکی از بازیگران اصلی بازار سنگ طبیعی ایران تبدیل گردید.
-                </p>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
-                  چشم‌انداز کارآفرینانه و سرمایه‌گذاری مستمر در تجهیزات مدرن، بازاریابی، تحقیق و توسعه در تمامی مراحل فرآیند، به شکل‌گیری شرکتی الگو انجامیده که هرگز از چالش‌پذیری و بازآفرینی خود دست برنمی‌دارد.
-                </p>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
-                  با وجود سهم قابل توجه در بازار داخلی ایران، این مجموعه سنگ‌های اکزوتیک با کیفیت برتر خود را به بازارهای بین‌المللی نیز عرضه می‌کند و در راستای رسالت خود، تنوع و زیبایی منحصربه‌فرد سنگ‌های طبیعی ایران را به سراسر جهان می‌رساند تا فضاها را با کاربردی‌پذیری و دوامی ابدی متمایز سازد.
-                </p>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
-                  به راهنمایی مشتریانمان تا انتهای مسیر پیش می‌رویم؛ رسالت خود را ادا می‌کنیم و رویاهایشان را پشتیبانی می‌نماییم. همیشه در کنار هر یک از آن‌هاییم — با نیازها و سلیقه‌های خاص خودشان.
-                </p>
-                <p className="text-[#1d2330]/70 leading-relaxed font-medium text-justify">
-                  منحصربه‌فرد، مثل طبیعتشان. منحصربه‌فرد، مثل سنگ‌های ما.
-                </p>
-              </div>
-              <div className="relative">
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <Image
-                    src="/images/collection-marble-dark.jpg"
-                    alt="شوروم مرجع سنگ ایرانیان — تهران"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-                <div className="absolute -bottom-4 -left-4 w-3/4 h-3/4 border border-[#c6a25f]/20 pointer-events-none" />
-              </div>
+            <div className="max-w-3xl">
+              <p className="text-[#c6a25f] text-[10px] uppercase tracking-[0.3em] font-bold mb-4">از سال ۱۳۸۹</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#1d2330] mb-6 leading-tight">
+                مرجع سنگ ایرانیان
+              </h2>
+              <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
+                مرجع سنگ ایرانیان در سال ۱۳۸۹ توسط خانواده وثیق تأسیس شد و به زودی به یکی از بازیگران اصلی بازار سنگ طبیعی ایران تبدیل گردید.
+              </p>
+              <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
+                چشم‌انداز کارآفرینانه و سرمایه‌گذاری مستمر در تجهیزات مدرن، بازاریابی، تحقیق و توسعه در تمامی مراحل فرآیند، به شکل‌گیری شرکتی الگو انجامیده که هرگز از چالش‌پذیری و بازآفرینی خود دست برنمی‌دارد.
+              </p>
+              <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
+                با وجود سهم قابل توجه در بازار داخلی ایران، این مجموعه سنگ‌های اکزوتیک با کیفیت برتر خود را به بازارهای بین‌المللی نیز عرضه می‌کند و در راستای رسالت خود، تنوع و زیبایی منحصربه‌فرد سنگ‌های طبیعی ایران را به سراسر جهان می‌رساند تا فضاها را با کاربردی‌پذیری و دوامی ابدی متمایز سازد.
+              </p>
+              <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
+                به راهنمایی مشتریانمان تا انتهای مسیر پیش می‌رویم؛ رسالت خود را ادا می‌کنیم و رویاهایشان را پشتیبانی می‌نماییم. همیشه در کنار هر یک از آن‌هاییم — با نیازها و سلیقه‌های خاص خودشان.
+              </p>
+              <p className="text-[#1d2330]/70 leading-relaxed font-medium text-justify">
+                منحصربه‌فرد، مثل طبیعتشان. منحصربه‌فرد، مثل سنگ‌های ما.
+              </p>
             </div>
           </div>
         </section>

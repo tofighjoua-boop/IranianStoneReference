@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -58,40 +57,26 @@ export default function AboutEN() {
         {/* Story */}
         <section className="bg-[#fbfaf6] py-20 lg:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-4" style={{ color: "#A18F7A" }}>Since 2010</p>
-                <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#1d2330] mb-6 leading-tight">
-                  Iranian Stone Reference
-                </h2>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
-                  Iranian Stone Reference was founded by the Vassigh Family in 2010, soon becoming one of the main players in the Iranian natural stone market.
-                </p>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
-                  Our entrepreneurial vision and constant investment in modern equipment, marketing, research and development at every step of the process have contributed to building a role-model company that never stops challenging and reinventing itself.
-                </p>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
-                  Despite its significant market share in Iran, the company also supplies its high-quality exotic stones to international markets — fulfilling its mission of bringing the diversity and unique beauty of Iranian natural stones to the world, to elevate spaces with practicality and enduring character.
-                </p>
-                <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
-                  Guided by our clients, we go all the way — delivering on our mission and supporting their dreams. Always present for each one of them, with their own special needs and tastes.
-                </p>
-                <p className="text-[#1d2330]/70 leading-relaxed font-medium text-justify">
-                  Unique as their nature. Unique as our stones.
-                </p>
-              </div>
-              <div className="relative">
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <Image
-                    src="/images/collection-marble-dark.jpg"
-                    alt="ISR Showroom — Tehran"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-                <div className="absolute -bottom-4 -right-4 w-3/4 h-3/4 border border-[#A18F7A]/20 pointer-events-none" />
-              </div>
+            <div className="max-w-3xl">
+              <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-4" style={{ color: "#A18F7A" }}>Since 2010</p>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#1d2330] mb-6 leading-tight">
+                Iranian Stone Reference
+              </h2>
+              <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
+                Iranian Stone Reference was founded by the Vassigh Family in 2010, soon becoming one of the main players in the Iranian natural stone market.
+              </p>
+              <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
+                Our entrepreneurial vision and constant investment in modern equipment, marketing, research and development at every step of the process have contributed to building a role-model company that never stops challenging and reinventing itself.
+              </p>
+              <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
+                Despite its significant market share in Iran, the company also supplies its high-quality exotic stones to international markets — fulfilling its mission of bringing the diversity and unique beauty of Iranian natural stones to the world, to elevate spaces with practicality and enduring character.
+              </p>
+              <p className="text-[#1d2330]/70 leading-relaxed mb-5 text-justify">
+                Guided by our clients, we go all the way — delivering on our mission and supporting their dreams. Always present for each one of them, with their own special needs and tastes.
+              </p>
+              <p className="text-[#1d2330]/70 leading-relaxed font-medium text-justify">
+                Unique as their nature. Unique as our stones.
+              </p>
             </div>
           </div>
         </section>
@@ -161,7 +146,7 @@ export default function AboutEN() {
         {/* CTA */}
         <section className="bg-[#0c1626] py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
-            <h2 className="font-display text-3xl font-bold text-white mb-4">Let's Work Together</h2>
+            <h2 className="font-display text-3xl font-bold text-white mb-4">Let&apos;s Work Together</h2>
             <p className="mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>
               Contact our team for custom stone quotes, samples, and export consultations.
             </p>
