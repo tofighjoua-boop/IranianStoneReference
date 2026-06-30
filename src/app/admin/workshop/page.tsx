@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef, ChangeEvent } from 'react'
 import { Loader2, Upload, Pencil, Trash2, X, Check } from 'lucide-react'
+import { uploadImage } from '@/lib/upload'
 import { Toast } from '@/components/admin/Toast'
 import type { WorkshopItem } from '@/data/workshop-gallery'
 import { useAdminLang } from '@/components/admin/AdminLangContext'
@@ -21,13 +22,7 @@ const fieldClass =
 
 const labelClass = 'block text-xs text-[#f4f1ea]/60 uppercase tracking-wider mb-1'
 
-const uploadFile = async (file: File): Promise<string> => {
-  const fd = new FormData()
-  fd.append('file', file)
-  const res = await fetch('/api/admin/upload', { method: 'POST', body: fd })
-  const data = (await res.json()) as { url: string }
-  return data.url
-}
+const uploadFile = uploadImage
 
 function WorkshopItemForm({
   initial,

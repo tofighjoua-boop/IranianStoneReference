@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { ArrowLeft, Upload, Plus, X, Loader2 } from 'lucide-react'
+import { uploadImage } from '@/lib/upload'
 import { Toast } from '@/components/admin/Toast'
 import { useAdminLang } from '@/components/admin/AdminLangContext'
 
@@ -60,14 +61,7 @@ export default function NewProductPage() {
     if (!slug || slug === genSlug(nameEn)) setSlug(genSlug(v))
   }
 
-  const uploadFile = async (file: File): Promise<string> => {
-    const fd = new FormData()
-    fd.append('file', file)
-    const res = await fetch('/api/admin/upload', { method: 'POST', body: fd })
-    const data = await res.json() as { url?: string; error?: string }
-    if (!data.url) throw new Error(data.error ?? 'Upload failed')
-    return data.url
-  }
+  const uploadFile = uploadImage
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]

@@ -46,13 +46,7 @@ const emptyForm: ArticleFormData = {
   bodyFaText: '',
 }
 
-const uploadFile = async (file: File): Promise<string> => {
-  const fd = new FormData()
-  fd.append('file', file)
-  const res = await fetch('/api/admin/upload', { method: 'POST', body: fd })
-  const data = (await res.json()) as { url: string }
-  return data.url
-}
+import { uploadImage } from '@/lib/upload'
 
 export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps) {
   const { t } = useAdminLang()
@@ -77,7 +71,7 @@ export function ArticleForm({ initial, onSave, saving, isNew }: ArticleFormProps
     if (!file) return
     setUploading(true)
     try {
-      const url = await uploadFile(file)
+      const url = await uploadImage(file)
       set('image', url)
     } finally {
       setUploading(false)

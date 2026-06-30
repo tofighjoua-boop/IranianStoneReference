@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import { ArrowLeft, Upload, Trash2, Star, Loader2, X } from 'lucide-react'
+import { uploadImage } from '@/lib/upload'
 import { Toast } from '@/components/admin/Toast'
 import { useAdminLang } from '@/components/admin/AdminLangContext'
 
@@ -102,13 +103,9 @@ export default function EditGalleryPage() {
     if (!file) return
     setUploading(true)
     try {
-      const fd = new FormData()
-      fd.append('file', file)
-      const res = await fetch('/api/admin/upload', { method: 'POST', body: fd })
-      const data = await res.json() as { url?: string; error?: string }
-      if (!data.url) throw new Error(data.error ?? 'Upload failed')
-      setImages(prev => [...prev, data.url!])
-      if (!thumbnail) setThumbnail(data.url!)
+      const url = await uploadImage(file)
+      setImages(prev => [...prev, url])
+      if (!thumbnail) setThumbnail(url)
     } catch (err) {
       setToast({ message: err instanceof Error ? err.message : 'Upload failed', type: 'error' })
     } finally {
