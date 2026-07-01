@@ -9,9 +9,10 @@ export function WorkshopGallery({ locale }: { locale: Language }) {
   const [lightbox, setLightbox] = useState<number | null>(null);
   const isRTL = locale === "fa";
   const font = isRTL ? "Vazirmatn, Tahoma, sans-serif" : "Lato, sans-serif";
+  const items = workshopGallery.slice(0, 9);
 
-  const prev = () => setLightbox((i) => (i === null ? null : (i - 1 + workshopGallery.length) % workshopGallery.length));
-  const next = () => setLightbox((i) => (i === null ? null : (i + 1) % workshopGallery.length));
+  const prev = () => setLightbox((i) => (i === null ? null : (i - 1 + items.length) % items.length));
+  const next = () => setLightbox((i) => (i === null ? null : (i + 1) % items.length));
 
   return (
     <>
@@ -25,16 +26,16 @@ export function WorkshopGallery({ locale }: { locale: Language }) {
         </h2>
       </div>
 
-      {/* Grid */}
+      {/* Grid — always 3×3 */}
       <div
         dir={isRTL ? "rtl" : "ltr"}
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+          gridTemplateColumns: "repeat(3, 1fr)",
           gap: "2px",
         }}
       >
-        {workshopGallery.map((item, idx) => (
+        {items.map((item, idx) => (
           <button
             key={item.id}
             onClick={() => setLightbox(idx)}
@@ -166,8 +167,8 @@ export function WorkshopGallery({ locale }: { locale: Language }) {
           >
             <div style={{ position: "relative", width: "100%", maxHeight: "72vh", aspectRatio: "16/10", overflow: "hidden" }}>
               <Image
-                src={workshopGallery[lightbox].image}
-                alt={isRTL ? workshopGallery[lightbox].captionFa : workshopGallery[lightbox].captionEn}
+                src={items[lightbox].image}
+                alt={isRTL ? items[lightbox].captionFa : items[lightbox].captionEn}
                 fill
                 unoptimized
                 sizes="90vw"
@@ -178,17 +179,17 @@ export function WorkshopGallery({ locale }: { locale: Language }) {
 
             <div dir={isRTL ? "rtl" : "ltr"} style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "16px" }}>
               <div>
-                {workshopGallery[lightbox].tagEn && (
+                {items[lightbox].tagEn && (
                   <span style={{ fontSize: "9px", color: "#A18F7A", letterSpacing: "2px", textTransform: "uppercase", fontFamily: "Lato, sans-serif", display: "block", marginBottom: "4px" }}>
-                    {isRTL ? workshopGallery[lightbox].tagFa : workshopGallery[lightbox].tagEn}
+                    {isRTL ? items[lightbox].tagFa : items[lightbox].tagEn}
                   </span>
                 )}
                 <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.65)", lineHeight: 1.6, fontFamily: font, margin: 0 }}>
-                  {isRTL ? workshopGallery[lightbox].captionFa : workshopGallery[lightbox].captionEn}
+                  {isRTL ? items[lightbox].captionFa : items[lightbox].captionEn}
                 </p>
               </div>
               <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.3)", fontFamily: "Lato, sans-serif", whiteSpace: "nowrap" }}>
-                {lightbox + 1} / {workshopGallery.length}
+                {lightbox + 1} / {items.length}
               </span>
             </div>
           </div>
@@ -203,7 +204,7 @@ export function WorkshopGallery({ locale }: { locale: Language }) {
 
           {/* Counter bottom */}
           <div style={{ position: "absolute", bottom: "20px", left: "50%", transform: "translateX(-50%)", display: "flex", gap: "6px" }}>
-            {workshopGallery.map((_, i) => (
+            {items.map((_, i) => (
               <button
                 key={i}
                 onClick={(e) => { e.stopPropagation(); setLightbox(i); }}
