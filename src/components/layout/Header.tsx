@@ -85,7 +85,7 @@ export function Header({ locale }: { locale: Language }) {
         }}
       >
         {/* Logo — left */}
-        <Link href={`/${locale}`} aria-label="ISR — Home" style={{ display: "flex", alignItems: "center" }}>
+        <a href={`/${locale}`} aria-label="ISR — Home" style={{ display: "flex", alignItems: "center" }}>
           <Image
             src="/images/isr-logo-full.png"
             alt="Iranian Stone Reference"
@@ -100,7 +100,7 @@ export function Header({ locale }: { locale: Language }) {
             }}
             priority
           />
-        </Link>
+        </a>
 
         {/* Desktop right side: nav links + language + MENU */}
         <div className="nomobile" style={{ display: "flex", alignItems: "center", gap: "28px" }}>
