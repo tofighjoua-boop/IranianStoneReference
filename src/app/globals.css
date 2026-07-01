@@ -223,6 +223,38 @@
   transform: translateY(0) !important;
 }
 
+/* ── Catalog popup ─────────────────────────────────────────── */
+@keyframes catalog-popup-glow {
+  0%, 100% { box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 0 rgba(198,162,95,0.45); }
+  50%       { box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 10px rgba(198,162,95,0); }
+}
+@keyframes catalog-popup-shine {
+  0%   { transform: translateX(-120%) skewX(-20deg); }
+  60%, 100% { transform: translateX(220%) skewX(-20deg); }
+}
+.catalog-popup {
+  animation: catalog-popup-glow 2.6s ease-in-out infinite;
+}
+.catalog-popup:hover {
+  animation-play-state: paused;
+}
+.catalog-popup-shine {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.catalog-popup-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  background: linear-gradient(115deg, transparent, rgba(255,255,255,0.22), transparent);
+  animation: catalog-popup-shine 3.2s ease-in-out infinite;
+}
+
 /* Workshop gallery */
 .workshop-card:hover .workshop-img     { transform: scale(1.06); opacity: 0.7; }
 .workshop-card:hover .workshop-overlay { opacity: 1 !important; }
