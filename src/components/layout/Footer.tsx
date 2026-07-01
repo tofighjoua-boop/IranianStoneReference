@@ -62,7 +62,7 @@ export function Footer({ locale }: { locale: Language }) {
         >
           {/* Col 1: Logo only (doubled size) */}
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <Link href={`/${locale}`}>
+            <a href={`/${locale}`}>
               <Image
                 src="/images/isr-logo-full.png"
                 alt="Iranian Stone Reference"
@@ -75,7 +75,7 @@ export function Footer({ locale }: { locale: Language }) {
                   filter: "brightness(0) invert(1)",
                 }}
               />
-            </Link>
+            </a>
           </div>
 
           {/* Col 2: Contact info (moved from below logo) */}
