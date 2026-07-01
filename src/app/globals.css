@@ -238,6 +238,14 @@
   .production-grid > div { order: unset !important; }
 }
 
+/* Footer responsive grid */
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 560px) {
+  .footer-grid { grid-template-columns: 1fr !important; }
+}
+
 /* Responsive visibility */
 @media (max-width: 768px)  { .nomobile   { display: none !important; } }
 @media (min-width: 769px)  { .onlymobile { display: none !important; } }

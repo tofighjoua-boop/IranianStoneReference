@@ -50,33 +50,36 @@ export function Footer({ locale }: { locale: Language }) {
           gap: "40px",
         }}
       >
-        {/* Top row */}
+        {/* Top row — 4 columns */}
         <div
           style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
+            display: "grid",
+            gridTemplateColumns: "auto 1fr 1fr 1fr",
+            gap: "clamp(24px, 4vw, 64px)",
             alignItems: "flex-start",
-            gap: "40px",
-            flexWrap: "wrap",
           }}
+          className="footer-grid"
         >
-          {/* Logo + address */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px", minWidth: "180px" }}>
+          {/* Col 1: Logo only (doubled size) */}
+          <div style={{ display: "flex", flexDirection: "column" }}>
             <Link href={`/${locale}`}>
               <Image
                 src="/images/isr-logo-full.png"
                 alt="Iranian Stone Reference"
-                width={178}
-                height={50}
+                width={356}
+                height={100}
                 style={{
-                  height: "38px",
+                  height: "76px",
                   width: "auto",
                   objectFit: "contain",
                   filter: "brightness(0) invert(1)",
                 }}
               />
             </Link>
+          </div>
+
+          {/* Col 2: Contact info (moved from below logo) */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             <p style={{ fontSize: "13px", color: "#A18F7A", lineHeight: 1.8, margin: 0 }}>
               {isRTL
                 ? <>ایران، تهران، شهرک صنعتی شمس آباد<br />بلوار بوستان، گلبن ۱۴، پلاک ۹</>
@@ -86,7 +89,7 @@ export function Footer({ locale }: { locale: Language }) {
             <a href="mailto:info@iranianstonereference.com" style={{ fontSize: "13px", color: "#A18F7A", textDecoration: "none" }}>info@iranianstonereference.com</a>
           </div>
 
-          {/* Nav links */}
+          {/* Col 3: Nav links */}
           <div style={{ display: "flex", flexDirection: "column" }}>
             {links.map((link) => (
               <Link
@@ -107,7 +110,7 @@ export function Footer({ locale }: { locale: Language }) {
             ))}
           </div>
 
-          {/* Social + language */}
+          {/* Col 4: Social + language */}
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             <p style={{ fontSize: "11px", color: "#A18F7A", letterSpacing: "2px", textTransform: "uppercase", margin: 0 }}>
               {isRTL ? "دنبال کنید" : "FOLLOW US"}
