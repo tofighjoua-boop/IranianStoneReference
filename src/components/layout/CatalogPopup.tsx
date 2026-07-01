@@ -32,7 +32,7 @@ export function CatalogPopup({ locale }: { locale: Language }) {
         zIndex: 60,
         transition: "opacity 0.5s ease, transform 0.5s ease",
       }}
-      className="flex items-center gap-3 rounded-full bg-[#0c1626] px-6 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.35)] border border-[#c6a25f]/40 hover:border-[#c6a25f] transition-colors"
+      className="flex items-center gap-3 rounded-full bg-[#0c1626] px-6 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.35)] border border-[#c6a25f]/40 hover:border-[#c6a25f] transition-colors cursor-pointer"
     >
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c6a25f" strokeWidth="1.8">
         <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
