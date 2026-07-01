@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CTAFloat } from "@/components/layout/CTAFloat";
+import { CatalogPopup } from "@/components/layout/CatalogPopup";
 import { HeroSection } from "@/components/home/HeroSection";
 import { CollectionSections } from "@/components/home/CollectionSections";
 import { BottomBanner } from "@/components/home/BottomBanner";
@@ -33,6 +34,7 @@ export default function HomeEN() {
       </main>
       <Footer locale="en" />
       <CTAFloat locale="en" />
+      <CatalogPopup locale="en" />
     </>
   );
 }
