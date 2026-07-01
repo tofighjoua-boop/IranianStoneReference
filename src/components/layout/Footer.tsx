@@ -69,7 +69,7 @@ export function Footer({ locale }: { locale: Language }) {
                 width={356}
                 height={100}
                 style={{
-                  height: "76px",
+                  height: "38px",
                   width: "auto",
                   objectFit: "contain",
                   filter: "brightness(0) invert(1)",
