@@ -4,23 +4,16 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { type Language } from "@/lib/translations";
 
-const CYCLE_MS = 10_000;
-const VISIBLE_MS = 5_000;
+const HALF_CYCLE_MS = 5_000;
 
 export function CatalogPopup({ locale }: { locale: Language }) {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
-    const showTimer = setInterval(() => setVisible(true), CYCLE_MS);
-    return () => clearInterval(showTimer);
+    const toggleTimer = setInterval(() => setVisible((v) => !v), HALF_CYCLE_MS);
+    return () => clearInterval(toggleTimer);
   }, []);
-
-  useEffect(() => {
-    if (!visible) return;
-    const hideTimer = setTimeout(() => setVisible(false), VISIBLE_MS);
-    return () => clearTimeout(hideTimer);
-  }, [visible]);
 
   return (
     <button
