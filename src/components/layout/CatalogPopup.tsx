@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { type Language } from "@/lib/translations";
 
@@ -8,11 +8,14 @@ const HALF_CYCLE_MS = 5_000;
 
 export function CatalogPopup({ locale }: { locale: Language }) {
   const [visible, setVisible] = useState(true);
+  const hoveredRef = useRef(false);
   const router = useRouter();
   const isRTL = locale === "fa";
 
   useEffect(() => {
-    const toggleTimer = setInterval(() => setVisible((v) => !v), HALF_CYCLE_MS);
+    const toggleTimer = setInterval(() => {
+      setVisible((v) => (hoveredRef.current ? true : !v));
+    }, HALF_CYCLE_MS);
     return () => clearInterval(toggleTimer);
   }, []);
 
@@ -20,6 +23,13 @@ export function CatalogPopup({ locale }: { locale: Language }) {
     <button
       type="button"
       onClick={() => router.push(`/${locale}/catalogs`)}
+      onMouseEnter={() => {
+        hoveredRef.current = true;
+        setVisible(true);
+      }}
+      onMouseLeave={() => {
+        hoveredRef.current = false;
+      }}
       aria-label={locale === "fa" ? "مشاهده کاتالوگ‌ها" : "View catalogs"}
       style={{
         position: "fixed",
