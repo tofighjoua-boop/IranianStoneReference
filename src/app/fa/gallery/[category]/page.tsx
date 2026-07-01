@@ -67,7 +67,7 @@ export default async function CategoryPageFA({ params, searchParams }: Props) {
         {isParent ? (
           /* ── Parent: show subcategory cards ── */
           <section className="bg-[#fbfaf6]">
-            <div className="grid grid-cols-1 sm:grid-cols-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 w-2/3 mx-auto">
               {subcategories.map((sub) => (
                 <CategoryCard key={sub.slug} category={sub} locale="fa" />
               ))}
