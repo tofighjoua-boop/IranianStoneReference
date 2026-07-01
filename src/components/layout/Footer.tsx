@@ -79,14 +79,14 @@ export function Footer({ locale }: { locale: Language }) {
           </div>
 
           {/* Col 2: Contact info (moved from below logo) */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px", minWidth: 0 }}>
             <p style={{ fontSize: "13px", color: "#A18F7A", lineHeight: 1.8, margin: 0 }}>
               {isRTL
                 ? <>ایران، تهران، شهرک صنعتی شمس آباد<br />بلوار بوستان، گلبن ۱۴، پلاک ۹</>
                 : <>Iran, Tehran, Shamsabad Industrial Town<br />Boustan Blvd, Golbon 14 St., No. 9</>}
             </p>
-            <a href="tel:+989126388525" style={{ fontSize: "13px", color: "#A18F7A", textDecoration: "none", direction: "ltr", display: "block" }}>+98 912 638 8525</a>
-            <a href="mailto:info@iranianstonereference.com" style={{ fontSize: "13px", color: "#A18F7A", textDecoration: "none" }}>info@iranianstonereference.com</a>
+            <a href="tel:+989126388525" style={{ fontSize: "13px", color: "#A18F7A", textDecoration: "none", unicodeBidi: "plaintext", display: "block" }}>+98 912 638 8525</a>
+            <a href="mailto:info@iranianstonereference.com" style={{ fontSize: "13px", color: "#A18F7A", textDecoration: "none", wordBreak: "break-all" }}>info@iranianstonereference.com</a>
           </div>
 
           {/* Col 3: Nav links */}
